@@ -13,7 +13,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setThemeState] = useState<Theme>("system");
+  const [theme, setThemeState] = useState<Theme>("light");
   const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light");
   const [mounted, setMounted] = useState(false);
 
@@ -42,7 +42,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   // Initialize theme from localStorage
   useEffect(() => {
     const stored = localStorage.getItem("theme") as Theme | null;
-    const initialTheme = stored || "system";
+    const sanitizedStored = stored === "system" ? "light" : stored;
+    const initialTheme = sanitizedStored || "light";
     setThemeState(initialTheme);
     updateResolvedTheme(initialTheme);
     setMounted(true);
@@ -64,16 +65,17 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, [theme, mounted]);
 
   const setTheme = (newTheme: Theme) => {
-    setThemeState(newTheme);
-    localStorage.setItem("theme", newTheme);
-    updateResolvedTheme(newTheme);
+    const nextTheme = newTheme === "system" ? "light" : newTheme;
+    setThemeState(nextTheme);
+    localStorage.setItem("theme", nextTheme);
+    updateResolvedTheme(nextTheme);
   };
 
   // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
     return (
       <ThemeContext.Provider
-        value={{ theme: "system", resolvedTheme: "light", setTheme }}
+        value={{ theme: "light", resolvedTheme: "light", setTheme }}
       >
         {children}
       </ThemeContext.Provider>
