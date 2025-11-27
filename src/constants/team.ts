@@ -3,6 +3,7 @@ export interface TeamMember {
   role: string;
   bio: string;
   image: string;
+  imageClass?: string;
   yearsExperience?: number;
   certifications?: string[];
   education?: string;
@@ -34,6 +35,7 @@ export const teamMembers: TeamMember[] = [
     role: "Dog Groomer",
     bio: "Hi there! I'm Steph, and I've enjoyed working as a dog groomer for the past seven years. My journey has included owning and operating my own successful grooming business, Bubbles and Mutts, for a couple of years. I'm thrilled to return that experience to the River Paws team. My love for animals began early on, working with livestock like swine and dairy cows. But when I discovered dog grooming, I knew I'd found my calling, and I haven't looked back since! I genuinely enjoy making your pups look and feel their absolute best, and I'm excited to get to know you and your furry family members.",
     image: "/caretakers/stephanie-helt.jpg",
+    imageClass: "rotate-90 object-contain scale-75 origin-center bg-slate-900",
     yearsExperience: 7,
     certifications: ["Business Owner Experience", "Livestock Experience"],
     specializations: ["Business Ownership", "Livestock Care Background", "Full-Service Grooming"]

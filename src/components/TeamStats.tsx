@@ -2,37 +2,38 @@
 
 import Link from "next/link";
 
-const StatCard = ({ 
-  number, 
-  label, 
-  subtext, 
-  icon 
-}: { 
-  number: string; 
-  label: string; 
-  subtext: string; 
-  icon: React.ReactNode; 
+const StatCard = ({
+  number,
+  label,
+  subtext,
+  icon,
+}: {
+  number: string;
+  label: string;
+  subtext: string;
+  icon: React.ReactNode;
 }) => (
-  <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-emerald-50/50 dark:from-blue-900/20 dark:via-slate-800/50 dark:to-emerald-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-    <div className="absolute -right-8 -top-8 text-gray-50 dark:text-slate-800 opacity-50 group-hover:opacity-20 group-hover:scale-110 transition-all duration-500 transform rotate-12">
+  <div className="team-stat-card group relative rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
+    <div className="stat-card-hover-overlay-light pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div className="stat-card-hover-overlay-dark pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div className="stat-card-decor absolute -right-8 -top-8 opacity-30 group-hover:opacity-15 group-hover:scale-110 transition-all duration-500 transform rotate-12">
       {icon}
     </div>
-    
+
     <div className="relative z-10">
-      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 text-blue-600 dark:text-blue-300 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm">
+      <div className="stat-card-icon w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm">
         <div className="w-8 h-8">
           {icon}
         </div>
       </div>
-      
-      <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-teal-600 dark:group-hover:from-blue-400 dark:group-hover:to-teal-400 transition-all duration-300">
+
+      <div className="stat-card-number text-4xl md:text-5xl font-bold mb-2 tracking-tight transition-all duration-300">
         {number}
       </div>
-      <h3 className="text-xl font-semibold text-gray-800 mb-3">
+      <h3 className="stat-card-title text-xl font-semibold mb-3">
         {label}
       </h3>
-      <p className="text-gray-600 leading-relaxed text-sm">
+      <p className="stat-card-subtext leading-relaxed text-sm">
         {subtext}
       </p>
     </div>
@@ -41,19 +42,19 @@ const StatCard = ({
 
 export default function TeamStats() {
   return (
-    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-white dark:bg-slate-900 relative overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-30">
-        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-emerald-100 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none opacity-30 dark:opacity-20">
+        <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-blue-100 dark:bg-blue-900/50 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl animate-blob"></div>
+        <div className="absolute bottom-[-10%] left-[-5%] w-96 h-96 bg-emerald-100 dark:bg-emerald-900/50 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Meet Our Pack Leaders
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Our experienced, trained team of professional groomers and hiking guides are dedicated to your dog's happiness and safety.
           </p>
         </div>

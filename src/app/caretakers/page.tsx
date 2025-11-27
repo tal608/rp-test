@@ -5,17 +5,14 @@ import Link from "next/link";
 import { useRef } from "react";
 import { teamMembers } from "@/constants/team";
 import { useMouseParallax } from "@/hooks/useMouseParallax";
-import { useGradientAnimation } from "@/hooks/useGradientAnimation";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Breadcrumb from "@/components/Breadcrumb";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export default function Caretakers() {
   const heroRef = useRef<HTMLDivElement>(null);
-  const certificationsGradientRef = useRef<HTMLDivElement>(null);
 
   const mousePosition = useMouseParallax(heroRef);
-  useGradientAnimation(certificationsGradientRef);
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-emerald-50">
@@ -161,7 +158,7 @@ export default function Caretakers() {
                         src={member.image}
                         alt={`${member.name}, ${member.role} at River Paws dog grooming and hiking service in Waunakee, Wisconsin`}
                         fill
-                        className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                        className={`object-cover object-center group-hover:scale-105 transition-transform duration-700 ${member.imageClass ?? ""}`}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     ) : (
@@ -307,16 +304,14 @@ export default function Caretakers() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="relative bg-gradient-to-r from-blue-600 via-emerald-600 via-teal-500 to-blue-600 py-16 sm:py-20 overflow-hidden group">
-        <div 
-          ref={certificationsGradientRef}
-          className="absolute inset-0 bg-gradient-to-r from-blue-600 via-emerald-600 via-teal-500 to-blue-600 bg-[length:300%_100%]"
-          style={{ 
-            willChange: 'background-position',
-            transform: 'translateZ(0)',
-            backfaceVisibility: 'hidden'
-          }}
-        ></div>
+      <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 py-16 sm:py-20 overflow-hidden group rounded-none">
+        {/* Animated Blobs Background to match homepage location card */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-20%] left-[-25%] w-[80%] h-[80%] bg-blue-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+          <div className="absolute top-[-20%] right-[-25%] w-[80%] h-[80%] bg-teal-400 rounded-full filter blur-[60px] opacity-40 animate-blob-2"></div>
+          <div className="absolute bottom-[-20%] left-[-25%] w-[80%] h-[80%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-3"></div>
+          <div className="absolute bottom-[-35%] right-[-10%] w-[65%] h-[65%] bg-emerald-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+        </div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent)]"></div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">

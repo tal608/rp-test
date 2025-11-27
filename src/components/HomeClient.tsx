@@ -532,7 +532,7 @@ export default function HomeClient() {
                 <div className="absolute top-[-30%] right-[-10%] w-[50%] h-[50%] bg-green-400 rounded-full filter blur-[50px] opacity-40 animate-blob-1"></div>
               </div>
               
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.1),transparent)]"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.1),transparent),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent)]"></div>
               <div className="relative z-10">
                 <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 drop-shadow-lg transform group-hover:scale-105 transition-transform duration-300">✨ New to River Paws?</h3>
                 <p className="text-white text-base sm:text-lg mb-4 drop-shadow-md px-2">Experience the difference for yourself! Call us today to schedule your first appointment and discover why thousands of local families trust us with their beloved pets.</p>

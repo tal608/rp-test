@@ -12,13 +12,13 @@ export default function ThemeToggle() {
   }, []);
 
   const cycleTheme = () => {
-    // Cycle: light -> dark -> system -> light
-    if (theme === "light") {
-      setTheme("dark");
-    } else if (theme === "dark") {
-      setTheme("system");
+    // Toggle between light and dark only
+    if (theme === "system") {
+      // If currently on system, toggle to opposite of resolved theme
+      setTheme(resolvedTheme === "light" ? "dark" : "light");
     } else {
-      setTheme("light");
+      // Toggle between light and dark
+      setTheme(theme === "light" ? "dark" : "light");
     }
   };
 
