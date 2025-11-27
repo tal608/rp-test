@@ -19,9 +19,9 @@ const FacebookIcon = () => (
 );
 
 const ReviewCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-  <div className="w-[350px] max-w-[85vw] flex-shrink-0 bg-white rounded-2xl p-6 shadow-md mr-8 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+  <div className="w-[350px] max-w-[85vw] flex-shrink-0 bg-white dark:bg-slate-800/90 rounded-2xl p-6 shadow-md hover:shadow-2xl mr-8 border border-gray-200 dark:border-slate-700/70 transition-all duration-300 backdrop-blur-sm">
     <div className="flex items-start gap-4 mb-4">
-      <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-blue-100">
+      <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-blue-100 dark:border-slate-600">
         {testimonial.image.startsWith("/") ? (
           <Image
             src={testimonial.image}
@@ -36,13 +36,13 @@ const ReviewCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) =>
           </div>
         )}
       </div>
-      <div>
+      <div className="flex-1">
         <div className="flex items-center gap-2">
-          <h3 className="font-bold text-gray-900 text-base">{testimonial.name}</h3>
+          <h3 className="font-bold text-gray-900 dark:text-white text-base">{testimonial.name}</h3>
           {testimonial.platform === 'google' && <GoogleIcon />}
           {testimonial.platform === 'facebook' && <FacebookIcon />}
         </div>
-        <p className="text-xs text-gray-500">{testimonial.dog} • {testimonial.breed}</p>
+        <p className="text-xs text-gray-500 dark:text-gray-400">{testimonial.dog} • {testimonial.breed}</p>
         <div className="flex items-center mt-1">
           {[...Array(testimonial.rating)].map((_, i) => (
             <svg key={i} className="w-3 h-3 text-yellow-400 fill-current" viewBox="0 0 24 24">
@@ -52,14 +52,14 @@ const ReviewCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) =>
         </div>
       </div>
     </div>
-    <p className="text-gray-600 text-sm leading-relaxed line-clamp-6">
+    <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed line-clamp-6">
       "{testimonial.text}"
     </p>
-    <div className="mt-4 pt-4 border-t border-gray-50 flex justify-between items-center">
-      <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+    <div className="mt-4 pt-4 border-t border-gray-50 dark:border-slate-700 flex justify-between items-center">
+      <span className="text-xs font-semibold text-blue-700 dark:text-white bg-blue-50 dark:bg-blue-500/40 border border-blue-100 dark:border-blue-400/30 px-2.5 py-1 rounded-full tracking-wide transition-colors duration-300">
         {testimonial.service}
       </span>
-      <div className="flex items-center text-gray-500 text-xs">
+      <div className="flex items-center text-gray-500 dark:text-gray-400 text-xs">
         <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
           <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
@@ -80,19 +80,19 @@ export default function TestimonialMarquee() {
   const marqueeRow2 = [...secondRow, ...secondRow];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-blue-50 to-white dark:from-slate-900 dark:to-slate-950 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-12 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           What Our Pack Says
         </h2>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Join thousands of happy tails in the Madison & Waunakee area.
         </p>
       </div>
 
       <div className="relative w-full pause-on-hover flex flex-col gap-8">
         {/* Left Fade */}
-        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-blue-50 to-transparent z-20 pointer-events-none"></div>
+        <div className="absolute left-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-r from-blue-50 to-transparent dark:from-slate-900 z-20 pointer-events-none"></div>
         
         {/* Row 1 - Normal Direction */}
         {/* w-max is CRITICAL: ensures the container is as wide as the content, not the screen */}
@@ -110,16 +110,16 @@ export default function TestimonialMarquee() {
         </div>
 
         {/* Right Fade */}
-        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none"></div>
+        <div className="absolute right-0 top-0 bottom-0 w-16 md:w-32 bg-gradient-to-l from-white to-transparent dark:from-slate-950 z-20 pointer-events-none"></div>
       </div>
 
       <div className="text-center mt-12">
-        <div className="inline-flex items-center gap-2 text-sm text-gray-500 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
+        <div className="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-300 bg-white dark:bg-slate-800/80 px-4 py-2 rounded-full shadow-sm border border-gray-100 dark:border-slate-700">
           <div className="flex -space-x-2">
-             <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center border border-gray-100 p-1">
+             <div className="w-6 h-6 rounded-full bg-white dark:bg-slate-900 flex items-center justify-center border border-gray-100 dark:border-slate-700 p-1">
                <GoogleIcon />
              </div>
-             <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center border border-gray-100 p-1">
+             <div className="w-6 h-6 rounded-full bg-white dark:bg-slate-900 flex items-center justify-center border border-gray-100 dark:border-slate-700 p-1">
                <FacebookIcon />
              </div>
           </div>

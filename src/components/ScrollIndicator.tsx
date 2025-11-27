@@ -16,7 +16,7 @@ export default function ScrollIndicator({ targetId, className = "", ariaLabel = 
     <button
       type="button"
       onClick={handleClick}
-      className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform z-50 ${className}`}
+      className={`absolute bottom-24 sm:bottom-14 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer hover:scale-110 transition-transform z-50 ${className}`}
       aria-label={ariaLabel}
     >
       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
