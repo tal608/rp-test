@@ -77,6 +77,14 @@ export default function RootLayout({
 
   return (
     <html lang="en-US" suppressHydrationWarning>
+      <head>
+        {/* Performance optimization: Resource hints */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
+        <link rel="dns-prefetch" href="https://www.googleapis.com" />
+        <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -97,12 +105,6 @@ export default function RootLayout({
             `,
           }}
         />
-        {/* Performance optimization: Resource hints */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://www.google.com" />
-        <link rel="dns-prefetch" href="https://www.googleapis.com" />
-        <link rel="dns-prefetch" href="https://maps.googleapis.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
