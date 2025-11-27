@@ -101,16 +101,16 @@ export default function Home() {
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight">
                 {/* LCP element - prioritized but animated */}
                 <span className="block text-white drop-shadow-2xl animate-fadeInUp">Every Tail Wags</span>
-                <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent relative inline-block">
+                <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent relative inline-block animate-fadeInUp-delay-400">
                   <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
                     With Joy
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent blur-xl opacity-50 animate-pulse"></span>
                 </span>
-                <span className="block text-xl sm:text-2xl md:text-3xl mt-6 font-medium text-blue-100 drop-shadow-md">
+                <span className="block text-xl sm:text-2xl md:text-3xl mt-6 font-medium text-blue-100 drop-shadow-md animate-fadeInUp-delay-600">
                   for River Paws Dog Grooming & Hiking
                 </span>
-            </h1>
+              </h1>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto animate-fadeInUp-delay-600 px-4 mt-8">
                 Professional grooming & adventure-filled hiking.
@@ -158,11 +158,11 @@ export default function Home() {
                     e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
                   }}
                 >
-                  <span className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_100%] animate-gradient-shift"></span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_100%] animate-gradient-shift"></span>
                   <span className="absolute inset-0 rounded-full bg-white/20 backdrop-blur-sm scale-0 group-hover:scale-100 transition-transform duration-500 origin-center" style={{ 
                     background: 'radial-gradient(circle 100px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16, 185, 129, 0.3), transparent)' 
                   }}></span>
-                  <span className="relative z-10 flex items-center justify-center text-blue-600 group-hover:text-white transition-colors duration-300">
+                  <span className="relative z-10 flex items-center justify-center text-blue-700 group-hover:text-white transition-colors duration-300">
                     <Image
                       src="/Logos/paw only 72.png"
                       alt=""

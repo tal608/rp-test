@@ -22,9 +22,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Dog Grooming Waunakee & North Madison | River Paws Dog Hikes",
-  description:
-    "Full-service dog grooming and small-group dog hikes on the Waunakee/Madison border. Serving DeForest, Sun Prairie & Middleton. Book today.",
+  title: {
+    default: "Dog Grooming Waunakee & North Madison | River Paws Dog Hikes",
+    template: "%s | River Paws"
+  },
+  description: "Full-service dog grooming and small-group dog hikes on the Waunakee/Madison border. Serving DeForest, Sun Prairie & Middleton. Book today.",
   authors: [{ name: "River Paws" }],
   alternates: {
     canonical: "https://www.riverpaws.dog/",

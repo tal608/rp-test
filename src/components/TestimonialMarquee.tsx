@@ -19,7 +19,7 @@ const FacebookIcon = () => (
 );
 
 const ReviewCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-  <div className="w-[350px] max-w-[85vw] flex-shrink-0 bg-white rounded-2xl p-6 shadow-md mr-8 border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+  <div className="w-[350px] max-w-[85vw] flex-shrink-0 bg-white rounded-2xl p-6 shadow-md mr-8 border border-gray-200 hover:shadow-xl transition-shadow duration-300">
     <div className="flex items-start gap-4 mb-4">
       <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-blue-100">
         {testimonial.image.startsWith("/") ? (
@@ -59,7 +59,7 @@ const ReviewCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) =>
       <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
         {testimonial.service}
       </span>
-      <div className="flex items-center text-gray-400 text-xs">
+      <div className="flex items-center text-gray-500 text-xs">
         <svg className="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
           <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>

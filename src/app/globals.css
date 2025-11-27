@@ -783,3 +783,9 @@ html.dark .rounded-lg.bg-white {
   background-color: #1e293b !important;
   border: 1px solid #334155 !important;
 }
+
+/* Utility to force white background even in dark mode (e.g. for image overlays) */
+.force-bg-white {
+  background-color: #ffffff !important;
+  color: #171717 !important;
+}

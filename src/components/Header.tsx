@@ -216,7 +216,7 @@ export default function Header() {
             href="https://booking.moego.pet/ol/RiverPaws/book"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative overflow-hidden bg-gradient-to-r from-blue-600 to-teal-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-medium group transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl text-sm md:text-base"
+            className="relative overflow-hidden bg-gradient-to-r from-blue-700 to-teal-600 text-white px-4 md:px-6 py-2 md:py-3 rounded-full font-medium group transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl text-sm md:text-base"
           >
             <span className="relative z-10 flex items-center">
               <span className="hidden sm:inline">Book Now</span>

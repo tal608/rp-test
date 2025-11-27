@@ -14,19 +14,19 @@ const StatCard = ({
   icon: React.ReactNode; 
 }) => (
   <div className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100">
-    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-emerald-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-    <div className="absolute -right-8 -top-8 text-gray-50 opacity-50 group-hover:opacity-20 group-hover:scale-110 transition-all duration-500 transform rotate-12">
+    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-white to-emerald-50/50 dark:from-blue-900/20 dark:via-slate-800/50 dark:to-emerald-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+    <div className="absolute -right-8 -top-8 text-gray-50 dark:text-slate-800 opacity-50 group-hover:opacity-20 group-hover:scale-110 transition-all duration-500 transform rotate-12">
       {icon}
     </div>
     
     <div className="relative z-10">
-      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-100 to-teal-100 text-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm">
+      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-100 to-teal-100 dark:from-blue-900 dark:to-teal-900 text-blue-600 dark:text-blue-300 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 shadow-sm">
         <div className="w-8 h-8">
           {icon}
         </div>
       </div>
       
-      <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-teal-600 transition-all duration-300">
+      <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-teal-600 dark:group-hover:from-blue-400 dark:group-hover:to-teal-400 transition-all duration-300">
         {number}
       </div>
       <h3 className="text-xl font-semibold text-gray-800 mb-3">
