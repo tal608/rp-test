@@ -729,7 +729,7 @@ export default function DogHikes() {
                   <span className="text-white font-bold text-lg">E</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800">Emily D.</h4>
+                  <h3 className="font-bold text-gray-800">Emily D.</h3>
                   <p className="text-sm text-gray-600">Madison</p>
                 </div>
               </div>
@@ -751,7 +751,7 @@ export default function DogHikes() {
                   <span className="text-white font-bold text-lg">J</span>
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-800">Jennifer M.</h4>
+                  <h3 className="font-bold text-gray-800">Jennifer M.</h3>
                   <p className="text-sm text-gray-600">Waunakee</p>
                 </div>
               </div>
@@ -903,9 +903,9 @@ export default function DogHikes() {
           <section className="py-16 px-6 bg-white">
             <div className="max-w-7xl mx-auto">
               <div className="bg-gradient-to-r from-blue-50 to-emerald-50 rounded-3xl p-8 md:p-12 border border-blue-100">
-                <h3 className="text-3xl font-bold text-gray-900 text-center mb-10">
+                <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
                   Explore Our Other Services
-                </h3>
+                </h2>
                 <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                   
                   {/* Grooming Portal Card */}
@@ -930,9 +930,9 @@ export default function DogHikes() {
                     </div>
 
                     <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                      <h4 className="text-3xl font-bold text-white mb-3 group-hover:translate-y-[-4px] transition-transform duration-300">
+                      <h3 className="text-3xl font-bold text-white mb-3 group-hover:translate-y-[-4px] transition-transform duration-300">
                         Professional Grooming
-                      </h4>
+                      </h3>
                       <p className="text-emerald-50 text-lg mb-4 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                         Full-service spa treatments, breed-specific cuts, and gentle care for your best friend.
                       </p>
@@ -967,9 +967,9 @@ export default function DogHikes() {
                     </div>
 
                     <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                      <h4 className="text-3xl font-bold text-white mb-3 group-hover:translate-y-[-4px] transition-transform duration-300">
+                      <h3 className="text-3xl font-bold text-white mb-3 group-hover:translate-y-[-4px] transition-transform duration-300">
                         Meet Our Team
-                      </h4>
+                      </h3>
                       <p className="text-blue-50 text-lg mb-4 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                         Get to know the experienced, passionate professionals who guide your dog's adventures.
                       </p>

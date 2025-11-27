@@ -38,6 +38,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
+  manifest: '/manifest.json',
   openGraph: {
     title: "Dog Grooming Waunakee & North Madison | River Paws Dog Hikes",
     description:
@@ -74,7 +75,9 @@ export default function RootLayout({
 
   return (
     <html lang="en-US" suppressHydrationWarning>
-      <head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {/* Prevent flash of wrong theme */}
         <script
           dangerouslySetInnerHTML={{
@@ -98,21 +101,6 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://www.googleapis.com" />
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
-        
-        {/* Preload LCP hero image for faster paint */}
-        <link
-          rel="preload"
-          as="image"
-          href="/Hiking/joyful-brindle-mix-running-waunakee-wi-river-paws.jpg"
-          type="image/jpeg"
-          fetchPriority="high"
-        />
-        
-        <link rel="manifest" href="/manifest.json" />
-      </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}

@@ -62,12 +62,13 @@ export default function Home() {
               src="/Hiking/joyful-brindle-mix-running-waunakee-wi-river-paws.jpg"
               alt="Athletic brindle mix becoming a properly challenged athlete on exclusive gated wilderness grounds serving Waunakee families."
               fill
-              sizes="100vw"
-              className="object-cover"
-              style={{ objectPosition: getImageObjectPosition("/Hiking/joyful-brindle-mix-running-waunakee-wi-river-paws.jpg") }}
               priority
               fetchPriority="high"
               loading="eager"
+              className="object-cover"
+              style={{ objectPosition: getImageObjectPosition("/Hiking/joyful-brindle-mix-running-waunakee-wi-river-paws.jpg") }}
+              sizes="100vw"
+              quality={85}
             />
             {/* IMAGE_PLACEMENT_END: homepage-hero */}
             <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-emerald-800/50 to-teal-900/60"></div>
@@ -77,14 +78,16 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-teal-600/20"></div>
 
           {/* Floating elements with parallax */}
-          <div
-            className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"
-            style={{ transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
-          ></div>
-          <div
-            className="absolute top-40 right-10 w-72 h-72 bg-teal-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob-delay-2"
-            style={{ transform: `translate(${-mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
-          ></div>
+          <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
+            <div
+              className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob will-change-transform"
+              style={{ transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
+            ></div>
+            <div
+              className="absolute top-40 right-10 w-72 h-72 bg-teal-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob-delay-2 will-change-transform"
+              style={{ transform: `translate(${-mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
+            ></div>
+          </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
             <div className="space-y-8">

@@ -38,7 +38,7 @@ const ReviewCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) =>
       </div>
       <div>
         <div className="flex items-center gap-2">
-          <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+          <h3 className="font-bold text-gray-900 text-base">{testimonial.name}</h3>
           {testimonial.platform === 'google' && <GoogleIcon />}
           {testimonial.platform === 'facebook' && <FacebookIcon />}
         </div>

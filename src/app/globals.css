@@ -316,6 +316,63 @@ body {
   animation-delay: 2s;
 }
 
+/* Optimized animations - only run when reduced motion is NOT preferred */
+@media (prefers-reduced-motion: no-preference) {
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-marquee-reverse {
+    animation: marquee-reverse 40s linear infinite;
+    will-change: transform;
+  }
+
+  .animate-blob {
+    will-change: transform;
+  }
+
+  .animate-blob-delay-2 {
+    will-change: transform;
+  }
+
+  .animate-blob-1 {
+    animation: blob-1 10s infinite ease-in-out alternate;
+    will-change: transform;
+  }
+
+  .animate-blob-2 {
+    animation: blob-2 12s infinite ease-in-out alternate;
+    will-change: transform;
+  }
+
+  .animate-blob-3 {
+    animation: blob-3 8s infinite ease-in-out alternate;
+    will-change: transform;
+  }
+}
+
+/* Fallback for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-blob,
+  .animate-blob-delay-2,
+  .animate-blob-1,
+  .animate-blob-2,
+  .animate-blob-3,
+  .animate-pulse,
+  .animate-shimmer,
+  .animate-gradient-shift,
+  .animate-gradient-shift-random,
+  .animate-float-slow,
+  .animate-float-medium,
+  .animate-float-fast {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
 .animate-fadeInUp {
   opacity: 1 !important;
   animation: simpleFadeIn 0.6s ease-out forwards;
