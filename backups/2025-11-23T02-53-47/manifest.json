@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-11-23T02:53:47.651Z",
+  "files": [
+    "image-placements-registry.json",
+    "imageFocalPoints.ts",
+    "gallery.ts",
+    "src\\app\\blog\\page.tsx",
+    "src\\app\\dog-grooming\\page.tsx",
+    "src\\app\\dog-grooming-deforest\\page.tsx",
+    "src\\app\\dog-grooming-madison\\page.tsx",
+    "src\\app\\dog-grooming-middleton\\page.tsx",
+    "src\\app\\dog-grooming-sun-prairie\\page.tsx",
+    "src\\app\\dog-grooming-waunakee\\page.tsx",
+    "src\\app\\dog-hikes\\page.tsx",
+    "src\\app\\gallery\\page.tsx",
+    "src\\app\\page.tsx"
+  ],
+  "backupDir": "C:\\Users\\Ben\\Downloads\\New-RP-Test\\riverpaws\\backups\\2025-11-23T02-53-47"
+}

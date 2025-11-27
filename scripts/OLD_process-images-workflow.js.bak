@@ -1,0 +1,202 @@
+#!/usr/bin/env node
+
+/**
+ * Master Workflow Script
+ * 
+ * Implements the complete ideal workflow:
+ * 1. Pre-flight validation
+ * 2. Create backup
+ * 3. Dry run
+ * 4. Execute (if approved)
+ * 5. Post-process validation
+ * 6. Build test
+ */
+
+const { validateCSV } = require('./validate-csv');
+const { validateFilesystem } = require('./validate-filesystem');
+const { validateCodebase } = require('./validate-codebase');
+const { createBackup } = require('./create-backup');
+const { validateAfterProcessing } = require('./validate-after-processing');
+const { cleanGallery } = require('./clean-broken-gallery-refs');
+const { safeBuildTest } = require('./safe-build-test');
+const { execSync } = require('child_process');
+const path = require('path');
+
+async function runWorkflow(csvPath, options = {}) {
+  const {
+    skipBackup = false,
+    skipDryRun = false,
+    autoApprove = false,
+    checkBuild = true
+  } = options;
+  
+  console.log('\n🚀 Image Processing Workflow\n');
+  console.log(`CSV: ${csvPath}\n`);
+  
+  // Step 1: Pre-flight validation
+  console.log('═══════════════════════════════════════════');
+  console.log('STEP 1: Pre-Flight Validation');
+  console.log('═══════════════════════════════════════════\n');
+  
+  // 1.1 Validate CSV
+  console.log('📋 Validating CSV structure...');
+  const csvResult = validateCSV(csvPath);
+  if (!csvResult.valid) {
+    console.error('\n❌ CSV validation failed');
+    csvResult.errors.forEach(e => console.error(`   - ${e}`));
+    process.exit(1);
+  }
+  console.log('✅ CSV validation passed\n');
+  
+  // 1.2 Validate filesystem
+  console.log('📁 Validating file system...');
+  const fsResult = validateFilesystem(csvPath);
+  if (!fsResult.valid) {
+    console.error('\n❌ File system validation failed');
+    fsResult.errors.forEach(e => console.error(`   - ${e}`));
+    process.exit(1);
+  }
+  console.log('✅ File system validation passed\n');
+  
+  // 1.3 Validate codebase
+  console.log('🔍 Validating codebase state...');
+  const codebaseResult = validateCodebase();
+  if (!codebaseResult.valid) {
+    console.error('\n❌ Codebase validation failed');
+    codebaseResult.errors.forEach(e => console.error(`   - ${e}`));
+    process.exit(1);
+  }
+  console.log('✅ Codebase validation passed\n');
+  
+  // 1.4 Clean broken gallery references (before processing)
+  console.log('🧹 Cleaning broken gallery references...');
+  try {
+    const cleanupResult = cleanGallery();
+    if (cleanupResult.removed > 0) {
+      console.log(`✅ Removed ${cleanupResult.removed} broken references\n`);
+    } else {
+      console.log('✅ No broken references found\n');
+    }
+  } catch (err) {
+    console.warn(`⚠️  Warning: Could not clean gallery: ${err.message}\n`);
+  }
+  
+  // Step 2: Create backup
+  if (!skipBackup) {
+    console.log('═══════════════════════════════════════════');
+    console.log('STEP 2: Create Backup');
+    console.log('═══════════════════════════════════════════\n');
+    
+    const backupResult = createBackup();
+    console.log(`✅ Backup created: ${backupResult.backupDir}\n`);
+  } else {
+    console.log('⏭️  Skipping backup (--skip-backup)\n');
+  }
+  
+  // Step 3: Dry run
+  if (!skipDryRun) {
+    console.log('═══════════════════════════════════════════');
+    console.log('STEP 3: Dry Run');
+    console.log('═══════════════════════════════════════════\n');
+    
+    console.log('Running dry run...\n');
+    try {
+      execSync(`node scripts/process-image-csv.js --csv "${csvPath}" --dry-run`, {
+        cwd: path.join(__dirname, '..'),
+        stdio: 'inherit'
+      });
+    } catch (err) {
+      console.error('\n❌ Dry run failed');
+      process.exit(1);
+    }
+    
+    if (!autoApprove) {
+      console.log('\n⚠️  Review the dry run output above.');
+      console.log('If everything looks good, run with --execute to proceed.');
+      console.log('Or use --auto-approve to skip this prompt.\n');
+      return;
+    }
+  } else {
+    console.log('⏭️  Skipping dry run (--skip-dry-run)\n');
+  }
+  
+  // Step 4: Execute
+  console.log('═══════════════════════════════════════════');
+  console.log('STEP 4: Execute Processing');
+  console.log('═══════════════════════════════════════════\n');
+  
+  console.log('Running image processing...\n');
+  try {
+    execSync(`node scripts/process-image-csv.js --csv "${csvPath}" --execute`, {
+      cwd: path.join(__dirname, '..'),
+      stdio: 'inherit'
+    });
+  } catch (err) {
+    console.error('\n❌ Processing failed');
+    console.error('You can rollback using: node scripts/rollback.js --backup [backup-dir]');
+    process.exit(1);
+  }
+  
+  // Step 5: Post-process validation
+  console.log('\n═══════════════════════════════════════════');
+  console.log('STEP 5: Post-Process Validation');
+  console.log('═══════════════════════════════════════════\n');
+  
+  const postResult = validateAfterProcessing({ checkBuild: false });
+  if (!postResult.valid) {
+    console.error('\n❌ Post-processing validation failed');
+    postResult.errors.forEach(e => console.error(`   - ${e}`));
+    console.error('\nYou can rollback using: node scripts/rollback.js --backup [backup-dir]');
+    process.exit(1);
+  }
+  console.log('✅ Post-processing validation passed\n');
+  
+  // Step 6: Build test
+  if (checkBuild) {
+    console.log('═══════════════════════════════════════════');
+    console.log('STEP 6: Build Test');
+    console.log('═══════════════════════════════════════════\n');
+    
+    const buildExitCode = safeBuildTest();
+    if (buildExitCode !== 0) {
+      console.error('\nYou can rollback using: node scripts/rollback.js --backup [backup-dir]');
+      process.exit(1);
+    }
+  }
+  
+  console.log('═══════════════════════════════════════════');
+  console.log('✅ Workflow Completed Successfully!');
+  console.log('═══════════════════════════════════════════\n');
+}
+
+// CLI
+if (require.main === module) {
+  const args = process.argv.slice(2);
+  const csvIndex = args.indexOf('--csv');
+  
+  if (csvIndex === -1 || !args[csvIndex + 1]) {
+    console.error('Usage: node scripts/process-images-workflow.js --csv path/to/file.csv [options]');
+    console.error('\nOptions:');
+    console.error('  --skip-backup      Skip creating backup');
+    console.error('  --skip-dry-run     Skip dry run');
+    console.error('  --auto-approve     Auto-approve after dry run');
+    console.error('  --skip-build       Skip build test');
+    process.exit(1);
+  }
+  
+  const csvPath = path.resolve(args[csvIndex + 1]);
+  const options = {
+    skipBackup: args.includes('--skip-backup'),
+    skipDryRun: args.includes('--skip-dry-run'),
+    autoApprove: args.includes('--auto-approve'),
+    checkBuild: !args.includes('--skip-build')
+  };
+  
+  runWorkflow(csvPath, options).catch(err => {
+    console.error(`\n❌ Workflow failed: ${err.message}`);
+    process.exit(1);
+  });
+}
+
+module.exports = { runWorkflow };
+

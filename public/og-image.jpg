@@ -1,0 +1,54 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+
+  <!-- Decorative elements -->
+  <circle cx="200" cy="200" r="80" fill="#ffffff" fill-opacity="0.1"/>
+  <circle cx="1000" cy="450" r="60" fill="#ffffff" fill-opacity="0.1"/>
+  <circle cx="1100" cy="150" r="40" fill="#ffffff" fill-opacity="0.1"/>
+
+  <!-- Main logo area -->
+  <g transform="translate(100, 150)">
+    <!-- Large paw print -->
+    <ellipse cx="80" cy="120" rx="40" ry="50" fill="#ffffff"/>
+    <ellipse cx="60" cy="80" rx="15" ry="20" fill="#ffffff"/>
+    <ellipse cx="80" cy="60" rx="15" ry="20" fill="#ffffff"/>
+    <ellipse cx="100" cy="80" rx="15" ry="20" fill="#ffffff"/>
+    <ellipse cx="50" cy="100" rx="10" ry="15" fill="#ffffff"/>
+    <ellipse cx="110" cy="100" rx="10" ry="15" fill="#ffffff"/>
+  </g>
+
+  <!-- Main text -->
+  <text x="300" y="200" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#ffffff">River Paws</text>
+  <text x="300" y="250" font-family="Arial, sans-serif" font-size="24" fill="#ffffff" fill-opacity="0.9">Dog Grooming & Adventure Hikes</text>
+  <text x="300" y="290" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" fill-opacity="0.8">Madison & Waunakee, WI</text>
+
+  <!-- Service highlights -->
+  <g transform="translate(100, 350)">
+    <circle cx="15" cy="15" r="8" fill="#ffffff" fill-opacity="0.8"/>
+    <text x="35" y="20" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">Professional Grooming</text>
+
+    <circle cx="15" cy="50" r="8" fill="#ffffff" fill-opacity="0.8"/>
+    <text x="35" y="55" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">Adventure Dog Hikes</text>
+
+    <circle cx="15" cy="85" r="8" fill="#ffffff" fill-opacity="0.8"/>
+    <text x="35" y="90" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">Puppy Play Sessions</text>
+  </g>
+
+  <!-- Contact info -->
+  <g transform="translate(700, 400)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">Contact Us:</text>
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">📞 (608) 571-7297</text>
+    <text x="0" y="55" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">📧 YaharaRiverPaws@gmail.com</text>
+    <text x="0" y="80" font-family="Arial, sans-serif" font-size="16" fill="#ffffff">🏠 5305 River Road, Waunakee, WI</text>
+  </g>
+
+  <!-- Bottom decorative line -->
+  <line x1="0" y1="600" x2="1200" y2="600" stroke="#ffffff" stroke-width="4" stroke-opacity="0.3"/>
+</svg>

@@ -1,0 +1,2428 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-11-23",
+  "opportunities": [
+    {
+      "id": "homepage-hero",
+      "page": "page.tsx",
+      "section": "hero",
+      "component": "HeroSection",
+      "file": "src/app/page.tsx",
+      "line": 71,
+      "requirements": {
+        "minScore": 8.5,
+        "requiredTags": [
+          "Homepage Hero"
+        ],
+        "preferredCategories": [
+          "Adventure / Hiking",
+          "Social / Community / Celebration"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee"
+        ],
+        "contentContext": "High-impact hero image showcasing adventure energy and joy. First impression for visitors.",
+        "priority": "critical"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "homepage-adventure-hikes-card",
+      "page": "page.tsx",
+      "section": "services",
+      "component": "ServiceCard",
+      "file": "src/app/page.tsx",
+      "line": 765,
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Adventure / Hiking"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Adventure Hikes service card - showcases outdoor hiking experiences",
+        "priority": "high"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "homepage-puppy-play-card",
+      "page": "page.tsx",
+      "section": "services",
+      "component": "ServiceCard",
+      "file": "src/app/page.tsx",
+      "line": 821,
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Social / Community / Celebration",
+          "Adventure / Hiking"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Puppy Play & Socialization service card - showcases puppy socialization and play experiences",
+        "priority": "high"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-hero",
+      "page": "dog-grooming",
+      "section": "hero",
+      "component": "HeroSection",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 43,
+      "requirements": {
+        "minScore": 8,
+        "requiredTags": [
+          "Services",
+          "Homepage Hero"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Professional dog grooming service hero - showcases grooming expertise",
+        "priority": "high"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [
+        "happy-bernesemix-grooming-madison-wi-river-paws.jpg"
+      ],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-hikes-hero",
+      "page": "dog-hikes",
+      "section": "hero",
+      "component": "HeroSection",
+      "file": "src/app/dog-hikes/page.tsx",
+      "line": 121,
+      "requirements": {
+        "minScore": 8,
+        "requiredTags": [
+          "Services",
+          "Homepage Hero"
+        ],
+        "preferredCategories": [
+          "Adventure / Hiking"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Dog hiking service hero - showcases outdoor adventure experiences",
+        "priority": "high"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-hikes-convenient-pickup-card",
+      "page": "dog-hikes",
+      "section": "day-in-life",
+      "component": "ServiceCard",
+      "file": "src/app/dog-hikes/page.tsx",
+      "line": 322,
+      "containerHeight": "h-48",
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Adventure / Hiking"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Convenient Pickup card - showcases transport/pickup service for dog hiking",
+        "priority": "medium"
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-hikes-off-leash-adventure-card",
+      "page": "dog-hikes",
+      "section": "day-in-life",
+      "component": "ServiceCard",
+      "file": "src/app/dog-hikes/page.tsx",
+      "line": 348,
+      "containerHeight": "h-48",
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Adventure / Hiking"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Off-Leash Adventure card - showcases hiking experience on trails",
+        "priority": "medium"
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-hikes-happy-return-card",
+      "page": "dog-hikes",
+      "section": "day-in-life",
+      "component": "ServiceCard",
+      "file": "src/app/dog-hikes/page.tsx",
+      "line": 373,
+      "containerHeight": "h-48",
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Adventure / Hiking",
+          "Social / Community / Celebration"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Happy Return card - showcases dogs after adventure, socializing",
+        "priority": "medium"
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-madison-hero",
+      "page": "dog-grooming-madison",
+      "section": "hero",
+      "component": "HeroSection",
+      "file": "src/app/dog-grooming-madison/page.tsx",
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Services"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Madison"
+        ],
+        "contentContext": "Madison-specific grooming page hero - must match Madison city",
+        "priority": "high",
+        "strictCityMatch": true
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-waunakee-hero",
+      "page": "dog-grooming-waunakee",
+      "section": "hero",
+      "component": "HeroSection",
+      "file": "src/app/dog-grooming-waunakee/page.tsx",
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Services"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Waunakee"
+        ],
+        "contentContext": "Waunakee-specific grooming page hero - must match Waunakee city",
+        "priority": "high",
+        "strictCityMatch": true
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-deforest-hero",
+      "page": "dog-grooming-deforest",
+      "section": "hero",
+      "component": "HeroSection",
+      "file": "src/app/dog-grooming-deforest/page.tsx",
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Services"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "DeForest"
+        ],
+        "contentContext": "DeForest-specific grooming page hero - must match DeForest city",
+        "priority": "high",
+        "strictCityMatch": true
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-sun-prairie-hero",
+      "page": "dog-grooming-sun-prairie",
+      "section": "hero",
+      "component": "HeroSection",
+      "file": "src/app/dog-grooming-sun-prairie/page.tsx",
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Services"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Sun Prairie"
+        ],
+        "contentContext": "Sun Prairie-specific grooming page hero - must match Sun Prairie city",
+        "priority": "high",
+        "strictCityMatch": true
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-middleton-hero",
+      "page": "dog-grooming-middleton",
+      "section": "hero",
+      "component": "HeroSection",
+      "file": "src/app/dog-grooming-middleton/page.tsx",
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Services"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Middleton"
+        ],
+        "contentContext": "Middleton-specific grooming page hero - must match Middleton city",
+        "priority": "high",
+        "strictCityMatch": true
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "gallery-hero",
+      "page": "gallery",
+      "section": "hero",
+      "component": "HeroSection",
+      "file": "src/app/gallery/page.tsx",
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Gallery",
+          "Services"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up",
+          "Adventure / Hiking"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Gallery page hero - showcases image collection",
+        "priority": "medium"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "gallery-category-grooming",
+      "page": "gallery",
+      "section": "gallery",
+      "component": "GalleryCategory",
+      "file": "src/constants/gallery.ts",
+      "category": "grooming",
+      "requirements": {
+        "minScore": 6,
+        "requiredTags": [
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Grooming gallery category - all grooming images added",
+        "priority": "medium",
+        "noLimit": true
+      },
+      "maxRotations": null,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "gallery-category-hiking",
+      "page": "gallery",
+      "section": "gallery",
+      "component": "GalleryCategory",
+      "file": "src/constants/gallery.ts",
+      "category": "hiking",
+      "requirements": {
+        "minScore": 6,
+        "requiredTags": [
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Adventure / Hiking"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Hiking gallery category - all hiking images added",
+        "priority": "medium",
+        "noLimit": true
+      },
+      "maxRotations": null,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "gallery-category-transport",
+      "page": "gallery",
+      "section": "gallery",
+      "component": "GalleryCategory",
+      "file": "src/constants/gallery.ts",
+      "category": "transport",
+      "requirements": {
+        "minScore": 6,
+        "requiredTags": [
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Dog Bus / Transport"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Transport gallery category - all transport images added",
+        "priority": "medium",
+        "noLimit": true
+      },
+      "maxRotations": null,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "gallery-category-playtime",
+      "page": "gallery",
+      "section": "gallery",
+      "component": "GalleryCategory",
+      "file": "src/constants/gallery.ts",
+      "category": "playtime",
+      "requirements": {
+        "minScore": 6,
+        "requiredTags": [
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Social / Community / Celebration"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Playtime gallery category - social, community, and celebration images",
+        "priority": "medium",
+        "noLimit": true
+      },
+      "maxRotations": null,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "blog-hero",
+      "page": "blog",
+      "section": "hero",
+      "component": "HeroSection",
+      "file": "src/app/blog/page.tsx",
+      "line": 33,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Adventure / Hiking",
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Blog page hero - showcases blog content and expertise",
+        "priority": "medium"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-image-1",
+      "page": "apply",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/apply/page.tsx",
+      "line": 38,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-image-2",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 216,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-image-3",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 872,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-image-4",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 898,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-image-5",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 924,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-image-6",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 950,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-image-7",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 976,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-image-8",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 1002,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-image-9",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 1028,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-puppy-grooming",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 872,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-canine-grooming",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 898,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-dog-grooming-madison",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 924,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-dog-grooming-waunakee",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 950,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-dog-grooming-deforest",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 976,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-dog-grooming-sun-prairie",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 1002,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-dog-grooming-middleton",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 1028,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-deforest",
+      "page": "dog-grooming-deforest",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming-deforest/page.tsx",
+      "line": 53,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-madison",
+      "page": "dog-grooming-madison",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming-madison/page.tsx",
+      "line": 57,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-middleton",
+      "page": "dog-grooming-middleton",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming-middleton/page.tsx",
+      "line": 53,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-sun-prairie",
+      "page": "dog-grooming-sun-prairie",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming-sun-prairie/page.tsx",
+      "line": 56,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-waunakee",
+      "page": "dog-grooming-waunakee",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming-waunakee/page.tsx",
+      "line": 56,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-puppy",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 872,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-resource-canine",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 898,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": " on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "unknown-hero",
+      "page": "apply",
+      "section": "hero",
+      "component": "Image",
+      "file": "src/app/apply/page.tsx",
+      "line": 38,
+      "requirements": {
+        "minScore": 8,
+        "requiredTags": [
+          "Homepage Hero",
+          "Services"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Hero Section on unknown page",
+        "priority": "high"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "blog-hero",
+      "page": "blog",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/blog/page.tsx",
+      "line": 43,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on unknown page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "apply-hero",
+      "page": "apply",
+      "section": "hero",
+      "component": "Image",
+      "file": "src/app/apply/page.tsx",
+      "line": 38,
+      "requirements": {
+        "minScore": 8,
+        "requiredTags": [
+          "Homepage Hero",
+          "Services"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Hero Section on apply page",
+        "priority": "high"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "canine-grooming-image-1",
+      "page": "canine-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/canine-grooming/page.tsx",
+      "line": 103,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on canine-grooming page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "caretakers-hero",
+      "page": "caretakers",
+      "section": "hero",
+      "component": "Image",
+      "file": "src/app/caretakers/page.tsx",
+      "line": 24,
+      "requirements": {
+        "minScore": 8,
+        "requiredTags": [
+          "Homepage Hero",
+          "Services"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Hero Section on caretakers page",
+        "priority": "high"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "contact-hero",
+      "page": "contact",
+      "section": "hero",
+      "component": "Image",
+      "file": "src/app/contact/page.tsx",
+      "line": 21,
+      "requirements": {
+        "minScore": 8,
+        "requiredTags": [
+          "Homepage Hero",
+          "Services"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Hero Section on contact page",
+        "priority": "high"
+      },
+      "maxRotations": 5,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-image-2",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 216,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resource-puppy",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 872,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resource-canine",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 898,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resource-madison",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 924,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resource-waunakee",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 950,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resource-deforest",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 976,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resource-sun-prairie",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 1002,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resource-middleton",
+      "page": "dog-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 1028,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-deforest-image-2",
+      "page": "dog-grooming-deforest",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming-deforest/page.tsx",
+      "line": 140,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming-deforest page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-madison-image-2",
+      "page": "dog-grooming-madison",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming-madison/page.tsx",
+      "line": 144,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming-madison page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-middleton-image-2",
+      "page": "dog-grooming-middleton",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-grooming-middleton/page.tsx",
+      "line": 140,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-grooming-middleton page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-hikes-image-2",
+      "page": "dog-hikes",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-hikes/page.tsx",
+      "line": 288,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-hikes page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-hikes-image-3",
+      "page": "dog-hikes",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-hikes/page.tsx",
+      "line": 324,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-hikes page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-hikes-image-4",
+      "page": "dog-hikes",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-hikes/page.tsx",
+      "line": 350,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-hikes page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-hikes-resource-madison",
+      "page": "dog-hikes",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/dog-hikes/page.tsx",
+      "line": 375,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on dog-hikes page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "page.tsx-image-2",
+      "page": "page.tsx",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/page.tsx",
+      "line": 657,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on page.tsx page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "page.tsx-image-3",
+      "page": "page.tsx",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/page.tsx",
+      "line": 703,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on page.tsx page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "puppy-grooming-image-1",
+      "page": "puppy-grooming",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/puppy-grooming/page.tsx",
+      "line": 104,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on puppy-grooming page",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "puppy-play-image-1",
+      "page": "puppy-play",
+      "section": "content",
+      "component": "Image",
+      "file": "src/app/puppy-play/page.tsx",
+      "line": 176,
+      "requirements": {
+        "minScore": 7,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Content Section on puppy-play page",
+        "priority": "medium"
+      },
+        "maxRotations": 1,
+        "rotationEnabled": false,
+        "lockedImages": [],
+        "currentPlacements": []
+    },
+    {
+      "id": "homepage-local-expertise-card",
+      "page": "page.tsx",
+      "section": "features",
+      "component": "FeatureCard",
+      "file": "src/app/page.tsx",
+      "line": 246,
+      "containerHeight": "h-48",
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Social / Community / Celebration",
+          "Adventure / Hiking"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Local Expertise feature card - showcases local community connection and area coverage",
+        "priority": "medium"
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "homepage-flexible-scheduling-card",
+      "page": "page.tsx",
+      "section": "features",
+      "component": "FeatureCard",
+      "file": "src/app/page.tsx",
+      "line": 273,
+      "containerHeight": "h-48",
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Social / Community / Celebration",
+          "Adventure / Hiking",
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Flexible Scheduling feature card - showcases convenience and customer-focused scheduling",
+        "priority": "medium"
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "homepage-stress-free-card",
+      "page": "page.tsx",
+      "section": "features",
+      "component": "FeatureCard",
+      "file": "src/app/page.tsx",
+      "line": 304,
+      "containerHeight": "h-48",
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up",
+          "Social / Community / Celebration"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Stress-Free Environment feature card - showcases calm, gentle care and positive experiences",
+        "priority": "medium"
+      },
+        "maxRotations": 3,
+        "rotationEnabled": true,
+        "lockedImages": [],
+        "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-a-la-carte-card",
+      "page": "dog-grooming",
+      "section": "services",
+      "component": "ServiceCard",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 287,
+      "containerHeight": "h-48",
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "À La Carte Services card - showcases individual grooming services like nail trims, teeth brushing, ear cleaning",
+        "priority": "medium"
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-bath-brush-card",
+      "page": "dog-grooming",
+      "section": "services",
+      "component": "ServiceCard",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 353,
+      "containerHeight": "h-48",
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Bath & Brush Package card - showcases complete bathing and brushing services",
+        "priority": "medium"
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-full-service-card",
+      "page": "dog-grooming",
+      "section": "services",
+      "component": "ServiceCard",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 414,
+      "containerHeight": "h-48",
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Full Service Grooming card - showcases complete professional grooming experience with haircut",
+        "priority": "medium"
+      },
+        "maxRotations": 3,
+        "rotationEnabled": true,
+        "lockedImages": [],
+        "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resources-puppy",
+      "page": "dog-grooming",
+      "section": "resources",
+      "component": "ResourceCard",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 942,
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Waunakee",
+          "Madison"
+        ],
+        "contentContext": "Puppy Grooming resource card - showcases early grooming services for puppies",
+        "priority": "medium"
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resources-canine-products",
+      "page": "dog-grooming",
+      "section": "resources",
+      "component": "ResourceCard",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 968,
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Waunakee",
+          "Madison"
+        ],
+        "contentContext": "Canine Grooming Products resource card - showcases grooming products and tools",
+        "priority": "medium"
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resources-madison",
+      "page": "dog-grooming",
+      "section": "resources",
+      "component": "ResourceCard",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 994,
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Madison"
+        ],
+        "contentContext": "Madison grooming resource card - must match Madison city",
+        "priority": "medium",
+        "strictCityMatch": true
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resources-waunakee",
+      "page": "dog-grooming",
+      "section": "resources",
+      "component": "ResourceCard",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 1020,
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Waunakee"
+        ],
+        "contentContext": "Waunakee grooming resource card - must match Waunakee city",
+        "priority": "medium",
+        "strictCityMatch": true
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resources-deforest",
+      "page": "dog-grooming",
+      "section": "resources",
+      "component": "ResourceCard",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 1046,
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "DeForest"
+        ],
+        "contentContext": "DeForest grooming resource card - must match DeForest city",
+        "priority": "medium",
+        "strictCityMatch": true
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resources-sun-prairie",
+      "page": "dog-grooming",
+      "section": "resources",
+      "component": "ResourceCard",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 1072,
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Sun Prairie"
+        ],
+        "contentContext": "Sun Prairie grooming resource card - must match Sun Prairie city",
+        "priority": "medium",
+        "strictCityMatch": true
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "dog-grooming-resources-middleton",
+      "page": "dog-grooming",
+      "section": "resources",
+      "component": "ResourceCard",
+      "file": "src/app/dog-grooming/page.tsx",
+      "line": 1098,
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Services",
+          "Gallery"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up"
+        ],
+        "preferredCities": [
+          "Middleton"
+        ],
+        "contentContext": "Middleton grooming resource card - must match Middleton city",
+        "priority": "medium",
+        "strictCityMatch": true
+      },
+      "maxRotations": 3,
+      "rotationEnabled": true,
+      "lockedImages": [],
+      "currentPlacements": []
+    },
+    {
+      "id": "blog-article-cards",
+      "page": "blog",
+      "section": "article-cards",
+      "component": "BlogArticleCard",
+      "file": "src/constants/blogArticles.ts",
+      "line": 21,
+      "requirements": {
+        "minScore": 7.0,
+        "requiredTags": [
+          "Blog Images",
+          "Services"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up",
+          "Adventure / Hiking",
+          "Social / Community / Celebration"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Blog article card images on listing page - dynamically rendered from blogArticles.ts",
+        "priority": "medium"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": [],
+      "dynamicContent": true,
+      "matchStrategy": "category-and-tags"
+    },
+    {
+      "id": "blog-post-featured",
+      "page": "blog/[slug]",
+      "section": "featured-image",
+      "component": "BlogPostFeaturedImage",
+      "file": "src/constants/blogArticles.ts",
+      "line": 21,
+      "requirements": {
+        "minScore": 7.5,
+        "requiredTags": [
+          "Blog Images",
+          "Featured"
+        ],
+        "preferredCategories": [
+          "Grooming / Care Close-Up",
+          "Adventure / Hiking"
+        ],
+        "preferredCities": [
+          "Madison",
+          "Waunakee",
+          "DeForest",
+          "Sun Prairie",
+          "Middleton"
+        ],
+        "contentContext": "Featured images for individual blog posts - dynamically rendered from blogArticles.ts",
+        "priority": "high"
+      },
+      "maxRotations": 1,
+      "rotationEnabled": false,
+      "lockedImages": [],
+      "currentPlacements": [],
+      "dynamicContent": true,
+      "matchStrategy": "category-and-tags"
+    }
+  ]
+}
