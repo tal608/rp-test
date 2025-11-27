@@ -99,8 +99,8 @@ export default function Home() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight">
-                {/* LCP element - no animation delay for instant render */}
-                <span className="block text-white drop-shadow-2xl">Every Tail Wags</span>
+                {/* LCP element - prioritized but animated */}
+                <span className="block text-white drop-shadow-2xl animate-fadeInUp">Every Tail Wags</span>
                 <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent relative inline-block">
                   <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
                     With Joy

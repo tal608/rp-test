@@ -96,14 +96,14 @@ export default function TestimonialMarquee() {
         
         {/* Row 1 - Normal Direction */}
         {/* w-max is CRITICAL: ensures the container is as wide as the content, not the screen */}
-        <div className="flex animate-marquee w-max">
+        <div className="flex animate-marquee w-max will-change-transform">
           {marqueeRow1.map((testimonial, index) => (
             <ReviewCard key={`row1-${index}`} testimonial={testimonial} />
           ))}
         </div>
 
         {/* Row 2 - Reverse Direction */}
-        <div className="flex animate-marquee-reverse w-max">
+        <div className="flex animate-marquee-reverse w-max will-change-transform">
            {marqueeRow2.map((testimonial, index) => (
             <ReviewCard key={`row2-${index}`} testimonial={testimonial} />
           ))}
