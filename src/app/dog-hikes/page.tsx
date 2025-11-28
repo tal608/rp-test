@@ -367,32 +367,43 @@ export default function DogHikes() {
           <div className="text-center mb-12 sm:mb-16 md:mb-24">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">Flexible Adventure Schedule</h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-12 px-4">
-              We offer dog hikes Tuesday through Friday, with flexible times to fit your routine.
-              Mondays are reserved for new assessments for pups looking to join the pack.
+              We offer dog hikes Monday through Friday, with flexible times to fit your routine.
             </p>
 
-            <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white text-center max-w-4xl mx-auto">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6">Available Days & Times</h3>
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
-                <div>
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
+            <div className="relative bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white text-center max-w-4xl mx-auto overflow-hidden">
+              {/* Animated Blobs Background */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[-20%] left-[-20%] w-[80%] h-[80%] bg-blue-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+                <div className="absolute top-[-20%] right-[-20%] w-[80%] h-[80%] bg-teal-400 rounded-full filter blur-[60px] opacity-40 animate-blob-2"></div>
+                <div className="absolute bottom-[-20%] left-[-20%] w-[80%] h-[80%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-3"></div>
+                <div className="absolute bottom-[-30%] right-[-10%] w-[60%] h-[60%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+              </div>
+              
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent)]"></div>
+              
+              <div className="relative z-10">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 drop-shadow-lg">Available Days & Times</h3>
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+                  <div>
+                    <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-bold mb-2">Adventure Days</h4>
+                    <p className="text-blue-100">Monday through Friday</p>
+                    <p className="text-sm text-blue-200 mt-2">Flexible morning & afternoon slots</p>
                   </div>
-                  <h4 className="text-xl font-bold mb-2">Adventure Days</h4>
-                  <p className="text-blue-100">Tuesday through Friday</p>
-                  <p className="text-sm text-blue-200 mt-2">Flexible morning & afternoon slots</p>
-                </div>
-                <div>
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v6a2 2 0 002 2h6a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                    </svg>
+                  <div>
+                    <div className="w-16 h-16 bg-yellow-500/30 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-yellow-400/50">
+                      <svg className="w-8 h-8 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-bold mb-2">Assessments On Hold</h4>
+                    <p className="text-blue-100">Currently at capacity</p>
+                    <p className="text-sm text-yellow-200 mt-2">Join our waitlist to be notified when spots open!</p>
                   </div>
-                  <h4 className="text-xl font-bold mb-2">Assessment Days</h4>
-                  <p className="text-blue-100">Mondays</p>
-                  <p className="text-sm text-blue-200 mt-2">New pup evaluations & introductions</p>
                 </div>
               </div>
             </div>
@@ -537,11 +548,22 @@ export default function DogHikes() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-r from-blue-600 to-teal-500 rounded-3xl p-8 md:p-12 text-white text-center">
-              <h3 className="text-3xl font-bold mb-4">The Proof Is In The Tired, Happy Faces</h3>
-              <p className="text-lg text-emerald-100 max-w-3xl mx-auto">
-                Pet parents tell us their dogs come home peacefully exhausted, ready for cozy cuddles—exactly how nature intended.
-              </p>
+            <div className="relative bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-8 md:p-12 text-white text-center overflow-hidden">
+              {/* Animated Blobs Background */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[-20%] left-[-20%] w-[80%] h-[80%] bg-blue-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+                <div className="absolute top-[-20%] right-[-20%] w-[80%] h-[80%] bg-teal-400 rounded-full filter blur-[60px] opacity-40 animate-blob-2"></div>
+                <div className="absolute bottom-[-20%] left-[-20%] w-[80%] h-[80%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-3"></div>
+                <div className="absolute bottom-[-30%] right-[-10%] w-[60%] h-[60%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+              </div>
+              
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent)]"></div>
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold mb-4 drop-shadow-lg">The Proof Is In The Tired, Happy Faces</h3>
+                <p className="text-lg text-white/90 max-w-3xl mx-auto drop-shadow-md">
+                  Pet parents tell us their dogs come home peacefully exhausted, ready for cozy cuddles—exactly how nature intended.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -553,8 +575,7 @@ export default function DogHikes() {
           <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">Adventure Pricing</h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Flexible pricing designed to fit your lifestyle and budget.
-              More hikes per week means better rates!
+              Simple, transparent pricing with multi-dog discounts for families with more than one pup.
             </p>
           </div>
 

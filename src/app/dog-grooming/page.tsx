@@ -268,24 +268,35 @@ export default function DogGrooming() {
           </div>
 
           {/* Walk-In Info Banner */}
-          <div className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white text-center mb-8 sm:mb-12 md:mb-16">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Walk-In Grooming Available</h3>
-            <p className="text-lg mb-6 max-w-2xl mx-auto">
-              Walk-in services are available but not guaranteed. We recommend calling ahead to check availability
-              and schedule with your preferred groomer.
-            </p>
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <div className="flex items-center">
-                <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                <span>Call (608) 571-PAWS</span>
-              </div>
-              <div className="flex items-center">
-                <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>Call for hours and availability</span>
+          <div className="relative bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white text-center mb-8 sm:mb-12 md:mb-16 overflow-hidden group">
+            {/* Animated Blobs Background */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-[-20%] left-[-20%] w-[80%] h-[80%] bg-blue-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+              <div className="absolute top-[-20%] right-[-20%] w-[80%] h-[80%] bg-teal-400 rounded-full filter blur-[60px] opacity-40 animate-blob-2"></div>
+              <div className="absolute bottom-[-20%] left-[-20%] w-[80%] h-[80%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-3"></div>
+              <div className="absolute bottom-[-30%] right-[-10%] w-[60%] h-[60%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+            </div>
+            
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent)]"></div>
+            <div className="relative z-10">
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 drop-shadow-lg">Walk-In Grooming Available</h3>
+              <p className="text-lg mb-6 max-w-2xl mx-auto drop-shadow-md">
+                Walk-in services are available but not guaranteed. We recommend calling ahead to check availability
+                and schedule with your preferred groomer.
+              </p>
+              <div className="flex flex-wrap justify-center gap-6 text-sm">
+                <div className="flex items-center">
+                  <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  <span>Call (608) 571-PAWS</span>
+                </div>
+                <div className="flex items-center">
+                  <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Call for hours and availability</span>
+                </div>
               </div>
             </div>
           </div>
@@ -297,11 +308,11 @@ export default function DogGrooming() {
             <div className="group bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 overflow-hidden">
               <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="/dog-grooming-nail-trim.jpg"
-                  alt="Professional nail trimming service for dogs at River Paws grooming salon"
+                  src="/Grooming/groomed-poodle-grooming-waunakee-wi-river-paws.jpg"
+                  alt="Freshly groomed poodle at River Paws grooming salon in Waunakee"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  style={{ objectPosition: getImageObjectPosition("/dog-grooming-nail-trim.jpg") }}
+                  style={{ objectPosition: getImageObjectPosition("/Grooming/groomed-poodle-grooming-waunakee-wi-river-paws.jpg") }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
@@ -363,11 +374,11 @@ export default function DogGrooming() {
             <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 overflow-hidden">
               <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="/dog-grooming-bath.jpg"
-                  alt="Professional bath and brush service for dogs at River Paws grooming salon"
+                  src="/Grooming/pampered-spaniel-bath-waunakee-wi-river-paws.jpg"
+                  alt="Pampered spaniel enjoying bath at River Paws grooming salon in Waunakee"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  style={{ objectPosition: getImageObjectPosition("/dog-grooming-bath.jpg") }}
+                  style={{ objectPosition: getImageObjectPosition("/Grooming/pampered-spaniel-bath-waunakee-wi-river-paws.jpg") }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
@@ -424,11 +435,11 @@ export default function DogGrooming() {
             <div className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 border border-gray-100 overflow-hidden">
               <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
                 <Image
-                  src="/dog-grooming-haircut.jpg"
-                  alt="Full service professional dog grooming including haircut at River Paws salon"
+                  src="/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg"
+                  alt="Freshly groomed goldendoodle at River Paws grooming salon in Madison"
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
-                  style={{ objectPosition: getImageObjectPosition("/dog-grooming-haircut.jpg") }}
+                  style={{ objectPosition: getImageObjectPosition("/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg") }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
@@ -610,26 +621,36 @@ export default function DogGrooming() {
       </section>
 
       {/* Location Highlight - Yahara Heights Dog Park */}
-      <section className="py-16 px-6 bg-gradient-to-r from-emerald-50 via-teal-50 to-emerald-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-2xl p-8 sm:p-10 shadow-xl border border-emerald-100">
-            <div className="flex items-start space-x-4 mb-6">
+      <section className="relative py-16 px-6 bg-gradient-to-br from-blue-600 to-blue-800 overflow-hidden">
+        {/* Animated Blobs Background */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-[-20%] left-[-20%] w-[80%] h-[80%] bg-blue-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+          <div className="absolute top-[-20%] right-[-20%] w-[80%] h-[80%] bg-teal-400 rounded-full filter blur-[60px] opacity-40 animate-blob-2"></div>
+          <div className="absolute bottom-[-20%] left-[-20%] w-[80%] h-[80%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-3"></div>
+          <div className="absolute bottom-[-30%] right-[-10%] w-[60%] h-[60%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+        </div>
+        
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent)]"></div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 sm:p-10 border border-white/20">
+            <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
               <div className="flex-shrink-0">
-                <div className="w-16 h-16 bg-gradient-to-r from-emerald-100 to-teal-100 rounded-xl flex items-center justify-center">
-                  <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center border border-white/30">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                   </svg>
                 </div>
               </div>
               <div className="flex-1">
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 drop-shadow-lg">
                   Conveniently Located Next to Yahara Heights Dog Park
                 </h3>
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Just 500 feet from Yahara Heights' 20-acre off-leash area, we're the perfect solution for post-dog park grooming. 
+                <p className="text-lg text-white/90 leading-relaxed drop-shadow-md">
+                  Just 500 feet from Yahara Heights&apos; 20-acre off-leash area, we&apos;re the perfect solution for post-dog park grooming. 
                   Clean up your muddy pup after Cherokee Marsh adventures or Yahara River swimming sessions. 
-                  Walking distance from the area's most popular dog park!
+                  Walking distance from the area&apos;s most popular dog park!
                 </p>
               </div>
             </div>

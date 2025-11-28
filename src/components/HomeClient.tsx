@@ -534,20 +534,88 @@ export default function HomeClient() {
               </div>
             </div>
 
-            {/* Happy Tails Peek */}
-            <div className="text-center mb-8 sm:mb-12 animate-fadeInUp-delay-800">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-4">
-                Don&apos;t just take our word for it... <span className="text-blue-600">The wags speak for themselves.</span>
-              </h3>
-              <Link
-                href="/gallery"
-                className="inline-flex items-center text-lg font-semibold text-blue-600 hover:text-teal-500 transition-colors group"
-              >
-                See the Happy Faces in Our Gallery
-                <svg className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
+            {/* Happy Tails Peek - Gallery CTA */}
+            <div className="mb-8 sm:mb-12 animate-fadeInUp-delay-800">
+              <div className="text-center mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
+                  Don&apos;t just take our word for it...
+                </h3>
+                <p className="text-lg text-blue-600 dark:text-blue-400 font-semibold">The wags speak for themselves.</p>
+              </div>
+              
+              {/* Polaroid Preview Stack */}
+              <div className="relative flex justify-center items-center mb-8">
+                <Link href="/gallery" className="group relative">
+                  {/* Stacked Polaroid effect */}
+                  <div className="relative w-64 h-72 sm:w-80 sm:h-96">
+                    {/* Back polaroid - left */}
+                    <div className="absolute left-0 top-4 w-48 h-56 sm:w-56 sm:h-64 bg-white rounded shadow-lg transform -rotate-12 group-hover:-rotate-6 transition-transform duration-300 overflow-hidden">
+                      <div className="p-2 pb-8 h-full">
+                        <div className="relative w-full h-full rounded-sm overflow-hidden">
+                          <Image
+                            src="/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg"
+                            alt="Happy goldendoodle after grooming"
+                            fill
+                            className="object-cover"
+                            sizes="224px"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Back polaroid - right */}
+                    <div className="absolute right-0 top-2 w-48 h-56 sm:w-56 sm:h-64 bg-white rounded shadow-lg transform rotate-12 group-hover:rotate-6 transition-transform duration-300 overflow-hidden">
+                      <div className="p-2 pb-8 h-full">
+                        <div className="relative w-full h-full rounded-sm overflow-hidden">
+                          <Image
+                            src="/Hiking/joyful-golden-retriever-wilderness-trails-waunakee-wi-river-paws.jpg"
+                            alt="Joyful golden retriever on trail"
+                            fill
+                            className="object-cover"
+                            sizes="224px"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Front polaroid - center */}
+                    <div className="absolute left-1/2 -translate-x-1/2 top-0 w-52 h-60 sm:w-64 sm:h-72 bg-white rounded shadow-2xl transform rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 z-10 overflow-hidden">
+                      <div className="p-2 pb-10 h-full">
+                        <div className="relative w-full h-full rounded-sm overflow-hidden">
+                          <Image
+                            src="/Grooming/freshly-groomed-pomeranian-grooming-waunakee-wi-river-paws.jpg"
+                            alt="Fluffy pomeranian freshly groomed"
+                            fill
+                            className="object-cover"
+                            sizes="256px"
+                          />
+                        </div>
+                      </div>
+                      <span className="absolute bottom-3 left-0 right-0 text-center text-sm text-gray-600 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>So fluffy! ✨</span>
+                    </div>
+                  </div>
+                  
+                  {/* Hover glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-teal-400/0 to-blue-400/0 group-hover:from-blue-400/20 group-hover:via-teal-400/20 group-hover:to-blue-400/20 rounded-3xl blur-2xl transition-all duration-500 -z-10"></div>
+                </Link>
+              </div>
+              
+              {/* CTA Button */}
+              <div className="text-center">
+                <Link
+                  href="/gallery"
+                  className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 bg-[length:200%_100%] text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-gradient-x"
+                >
+                  <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  See All the Happy Faces
+                  <svg className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-3">100+ photos of happy pups in our gallery</p>
+              </div>
             </div>
 
             {/* Location Highlight */}
