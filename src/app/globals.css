@@ -385,6 +385,100 @@ body {
   background: radial-gradient(ellipse at center, var(--tw-gradient-stops));
 }
 
+/* Hero base layer - white/light background for gradient to blend with */
+/* This mimics the original light mode appearance (gradient over white body) */
+.hero-base-layer {
+  background: #ffffff !important;
+}
+
+html.dark .hero-base-layer,
+:root.dark .hero-base-layer {
+  background: #ffffff !important;
+}
+
+/* Hero gradient overlay - balanced colors (blue-700, emerald-700, teal-700) */
+/* Professional but still vibrant - middle ground between subdued and energetic */
+.hero-gradient-overlay {
+  background: linear-gradient(
+    to bottom right,
+    rgba(29, 78, 216, 0.65),
+    rgba(4, 120, 87, 0.55),
+    rgba(15, 118, 110, 0.65)
+  ) !important;
+}
+
+/* Ensure it stays the same in dark mode */
+html.dark .hero-gradient-overlay,
+:root.dark .hero-gradient-overlay {
+  background: linear-gradient(
+    to bottom right,
+    rgba(29, 78, 216, 0.65),
+    rgba(4, 120, 87, 0.55),
+    rgba(15, 118, 110, 0.65)
+  ) !important;
+}
+
+/* Secondary hero overlay - blue-600 (#2563eb), teal-600 (#0d9488) with opacity */
+.hero-gradient-overlay-secondary {
+  background: linear-gradient(
+    to bottom right,
+    rgba(37, 99, 235, 0.2),
+    transparent,
+    rgba(13, 148, 136, 0.2)
+  ) !important;
+}
+
+html.dark .hero-gradient-overlay-secondary,
+:root.dark .hero-gradient-overlay-secondary {
+  background: linear-gradient(
+    to bottom right,
+    rgba(37, 99, 235, 0.2),
+    transparent,
+    rgba(13, 148, 136, 0.2)
+  ) !important;
+}
+
+/* Fix coat type boxes in dark mode */
+html.dark .bg-blue-50,
+:root.dark .bg-blue-50 {
+  background-color: rgba(30, 58, 138, 0.3) !important;
+}
+
+html.dark .bg-teal-50,
+:root.dark .bg-teal-50 {
+  background-color: rgba(19, 78, 74, 0.3) !important;
+}
+
+html.dark .text-blue-800,
+:root.dark .text-blue-800 {
+  color: #93c5fd !important;
+}
+
+html.dark .text-blue-700,
+:root.dark .text-blue-700 {
+  color: #60a5fa !important;
+}
+
+html.dark .text-teal-800,
+:root.dark .text-teal-800 {
+  color: #5eead4 !important;
+}
+
+html.dark .text-teal-700,
+:root.dark .text-teal-700 {
+  color: #2dd4bf !important;
+}
+
+html.dark .border-blue-100,
+:root.dark .border-blue-100 {
+  border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+html.dark .border-teal-100,
+:root.dark .border-teal-100 {
+  border-color: rgba(20, 184, 166, 0.3) !important;
+}
+
 /* Enhanced text shadows for hero readability */
 .text-shadow-hero {
   text-shadow: 
@@ -1056,35 +1150,35 @@ html.dark div[class*="bg-gradient"][class*="from-emerald-600"]:not(button):not(a
 }
 
 /* Ensure hero image gradient overlays maintain their original colors and opacity in dark mode */
-/* Hero overlays use opacity modifiers (/60, /50, /20, /70) and should NOT be affected by button color rules */
-/* Explicitly preserve blue-900, teal-900, blue-600, teal-600 colors for hero overlays */
-/* Tailwind colors: blue-900: #1e3a8a, teal-900: #134e4a, blue-600: #2563eb, teal-600: #0d9488, emerald-800: #065f46 */
-html.dark div[class*="from-blue-900"][class*="/"],
-html.dark div[class*="via-blue-900"][class*="/"],
-html.dark div[class*="to-teal-900"][class*="/"],
-html.dark div[class*="from-emerald-800"][class*="/"],
-html.dark div[class*="via-emerald-800"][class*="/"],
-html.dark div[class*="from-emerald-900"][class*="/"],
-html.dark div[class*="from-blue-600"][class*="/20"],
-html.dark div[class*="from-blue-600"][class*="/60"],
-html.dark div[class*="from-blue-600"][class*="/70"],
-html.dark div[class*="to-teal-600"][class*="/20"],
-html.dark div[class*="to-teal-600"][class*="/60"],
-html.dark div[class*="to-teal-600"][class*="/70"],
-html.dark section[class*="from-blue-900"][class*="/"],
-html.dark section[class*="via-blue-900"][class*="/"],
-html.dark section[class*="to-teal-900"][class*="/"],
-html.dark section[class*="from-emerald-800"][class*="/"],
-html.dark section[class*="via-emerald-800"][class*="/"],
-html.dark section[class*="from-emerald-900"][class*="/"],
-html.dark section[class*="from-blue-600"][class*="/20"],
-html.dark section[class*="from-blue-600"][class*="/60"],
-html.dark section[class*="from-blue-600"][class*="/70"],
-html.dark section[class*="to-teal-600"][class*="/20"],
-html.dark section[class*="to-teal-600"][class*="/60"],
-html.dark section[class*="to-teal-600"][class*="/70"] {
-  /* Ensure these gradients render with their natural Tailwind colors - no overrides needed */
-  /* The button color rules already exclude opacity modifiers, so these should work naturally */
+/* Hero overlays use opacity modifiers (/60, /50, /20, /70) and should NOT be affected by dark mode */
+/* Tailwind colors: blue-900: #1e3a8a, teal-900: #134e4a, emerald-800: #065f46 */
+
+/* Homepage hero background gradient - preserve exact light mode appearance */
+html.dark .bg-gradient-to-br.from-blue-900\/60.via-emerald-800\/50.to-teal-900\/60,
+html.dark div[class*="bg-gradient-to-br"][class*="from-blue-900/60"][class*="via-emerald-800/50"][class*="to-teal-900/60"] {
+  background: linear-gradient(to bottom right, rgba(30, 58, 138, 0.6), rgba(6, 95, 70, 0.5), rgba(19, 78, 74, 0.6)) !important;
+}
+
+/* Hero secondary overlay gradient - preserve exact light mode appearance */
+html.dark .bg-gradient-to-br.from-blue-600\/20.via-transparent.to-teal-600\/20,
+html.dark div[class*="bg-gradient-to-br"][class*="from-blue-600/20"][class*="via-transparent"][class*="to-teal-600/20"] {
+  background: linear-gradient(to bottom right, rgba(37, 99, 235, 0.2), transparent, rgba(13, 148, 136, 0.2)) !important;
+}
+
+/* Generic hero overlay preservations for other pages */
+html.dark div[class*="from-blue-900"][class*="/60"],
+html.dark div[class*="via-emerald-800"][class*="/50"],
+html.dark div[class*="to-teal-900"][class*="/60"],
+html.dark div[class*="from-blue-900"][class*="/70"],
+html.dark div[class*="to-teal-900"][class*="/70"],
+html.dark section[class*="from-blue-900"][class*="/60"],
+html.dark section[class*="via-emerald-800"][class*="/50"],
+html.dark section[class*="to-teal-900"][class*="/60"],
+html.dark section[class*="from-emerald-900"][class*="/70"],
+html.dark section[class*="to-emerald-900"][class*="/70"] {
+  --tw-gradient-from: rgba(30, 58, 138, var(--tw-gradient-from-opacity, 1)) !important;
+  --tw-gradient-via: rgba(6, 95, 70, var(--tw-gradient-via-opacity, 1)) !important;
+  --tw-gradient-to: rgba(19, 78, 74, var(--tw-gradient-to-opacity, 1)) !important;
 }
 
 /* Fix light gradient backgrounds for dark mode readability */

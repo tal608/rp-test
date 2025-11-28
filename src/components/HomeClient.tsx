@@ -166,8 +166,10 @@ export default function HomeClient() {
         {/* Enhanced Hero Section with Polaroid Photo Wall */}
         {/* IMAGE_PLACEMENT_START: homepage-hero */}
         <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-          {/* Background Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-emerald-800/50 to-teal-900/60 z-0"></div>
+          {/* Base background layer - ensures consistent appearance in light/dark mode */}
+          <div className="absolute inset-0 hero-base-layer z-0"></div>
+          {/* Background Gradient overlay */}
+          <div className="absolute inset-0 hero-gradient-overlay z-[1]"></div>
           
           {/* Polaroid Photos Container */}
           <div className="absolute inset-0 z-[5] pointer-events-none overflow-hidden">
@@ -269,8 +271,8 @@ export default function HomeClient() {
           
           {/* IMAGE_PLACEMENT_END: homepage-hero */}
 
-          {/* Animated gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-teal-600/20"></div>
+          {/* Animated gradient overlay - using custom class to prevent dark mode color shifts */}
+          <div className="absolute inset-0 hero-gradient-overlay-secondary"></div>
 
           {/* Floating elements with parallax */}
           <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
@@ -641,46 +643,180 @@ export default function HomeClient() {
               </div>
             </div>
 
-            {/* Pricing Display */}
+            {/* Services Display */}
             {selectedService === 'grooming' ? (
-              <div className="grid md:grid-cols-4 gap-6">
-                {[
-                  { size: "Small (Under 25 lbs)", basic: "$45", full: "$65", premium: "$85" },
-                  { size: "Medium (25-50 lbs)", basic: "$55", full: "$75", premium: "$95" },
-                  { size: "Large (50-75 lbs)", basic: "$65", full: "$85", premium: "$105" },
-                  { size: "XL (Over 75 lbs)", basic: "$75", full: "$95", premium: "$120" }
-                ].map((tier, index) => (
-                  <div 
-                    key={index} 
-                    className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
-                    onMouseEnter={() => setCardHover(index)}
-                    onMouseLeave={() => setCardHover(null)}
-                    style={{
-                      transform: cardHover === index ? 'translateY(-8px) rotateX(2deg)' : 'translateY(0)',
-                      transition: 'all 0.5s cubic-bezier(0.23, 1, 0.32, 1)'
-                    }}
-                  >
+              <div className="space-y-8">
+                {/* Pricing Explanation Header */}
+                <div className="text-center max-w-2xl mx-auto">
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Transparent, Fair Pricing</h3>
+                  <p className="text-gray-600">
+                    Our base grooming prices are based on <span className="font-semibold text-blue-600">your dog&apos;s weight</span> + <span className="font-semibold text-teal-600">coat type</span>. 
+                    This ensures you only pay for the time and care your pup actually needs.
+                  </p>
+                </div>
+
+                {/* How We Price */}
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Weight Groups Card */}
+                  <div className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-teal-50/0 to-blue-50/0 group-hover:from-blue-50/50 group-hover:via-teal-50/30 group-hover:to-blue-50/50 transition-all duration-500"></div>
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                     <div className="relative z-10">
-                      <h3 className="font-bold text-lg text-gray-800 mb-4 group-hover:text-blue-600 transition-colors duration-300">{tier.size}</h3>
+                      <div className="flex items-center mb-4">
+                        <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl flex items-center justify-center mr-3">
+                          <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                          </svg>
+                        </div>
+                        <h3 className="font-bold text-lg text-gray-800 group-hover:text-blue-600 transition-colors">Step 1: Weight Group</h3>
+                      </div>
+                      <p className="text-gray-600 text-sm mb-4">First, we determine your dog&apos;s weight category:</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        {[
+                          { name: "Extra Small", weight: "9-10 lbs" },
+                          { name: "Small", weight: "11-30 lbs" },
+                          { name: "Medium", weight: "31-60 lbs" },
+                          { name: "Large", weight: "61-90 lbs" },
+                          { name: "Extra Large", weight: "91-120 lbs" },
+                          { name: "Giant", weight: "121+ lbs" }
+                        ].map((group, idx) => (
+                          <div key={idx} className="flex items-center text-sm">
+                            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span className="text-gray-700 font-medium">{group.name}</span>
+                            <span className="text-gray-500 ml-1">({group.weight})</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Coat Types Card */}
+                  <div className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-teal-50/0 to-blue-50/0 group-hover:from-blue-50/50 group-hover:via-teal-50/30 group-hover:to-blue-50/50 transition-all duration-500"></div>
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    <div className="relative z-10">
+                      <div className="flex items-center mb-4">
+                        <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl flex items-center justify-center mr-3">
+                          <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
+                          </svg>
+                        </div>
+                        <h3 className="font-bold text-lg text-gray-800 group-hover:text-blue-600 transition-colors">Step 2: Coat Type</h3>
+                      </div>
+                      <p className="text-gray-600 text-sm mb-4">Then, we factor in your dog&apos;s coat complexity:</p>
                       <div className="space-y-3">
-                        <div className="flex justify-between items-center pb-2 border-b border-gray-100 group-hover:border-gray-200 transition-colors">
-                          <span className="text-gray-600 group-hover:text-gray-700 transition-colors">Basic Bath</span>
-                          <span className="font-bold text-blue-600 text-lg group-hover:scale-110 inline-block transition-transform duration-300">{tier.basic}</span>
+                        <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-3 border border-blue-100 dark:border-blue-800">
+                          <span className="font-semibold text-blue-800 dark:text-blue-300 text-sm block mb-1">Basic Coat</span>
+                          <span className="text-blue-700 dark:text-blue-400 text-sm">Hairless, Smooth, Short, Medium</span>
                         </div>
-                        <div className="flex justify-between items-center pb-2 border-b border-gray-100 group-hover:border-gray-200 transition-colors">
-                          <span className="text-gray-600 group-hover:text-gray-700 transition-colors">Full Groom</span>
-                          <span className="font-bold text-blue-600 text-lg group-hover:scale-110 inline-block transition-transform duration-300">{tier.full}</span>
-                        </div>
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-600 group-hover:text-gray-700 transition-colors">Premium Spa</span>
-                          <span className="font-bold text-blue-600 text-lg group-hover:scale-110 inline-block transition-transform duration-300">{tier.premium}</span>
+                        <div className="bg-teal-50 dark:bg-teal-900/30 rounded-lg p-3 border border-teal-100 dark:border-teal-800">
+                          <span className="font-semibold text-teal-800 dark:text-teal-300 text-sm block mb-1">Thick Coat</span>
+                          <span className="text-teal-700 dark:text-teal-400 text-sm">Corded, Wire, Double, Curly, Long</span>
                         </div>
                       </div>
                     </div>
                   </div>
-                ))}
+                </div>
+
+                {/* Services & Add-ons */}
+                <div className="grid md:grid-cols-3 gap-6">
+                  {/* Core Services */}
+                  <div className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-teal-50/0 to-blue-50/0 group-hover:from-blue-50/50 group-hover:via-teal-50/30 group-hover:to-blue-50/50 transition-all duration-500"></div>
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    <div className="relative z-10">
+                      <h3 className="font-bold text-lg text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Core Services</h3>
+                      <ul className="space-y-3">
+                        {["Bath & Brush", "Full Service Groom"].map((service, idx) => (
+                          <li key={idx} className="flex items-center text-gray-700">
+                            <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span className="font-medium">{service}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Add-ons */}
+                  <div className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-teal-50/0 to-blue-50/0 group-hover:from-blue-50/50 group-hover:via-teal-50/30 group-hover:to-blue-50/50 transition-all duration-500"></div>
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    <div className="relative z-10">
+                      <h3 className="font-bold text-lg text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Add-Ons & À La Carte</h3>
+                      <ul className="space-y-2 text-sm">
+                        {[
+                          "Pawdicure",
+                          "Nail Trim",
+                          "Nail Grind",
+                          "Ear Cleaning",
+                          "Teeth Brushing",
+                          "Anal Gland Expression",
+                          "Sanitary Trim",
+                          "Extra Handling / Care"
+                        ].map((addon, idx) => (
+                          <li key={idx} className="flex items-center text-gray-600">
+                            <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 flex-shrink-0"></span>
+                            {addon}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Specials */}
+                  <div className="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/0 via-orange-50/0 to-yellow-50/0 group-hover:from-yellow-50/50 group-hover:via-orange-50/30 group-hover:to-yellow-50/50 dark:group-hover:from-yellow-900/20 dark:group-hover:via-orange-900/15 dark:group-hover:to-yellow-900/20 transition-all duration-500"></div>
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                    <div className="relative z-10">
+                      <div className="flex items-center mb-4">
+                        <span className="text-xl mr-2">✨</span>
+                        <h3 className="font-bold text-lg text-gray-800 dark:text-gray-100 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">Special Packages</h3>
+                      </div>
+                      <ul className="space-y-2">
+                        {[
+                          "Monthly Special",
+                          "Premium Special",
+                          "Deluxe Special",
+                          "Supreme Special"
+                        ].map((special, idx) => (
+                          <li key={idx} className="flex items-center text-gray-700 dark:text-gray-300">
+                            <svg className="w-4 h-4 text-yellow-500 dark:text-yellow-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <span className="font-medium text-sm">{special}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">Ask about current specials when booking!</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                  <Link
+                    href="/dog-grooming"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 min-h-[44px]"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    Check Out Our Grooming Services
+                  </Link>
+                  <a
+                    href="https://booking.moego.pet/ol/RiverPaws/book"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 min-h-[44px]"
+                  >
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    Book Now
+                  </a>
+                </div>
               </div>
             ) : (
               <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
