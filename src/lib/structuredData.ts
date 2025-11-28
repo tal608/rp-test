@@ -168,9 +168,10 @@ export function getLocalBusinessSchema(): LocalBusinessSchema {
       },
     ],
     sameAs: [
-      "https://www.facebook.com/riverpaws",
-      "https://www.instagram.com/riverpaws",
-      "https://www.tiktok.com/@riverpaws",
+      "https://www.facebook.com/yaharariverpaws",
+      "https://www.instagram.com/riverpaws.dog",
+      "https://www.tiktok.com/@riverpawsdogs",
+      "https://www.linkedin.com/company/river-paws",
       "https://www.yelp.com/biz/river-paws-waunakee",
       "https://www.google.com/maps/place/River+Paws",
     ],

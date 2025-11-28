@@ -13,23 +13,28 @@ export interface DirectoryLink {
 export const socialLinks: SocialLink[] = [
   {
     name: "Facebook",
-    url: "https://www.facebook.com/riverpaws",
+    url: "https://www.facebook.com/yaharariverpaws",
     icon: "/icons/facebook.svg",
   },
   {
     name: "Instagram",
-    url: "https://www.instagram.com/riverpaws",
+    url: "https://www.instagram.com/riverpaws.dog",
     icon: "/icons/instagram.svg",
   },
   {
     name: "TikTok",
-    url: "https://www.tiktok.com/@riverpaws",
+    url: "https://www.tiktok.com/@riverpawsdogs",
     icon: "/icons/tiktok.svg",
   },
   {
     name: "Yelp",
     url: "https://www.yelp.com/biz/river-paws-waunakee",
     icon: "/icons/yelp.svg",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/company/river-paws",
+    icon: "/icons/linkedin.svg",
   },
 ];
 

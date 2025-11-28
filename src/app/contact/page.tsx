@@ -237,7 +237,7 @@ export default function Contact() {
                     </p>
                     <div className="flex items-center gap-3">
                       <a
-                        href="https://www.facebook.com/riverpaws"
+                        href="https://www.facebook.com/yaharariverpaws"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full flex items-center justify-center hover:from-blue-200 hover:to-teal-200 transition-all duration-300 hover:scale-110"
@@ -248,7 +248,7 @@ export default function Contact() {
                         </svg>
                       </a>
                       <a
-                        href="https://www.instagram.com/riverpaws"
+                        href="https://www.instagram.com/riverpaws.dog"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full flex items-center justify-center hover:from-blue-200 hover:to-teal-200 transition-all duration-300 hover:scale-110"
@@ -259,7 +259,7 @@ export default function Contact() {
                         </svg>
                       </a>
                       <a
-                        href="https://www.tiktok.com/@riverpaws"
+                        href="https://www.tiktok.com/@riverpawsdogs"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 bg-gradient-to-r from-blue-100 to-teal-100 rounded-full flex items-center justify-center hover:from-blue-200 hover:to-teal-200 transition-all duration-300 hover:scale-110"
