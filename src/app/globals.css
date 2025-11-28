@@ -1115,230 +1115,205 @@ html.dark [class*="bg-yellow-50"] strong {
   color: #f1f5f9 !important;
 }
 
-/* Preserve FAQ icon colors - they should stay the same in dark mode */
-/* FAQ icons use: bg-gradient-to-br from-blue-100 to-emerald-100 text-blue-600 */
-/* Tailwind colors: blue-100: #dbeafe, emerald-100: #d1fae5, blue-600: #2563eb */
-html.dark div[class*="bg-gradient-to-br"][class*="from-blue-100"][class*="to-emerald-100"],
-html.dark div[class*="from-blue-100"][class*="to-emerald-100"],
-html.dark [class*="bg-gradient-to-br"][class*="from-blue-100"][class*="to-emerald-100"] {
-  --tw-gradient-from: #dbeafe !important;
-  --tw-gradient-to: #d1fae5 !important;
+/* Update service icons to match team stat card dark mode styling */
+/* Team stat card icon style: semi-transparent blue-to-teal gradient with light blue icon color */
+/* Target icon containers (rounded corners, flex items-center, specific widths/heights) */
+
+/* Icon containers with blue-100 to teal-100 gradients */
+html.dark div[class*="from-blue-100"][class*="to-teal-100"],
+html.dark div[class*="bg-gradient-to-r"][class*="from-blue-100"][class*="to-teal-100"],
+html.dark div[class*="bg-gradient-to-br"][class*="from-blue-100"][class*="to-teal-100"],
+html.dark div[class*="rounded-xl"][class*="from-blue-100"][class*="to-teal-100"],
+html.dark div[class*="rounded-lg"][class*="from-blue-100"][class*="to-teal-100"],
+html.dark div[class*="rounded-full"][class*="from-blue-100"][class*="to-teal-100"],
+html.dark div[class*="flex"][class*="items-center"][class*="from-blue-100"][class*="to-teal-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
-html.dark div[class*="bg-gradient-to-br"][class*="from-blue-100"][class*="to-emerald-100"].text-blue-600,
-html.dark div[class*="from-blue-100"][class*="to-emerald-100"].text-blue-600,
-html.dark div[class*="bg-gradient-to-br"][class*="from-blue-100"][class*="to-emerald-100"][class*="text-blue-600"],
-html.dark div[class*="from-blue-100"][class*="to-emerald-100"][class*="text-blue-600"] {
-  color: #2563eb !important;
-}
-
-/* Preserve blue-100 and emerald-100 gradient colors for icons and UI elements */
-/* Target icon containers specifically (rounded corners, flex items-center, etc.) */
-html.dark div[class*="rounded-xl"][class*="from-blue-100"],
-html.dark div[class*="rounded-xl"][class*="to-emerald-100"],
-html.dark div[class*="rounded-lg"][class*="from-blue-100"],
-html.dark div[class*="rounded-lg"][class*="to-emerald-100"],
-html.dark div[class*="rounded-full"][class*="from-blue-100"],
-html.dark div[class*="rounded-full"][class*="to-emerald-100"],
-html.dark div[class*="flex"][class*="items-center"][class*="from-blue-100"],
-html.dark div[class*="flex"][class*="items-center"][class*="to-emerald-100"],
-html.dark div[class*="w-10"][class*="h-10"][class*="from-blue-100"],
-html.dark div[class*="w-10"][class*="h-10"][class*="to-emerald-100"] {
-  --tw-gradient-from: #dbeafe !important;
-  --tw-gradient-to: #d1fae5 !important;
-}
-
-/* Preserve blue-100 and emerald-100 for any div with these gradient classes (icon containers) */
+/* Icon containers with blue-100 to emerald-100 gradients */
 html.dark div[class*="from-blue-100"][class*="to-emerald-100"],
 html.dark div[class*="bg-gradient-to-br"][class*="from-blue-100"][class*="to-emerald-100"],
 html.dark div[class*="bg-gradient-to-r"][class*="from-blue-100"][class*="to-emerald-100"],
-html.dark div[class*="bg-gradient-to-br"][class*="from-blue-100"][class*="via-emerald-100"][class*="to-teal-100"] {
-  --tw-gradient-from: #dbeafe !important;
-  --tw-gradient-to: #d1fae5 !important;
-  --tw-gradient-via: #d1fae5 !important;
+html.dark div[class*="rounded-xl"][class*="from-blue-100"][class*="to-emerald-100"],
+html.dark div[class*="rounded-lg"][class*="from-blue-100"][class*="to-emerald-100"],
+html.dark div[class*="rounded-full"][class*="from-blue-100"][class*="to-emerald-100"],
+html.dark div[class*="flex"][class*="items-center"][class*="from-blue-100"][class*="to-emerald-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
-/* Preserve blue-100 to teal-100 gradients for icon containers */
-html.dark div[class*="from-blue-100"][class*="to-teal-100"],
-html.dark div[class*="bg-gradient-to-r"][class*="from-blue-100"][class*="to-teal-100"],
-html.dark div[class*="bg-gradient-to-br"][class*="from-blue-100"][class*="to-teal-100"] {
-  /* Preserve Tailwind colors: blue-100: #dbeafe, teal-100: #ccfbf1 */
-  --tw-gradient-from: #dbeafe !important;
-  --tw-gradient-to: #ccfbf1 !important;
-}
-
-/* Preserve green-100 to emerald-100 gradients for icon containers */
+/* Icon containers with green-100 to emerald-100 gradients */
 html.dark div[class*="from-green-100"][class*="to-emerald-100"],
 html.dark div[class*="bg-gradient-to-r"][class*="from-green-100"][class*="to-emerald-100"],
-html.dark div[class*="bg-gradient-to-br"][class*="from-green-100"][class*="to-emerald-100"] {
-  /* Preserve Tailwind colors: green-100: #dcfce7, emerald-100: #d1fae5 */
-  --tw-gradient-from: #dcfce7 !important;
-  --tw-gradient-to: #d1fae5 !important;
+html.dark div[class*="bg-gradient-to-br"][class*="from-green-100"][class*="to-emerald-100"],
+html.dark div[class*="rounded-xl"][class*="from-green-100"][class*="to-emerald-100"],
+html.dark div[class*="rounded-lg"][class*="from-green-100"][class*="to-emerald-100"],
+html.dark div[class*="rounded-full"][class*="from-green-100"][class*="to-emerald-100"],
+html.dark div[class*="flex"][class*="items-center"][class*="from-green-100"][class*="to-emerald-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
-/* Preserve text-blue-600 for FAQ icons and other UI elements */
-html.dark div[class*="from-blue-100"][class*="text-blue-600"],
-html.dark div[class*="bg-gradient-to-br"][class*="from-blue-100"][class*="text-blue-600"],
-html.dark div[class*="to-emerald-100"][class*="text-blue-600"],
-html.dark div[class*="bg-gradient-to-br"][class*="to-emerald-100"][class*="text-blue-600"] {
-  color: #2563eb !important;
-}
-
-/* Preserve all service icon gradient colors - they should stay the same in dark mode */
-/* Icon containers use various gradient combinations that should maintain their colors */
+/* Icon containers with emerald-100 to blue-100 gradients */
 html.dark div[class*="from-emerald-100"][class*="to-blue-100"],
 html.dark div[class*="bg-gradient-to-r"][class*="from-emerald-100"][class*="to-blue-100"],
-html.dark div[class*="bg-gradient-to-br"][class*="from-emerald-100"][class*="to-blue-100"] {
-  /* Preserve Tailwind colors: emerald-100: #d1fae5, blue-100: #dbeafe */
-  --tw-gradient-from: #d1fae5 !important;
-  --tw-gradient-to: #dbeafe !important;
+html.dark div[class*="bg-gradient-to-br"][class*="from-emerald-100"][class*="to-blue-100"],
+html.dark div[class*="rounded-xl"][class*="from-emerald-100"][class*="to-blue-100"],
+html.dark div[class*="rounded-lg"][class*="from-emerald-100"][class*="to-blue-100"],
+html.dark div[class*="rounded-full"][class*="from-emerald-100"][class*="to-blue-100"],
+html.dark div[class*="flex"][class*="items-center"][class*="from-emerald-100"][class*="to-blue-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
+/* Icon containers with emerald-100 to teal-100 gradients */
 html.dark div[class*="from-emerald-100"][class*="to-teal-100"],
 html.dark div[class*="bg-gradient-to-r"][class*="from-emerald-100"][class*="to-teal-100"],
-html.dark div[class*="bg-gradient-to-br"][class*="from-emerald-100"][class*="to-teal-100"] {
-  /* Preserve Tailwind colors: emerald-100: #d1fae5, teal-100: #ccfbf1 */
-  --tw-gradient-from: #d1fae5 !important;
-  --tw-gradient-to: #ccfbf1 !important;
+html.dark div[class*="bg-gradient-to-br"][class*="from-emerald-100"][class*="to-teal-100"],
+html.dark div[class*="rounded-xl"][class*="from-emerald-100"][class*="to-teal-100"],
+html.dark div[class*="rounded-lg"][class*="from-emerald-100"][class*="to-teal-100"],
+html.dark div[class*="rounded-full"][class*="from-emerald-100"][class*="to-teal-100"],
+html.dark div[class*="flex"][class*="items-center"][class*="from-emerald-100"][class*="to-teal-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
+/* Other gradient combinations - apply same dark mode styling */
 html.dark div[class*="from-purple-100"][class*="to-pink-100"],
 html.dark div[class*="bg-gradient-to-r"][class*="from-purple-100"][class*="to-pink-100"],
-html.dark div[class*="bg-gradient-to-br"][class*="from-purple-100"][class*="to-pink-100"] {
-  /* Preserve Tailwind colors: purple-100: #f3e8ff, pink-100: #fce7f3 */
-  --tw-gradient-from: #f3e8ff !important;
-  --tw-gradient-to: #fce7f3 !important;
+html.dark div[class*="bg-gradient-to-br"][class*="from-purple-100"][class*="to-pink-100"],
+html.dark div[class*="rounded-xl"][class*="from-purple-100"][class*="to-pink-100"],
+html.dark div[class*="rounded-lg"][class*="from-purple-100"][class*="to-pink-100"],
+html.dark div[class*="rounded-full"][class*="from-purple-100"][class*="to-pink-100"],
+html.dark div[class*="flex"][class*="items-center"][class*="from-purple-100"][class*="to-pink-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
 html.dark div[class*="from-yellow-100"][class*="to-orange-100"],
 html.dark div[class*="bg-gradient-to-r"][class*="from-yellow-100"][class*="to-orange-100"],
-html.dark div[class*="bg-gradient-to-br"][class*="from-yellow-100"][class*="to-orange-100"] {
-  /* Preserve Tailwind colors: yellow-100: #fef9c3, orange-100: #ffedd5 */
-  --tw-gradient-from: #fef9c3 !important;
-  --tw-gradient-to: #ffedd5 !important;
+html.dark div[class*="bg-gradient-to-br"][class*="from-yellow-100"][class*="to-orange-100"],
+html.dark div[class*="rounded-xl"][class*="from-yellow-100"][class*="to-orange-100"],
+html.dark div[class*="rounded-lg"][class*="from-yellow-100"][class*="to-orange-100"],
+html.dark div[class*="rounded-full"][class*="from-yellow-100"][class*="to-orange-100"],
+html.dark div[class*="flex"][class*="items-center"][class*="from-yellow-100"][class*="to-orange-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
 html.dark div[class*="from-indigo-100"][class*="to-purple-100"],
 html.dark div[class*="bg-gradient-to-r"][class*="from-indigo-100"][class*="to-purple-100"],
-html.dark div[class*="bg-gradient-to-br"][class*="from-indigo-100"][class*="to-purple-100"] {
-  /* Preserve Tailwind colors: indigo-100: #e0e7ff, purple-100: #f3e8ff */
-  --tw-gradient-from: #e0e7ff !important;
-  --tw-gradient-to: #f3e8ff !important;
+html.dark div[class*="bg-gradient-to-br"][class*="from-indigo-100"][class*="to-purple-100"],
+html.dark div[class*="rounded-xl"][class*="from-indigo-100"][class*="to-purple-100"],
+html.dark div[class*="rounded-lg"][class*="from-indigo-100"][class*="to-purple-100"],
+html.dark div[class*="rounded-full"][class*="from-indigo-100"][class*="to-purple-100"],
+html.dark div[class*="flex"][class*="items-center"][class*="from-indigo-100"][class*="to-purple-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
 html.dark div[class*="from-red-100"][class*="to-pink-100"],
 html.dark div[class*="bg-gradient-to-r"][class*="from-red-100"][class*="to-pink-100"],
-html.dark div[class*="bg-gradient-to-br"][class*="from-red-100"][class*="to-pink-100"] {
-  /* Preserve Tailwind colors: red-100: #fee2e2, pink-100: #fce7f3 */
-  --tw-gradient-from: #fee2e2 !important;
-  --tw-gradient-to: #fce7f3 !important;
+html.dark div[class*="bg-gradient-to-br"][class*="from-red-100"][class*="to-pink-100"],
+html.dark div[class*="rounded-xl"][class*="from-red-100"][class*="to-pink-100"],
+html.dark div[class*="rounded-lg"][class*="from-red-100"][class*="to-pink-100"],
+html.dark div[class*="rounded-full"][class*="from-red-100"][class*="to-pink-100"],
+html.dark div[class*="flex"][class*="items-center"][class*="from-red-100"][class*="to-pink-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
-/* Preserve icon text colors - they should stay the same in dark mode */
+/* Update icon text colors to match team stat card (light blue) */
 html.dark div[class*="from-blue-100"] svg.text-blue-600,
 html.dark div[class*="bg-gradient-to-r"][class*="from-blue-100"] svg.text-blue-600,
 html.dark div[class*="bg-gradient-to-br"][class*="from-blue-100"] svg.text-blue-600,
 html.dark div[class*="w-16"][class*="h-16"] svg.text-blue-600,
 html.dark div[class*="w-12"][class*="h-12"] svg.text-blue-600,
-html.dark div[class*="w-10"][class*="h-10"] svg.text-blue-600 {
-  color: #2563eb !important;
+html.dark div[class*="w-10"][class*="h-10"] svg.text-blue-600,
+html.dark div[class*="from-blue-100"][class*="to-teal-100"] svg,
+html.dark div[class*="from-blue-100"][class*="to-emerald-100"] svg,
+html.dark div[class*="from-green-100"][class*="to-emerald-100"] svg,
+html.dark div[class*="from-emerald-100"] svg,
+html.dark div[class*="from-purple-100"] svg,
+html.dark div[class*="from-yellow-100"] svg,
+html.dark div[class*="from-indigo-100"] svg,
+html.dark div[class*="from-red-100"] svg {
+  color: #bfdbfe !important;
 }
 
 html.dark div[class*="from-purple-100"] svg.text-purple-600,
 html.dark div[class*="bg-gradient-to-r"][class*="from-purple-100"] svg.text-purple-600,
 html.dark div[class*="w-16"][class*="h-16"] svg.text-purple-600 {
-  /* Preserve Tailwind color: purple-600: #9333ea */
-  color: #9333ea !important;
+  color: #bfdbfe !important;
 }
 
 html.dark div[class*="from-emerald-100"] svg.text-emerald-600,
 html.dark div[class*="bg-gradient-to-r"][class*="from-emerald-100"] svg.text-emerald-600,
 html.dark div[class*="w-16"][class*="h-16"] svg.text-emerald-600 {
-  /* Preserve Tailwind color: emerald-600: #059669 */
-  color: #059669 !important;
+  color: #bfdbfe !important;
 }
 
 html.dark div[class*="from-yellow-100"] svg.text-yellow-600,
 html.dark div[class*="bg-gradient-to-r"][class*="from-yellow-100"] svg.text-yellow-600,
 html.dark div[class*="w-16"][class*="h-16"] svg.text-yellow-600 {
-  /* Preserve Tailwind color: yellow-600: #ca8a04 */
-  color: #ca8a04 !important;
+  color: #bfdbfe !important;
 }
 
 html.dark div[class*="from-green-100"] svg.text-green-600,
 html.dark div[class*="bg-gradient-to-r"][class*="from-green-100"] svg.text-green-600,
 html.dark div[class*="w-16"][class*="h-16"] svg.text-green-600 {
-  /* Preserve Tailwind color: green-600: #16a34a */
-  color: #16a34a !important;
+  color: #bfdbfe !important;
 }
 
 html.dark div[class*="from-indigo-100"] svg.text-indigo-600,
 html.dark div[class*="bg-gradient-to-r"][class*="from-indigo-100"] svg.text-indigo-600,
 html.dark div[class*="w-16"][class*="h-16"] svg.text-indigo-600 {
-  /* Preserve Tailwind color: indigo-600: #4f46e5 */
-  color: #4f46e5 !important;
+  color: #bfdbfe !important;
 }
 
-/* General rule: preserve ALL -100 level gradient colors for icon containers */
-/* Icon containers should maintain their light gradient backgrounds in dark mode */
-/* Target icon containers by their size and rounded corners - preserve exact Tailwind colors */
+/* Update icon containers to use dark mode styling matching team stat cards */
 html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-blue-100"],
 html.dark div[class*="w-12"][class*="h-12"][class*="rounded-full"][class*="from-blue-100"],
 html.dark div[class*="w-10"][class*="h-10"][class*="rounded-full"][class*="from-blue-100"] {
-  --tw-gradient-from: #dbeafe !important; /* blue-100 */
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
 html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-emerald-100"],
 html.dark div[class*="w-12"][class*="h-12"][class*="rounded-full"][class*="from-emerald-100"],
 html.dark div[class*="w-10"][class*="h-10"][class*="rounded-full"][class*="from-emerald-100"] {
-  --tw-gradient-from: #d1fae5 !important; /* emerald-100 */
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
 html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-teal-100"],
 html.dark div[class*="w-12"][class*="h-12"][class*="rounded-full"][class*="from-teal-100"],
 html.dark div[class*="w-10"][class*="h-10"][class*="rounded-full"][class*="from-teal-100"] {
-  --tw-gradient-from: #ccfbf1 !important; /* teal-100 */
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-purple-100"] {
-  --tw-gradient-from: #f3e8ff !important; /* purple-100 */
-}
-
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-pink-100"] {
-  --tw-gradient-from: #fce7f3 !important; /* pink-100 */
-}
-
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-yellow-100"] {
-  --tw-gradient-from: #fef9c3 !important; /* yellow-100 */
-}
-
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-orange-100"] {
-  --tw-gradient-from: #ffedd5 !important; /* orange-100 */
-}
-
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-green-100"] {
-  --tw-gradient-from: #dcfce7 !important; /* green-100 */
-}
-
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-indigo-100"] {
-  --tw-gradient-from: #e0e7ff !important; /* indigo-100 */
-}
-
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-purple-100"],
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-pink-100"],
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-yellow-100"],
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-orange-100"],
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-green-100"],
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-indigo-100"],
 html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="from-red-100"] {
-  --tw-gradient-from: #fee2e2 !important; /* red-100 */
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
-/* Preserve all -100 level gradient "to" and "via" colors for icon containers */
+/* Update all -100 level gradient "to" and "via" colors for icon containers */
 html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-blue-100"],
 html.dark div[class*="w-12"][class*="h-12"][class*="rounded-full"][class*="to-blue-100"],
-html.dark div[class*="w-10"][class*="h-10"][class*="rounded-full"][class*="to-blue-100"] {
-  --tw-gradient-to: #dbeafe !important; /* blue-100 */
-}
-
+html.dark div[class*="w-10"][class*="h-10"][class*="rounded-full"][class*="to-blue-100"],
 html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-emerald-100"],
 html.dark div[class*="w-12"][class*="h-12"][class*="rounded-full"][class*="to-emerald-100"],
 html.dark div[class*="w-10"][class*="h-10"][class*="rounded-full"][class*="to-emerald-100"] {
-  --tw-gradient-to: #d1fae5 !important; /* emerald-100 */
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
 html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-teal-100"],
@@ -1355,38 +1330,48 @@ html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-pink
   --tw-gradient-to: #fce7f3 !important; /* pink-100 */
 }
 
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-yellow-100"] {
-  --tw-gradient-to: #fef9c3 !important; /* yellow-100 */
-}
-
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-orange-100"] {
-  --tw-gradient-to: #ffedd5 !important; /* orange-100 */
-}
-
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-green-100"] {
-  --tw-gradient-to: #dcfce7 !important; /* green-100 */
-}
-
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-indigo-100"] {
-  --tw-gradient-to: #e0e7ff !important; /* indigo-100 */
-}
-
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-red-100"] {
-  --tw-gradient-to: #fee2e2 !important; /* red-100 */
-}
-
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-yellow-100"],
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-orange-100"],
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-green-100"],
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-indigo-100"],
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="to-red-100"],
 html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="via-blue-100"],
 html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="via-emerald-100"],
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="via-teal-100"] {
-  --tw-gradient-via: #dbeafe !important; /* Will be overridden by specific rules */
-}
-
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="via-teal-100"],
+html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="via-blue-100"],
 html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="via-emerald-100"] {
-  --tw-gradient-via: #d1fae5 !important; /* emerald-100 */
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
 }
 
-html.dark div[class*="w-16"][class*="h-16"][class*="rounded-xl"][class*="via-teal-100"] {
-  --tw-gradient-via: #ccfbf1 !important; /* teal-100 */
+/* Comprehensive catch-all for any icon container with -100 level gradients */
+/* This ensures ALL icon containers get the dark mode treatment */
+/* Target any div with rounded corners, flex items-center, and -100 gradients */
+html.dark div[class*="rounded"][class*="flex"][class*="items-center"][class*="from-"][class*="-100"],
+html.dark div[class*="rounded"][class*="flex"][class*="items-center"][class*="to-"][class*="-100"],
+html.dark div[class*="rounded"][class*="flex"][class*="items-center"][class*="via-"][class*="-100"],
+html.dark div[class*="rounded"][class*="flex"][class*="justify-center"][class*="from-"][class*="-100"],
+html.dark div[class*="rounded"][class*="flex"][class*="justify-center"][class*="to-"][class*="-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
+}
+
+/* Additional catch-all for icon containers by size and gradient pattern */
+html.dark div[class*="w-"][class*="h-"][class*="rounded"][class*="from-"][class*="-100"][class*="to-"][class*="-100"],
+html.dark div[class*="w-"][class*="h-"][class*="rounded"][class*="bg-gradient"][class*="-100"],
+html.dark div[class*="w-"][class*="h-"][class*="rounded"][class*="flex"][class*="items-center"][class*="-100"] {
+  background: linear-gradient(135deg, rgba(30, 64, 175, 0.6), rgba(13, 148, 136, 0.6)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.3) !important;
+}
+
+/* Ensure all SVG icons within -100 gradient icon containers get the light blue color */
+html.dark div[class*="rounded"][class*="from-"][class*="-100"] svg,
+html.dark div[class*="rounded"][class*="to-"][class*="-100"] svg,
+html.dark div[class*="rounded"][class*="via-"][class*="-100"] svg,
+html.dark div[class*="w-"][class*="h-"][class*="rounded"][class*="-100"] svg,
+html.dark div[class*="flex"][class*="items-center"][class*="from-"][class*="-100"] svg,
+html.dark div[class*="flex"][class*="items-center"][class*="to-"][class*="-100"] svg {
+  color: #bfdbfe !important;
 }
 
 /* Fix red-50 gradient backgrounds for dark mode */
