@@ -773,13 +773,13 @@ export default function HomeClient() {
                       </div>
                       <p className="text-gray-600 text-sm mb-4">Then, we factor in your dog&apos;s coat complexity:</p>
                       <div className="space-y-3">
-                        <div className="bg-blue-50 dark:bg-blue-900/30 rounded-lg p-3 border border-blue-100 dark:border-blue-800">
-                          <span className="font-semibold text-blue-800 dark:text-blue-300 text-sm block mb-1">Basic Coat</span>
-                          <span className="text-blue-700 dark:text-blue-400 text-sm">Hairless, Smooth, Short, Medium</span>
+                        <div className="bg-blue-100 dark:bg-blue-900/30 rounded-lg p-3 border border-blue-200 dark:border-blue-800 shadow-sm">
+                          <span className="font-semibold text-blue-900 dark:text-blue-300 text-sm block mb-1">Basic Coat</span>
+                          <span className="text-blue-800 dark:text-blue-400 text-sm">Hairless, Smooth, Short, Medium</span>
                         </div>
-                        <div className="bg-teal-50 dark:bg-teal-900/30 rounded-lg p-3 border border-teal-100 dark:border-teal-800">
-                          <span className="font-semibold text-teal-800 dark:text-teal-300 text-sm block mb-1">Thick Coat</span>
-                          <span className="text-teal-700 dark:text-teal-400 text-sm">Corded, Wire, Double, Curly, Long</span>
+                        <div className="bg-teal-100 dark:bg-teal-900/30 rounded-lg p-3 border border-teal-200 dark:border-teal-800 shadow-sm">
+                          <span className="font-semibold text-teal-900 dark:text-teal-300 text-sm block mb-1">Thick Coat</span>
+                          <span className="text-teal-800 dark:text-teal-400 text-sm">Corded, Wire, Double, Curly, Long</span>
                         </div>
                       </div>
                     </div>
