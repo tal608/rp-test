@@ -16,15 +16,16 @@ import { getImageObjectPosition } from "@/lib/imageFocalPoints";
 import { contactInfo } from "@/constants/social";
 
 // Top 10 hero images for Polaroid display - Mix of hiking and grooming
+// Positioned around edges to create a "donut" layout with clear center for text
 const heroImages = [
-  // Hiking images (6)
+  // TOP-LEFT QUADRANT
   {
     src: "/Hiking/energetic-english-cream-dog-hiking-sun-prairie-wi-river-paws.jpg",
     alt: "Energetic English Cream building confidence serving Sun Prairie families at professionally supervised wilderness trails",
     caption: "Adventure Awaits",
     rotation: -3,
     size: "large" as const,
-    position: { x: "5%", y: "10%" },
+    position: { x: "2%", y: "5%" },
     delay: 0
   },
   {
@@ -33,16 +34,17 @@ const heroImages = [
     caption: "Fresh & Clean",
     rotation: 4,
     size: "medium" as const,
-    position: { x: "50%", y: "15%" },
+    position: { x: "5%", y: "28%" },
     delay: 1.5
   },
+  // TOP-RIGHT QUADRANT
   {
     src: "/Hiking/joyful-golden-retriever-wilderness-trails-waunakee-wi-river-paws.jpg",
     alt: "Joyful Golden Retriever thriving on purpose-built wilderness trails at River Paws' exclusive facility in Waunakee, Wisconsin",
     caption: "Pure Joy",
     rotation: -2,
     size: "medium" as const,
-    position: { x: "75%", y: "25%" },
+    position: { x: "78%", y: "8%" },
     delay: 3
   },
   {
@@ -51,26 +53,18 @@ const heroImages = [
     caption: "Pampered Pup",
     rotation: 5,
     size: "large" as const,
-    position: { x: "15%", y: "35%" },
+    position: { x: "75%", y: "30%" },
     delay: 4.5
   },
+  // BOTTOM-LEFT QUADRANT
   {
     src: "/Hiking/energetic-german-shepherd-dog-hiking-madison-wi-river-paws.jpg",
     alt: "German Shepherd experiencing natural enrichment for Madison area dogs at Waunakee's premier adventure park",
     caption: "Best Day Ever",
     rotation: -4,
     size: "small" as const,
-    position: { x: "60%", y: "40%" },
+    position: { x: "3%", y: "52%" },
     delay: 6
-  },
-  {
-    src: "/Grooming/freshly-groomed-pomeranian-grooming-waunakee-wi-river-paws.jpg",
-    alt: "A freshly groomed Pomeranian dog happily poses in a grooming salon, wearing a watermelon bandana, ready for River Paws in Waunakee, WI",
-    caption: "Spa Day",
-    rotation: 3,
-    size: "medium" as const,
-    position: { x: "85%", y: "50%" },
-    delay: 7.5
   },
   {
     src: "/Hiking/joyful-mini-aussie-dog-hiking-madison-wi-river-paws.jpg",
@@ -78,8 +72,18 @@ const heroImages = [
     caption: "Our Pack",
     rotation: -5,
     size: "large" as const,
-    position: { x: "8%", y: "55%" },
+    position: { x: "2%", y: "72%" },
     delay: 9
+  },
+  // BOTTOM-RIGHT QUADRANT
+  {
+    src: "/Grooming/freshly-groomed-pomeranian-grooming-waunakee-wi-river-paws.jpg",
+    alt: "A freshly groomed Pomeranian dog happily poses in a grooming salon, wearing a watermelon bandana, ready for River Paws in Waunakee, WI",
+    caption: "Spa Day",
+    rotation: 3,
+    size: "medium" as const,
+    position: { x: "80%", y: "55%" },
+    delay: 7.5
   },
   {
     src: "/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg",
@@ -87,16 +91,17 @@ const heroImages = [
     caption: "Looking Good",
     rotation: 2,
     size: "small" as const,
-    position: { x: "45%", y: "60%" },
+    position: { x: "78%", y: "75%" },
     delay: 10.5
   },
+  // TOP & BOTTOM CENTER (pushed to extremes)
   {
     src: "/Hiking/confident-mixed-pack-dog-hiking-waunakee-wi-river-paws.jpg",
     alt: "Mixed pack socializing thriving on purpose-built wilderness trails at River Paws' exclusive facility in Waunakee, Wisconsin",
     caption: "Wilderness Fun",
     rotation: -3,
     size: "medium" as const,
-    position: { x: "70%", y: "65%" },
+    position: { x: "38%", y: "0%" },
     delay: 12
   },
   {
@@ -105,7 +110,7 @@ const heroImages = [
     caption: "Best Friends",
     rotation: 4,
     size: "large" as const,
-    position: { x: "25%", y: "70%" },
+    position: { x: "35%", y: "82%" },
     delay: 13.5
   }
 ];
@@ -209,21 +214,22 @@ export default function HomeClient() {
                 </div>
               );
             })}
-            {/* Mobile: Show fewer, smaller Polaroids */}
+            {/* Mobile: Show fewer, smaller Polaroids - positioned at corners/edges */}
             {heroImages.slice(0, Math.min(loadedImages, 6)).map((image, index) => {
               const mobileSizeMap = {
-                large: { width: 200, height: 200 },
-                medium: { width: 180, height: 180 },
-                small: { width: 160, height: 160 }
+                large: { width: 140, height: 140 },
+                medium: { width: 120, height: 120 },
+                small: { width: 100, height: 100 }
               };
               const mobileSize = mobileSizeMap[image.size];
+              // Corner-focused positions to keep center clear for text
               const mobilePositions = [
-                { x: "5%", y: "8%", rotation: -2 },
-                { x: "55%", y: "12%", rotation: 3 },
-                { x: "10%", y: "30%", rotation: -4 },
-                { x: "60%", y: "35%", rotation: 2 },
-                { x: "15%", y: "55%", rotation: -3 },
-                { x: "65%", y: "60%", rotation: 4 }
+                { x: "2%", y: "5%", rotation: -2 },     // Top-left corner
+                { x: "70%", y: "8%", rotation: 3 },    // Top-right corner
+                { x: "2%", y: "72%", rotation: -4 },   // Bottom-left corner
+                { x: "68%", y: "74%", rotation: 2 },   // Bottom-right corner
+                { x: "72%", y: "40%", rotation: -3 },  // Right edge, middle
+                { x: "2%", y: "38%", rotation: 4 }     // Left edge, middle
               ];
               const mobilePos = mobilePositions[index] || image.position;
               
@@ -279,9 +285,13 @@ export default function HomeClient() {
             ></div>
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          {/* Content container with higher z-index to stay above Polaroids */}
+          <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 text-center">
+            {/* Soft radial backdrop for text readability */}
+            <div className="absolute inset-0 -inset-x-8 -inset-y-16 bg-gradient-radial from-slate-900/60 via-slate-900/30 to-transparent blur-xl -z-10 pointer-events-none"></div>
+            
             <div className="space-y-8">
-              <div className="inline-flex items-center bg-white/90 backdrop-blur-md rounded-full px-4 py-2 animate-fadeInUp">
+              <div className="inline-flex items-center bg-white/95 backdrop-blur-md rounded-full px-4 py-2 animate-fadeInUp shadow-lg">
                 <svg className="w-4 h-4 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                 </svg>
@@ -290,19 +300,19 @@ export default function HomeClient() {
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight px-2">
                 {/* LCP element - prioritized but animated */}
-                <span className="block text-white drop-shadow-2xl animate-fadeInUp">Every Tail Wags</span>
+                <span className="block text-white text-shadow-hero animate-fadeInUp">Every Tail Wags</span>
                 <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent relative inline-block animate-fadeInUp-delay-400">
-                  <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
+                  <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] text-shadow-hero-glow">
                     With Joy
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent blur-xl opacity-50 animate-pulse"></span>
                 </span>
-                <span className="block text-xl sm:text-2xl md:text-3xl mt-6 font-medium text-blue-100 drop-shadow-md animate-fadeInUp-delay-600">
+                <span className="block text-xl sm:text-2xl md:text-3xl mt-6 font-medium text-blue-100 text-shadow-md animate-fadeInUp-delay-600">
                   for River Paws Dog Grooming & Hiking
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto animate-fadeInUp-delay-600 px-4 mt-8">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto animate-fadeInUp-delay-600 px-4 mt-8 text-shadow-md">
                 Professional grooming & adventure-filled hiking.
                 <span className="block mt-2">Your dog&apos;s happiness is our mission.</span>
               </p>
