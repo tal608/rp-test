@@ -105,7 +105,7 @@ export default function DogHikes() {
               <span className="block text-white animate-fadeInUp-delay-200 drop-shadow-2xl">Where Madison</span>
               <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-fadeInUp-delay-400 relative inline-block">
                 <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
-                  Dogs Run Wild
+                  Dogs Run Free
                 </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent blur-xl opacity-50 animate-pulse"></span>
               </span>
@@ -144,7 +144,7 @@ export default function DogHikes() {
                     height={20}
                     className="mr-2 w-5 h-5 object-contain group-hover:rotate-12 transition-transform duration-300"
                   />
-                  Start Your Adventure
+                  Join our Waitlist
                 </span>
               </Link>
 
@@ -684,7 +684,7 @@ export default function DogHikes() {
                 <div className="mt-6">
                   <Link
                 href="/dog-hike-scheduling"
-                className="group relative inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-700 rounded-full font-medium text-base sm:text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden min-h-[44px]"
+                className="group relative inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-white text-white rounded-full font-medium text-base sm:text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden min-h-[44px]"
                 onMouseMove={(e) => {
                       const rect = e.currentTarget.getBoundingClientRect();
                       const x = e.clientX - rect.left;
@@ -697,7 +697,7 @@ export default function DogHikes() {
                     <span className="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-500 origin-center" style={{ 
                       background: 'radial-gradient(circle 100px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.3), transparent)' 
                     }}></span>
-                    <span className="relative z-10 flex items-center">
+                    <span className="relative z-10 flex items-center text-white">
                       <svg className="mr-2 w-5 h-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                       </svg>

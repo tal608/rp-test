@@ -84,17 +84,26 @@ export default function PuppyPlay() {
               The foundation for a confident, well-socialized adult dog begins with positive early experiences.
               Professional socialization programs for puppies 8 weeks to 12 months.
             </p>
+            
+            <div className="mt-8 inline-flex items-center bg-yellow-400/95 dark:bg-yellow-600/95 backdrop-blur-md rounded-full px-6 py-3 animate-fadeInUp-delay-800 border-2 border-yellow-300 dark:border-yellow-500">
+              <svg className="w-5 h-5 text-yellow-900 dark:text-yellow-100 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              </svg>
+              <span className="text-base font-semibold text-yellow-900 dark:text-yellow-100">
+                Limited Availability: Very occasional offering (once or twice a year) - No current availability
+              </span>
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp-delay-800">
               <Link
-                href="/apply"
+                href="/contact"
                 className="group relative px-8 py-4 bg-white text-emerald-600 rounded-full font-medium text-lg overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
               >
                 <span className="relative z-10 flex items-center">
                   <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  Enroll Your Puppy
+                  Inquire About Future Sessions
                 </span>
               </Link>
 
@@ -115,20 +124,28 @@ export default function PuppyPlay() {
       </section>
 
       {/* About Program & Critical Period */}
-      <section id="about-program-section" className="py-24 px-6 bg-gradient-to-b from-white to-blue-50">
+      <section id="about-program-section" className="py-24 px-6 bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-950">
         <div className="max-w-7xl mx-auto">
+          {/* Limited Availability Notice */}
+          <div className="mb-12 p-4 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 dark:border-yellow-500 rounded-lg">
+            <p className="text-base font-semibold text-gray-800 dark:text-gray-200">
+              <strong>Important:</strong> Puppy Play & Socialization is a very occasional and limited offering that only happens once or twice a year. There is currently no availability. Please call us to inquire about future sessions.
+            </p>
+          </div>
+          
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 dark:text-white mb-6">
                   Building Confident Puppies
                 </h2>
-                <p className="text-xl text-gray-600 leading-relaxed mb-6">
+                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                   The first year of your puppy&apos;s life is crucial for developing social skills,
                   confidence, and good behavior patterns. Our supervised puppy play sessions
                   provide the perfect environment for positive socialization and learning.
+                  <strong className="text-gray-800 dark:text-gray-200"> Please note: This program is offered on a very limited basis, typically only once or twice per year.</strong>
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                   We focus on age-appropriate activities that help puppies learn to interact
                   appropriately with other dogs and people, while having fun and building
                   confidence in a safe, controlled environment.

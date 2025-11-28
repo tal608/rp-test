@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Kalam } from "next/font/google";
 import "./globals.css";
 import AppShell from "@/components/AppShell";
 import { getLocalBusinessSchema } from "@/lib/structuredData";
@@ -18,6 +18,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap", // Optimize font loading - show fallback font immediately
   preload: false, // Only preload the main font
+});
+
+const kalam = Kalam({
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  preload: false, // Load on demand for Polaroid captions
+  variable: "--font-kalam",
 });
 
 export const metadata: Metadata = {
@@ -90,7 +98,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} antialiased`}
       >
         {/* Prevent flash of wrong theme */}
         <script

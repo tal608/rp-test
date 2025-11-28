@@ -15,10 +15,106 @@ import GetDirectionsButton from "@/components/GetDirectionsButton";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
 import { contactInfo } from "@/constants/social";
 
+// Top 10 hero images for Polaroid display - Mix of hiking and grooming
+const heroImages = [
+  // Hiking images (6)
+  {
+    src: "/Hiking/energetic-english-cream-dog-hiking-sun-prairie-wi-river-paws.jpg",
+    alt: "Energetic English Cream building confidence serving Sun Prairie families at professionally supervised wilderness trails",
+    caption: "Adventure Awaits",
+    rotation: -3,
+    size: "large" as const,
+    position: { x: "5%", y: "10%" },
+    delay: 0
+  },
+  {
+    src: "/Grooming/grooming-transformation-doodle-madison-wi-river-paws.jpg",
+    alt: "A happy Poodle mix, first muddy outdoors, then freshly groomed indoors with a bandana by River Paws in Waunakee",
+    caption: "Fresh & Clean",
+    rotation: 4,
+    size: "medium" as const,
+    position: { x: "50%", y: "15%" },
+    delay: 1.5
+  },
+  {
+    src: "/Hiking/joyful-golden-retriever-wilderness-trails-waunakee-wi-river-paws.jpg",
+    alt: "Joyful Golden Retriever thriving on purpose-built wilderness trails at River Paws' exclusive facility in Waunakee, Wisconsin",
+    caption: "Pure Joy",
+    rotation: -2,
+    size: "medium" as const,
+    position: { x: "75%", y: "25%" },
+    delay: 3
+  },
+  {
+    src: "/Grooming/happy-bernesemix-grooming-madison-wi-river-paws.jpg",
+    alt: "Happy Bernesemix dog with a fresh groom and blue bandana looks directly at the camera in a Sun Prairie grooming salon, cared for by River Paws",
+    caption: "Pampered Pup",
+    rotation: 5,
+    size: "large" as const,
+    position: { x: "15%", y: "35%" },
+    delay: 4.5
+  },
+  {
+    src: "/Hiking/energetic-german-shepherd-dog-hiking-madison-wi-river-paws.jpg",
+    alt: "German Shepherd experiencing natural enrichment for Madison area dogs at Waunakee's premier adventure park",
+    caption: "Best Day Ever",
+    rotation: -4,
+    size: "small" as const,
+    position: { x: "60%", y: "40%" },
+    delay: 6
+  },
+  {
+    src: "/Grooming/freshly-groomed-pomeranian-grooming-waunakee-wi-river-paws.jpg",
+    alt: "A freshly groomed Pomeranian dog happily poses in a grooming salon, wearing a watermelon bandana, ready for River Paws in Waunakee, WI",
+    caption: "Spa Day",
+    rotation: 3,
+    size: "medium" as const,
+    position: { x: "85%", y: "50%" },
+    delay: 7.5
+  },
+  {
+    src: "/Hiking/joyful-mini-aussie-dog-hiking-madison-wi-river-paws.jpg",
+    alt: "Mini Aussie experiencing natural enrichment for Madison area dogs at Waunakee's premier adventure park",
+    caption: "Our Pack",
+    rotation: -5,
+    size: "large" as const,
+    position: { x: "8%", y: "55%" },
+    delay: 9
+  },
+  {
+    src: "/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg",
+    alt: "A freshly groomed Goldendoodle sits calmly on a grooming table at a River Paws salon in Madison, Wisconsin",
+    caption: "Looking Good",
+    rotation: 2,
+    size: "small" as const,
+    position: { x: "45%", y: "60%" },
+    delay: 10.5
+  },
+  {
+    src: "/Hiking/confident-mixed-pack-dog-hiking-waunakee-wi-river-paws.jpg",
+    alt: "Mixed pack socializing thriving on purpose-built wilderness trails at River Paws' exclusive facility in Waunakee, Wisconsin",
+    caption: "Wilderness Fun",
+    rotation: -3,
+    size: "medium" as const,
+    position: { x: "70%", y: "65%" },
+    delay: 12
+  },
+  {
+    src: "/Hiking/joyful-pack-social-hiking-madison-wi-river-paws.jpg",
+    alt: "Joyful pack socializing experiencing natural enrichment for Madison area dogs at Waunakee's premier adventure park",
+    caption: "Best Friends",
+    rotation: 4,
+    size: "large" as const,
+    position: { x: "25%", y: "70%" },
+    delay: 13.5
+  }
+];
+
 export default function HomeClient() {
   const [selectedService, setSelectedService] = useState<'grooming' | 'hiking'>('grooming');
   const [isVisible, setIsVisible] = useState(false);
   const [cardHover, setCardHover] = useState<number | null>(null);
+  const [loadedImages, setLoadedImages] = useState(1);
   const heroRef = useRef<HTMLDivElement>(null);
   const serviceSectionRef = useRef<HTMLDivElement>(null);
   const locationGradientRef = useRef<HTMLDivElement>(null);
@@ -27,6 +123,14 @@ export default function HomeClient() {
   const mousePosition = useMouseParallax(heroRef);
   useGradientAnimation(locationGradientRef);
   useGradientAnimation(newToRiverPawsRef);
+
+  // Progressive image loading
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLoadedImages((prev) => prev >= 10 ? prev : prev + 1);
+    }, 1500);
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     // Intersection Observer for scroll animations
@@ -54,26 +158,111 @@ export default function HomeClient() {
   return (
     <>
       <div className="min-h-screen">
-        {/* Enhanced Hero Section with Advanced Effects */}
+        {/* Enhanced Hero Section with Polaroid Photo Wall */}
         {/* IMAGE_PLACEMENT_START: homepage-hero */}
         <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-          {/* Background Image with Parallax */}
-          <div className="absolute inset-0">
-            <Image
-              src="/Hiking/joyful-brindle-mix-running-waunakee-wi-river-paws.jpg"
-              alt="Athletic brindle mix becoming a properly challenged athlete on exclusive gated wilderness grounds serving Waunakee families."
-              fill
-              priority
-              fetchPriority="high"
-              loading="eager"
-              className="object-cover"
-              style={{ objectPosition: getImageObjectPosition("/Hiking/joyful-brindle-mix-running-waunakee-wi-river-paws.jpg") }}
-              sizes="100vw"
-              quality={85}
-            />
-            {/* IMAGE_PLACEMENT_END: homepage-hero */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-emerald-800/50 to-teal-900/60"></div>
+          {/* Background Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-emerald-800/50 to-teal-900/60 z-0"></div>
+          
+          {/* Polaroid Photos Container */}
+          <div className="absolute inset-0 z-[5] pointer-events-none overflow-hidden">
+            {heroImages.slice(0, loadedImages).map((image, index) => {
+              const sizeMap = {
+                large: { width: 320, height: 320, mobileWidth: 200, mobileHeight: 200 },
+                medium: { width: 280, height: 280, mobileWidth: 180, mobileHeight: 180 },
+                small: { width: 240, height: 240, mobileWidth: 160, mobileHeight: 160 }
+              };
+              const size = sizeMap[image.size];
+              const isVisible = index < loadedImages;
+              
+              return (
+                <div
+                  key={image.src}
+                  className={`polaroid-frame ${isVisible ? 'visible polaroid-enter' : ''} polaroid-float hidden sm:block`}
+                  style={{
+                    left: image.position.x,
+                    top: image.position.y,
+                    width: `${size.width}px`,
+                    height: `${size.height + 60}px`,
+                    '--rotation': `${image.rotation}deg`,
+                    '--delay': `${index * 0.2}s`,
+                    zIndex: 10 + index,
+                    animationDelay: `${index * 1.5}s`
+                  } as React.CSSProperties}
+                >
+                  <div className="polaroid-image" style={{ height: `${size.height}px` }}>
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      priority={index === 0}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      className="object-cover"
+                      style={{ objectPosition: getImageObjectPosition(image.src) }}
+                      sizes={`(max-width: 768px) ${size.mobileWidth}px, ${size.width}px`}
+                      quality={index === 0 ? 85 : 75}
+                    />
+                  </div>
+                  <div className="polaroid-caption">
+                    {image.caption}
+                  </div>
+                </div>
+              );
+            })}
+            {/* Mobile: Show fewer, smaller Polaroids */}
+            {heroImages.slice(0, Math.min(loadedImages, 6)).map((image, index) => {
+              const mobileSizeMap = {
+                large: { width: 200, height: 200 },
+                medium: { width: 180, height: 180 },
+                small: { width: 160, height: 160 }
+              };
+              const mobileSize = mobileSizeMap[image.size];
+              const mobilePositions = [
+                { x: "5%", y: "8%", rotation: -2 },
+                { x: "55%", y: "12%", rotation: 3 },
+                { x: "10%", y: "30%", rotation: -4 },
+                { x: "60%", y: "35%", rotation: 2 },
+                { x: "15%", y: "55%", rotation: -3 },
+                { x: "65%", y: "60%", rotation: 4 }
+              ];
+              const mobilePos = mobilePositions[index] || image.position;
+              
+              return (
+                <div
+                  key={`mobile-${image.src}`}
+                  className={`polaroid-frame ${index < loadedImages ? 'visible polaroid-enter' : ''} block sm:hidden`}
+                  style={{
+                    left: mobilePos.x,
+                    top: mobilePos.y,
+                    width: `${mobileSize.width}px`,
+                    height: `${mobileSize.height + 50}px`,
+                    '--rotation': `${mobilePos.rotation}deg`,
+                    zIndex: 10 + index,
+                    animationDelay: `${index * 1.5}s`
+                  } as React.CSSProperties}
+                >
+                  <div className="polaroid-image" style={{ height: `${mobileSize.height}px` }}>
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      fill
+                      priority={index === 0}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      className="object-cover"
+                      style={{ objectPosition: getImageObjectPosition(image.src) }}
+                      sizes={`${mobileSize.width}px`}
+                      quality={index === 0 ? 85 : 75}
+                    />
+                  </div>
+                  <div className="polaroid-caption">
+                    {image.caption}
+                  </div>
+                </div>
+              );
+            })}
           </div>
+          
+          {/* IMAGE_PLACEMENT_END: homepage-hero */}
 
           {/* Animated gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-teal-600/20"></div>
@@ -308,11 +497,11 @@ export default function HomeClient() {
               <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 overflow-hidden">
                 <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
                   <Image
-                    src="/Hiking/relaxed-golden-retriever-socializing-waunakee-wi-river-paws.jpg"
-                    alt="Relaxed Golden Retriever socializing thriving on purpose-built wilderness trails at River Paws' exclusive facility in Waunakee, Wisconsin"
+                    src="/Grooming/happy-bernesemix-grooming-madison-wi-river-paws.jpg"
+                    alt="A happy Bernesemix dog with a fresh groom looks content after grooming at River Paws in Madison, Wisconsin"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    style={{ objectPosition: getImageObjectPosition("/Hiking/relaxed-golden-retriever-socializing-waunakee-wi-river-paws.jpg") }}
+                    style={{ objectPosition: getImageObjectPosition("/Grooming/happy-bernesemix-grooming-madison-wi-river-paws.jpg") }}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">
@@ -802,17 +991,22 @@ export default function HomeClient() {
                     <p className="text-white text-xs font-medium">Safe, supervised puppy socialization.</p>
                   </div>
                 </div>
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-100 to-teal-100 rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Puppy Play & Socialization</h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
+                <div className="mb-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 dark:border-yellow-500 rounded">
+                  <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                    <strong>Limited Availability:</strong> This is a very occasional offering that only happens once or twice a year. No current availability.
+                  </p>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6">
                   Structured play sessions designed for puppies and young dogs. Learn socialization skills,
-                  basic training, and make new friends in a safe environment.
+                  basic training, and make new friends in a safe environment. Offered on a very limited basis.
                 </p>
-                <div className="space-y-2 text-sm text-gray-600">
+                <div className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                   <div className="flex items-center">
                     <svg className="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
