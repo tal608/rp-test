@@ -448,6 +448,37 @@ html.dark .hero-gradient-overlay-secondary,
   ) !important;
 }
 
+/* Special Packages card - consistent colors in light and dark mode */
+.special-packages-title {
+  color: #1f2937 !important;
+}
+.special-packages-item {
+  color: #374151 !important;
+}
+.special-packages-star {
+  color: #eab308 !important;
+}
+.special-packages-footer {
+  color: #6b7280 !important;
+}
+
+html.dark .special-packages-title,
+:root.dark .special-packages-title {
+  color: #f3f4f6 !important;
+}
+html.dark .special-packages-item,
+:root.dark .special-packages-item {
+  color: #d1d5db !important;
+}
+html.dark .special-packages-star,
+:root.dark .special-packages-star {
+  color: #fbbf24 !important;
+}
+html.dark .special-packages-footer,
+:root.dark .special-packages-footer {
+  color: #9ca3af !important;
+}
+
 /* Fix coat type boxes in dark mode */
 html.dark .bg-blue-50,
 :root.dark .bg-blue-50 {

@@ -834,13 +834,13 @@ export default function HomeClient() {
                   </div>
 
                   {/* Specials */}
-                  <div className="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                  <div className="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden special-packages-card">
                     <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/0 via-orange-50/0 to-yellow-50/0 group-hover:from-yellow-50/50 group-hover:via-orange-50/30 group-hover:to-yellow-50/50 dark:group-hover:from-yellow-900/20 dark:group-hover:via-orange-900/15 dark:group-hover:to-yellow-900/20 transition-all duration-500"></div>
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                     <div className="relative z-10">
                       <div className="flex items-center mb-4">
                         <span className="text-xl mr-2">✨</span>
-                        <h3 className="font-bold text-lg group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors" style={{ color: '#1f2937' }}>Special Packages</h3>
+                        <h3 className="font-bold text-lg group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors special-packages-title">Special Packages</h3>
                       </div>
                       <ul className="space-y-2">
                         {[
@@ -849,15 +849,15 @@ export default function HomeClient() {
                           "Deluxe Special",
                           "Supreme Special"
                         ].map((special, idx) => (
-                          <li key={idx} className="flex items-center" style={{ color: '#374151' }}>
-                            <svg className="w-4 h-4 mr-2 flex-shrink-0" style={{ color: '#eab308' }} fill="currentColor" viewBox="0 0 24 24">
+                          <li key={idx} className="flex items-center special-packages-item">
+                            <svg className="w-4 h-4 mr-2 flex-shrink-0 special-packages-star" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                             </svg>
                             <span className="font-medium text-sm">{special}</span>
                           </li>
                         ))}
                       </ul>
-                      <p className="text-xs mt-3" style={{ color: '#6b7280' }}>Ask about current specials when booking!</p>
+                      <p className="text-xs mt-3 special-packages-footer">Ask about current specials when booking!</p>
                     </div>
                   </div>
                 </div>
