@@ -773,13 +773,13 @@ export default function HomeClient() {
                       </div>
                       <p className="text-gray-600 text-sm mb-4">Then, we factor in your dog&apos;s coat complexity:</p>
                       <div className="space-y-3">
-                        <div className="bg-blue-100 dark:bg-blue-900/30 rounded-lg p-3 border border-blue-200 dark:border-blue-800 shadow-sm">
-                          <span className="font-semibold text-blue-900 dark:text-blue-300 text-sm block mb-1">Basic Coat</span>
-                          <span className="text-blue-800 dark:text-blue-400 text-sm">Hairless, Smooth, Short, Medium</span>
+                        <div className="rounded-lg p-3 shadow-sm" style={{ backgroundColor: 'rgb(219, 234, 254)', border: '1px solid rgb(191, 219, 254)' }}>
+                          <span className="font-semibold text-sm block mb-1" style={{ color: '#1e3a8a' }}>Basic Coat</span>
+                          <span className="text-sm" style={{ color: '#1e40af' }}>Hairless, Smooth, Short, Medium</span>
                         </div>
-                        <div className="bg-teal-100 dark:bg-teal-900/30 rounded-lg p-3 border border-teal-200 dark:border-teal-800 shadow-sm">
-                          <span className="font-semibold text-teal-900 dark:text-teal-300 text-sm block mb-1">Thick Coat</span>
-                          <span className="text-teal-800 dark:text-teal-400 text-sm">Corded, Wire, Double, Curly, Long</span>
+                        <div className="rounded-lg p-3 shadow-sm" style={{ backgroundColor: 'rgb(204, 251, 241)', border: '1px solid rgb(153, 246, 228)' }}>
+                          <span className="font-semibold text-sm block mb-1" style={{ color: '#134e4a' }}>Thick Coat</span>
+                          <span className="text-sm" style={{ color: '#0f766e' }}>Corded, Wire, Double, Curly, Long</span>
                         </div>
                       </div>
                     </div>
@@ -840,7 +840,7 @@ export default function HomeClient() {
                     <div className="relative z-10">
                       <div className="flex items-center mb-4">
                         <span className="text-xl mr-2">✨</span>
-                        <h3 className="font-bold text-lg text-gray-800 dark:text-gray-100 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">Special Packages</h3>
+                        <h3 className="font-bold text-lg group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors" style={{ color: '#1f2937' }}>Special Packages</h3>
                       </div>
                       <ul className="space-y-2">
                         {[
@@ -849,15 +849,15 @@ export default function HomeClient() {
                           "Deluxe Special",
                           "Supreme Special"
                         ].map((special, idx) => (
-                          <li key={idx} className="flex items-center text-gray-700 dark:text-gray-300">
-                            <svg className="w-4 h-4 text-yellow-500 dark:text-yellow-400 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                          <li key={idx} className="flex items-center" style={{ color: '#374151' }}>
+                            <svg className="w-4 h-4 mr-2 flex-shrink-0" style={{ color: '#eab308' }} fill="currentColor" viewBox="0 0 24 24">
                               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                             </svg>
                             <span className="font-medium text-sm">{special}</span>
                           </li>
                         ))}
                       </ul>
-                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">Ask about current specials when booking!</p>
+                      <p className="text-xs mt-3" style={{ color: '#6b7280' }}>Ask about current specials when booking!</p>
                     </div>
                   </div>
                 </div>
@@ -1210,8 +1210,8 @@ export default function HomeClient() {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">Puppy Play & Socialization</h3>
-                <div className="mb-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 dark:border-yellow-500 rounded">
-                  <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                <div className="mb-4 p-3 rounded border-l-4" style={{ backgroundColor: '#fef3c7', borderLeftColor: '#f59e0b' }}>
+                  <p className="text-sm font-semibold" style={{ color: '#92400e' }}>
                     <strong>Limited Availability:</strong> This is a very occasional offering that only happens once or twice a year. No current availability.
                   </p>
                 </div>
