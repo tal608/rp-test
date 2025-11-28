@@ -8,3 +8,6 @@ Disallow: /api
 # Sitemap location
 Sitemap: https://www.riverpaws.dog/sitemap.xml
 
+# AI.txt location (for AI crawlers)
+# See https://www.riverpaws.dog/ai.txt for AI-specific crawling guidelines
+

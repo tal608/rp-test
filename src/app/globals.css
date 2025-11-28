@@ -1703,3 +1703,250 @@ html.dark .stat-card-hover-overlay-light {
 html.dark .stat-card-hover-overlay-dark {
   display: block;
 }
+
+/* Force light mode for Team Stats section when light mode is selected */
+html.light .team-stat-card,
+html:not(.dark) .team-stat-card {
+  background: rgba(255, 255, 255, 0.98) !important;
+  color: #0f172a !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light .team-stat-card .stat-card-number,
+html:not(.dark) .team-stat-card .stat-card-number {
+  color: #0f172a !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  background-clip: unset !important;
+}
+
+html.light .team-stat-card .stat-card-title,
+html:not(.dark) .team-stat-card .stat-card-title {
+  color: #0f172a !important;
+}
+
+html.light .team-stat-card .stat-card-subtext,
+html:not(.dark) .team-stat-card .stat-card-subtext {
+  color: #475569 !important;
+}
+
+html.light .team-stat-card .stat-card-icon,
+html:not(.dark) .team-stat-card .stat-card-icon {
+  background: linear-gradient(135deg, #dbeafe, #ccfbf1) !important;
+  color: #2563eb !important;
+  box-shadow: none !important;
+}
+
+html.light section.bg-white.dark\:bg-slate-900,
+html:not(.dark) section.bg-white.dark\:bg-slate-900,
+html.light section[class*="bg-white"][class*="dark:bg-slate-900"],
+html:not(.dark) section[class*="bg-white"][class*="dark:bg-slate-900"] {
+  background-color: #ffffff !important;
+}
+
+html.light section.dark\:from-slate-900,
+html:not(.dark) section.dark\:from-slate-900,
+html.light section[class*="dark:from-slate-900"],
+html:not(.dark) section[class*="dark:from-slate-900"] {
+  background-image: linear-gradient(to bottom, #eff6ff, #ffffff) !important;
+}
+
+html.light section.dark\:to-slate-950,
+html:not(.dark) section.dark\:to-slate-950,
+html.light section[class*="dark:to-slate-950"],
+html:not(.dark) section[class*="dark:to-slate-950"] {
+  background-image: linear-gradient(to bottom, #eff6ff, #ffffff) !important;
+}
+
+html.light section.bg-gradient-to-b.from-blue-50.to-white.dark\:from-slate-900.dark\:to-slate-950,
+html:not(.dark) section.bg-gradient-to-b.from-blue-50.to-white.dark\:from-slate-900.dark\:to-slate-950 {
+  background-image: linear-gradient(to bottom, #eff6ff, #ffffff) !important;
+}
+
+/* Force light mode for Testimonial/Reviews section when light mode is selected */
+html.light .bg-white.dark\:bg-slate-800\/90,
+html:not(.dark) .bg-white.dark\:bg-slate-800\/90,
+html.light [class*="bg-white"][class*="dark:bg-slate-800"],
+html:not(.dark) [class*="bg-white"][class*="dark:bg-slate-800"] {
+  background-color: #ffffff !important;
+}
+
+html.light .text-gray-900.dark\:text-white,
+html:not(.dark) .text-gray-900.dark\:text-white,
+html.light [class*="text-gray-900"][class*="dark:text-white"],
+html:not(.dark) [class*="text-gray-900"][class*="dark:text-white"] {
+  color: #111827 !important;
+}
+
+html.light .text-gray-600.dark\:text-gray-300,
+html:not(.dark) .text-gray-600.dark\:text-gray-300,
+html.light [class*="text-gray-600"][class*="dark:text-gray-300"],
+html:not(.dark) [class*="text-gray-600"][class*="dark:text-gray-300"] {
+  color: #4b5563 !important;
+}
+
+html.light .text-gray-500.dark\:text-gray-400,
+html:not(.dark) .text-gray-500.dark\:text-gray-400,
+html.light [class*="text-gray-500"][class*="dark:text-gray-400"],
+html:not(.dark) [class*="text-gray-500"][class*="dark:text-gray-400"] {
+  color: #6b7280 !important;
+}
+
+html.light .border-gray-200.dark\:border-slate-700\/70,
+html:not(.dark) .border-gray-200.dark\:border-slate-700\/70,
+html.light [class*="border-gray-200"][class*="dark:border-slate-700"],
+html:not(.dark) [class*="border-gray-200"][class*="dark:border-slate-700"] {
+  border-color: #e5e7eb !important;
+}
+
+html.light .border-gray-50.dark\:border-slate-700,
+html:not(.dark) .border-gray-50.dark\:border-slate-700,
+html.light [class*="border-gray-50"][class*="dark:border-slate-700"],
+html:not(.dark) [class*="border-gray-50"][class*="dark:border-slate-700"] {
+  border-color: #f9fafb !important;
+}
+
+html.light .bg-blue-50.dark\:bg-blue-500\/40,
+html:not(.dark) .bg-blue-50.dark\:bg-blue-500\/40,
+html.light [class*="bg-blue-50"][class*="dark:bg-blue-500"],
+html:not(.dark) [class*="bg-blue-50"][class*="dark:bg-blue-500"] {
+  background-color: #eff6ff !important;
+}
+
+html.light .text-blue-700.dark\:text-white,
+html:not(.dark) .text-blue-700.dark\:text-white,
+html.light [class*="text-blue-700"][class*="dark:text-white"],
+html:not(.dark) [class*="text-blue-700"][class*="dark:text-white"] {
+  color: #1d4ed8 !important;
+}
+
+html.light .border-blue-100.dark\:border-blue-400\/30,
+html:not(.dark) .border-blue-100.dark\:border-blue-400\/30,
+html.light [class*="border-blue-100"][class*="dark:border-blue-400"],
+html:not(.dark) [class*="border-blue-100"][class*="dark:border-blue-400"] {
+  border-color: #dbeafe !important;
+}
+
+html.light .bg-white.dark\:bg-slate-900,
+html:not(.dark) .bg-white.dark\:bg-slate-900,
+html.light [class*="bg-white"][class*="dark:bg-slate-900"],
+html:not(.dark) [class*="bg-white"][class*="dark:bg-slate-900"] {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-white.dark\:bg-slate-800\/80,
+html:not(.dark) .bg-white.dark\:bg-slate-800\/80,
+html.light [class*="bg-white"][class*="dark:bg-slate-800"],
+html:not(.dark) [class*="bg-white"][class*="dark:bg-slate-800"] {
+  background-color: #ffffff !important;
+}
+
+html.light .border-gray-100.dark\:border-slate-700,
+html:not(.dark) .border-gray-100.dark\:border-slate-700,
+html.light [class*="border-gray-100"][class*="dark:border-slate-700"],
+html:not(.dark) [class*="border-gray-100"][class*="dark:border-slate-700"] {
+  border-color: #f3f4f6 !important;
+}
+
+html.light .text-gray-500.dark\:text-gray-300,
+html:not(.dark) .text-gray-500.dark\:text-gray-300,
+html.light [class*="text-gray-500"][class*="dark:text-gray-300"],
+html:not(.dark) [class*="text-gray-500"][class*="dark:text-gray-300"] {
+  color: #6b7280 !important;
+}
+
+html.light .text-gray-600.dark\:text-gray-400,
+html:not(.dark) .text-gray-600.dark\:text-gray-400,
+html.light [class*="text-gray-600"][class*="dark:text-gray-400"],
+html:not(.dark) [class*="text-gray-600"][class*="dark:text-gray-400"] {
+  color: #4b5563 !important;
+}
+
+html.light .text-gray-900.dark\:text-white,
+html:not(.dark) .text-gray-900.dark\:text-white,
+html.light h2[class*="text-gray-900"][class*="dark:text-white"],
+html:not(.dark) h2[class*="text-gray-900"][class*="dark:text-white"] {
+  color: #111827 !important;
+}
+
+html.light .text-gray-600.dark\:text-gray-400,
+html:not(.dark) .text-gray-600.dark\:text-gray-400,
+html.light p[class*="text-gray-600"][class*="dark:text-gray-400"],
+html:not(.dark) p[class*="text-gray-600"][class*="dark:text-gray-400"] {
+  color: #4b5563 !important;
+}
+
+html.light .border-gray-100.dark\:border-slate-700,
+html:not(.dark) .border-gray-100.dark\:border-slate-700,
+html.light div[class*="border-gray-100"][class*="dark:border-slate-700"],
+html:not(.dark) div[class*="border-gray-100"][class*="dark:border-slate-700"] {
+  border-color: #f3f4f6 !important;
+}
+
+html.light .from-blue-50.dark\:from-slate-900,
+html:not(.dark) .from-blue-50.dark\:from-slate-900,
+html.light [class*="from-blue-50"][class*="dark:from-slate-900"],
+html:not(.dark) [class*="from-blue-50"][class*="dark:from-slate-900"] {
+  --tw-gradient-from: #eff6ff !important;
+}
+
+html.light .to-white.dark\:to-slate-950,
+html:not(.dark) .to-white.dark\:to-slate-950,
+html.light [class*="to-white"][class*="dark:to-slate-950"],
+html:not(.dark) [class*="to-white"][class*="dark:to-slate-950"] {
+  --tw-gradient-to: #ffffff !important;
+}
+
+html.light .from-white.dark\:from-slate-950,
+html:not(.dark) .from-white.dark\:from-slate-950,
+html.light [class*="from-white"][class*="dark:from-slate-950"],
+html:not(.dark) [class*="from-white"][class*="dark:from-slate-950"] {
+  --tw-gradient-from: #ffffff !important;
+}
+
+/* Force light mode for Team Stats section background */
+html.light section.bg-white.dark\:bg-slate-900,
+html:not(.dark) section.bg-white.dark\:bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+html.light section .bg-blue-100.dark\:bg-blue-900\/50,
+html:not(.dark) section .bg-blue-100.dark\:bg-blue-900\/50 {
+  background-color: #dbeafe !important;
+}
+
+html.light section .bg-emerald-100.dark\:bg-emerald-900\/50,
+html:not(.dark) section .bg-emerald-100.dark\:bg-emerald-900\/50 {
+  background-color: #d1fae5 !important;
+}
+
+html.light section .dark\:mix-blend-screen,
+html:not(.dark) section .dark\:mix-blend-screen {
+  mix-blend-mode: multiply !important;
+}
+
+html.light section .dark\:opacity-20,
+html:not(.dark) section .dark\:opacity-20 {
+  opacity: 0.3 !important;
+}
+
+/* Force light mode for Testimonial section background gradient */
+html.light section.bg-gradient-to-b.from-blue-50.to-white.dark\:from-slate-900.dark\:to-slate-950,
+html:not(.dark) section.bg-gradient-to-b.from-blue-50.to-white.dark\:from-slate-900.dark\:to-slate-950 {
+  background-image: linear-gradient(to bottom, #eff6ff, #ffffff) !important;
+}
+
+html.light section .from-blue-50.dark\:from-slate-900,
+html:not(.dark) section .from-blue-50.dark\:from-slate-900 {
+  --tw-gradient-from: #eff6ff !important;
+}
+
+html.light section .to-white.dark\:to-slate-950,
+html:not(.dark) section .to-white.dark\:to-slate-950 {
+  --tw-gradient-to: #ffffff !important;
+}
+
+html.light section .from-white.dark\:from-slate-950,
+html:not(.dark) section .from-white.dark\:from-slate-950 {
+  --tw-gradient-from: #ffffff !important;
+}

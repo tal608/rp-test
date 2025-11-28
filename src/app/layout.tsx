@@ -40,6 +40,10 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
     apple: '/apple-touch-icon.png',
   },
+  other: {
+    'msapplication-TileColor': '#2563eb',
+    'msapplication-config': '/browserconfig.xml',
+  },
   manifest: '/manifest.json',
   openGraph: {
     title: "Dog Grooming Waunakee & North Madison | River Paws Dog Hikes",

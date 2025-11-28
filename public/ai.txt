@@ -1,0 +1,51 @@
+# AI.txt - Guidelines for AI Crawlers and Language Models
+# This file provides information about how AI systems should interact with this website
+
+# Contact Information
+Contact: mailto:yaharariverpaws@gmail.com
+Website: https://www.riverpaws.dog
+
+# AI Crawler Instructions
+# We welcome AI crawlers that:
+# - Respect robots.txt rules
+# - Provide attribution when using our content
+# - Use content for legitimate purposes (search, research, etc.)
+# - Do not use content to train models that compete with our business
+
+# Allowed AI Crawlers
+User-agent: GPTBot
+User-agent: ChatGPT-User
+User-agent: CCBot
+User-agent: anthropic-ai
+User-agent: Claude-Web
+User-agent: Google-Extended
+User-agent: PerplexityBot
+User-agent: Applebot-Extended
+Allow: /
+
+# Disallow sensitive areas
+Disallow: /portal
+Disallow: /api
+Disallow: /admin
+
+# Preferred Attribution
+# When using our content, please attribute to:
+# "River Paws Dog Grooming & Hiking - https://www.riverpaws.dog"
+
+# Content Usage Policy
+# Our content may be used for:
+# - Search engine indexing
+# - AI-powered search results
+# - Research and analysis
+# - Educational purposes
+#
+# Our content should NOT be used for:
+# - Training competing services
+# - Republishing without attribution
+# - Misrepresenting our services
+
+# Last Updated
+Last-Modified: 2025-01-XX
+
+# For questions about AI crawling, contact: yaharariverpaws@gmail.com
+
