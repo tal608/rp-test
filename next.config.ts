@@ -4,7 +4,8 @@ const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    // Optimized for Polaroid hero sizes: 100, 120, 140 (mobile) + 240, 280, 320 (desktop)
+    imageSizes: [16, 32, 48, 64, 96, 100, 120, 140, 160, 200, 240, 280, 320, 384],
   },
   // Enable compression
   compress: true,

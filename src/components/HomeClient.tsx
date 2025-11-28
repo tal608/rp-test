@@ -94,14 +94,14 @@ const heroImages = [
     position: { x: "78%", y: "75%" },
     delay: 10.5
   },
-  // TOP & BOTTOM CENTER (pushed to extremes)
+  // BOTTOM CENTER (both pushed to bottom to keep top clear for text)
   {
     src: "/Hiking/confident-mixed-pack-dog-hiking-waunakee-wi-river-paws.jpg",
     alt: "Mixed pack socializing thriving on purpose-built wilderness trails at River Paws' exclusive facility in Waunakee, Wisconsin",
     caption: "Wilderness Fun",
     rotation: -3,
     size: "medium" as const,
-    position: { x: "38%", y: "0%" },
+    position: { x: "55%", y: "80%" },
     delay: 12
   },
   {
@@ -110,7 +110,7 @@ const heroImages = [
     caption: "Best Friends",
     rotation: 4,
     size: "large" as const,
-    position: { x: "35%", y: "82%" },
+    position: { x: "25%", y: "82%" },
     delay: 13.5
   }
 ];
@@ -214,22 +214,21 @@ export default function HomeClient() {
                 </div>
               );
             })}
-            {/* Mobile: Show fewer, smaller Polaroids - positioned at corners/edges */}
-            {heroImages.slice(0, Math.min(loadedImages, 6)).map((image, index) => {
+            {/* Mobile: Show only 4 small Polaroids at corners - keeps center clear */}
+            {heroImages.slice(0, Math.min(loadedImages, 4)).map((image, index) => {
+              // Smaller sizes for mobile to not crowd the screen
               const mobileSizeMap = {
-                large: { width: 140, height: 140 },
-                medium: { width: 120, height: 120 },
-                small: { width: 100, height: 100 }
+                large: { width: 110, height: 110 },
+                medium: { width: 100, height: 100 },
+                small: { width: 90, height: 90 }
               };
               const mobileSize = mobileSizeMap[image.size];
-              // Corner-focused positions to keep center clear for text
+              // Only 4 positions - corners only, pushed to edges
               const mobilePositions = [
-                { x: "2%", y: "5%", rotation: -2 },     // Top-left corner
-                { x: "70%", y: "8%", rotation: 3 },    // Top-right corner
-                { x: "2%", y: "72%", rotation: -4 },   // Bottom-left corner
-                { x: "68%", y: "74%", rotation: 2 },   // Bottom-right corner
-                { x: "72%", y: "40%", rotation: -3 },  // Right edge, middle
-                { x: "2%", y: "38%", rotation: 4 }     // Left edge, middle
+                { x: "3%", y: "8%", rotation: -3 },     // Top-left corner
+                { x: "68%", y: "10%", rotation: 4 },    // Top-right corner
+                { x: "5%", y: "75%", rotation: -4 },    // Bottom-left corner
+                { x: "65%", y: "77%", rotation: 3 },    // Bottom-right corner
               ];
               const mobilePos = mobilePositions[index] || image.position;
               
@@ -241,7 +240,7 @@ export default function HomeClient() {
                     left: mobilePos.x,
                     top: mobilePos.y,
                     width: `${mobileSize.width}px`,
-                    height: `${mobileSize.height + 50}px`,
+                    height: `${mobileSize.height + 35}px`,
                     '--rotation': `${mobilePos.rotation}deg`,
                     zIndex: 10 + index,
                     animationDelay: `${index * 1.5}s`
@@ -298,7 +297,7 @@ export default function HomeClient() {
                 <span className="text-sm font-medium text-gray-700">Trusted by 2000+ Local Families Since 2017</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight px-2">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight px-2">
                 {/* LCP element - prioritized but animated */}
                 <span className="block text-white text-shadow-hero animate-fadeInUp">Every Tail Wags</span>
                 <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent relative inline-block animate-fadeInUp-delay-400">
@@ -307,12 +306,12 @@ export default function HomeClient() {
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent blur-xl opacity-50 animate-pulse"></span>
                 </span>
-                <span className="block text-xl sm:text-2xl md:text-3xl mt-6 font-medium text-blue-100 text-shadow-md animate-fadeInUp-delay-600">
+                <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 sm:mt-6 font-medium text-blue-100 text-shadow-md animate-fadeInUp-delay-600">
                   for River Paws Dog Grooming & Hiking
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white max-w-3xl mx-auto animate-fadeInUp-delay-600 px-4 mt-8 text-shadow-md">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto animate-fadeInUp-delay-600 px-4 mt-6 text-shadow-md">
                 Professional grooming & adventure-filled hiking.
                 <span className="block mt-2">Your dog&apos;s happiness is our mission.</span>
               </p>
