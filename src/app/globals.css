@@ -448,6 +448,19 @@ html.dark .hero-gradient-overlay-secondary,
   ) !important;
 }
 
+/* Ensure blog hero image stays visible in dark mode */
+html.dark section[class*="h-screen"] > div[class*="absolute"][class*="inset-0"][class*="z-0"],
+:root.dark section[class*="h-screen"] > div[class*="absolute"][class*="inset-0"][class*="z-0"] {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html.dark section[class*="h-screen"] > div[class*="absolute"][class*="inset-0"][class*="z-0"] img,
+:root.dark section[class*="h-screen"] > div[class*="absolute"][class*="inset-0"][class*="z-0"] img {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
 /* Special Packages card - consistent colors in light and dark mode */
 .special-packages-title {
   color: #1f2937 !important;
@@ -1206,20 +1219,11 @@ html.dark div[class*="bg-gradient-to-br"][class*="from-blue-600/20"][class*="via
   background: linear-gradient(to bottom right, rgba(37, 99, 235, 0.2), transparent, rgba(13, 148, 136, 0.2)) !important;
 }
 
-/* Generic hero overlay preservations for other pages */
-html.dark div[class*="from-blue-900"][class*="/60"],
-html.dark div[class*="via-emerald-800"][class*="/50"],
-html.dark div[class*="to-teal-900"][class*="/60"],
-html.dark div[class*="from-blue-900"][class*="/70"],
-html.dark div[class*="to-teal-900"][class*="/70"],
-html.dark section[class*="from-blue-900"][class*="/60"],
-html.dark section[class*="via-emerald-800"][class*="/50"],
-html.dark section[class*="to-teal-900"][class*="/60"],
-html.dark section[class*="from-emerald-900"][class*="/70"],
-html.dark section[class*="to-emerald-900"][class*="/70"] {
-  --tw-gradient-from: rgba(30, 58, 138, var(--tw-gradient-from-opacity, 1)) !important;
-  --tw-gradient-via: rgba(6, 95, 70, var(--tw-gradient-via-opacity, 1)) !important;
-  --tw-gradient-to: rgba(19, 78, 74, var(--tw-gradient-to-opacity, 1)) !important;
+/* Generic hero overlay preservations for other pages - preserve opacity modifiers */
+/* Blog hero uses: from-blue-900/70 via-blue-900/60 to-teal-900/70 */
+html.dark .bg-gradient-to-br[class*="from-blue-900/70"][class*="via-blue-900/60"][class*="to-teal-900/70"],
+html.dark div[class*="from-blue-900/70"][class*="via-blue-900/60"][class*="to-teal-900/70"] {
+  background: linear-gradient(to bottom right, rgba(30, 58, 138, 0.7), rgba(30, 58, 138, 0.6), rgba(19, 78, 74, 0.7)) !important;
 }
 
 /* Fix light gradient backgrounds for dark mode readability */
