@@ -219,7 +219,7 @@ export default function DogGroomingMiddleton() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <strong className="text-gray-900">Expert care</strong> - 2000+ families trust us as their best dog groomer in Middleton with over 7 years serving the community
+                    <strong className="text-gray-900">Expert care</strong> - 2000+ families trust us as their best dog groomer in Middleton with over 8 years serving the community
                   </div>
                 </li>
                 <li className="flex items-start">

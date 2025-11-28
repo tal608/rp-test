@@ -252,7 +252,7 @@ export default function DogGroomingDeForest() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <strong className="text-gray-900">Expert care</strong> - 2000+ families trust us as their best dog groomer in DeForest with over 7 years serving the Cherokee Marsh community
+                    <strong className="text-gray-900">Expert care</strong> - 2000+ families trust us as their best dog groomer in DeForest with over 8 years serving the Cherokee Marsh community
                   </div>
                 </li>
                 <li className="flex items-start">

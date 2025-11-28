@@ -198,11 +198,11 @@ export default function DogHikes() {
 
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-teal-50 rounded-xl">
-                  <div className="text-3xl font-bold text-blue-600 mb-2">3000+</div>
-                  <div className="text-sm text-gray-600">Happy Hikers</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">Hundreds</div>
+                  <div className="text-sm text-gray-600">of Tail-Wagging Adventures</div>
                 </div>
                 <div className="text-center p-6 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl">
-                  <div className="text-3xl font-bold text-emerald-600 mb-2">7</div>
+                  <div className="text-3xl font-bold text-emerald-600 mb-2">8</div>
                   <div className="text-sm text-gray-600">Years of Adventures</div>
                 </div>
               </div>

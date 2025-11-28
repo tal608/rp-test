@@ -201,7 +201,7 @@ export default function DogGroomingSunPrairie() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <strong className="text-gray-900">Expert care</strong> - 2000+ families trust us as their best dog groomer in Sun Prairie with over 7 years serving the Cherokee Marsh community
+                    <strong className="text-gray-900">Expert care</strong> - 2000+ families trust us as their best dog groomer in Sun Prairie with over 8 years serving the Cherokee Marsh community
                   </div>
                 </li>
               </ul>

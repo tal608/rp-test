@@ -328,7 +328,7 @@ export default function Caretakers() {
               {[
                 {
                   title: "25+ Years Combined Grooming Experience",
-                  description: "Kelly brings 17 years, Stephanie has 7+ years including owning her own salon, plus years of additional team expertise",
+                  description: "Kelly brings 17 years, Stephanie has 8+ years including owning her own salon, plus years of additional team expertise",
                   icon: (
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   )
