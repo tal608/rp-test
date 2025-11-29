@@ -447,12 +447,18 @@ export default function DogGrooming() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Full Body Groom</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Full Service Groom</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Complete professional grooming experience with everything your dog needs
                 for optimal health, comfort, and style.
               </p>
               <ul className="space-y-3 text-sm text-gray-700">
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Full Body Haircut
+                </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -482,12 +488,6 @@ export default function DogGrooming() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   Ear Cleaning
-                </li>
-                <li className="flex items-center">
-                  <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  Full Body Haircut
                 </li>
               </ul>
             </div>

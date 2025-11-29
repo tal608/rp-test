@@ -216,26 +216,28 @@ export default function HomeClient() {
                 </div>
               );
             })}
-            {/* Mobile: Show only 2 small Polaroids at top corners - minimal intrusion */}
-            {heroImages.slice(0, Math.min(loadedImages, 2)).map((image, index) => {
-              // Much smaller sizes for mobile
-              const mobileSize = { width: 70, height: 70 };
-              // Only 2 positions - top corners, very edge, partially off-screen
+            {/* Mobile: Show 4 small Polaroids - 2 at top, 2 at very bottom near scroll arrow */}
+            {heroImages.slice(0, Math.min(loadedImages, 4)).map((image, index) => {
+              // Smaller sizes for mobile
+              const mobileSize = { width: 80, height: 80 };
+              // 4 positions - 2 at top (visible), 2 at very bottom near scroll indicator
               const mobilePositions = [
-                { x: "-8%", y: "12%", rotation: -8 },    // Top-left, partially off-screen
-                { x: "78%", y: "14%", rotation: 8 },     // Top-right, partially off-screen
+                { x: "5%", y: "10%", rotation: -5 },     // Top-left, more visible
+                { x: "70%", y: "8%", rotation: 5 },      // Top-right
+                { x: "2%", y: "88%", rotation: -4 },     // Bottom-left, by scroll arrow
+                { x: "72%", y: "86%", rotation: 4 },     // Bottom-right, by scroll arrow
               ];
               const mobilePos = mobilePositions[index] || { x: "0%", y: "0%", rotation: 0 };
               
               return (
                 <div
                   key={`mobile-${image.src}`}
-                  className={`polaroid-frame ${index < loadedImages ? 'visible polaroid-enter' : ''} block sm:hidden opacity-70`}
+                  className={`polaroid-frame ${index < loadedImages ? 'visible polaroid-enter' : ''} polaroid-float block sm:hidden`}
                   style={{
                     left: mobilePos.x,
                     top: mobilePos.y,
                     width: `${mobileSize.width}px`,
-                    height: `${mobileSize.height + 25}px`,
+                    height: `${mobileSize.height + 30}px`,
                     '--rotation': `${mobilePos.rotation}deg`,
                     zIndex: 4,
                     animationDelay: `${index * 1.5}s`
@@ -250,8 +252,11 @@ export default function HomeClient() {
                       className="object-cover"
                       style={{ objectPosition: getImageObjectPosition(image.src) }}
                       sizes={`${mobileSize.width}px`}
-                      quality={60}
+                      quality={70}
                     />
+                  </div>
+                  <div className="polaroid-caption text-xs">
+                    {image.caption}
                   </div>
                 </div>
               );
@@ -783,16 +788,32 @@ export default function HomeClient() {
                     <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                     <div className="relative z-10">
                       <h3 className="font-bold text-lg text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Core Services</h3>
-                      <ul className="space-y-3">
-                        {["Bath & Brush", "Full Service Groom"].map((service, idx) => (
-                          <li key={idx} className="flex items-center text-gray-700">
-                            <svg className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            <span className="font-medium">{service}</span>
-                          </li>
-                        ))}
-                      </ul>
+                      
+                      {/* Bath & Brush */}
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-gray-800 mb-2">Bath & Brush</h4>
+                        <ul className="space-y-1 text-sm text-gray-600 ml-2">
+                          {["Bath (Premium Shampoo & Conditioning)", "Blow Out", "Brush Out", "Nail Trim", "Ear Cleaning"].map((item, idx) => (
+                            <li key={idx} className="flex items-center">
+                              <span className="w-1 h-1 bg-blue-500 rounded-full mr-2 flex-shrink-0"></span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      
+                      {/* Full Service Groom */}
+                      <div>
+                        <h4 className="font-semibold text-gray-800 mb-2">Full Service Groom</h4>
+                        <ul className="space-y-1 text-sm text-gray-600 ml-2">
+                          {["Full Body Haircut", "Bath (Premium Shampoo & Conditioning)", "Blow Out", "Brush Out", "Nail Trim", "Ear Cleaning"].map((item, idx) => (
+                            <li key={idx} className="flex items-center">
+                              <span className="w-1 h-1 bg-teal-500 rounded-full mr-2 flex-shrink-0"></span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
 
