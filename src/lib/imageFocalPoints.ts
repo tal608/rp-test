@@ -15,7 +15,7 @@ const focalPointMap: Record<string, { x: number; y: number }> = {
   'freshly-groomed-doodle-salon-waunakee-wi-river-paws.jpg': { x: 50, y: 40 },
   'freshly-groomed-doodle-mix-grooming-waunakee-wi-river-paws.jpg': { x: 50, y: 40 },
   // Goldendoodle images
-  'freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg': { x: 50, y: 40 },  
+  'freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg': { x: 50, y: 25 },  
   // Spaniel/Bath images
   'pampered-spaniel-bath-waunakee-wi-river-paws.jpg': { x: 50, y: 40 },  
   // Husky images

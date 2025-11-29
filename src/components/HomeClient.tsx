@@ -116,9 +116,7 @@ const heroImages = [
 ];
 
 export default function HomeClient() {
-  const [selectedService, setSelectedService] = useState<'grooming' | 'hiking'>('grooming');
   const [isVisible, setIsVisible] = useState(false);
-  const [cardHover, setCardHover] = useState<number | null>(null);
   const [loadedImages, setLoadedImages] = useState(1);
   const heroRef = useRef<HTMLDivElement>(null);
   const serviceSectionRef = useRef<HTMLDivElement>(null);
@@ -660,313 +658,176 @@ export default function HomeClient() {
         </div>
       </section>
 
-        {/* Services Section with Pricing */}
-        <section ref={serviceSectionRef} className={`py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-gradient-to-b from-white to-blue-50 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">Our Services</h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 px-4">Transparent pricing, exceptional care</p>
+        {/* Services Section - Two Polaroid Cards */}
+        <section ref={serviceSectionRef} className={`py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-b from-white to-blue-50 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-12 sm:mb-16 md:mb-20">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Services</h2>
+              <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">Two ways to make tails wag</p>
             </div>
 
-            {/* Service Toggle */}
-            <div className="flex justify-center mb-12">
-              <div className="relative bg-white rounded-full shadow-lg p-1 flex backdrop-blur-sm border border-white/50">
-                <div 
-                  className={`absolute top-1 bottom-1 rounded-full bg-gradient-to-r from-blue-600 to-teal-500 transition-all duration-500 ease-out shadow-lg ${
-                    selectedService === 'grooming' ? 'left-1 w-[calc(50%-0.25rem)]' : 'left-[calc(50%+0.25rem)] w-[calc(50%-0.25rem)]'
-                  }`}
-                />
-                <button
-                  type="button"
-                  aria-label="Select grooming service"
-                  aria-pressed={selectedService === 'grooming'}
-                  onClick={() => setSelectedService('grooming')}
-                  className={`relative z-10 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                    selectedService === 'grooming'
-                      ? 'text-white'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                >
-                  Grooming Services
-                </button>
-                <button
-                  type="button"
-                  aria-label="Select hiking service"
-                  aria-pressed={selectedService === 'hiking'}
-                  onClick={() => setSelectedService('hiking')}
-                  className={`relative z-10 px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                    selectedService === 'hiking'
-                      ? 'text-white'
-                      : 'text-gray-600 hover:text-gray-800'
-                  }`}
-                >
-                  Adventure Hikes
-                </button>
-              </div>
-            </div>
-
-            {/* Services Display */}
-            {selectedService === 'grooming' ? (
-              <div className="space-y-8">
-                {/* Pricing Explanation Header */}
-                <div className="text-center max-w-2xl mx-auto">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Transparent, Fair Pricing</h3>
-                  <p className="text-gray-600">
-                    Our base grooming prices are based on <span className="font-semibold text-blue-600">your dog&apos;s weight</span> + <span className="font-semibold text-teal-600">coat type</span>. 
-                    This ensures you only pay for the time and care your pup actually needs.
-                  </p>
-                </div>
-
-                {/* How We Price */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* Weight Groups Card */}
-                  <div className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-teal-50/0 to-blue-50/0 group-hover:from-blue-50/50 group-hover:via-teal-50/30 group-hover:to-blue-50/50 transition-all duration-500"></div>
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center mb-4">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl flex items-center justify-center mr-3">
-                          <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                          </svg>
-                        </div>
-                        <h3 className="font-bold text-lg text-gray-800 group-hover:text-blue-600 transition-colors">Step 1: Weight Group</h3>
-                      </div>
-                      <p className="text-gray-600 text-sm mb-4">First, we determine your dog&apos;s weight category:</p>
-                      <div className="grid grid-cols-2 gap-2">
-                        {[
-                          { name: "Extra Small", weight: "9-10 lbs" },
-                          { name: "Small", weight: "11-30 lbs" },
-                          { name: "Medium", weight: "31-60 lbs" },
-                          { name: "Large", weight: "61-90 lbs" },
-                          { name: "Extra Large", weight: "91-120 lbs" },
-                          { name: "Giant", weight: "121+ lbs" }
-                        ].map((group, idx) => (
-                          <div key={idx} className="flex items-center text-sm">
-                            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-                            <span className="text-gray-700 font-medium">{group.name}</span>
-                            <span className="text-gray-500 ml-1">({group.weight})</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Coat Types Card */}
-                  <div className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-teal-50/0 to-blue-50/0 group-hover:from-blue-50/50 group-hover:via-teal-50/30 group-hover:to-blue-50/50 transition-all duration-500"></div>
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center mb-4">
-                        <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl flex items-center justify-center mr-3">
-                          <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                          </svg>
-                        </div>
-                        <h3 className="font-bold text-lg text-gray-800 group-hover:text-blue-600 transition-colors">Step 2: Coat Type</h3>
-                      </div>
-                      <p className="text-gray-600 text-sm mb-4">Then, we factor in your dog&apos;s coat complexity:</p>
-                      <div className="space-y-3">
-                        <div className="rounded-lg p-3 shadow-sm" style={{ backgroundColor: 'rgb(219, 234, 254)', border: '1px solid rgb(191, 219, 254)' }}>
-                          <span className="font-semibold text-sm block mb-1" style={{ color: '#1e3a8a' }}>Basic Coat</span>
-                          <span className="text-sm" style={{ color: '#1e40af' }}>Hairless, Smooth, Short, Medium</span>
-                        </div>
-                        <div className="rounded-lg p-3 shadow-sm" style={{ backgroundColor: 'rgb(204, 251, 241)', border: '1px solid rgb(153, 246, 228)' }}>
-                          <span className="font-semibold text-sm block mb-1" style={{ color: '#134e4a' }}>Thick Coat</span>
-                          <span className="text-sm" style={{ color: '#0f766e' }}>Corded, Wire, Double, Curly, Long</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Services & Add-ons */}
-                <div className="grid md:grid-cols-3 gap-6">
-                  {/* Core Services */}
-                  <div className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-teal-50/0 to-blue-50/0 group-hover:from-blue-50/50 group-hover:via-teal-50/30 group-hover:to-blue-50/50 transition-all duration-500"></div>
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div className="relative z-10">
-                      <h3 className="font-bold text-lg text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Core Services</h3>
-                      
-                      {/* Bath & Brush */}
-                      <div className="mb-4">
-                        <h4 className="font-semibold text-gray-800 mb-2">Bath & Brush</h4>
-                        <ul className="space-y-1 text-sm text-gray-600 ml-2">
-                          {["Bath (Premium Shampoo & Conditioning)", "Blow Out", "Brush Out", "Nail Trim", "Ear Cleaning"].map((item, idx) => (
-                            <li key={idx} className="flex items-center">
-                              <span className="w-1 h-1 bg-blue-500 rounded-full mr-2 flex-shrink-0"></span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      
-                      {/* Full Service Groom */}
-                      <div>
-                        <h4 className="font-semibold text-gray-800 mb-2">Full Service Groom</h4>
-                        <ul className="space-y-1 text-sm text-gray-600 ml-2">
-                          {["Full Body Haircut", "Bath (Premium Shampoo & Conditioning)", "Blow Out", "Brush Out", "Nail Trim", "Ear Cleaning"].map((item, idx) => (
-                            <li key={idx} className="flex items-center">
-                              <span className="w-1 h-1 bg-teal-500 rounded-full mr-2 flex-shrink-0"></span>
-                              {item}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Add-ons */}
-                  <div className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-teal-50/0 to-blue-50/0 group-hover:from-blue-50/50 group-hover:via-teal-50/30 group-hover:to-blue-50/50 transition-all duration-500"></div>
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div className="relative z-10">
-                      <h3 className="font-bold text-lg text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Add-Ons & À La Carte</h3>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start text-gray-600">
-                          <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
-                          <span>Pawdicure <span className="text-xs text-gray-500">(Nail Trim, Nail Grind, Ear Cleaning)</span></span>
-                        </li>
-                        {[
-                          "Nail Trim",
-                          "Nail Grind",
-                          "Teeth Brushing",
-                          "Anal Gland Expression",
-                          "Sanitary Trim",
-                          "Extra Handling / Care"
-                        ].map((addon, idx) => (
-                          <li key={idx} className="flex items-center text-gray-600">
-                            <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 flex-shrink-0"></span>
-                            {addon}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Specials */}
-                  <div className="group relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden special-packages-card">
-                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-50/0 via-orange-50/0 to-yellow-50/0 group-hover:from-yellow-50/50 group-hover:via-orange-50/30 group-hover:to-yellow-50/50 dark:group-hover:from-yellow-900/20 dark:group-hover:via-orange-900/15 dark:group-hover:to-yellow-900/20 transition-all duration-500"></div>
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-yellow-500 via-orange-500 to-yellow-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div className="relative z-10">
-                      <div className="flex items-center mb-4">
-                        <span className="text-xl mr-2">✨</span>
-                        <h3 className="font-bold text-lg group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors special-packages-title">Special Packages</h3>
-                      </div>
-                      <ul className="space-y-2">
-                        {[
-                          "Monthly Special",
-                          "Premium Special",
-                          "Deluxe Special",
-                          "Supreme Special"
-                        ].map((special, idx) => (
-                          <li key={idx} className="flex items-center special-packages-item">
-                            <svg className="w-4 h-4 mr-2 flex-shrink-0 special-packages-star" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
-                            <span className="font-medium text-sm">{special}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <p className="text-xs mt-3 special-packages-footer">Ask about current specials when booking!</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                  <Link
-                    href="/dog-grooming"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all duration-300 min-h-[44px]"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    Check Out Our Grooming Services
-                  </Link>
-                  <a
-                    href="https://booking.moego.pet/ol/RiverPaws/book"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 min-h-[44px]"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    Book Now
-                  </a>
-                </div>
-              </div>
-            ) : (
-              <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                {[
-                  { type: "Group Adventure", price: "$45", features: ["1-1.5 hours on trail", "Small group (4-6 dogs)", "Transport included", "Socialization focused"] },
-                  { type: "Private Hike", price: "$55", features: ["45 minutes on trail", "One-on-one attention", "Custom pace & route", "Ideal for non-social or recall challenged dogs"] }
-                ].map((tier, index) => (
-                  <div 
-                    key={index} 
-                    className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden"
-                    onMouseEnter={() => setCardHover(index + 10)}
-                    onMouseLeave={() => setCardHover(null)}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/0 via-teal-50/0 to-emerald-50/0 group-hover:from-emerald-50/50 group-hover:via-teal-50/30 group-hover:to-emerald-50/50 transition-all duration-500"></div>
-                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                    <div className="relative z-10">
-                      <h3 className="font-bold text-2xl text-gray-800 mb-2 group-hover:text-emerald-600 transition-colors duration-300">{tier.type}</h3>
-                      <p className="text-3xl font-bold text-blue-600 mb-6 group-hover:scale-110 inline-block transition-transform duration-300">{tier.price}</p>
-                      <ul className="space-y-3">
-                        {tier.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-gray-700 group-hover:text-gray-800 transition-colors">
-                            <svg className="w-5 h-5 text-green-500 mr-3 group-hover:scale-125 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                            </svg>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                      <Link
-                        href="/contact"
-                        className="block w-full mt-6 px-6 py-3 bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-600 text-white rounded-full font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-300 relative overflow-hidden group/btn min-h-[44px] text-center"
-                        >
-                          <span className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-600 bg-[length:200%_100%] animate-gradient-shift"></span>
-                          <span className="relative z-10">Join Waitlist</span>
-                        </Link>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {/* Special Offer Banner */}
-            <div className="mt-8 sm:mt-12 relative bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center shadow-xl overflow-hidden group">
-              {/* Animated Blobs Background */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute top-[-20%] right-[-20%] w-[80%] h-[80%] bg-blue-400 rounded-full filter blur-[50px] opacity-40 animate-blob-1"></div>
-                <div className="absolute bottom-[-20%] left-[-20%] w-[80%] h-[80%] bg-green-400 rounded-full filter blur-[50px] opacity-40 animate-blob-2"></div>
-                <div className="absolute top-[20%] left-[20%] w-[60%] h-[60%] bg-teal-400 rounded-full filter blur-[50px] opacity-40 animate-blob-3"></div>
-                <div className="absolute top-[-30%] right-[-10%] w-[50%] h-[50%] bg-green-400 rounded-full filter blur-[50px] opacity-40 animate-blob-1"></div>
-              </div>
+            {/* Two Polaroid Cards */}
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 max-w-5xl mx-auto">
               
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(255,255,255,0.1),transparent),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent)]"></div>
-              <div className="relative z-10">
-                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 drop-shadow-lg transform group-hover:scale-105 transition-transform duration-300">✨ New to River Paws?</h3>
-                <p className="text-white text-base sm:text-lg mb-4 drop-shadow-md px-2">Experience the difference for yourself! Call us today to schedule your first appointment and discover why thousands of local families trust us with their beloved pets.</p>
-                <div className="flex flex-wrap justify-center gap-4 mt-6">
-                  {[
-                    "By appointment only",
-                    "Flexible scheduling",
-                    "Experienced professionals"
-                  ].map((feature, index) => (
-                    <div 
-                      key={index}
-                      className="bg-white/25 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/30 hover:bg-white/35 hover:border-white/50 transition-all duration-300 transform hover:scale-110 hover:-translate-y-1 cursor-default"
-                    >
-                      <p className="text-sm font-medium text-white drop-shadow-sm">{feature}</p>
+              {/* Grooming Polaroid Card */}
+              <div className="group">
+                <Link href="/dog-grooming" className="block">
+                  {/* Polaroid Frame */}
+                  <div className="relative bg-white p-3 pb-20 sm:p-4 sm:pb-24 rounded-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-rotate-1 group-hover:scale-[1.02]"
+                       style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)' }}>
+                    {/* Photo */}
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                      <Image
+                        src="/Grooming/freshly-groomed-pomeranian-grooming-waunakee-wi-river-paws.jpg"
+                        alt="Beautifully groomed Pomeranian at River Paws"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      {/* Subtle overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     </div>
-                  ))}
+                    
+                    {/* Handwritten Caption */}
+                    <div className="absolute bottom-4 sm:bottom-6 left-0 right-0 text-center">
+                      <p className="text-lg sm:text-xl text-gray-700 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
+                        Pampered & Beautiful ✨
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+                
+                {/* Service Info Below Polaroid */}
+                <div className="mt-6 sm:mt-8 text-center">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 flex items-center justify-center">
+                    <span className="text-2xl mr-2">🛁</span> Grooming
+                  </h3>
+                  <ul className="space-y-2 text-gray-600 mb-6">
+                    <li className="flex items-center justify-center">
+                      <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Bath & Brush
+                    </li>
+                    <li className="flex items-center justify-center">
+                      <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Full Service Groom
+                    </li>
+                    <li className="flex items-center justify-center">
+                      <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Add-Ons & Specials
+                    </li>
+                  </ul>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Link
+                      href="/dog-grooming"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    >
+                      Explore Grooming
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                    <a
+                      href="https://booking.moego.pet/ol/RiverPaws/book"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-blue-600 text-blue-600 rounded-full font-semibold hover:bg-blue-50 transform hover:scale-105 transition-all duration-300"
+                    >
+                      Book Now
+                    </a>
+                  </div>
                 </div>
               </div>
+
+              {/* Hiking Polaroid Card */}
+              <div className="group">
+                <Link href="/dog-hikes" className="block">
+                  {/* Polaroid Frame */}
+                  <div className="relative bg-white p-3 pb-20 sm:p-4 sm:pb-24 rounded-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:rotate-1 group-hover:scale-[1.02]"
+                       style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)' }}>
+                    {/* Photo */}
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                      <Image
+                        src="/Hiking/joyful-golden-retriever-wilderness-trails-waunakee-wi-river-paws.jpg"
+                        alt="Happy golden retriever on River Paws adventure hike"
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                      />
+                      {/* Subtle overlay on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    </div>
+                    
+                    {/* Handwritten Caption */}
+                    <div className="absolute bottom-4 sm:bottom-6 left-0 right-0 text-center">
+                      <p className="text-lg sm:text-xl text-gray-700 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
+                        Trail Buddies 🐾
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+                
+                {/* Service Info Below Polaroid */}
+                <div className="mt-6 sm:mt-8 text-center">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 flex items-center justify-center">
+                    <span className="text-2xl mr-2">🥾</span> Adventure Hikes
+                  </h3>
+                  <ul className="space-y-2 text-gray-600 mb-6">
+                    <li className="flex items-center justify-center">
+                      <svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Off-Leash Freedom
+                    </li>
+                    <li className="flex items-center justify-center">
+                      <svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Private Trails
+                    </li>
+                    <li className="flex items-center justify-center">
+                      <svg className="w-5 h-5 text-emerald-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      Small Group Adventures
+                    </li>
+                  </ul>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Link
+                      href="/dog-hikes"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-emerald-600 to-teal-500 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    >
+                      Learn About Hikes
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
+                    <Link
+                      href="/dog-hikes#waitlist"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-emerald-600 text-emerald-600 rounded-full font-semibold hover:bg-emerald-50 transform hover:scale-105 transition-all duration-300"
+                    >
+                      Join Waitlist
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Location Callout */}
+            <div className="mt-12 sm:mt-16 text-center">
+              <p className="text-gray-600 flex items-center justify-center flex-wrap gap-2">
+                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span>Conveniently located next to <strong>Yahara Heights Dog Park</strong></span>
+              </p>
             </div>
         </div>
       </section>
