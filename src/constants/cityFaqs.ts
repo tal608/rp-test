@@ -195,7 +195,7 @@ export const cityGroomingFaqs: Record<string, CityFAQ[]> = {
 <li><a href="/puppy-grooming" class="text-emerald-600 hover:text-emerald-700 font-medium underline">Puppy grooming</a> starting at 12 weeks</li>
 <li>Nail trimming and ear cleaning</li>
 <li>Bathing with premium, pet-safe products</li>
-<li>Walk-in appointments available</li>
+<li>By appointment only</li>
 <li>Post-dog park cleanup services</li>
 </ul>
 

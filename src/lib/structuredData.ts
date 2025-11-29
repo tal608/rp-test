@@ -241,7 +241,7 @@ export function getGroomingServiceSchema(): ServiceSchema {
       { "@type": "City", name: "Sun Prairie" },
     ],
     description:
-      "Professional dog grooming services including full-service grooming, nail trimming, breed-specific styling, and walk-in grooming options.",
+      "Professional dog grooming services including full-service grooming, nail trimming, and breed-specific styling. By appointment only.",
     url: "https://www.riverpaws.dog/dog-grooming",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
@@ -251,8 +251,7 @@ export function getGroomingServiceSchema(): ServiceSchema {
         { "@type": "Offer", name: "Bath & Brush" },
         { "@type": "Offer", name: "De-Shedding / Double-Coat" },
         { "@type": "Offer", name: "Puppy Groom" },
-        { "@type": "Offer", name: "Nail Trim / Pawdicure" },
-        { "@type": "Offer", name: "Walk-In Nail Trim" },
+        { "@type": "Offer", name: "Pawdicure (Nail Trim, Nail Grind, Ear Cleaning)" },
       ],
     },
   };

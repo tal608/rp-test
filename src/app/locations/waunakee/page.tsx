@@ -107,7 +107,7 @@ export default function WaunakeeLocationPage() {
                     <ul className="text-gray-600 space-y-1">
                       <li>• Full-service grooming</li>
                       <li>• Breed-specific styling</li>
-                      <li>• Walk-in appointments</li>
+                      <li>• By appointment only</li>
                       <li>• Nail trimming & ear cleaning</li>
                     </ul>
                     <Link

@@ -216,35 +216,28 @@ export default function HomeClient() {
                 </div>
               );
             })}
-            {/* Mobile: Show only 4 small Polaroids at corners - keeps center clear */}
-            {heroImages.slice(0, Math.min(loadedImages, 4)).map((image, index) => {
-              // Smaller sizes for mobile to not crowd the screen
-              const mobileSizeMap = {
-                large: { width: 110, height: 110 },
-                medium: { width: 100, height: 100 },
-                small: { width: 90, height: 90 }
-              };
-              const mobileSize = mobileSizeMap[image.size];
-              // Only 4 positions - corners only, pushed to edges
+            {/* Mobile: Show only 2 small Polaroids at top corners - minimal intrusion */}
+            {heroImages.slice(0, Math.min(loadedImages, 2)).map((image, index) => {
+              // Much smaller sizes for mobile
+              const mobileSize = { width: 70, height: 70 };
+              // Only 2 positions - top corners, very edge, partially off-screen
               const mobilePositions = [
-                { x: "3%", y: "8%", rotation: -3 },     // Top-left corner
-                { x: "68%", y: "10%", rotation: 4 },    // Top-right corner
-                { x: "5%", y: "75%", rotation: -4 },    // Bottom-left corner
-                { x: "65%", y: "77%", rotation: 3 },    // Bottom-right corner
+                { x: "-8%", y: "12%", rotation: -8 },    // Top-left, partially off-screen
+                { x: "78%", y: "14%", rotation: 8 },     // Top-right, partially off-screen
               ];
-              const mobilePos = mobilePositions[index] || image.position;
+              const mobilePos = mobilePositions[index] || { x: "0%", y: "0%", rotation: 0 };
               
               return (
                 <div
                   key={`mobile-${image.src}`}
-                  className={`polaroid-frame ${index < loadedImages ? 'visible polaroid-enter' : ''} block sm:hidden`}
+                  className={`polaroid-frame ${index < loadedImages ? 'visible polaroid-enter' : ''} block sm:hidden opacity-70`}
                   style={{
                     left: mobilePos.x,
                     top: mobilePos.y,
                     width: `${mobileSize.width}px`,
-                    height: `${mobileSize.height + 35}px`,
+                    height: `${mobileSize.height + 25}px`,
                     '--rotation': `${mobilePos.rotation}deg`,
-                    zIndex: 10 + index,
+                    zIndex: 4,
                     animationDelay: `${index * 1.5}s`
                   } as React.CSSProperties}
                 >
@@ -253,16 +246,12 @@ export default function HomeClient() {
                       src={image.src}
                       alt={image.alt}
                       fill
-                      priority={index === 0}
-                      loading={index === 0 ? "eager" : "lazy"}
+                      loading="lazy"
                       className="object-cover"
                       style={{ objectPosition: getImageObjectPosition(image.src) }}
                       sizes={`${mobileSize.width}px`}
-                      quality={index === 0 ? 85 : 75}
+                      quality={60}
                     />
-                  </div>
-                  <div className="polaroid-caption">
-                    {image.caption}
                   </div>
                 </div>
               );
@@ -393,7 +382,7 @@ export default function HomeClient() {
                 </a>
               </div>
               
-              <p className="mt-6 text-sm sm:text-base text-yellow-200 font-semibold animate-fadeInUp-delay-1000 drop-shadow-md">
+              <p className="mt-6 text-sm sm:text-base text-white font-semibold animate-fadeInUp-delay-1000 drop-shadow-lg">
                 Find professional dog grooming and hiking services near you!
               </p>
           </div>
@@ -814,11 +803,13 @@ export default function HomeClient() {
                     <div className="relative z-10">
                       <h3 className="font-bold text-lg text-gray-800 mb-4 group-hover:text-blue-600 transition-colors">Add-Ons & À La Carte</h3>
                       <ul className="space-y-2 text-sm">
+                        <li className="flex items-start text-gray-600">
+                          <span className="w-1.5 h-1.5 bg-teal-500 rounded-full mr-2 mt-1.5 flex-shrink-0"></span>
+                          <span>Pawdicure <span className="text-xs text-gray-500">(Nail Trim, Nail Grind, Ear Cleaning)</span></span>
+                        </li>
                         {[
-                          "Pawdicure",
                           "Nail Trim",
                           "Nail Grind",
-                          "Ear Cleaning",
                           "Teeth Brushing",
                           "Anal Gland Expression",
                           "Sanitary Trim",
@@ -942,7 +933,7 @@ export default function HomeClient() {
                 <p className="text-white text-base sm:text-lg mb-4 drop-shadow-md px-2">Experience the difference for yourself! Call us today to schedule your first appointment and discover why thousands of local families trust us with their beloved pets.</p>
                 <div className="flex flex-wrap justify-center gap-4 mt-6">
                   {[
-                    "Walk-in grooming available",
+                    "By appointment only",
                     "Flexible scheduling",
                     "Experienced professionals"
                   ].map((feature, index) => (

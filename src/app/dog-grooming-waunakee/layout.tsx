@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
   title: "Dog Grooming Waunakee | Dog Grooming in Waunakee, WI | River Paws Professional Grooming Services",
   description:
-    "Dog grooming Waunakee - Professional dog grooming services in Waunakee, Wisconsin. Expert groomers serving Waunakee families with full-service grooming, breed-specific styling, and walk-in appointments. Located at 5305 River Road.",
+    "Dog grooming Waunakee - Professional dog grooming services in Waunakee, Wisconsin. Expert groomers serving Waunakee families with full-service grooming and breed-specific styling. By appointment only. Located at 5305 River Road.",
   alternates: {
     canonical: "https://www.riverpaws.dog/dog-grooming-waunakee",
   },

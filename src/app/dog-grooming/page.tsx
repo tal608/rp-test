@@ -267,7 +267,7 @@ export default function DogGrooming() {
             </p>
           </div>
 
-          {/* Walk-In Info Banner */}
+          {/* Book Appointment Banner */}
           <div className="relative bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 text-white text-center mb-8 sm:mb-12 md:mb-16 overflow-hidden group">
             {/* Animated Blobs Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -279,10 +279,10 @@ export default function DogGrooming() {
             
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent)]"></div>
             <div className="relative z-10">
-              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 drop-shadow-lg">Walk-In Grooming Available</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4 drop-shadow-lg">Book Your Grooming Appointment</h3>
               <p className="text-lg mb-6 max-w-2xl mx-auto drop-shadow-md">
-                Walk-in services are available but not guaranteed. We recommend calling ahead to check availability
-                and schedule with your preferred groomer.
+                All grooming services are by appointment only. Call us or book online to schedule
+                your pup&apos;s next pampering session with your preferred groomer.
               </p>
               <div className="flex flex-wrap justify-center gap-6 text-sm">
                 <div className="flex items-center">
@@ -293,9 +293,9 @@ export default function DogGrooming() {
                 </div>
                 <div className="flex items-center">
                   <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                   </svg>
-                  <span>Call for hours and availability</span>
+                  <span>Appointments Only</span>
                 </div>
               </div>
             </div>
@@ -330,41 +330,36 @@ export default function DogGrooming() {
                 Individual grooming services for specific needs. Perfect for maintaining your dog&apos;s health
                 and appearance between full grooming sessions.
               </p>
-              <div className="mb-4 p-3 bg-yellow-50 border-l-4 border-yellow-400 rounded">
-                <p className="text-sm font-semibold text-gray-800">
-                  <strong>Walk-In Nail Trims Available</strong> - Call ahead to check availability!
-                </p>
-              </div>
               <ul className="space-y-3 text-sm text-gray-700">
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Walk-in nail trimming (call ahead)
+                  Pawdicure (Nail Trim, Nail Grind, Ear Cleaning)
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Teeth brushing & cleaning
+                  Nail Trim
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Ear cleaning & maintenance
+                  Nail Grind
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Anal gland expression
+                  Teeth Brushing
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Complete pawdicure
+                  Anal Gland Expression
                 </li>
               </ul>
             </div>
@@ -401,31 +396,31 @@ export default function DogGrooming() {
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Premium shampoo & conditioner bath
+                  Bath (Premium Shampoo &amp; Conditioning)
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Professional blow dry & styling
+                  Blow Out
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                    Complete brush out & detangling
+                  Brush Out
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Professional nail trimming
+                  Nail Trim
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Ear cleaning & sanitary trim
+                  Ear Cleaning
                 </li>
               </ul>
             </div>
@@ -452,7 +447,7 @@ export default function DogGrooming() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Full Service Grooming</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Full Body Groom</h3>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Complete professional grooming experience with everything your dog needs
                 for optimal health, comfort, and style.
@@ -462,31 +457,37 @@ export default function DogGrooming() {
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Premium bath & conditioning
+                  Bath (Premium Shampoo &amp; Conditioning)
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Professional blow dry & styling
+                  Blow Out
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Complete brush out & detangling
+                  Brush Out
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Professional nail trimming
+                  Nail Trim
                 </li>
                 <li className="flex items-center">
                   <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Full body professional haircut
+                  Ear Cleaning
+                </li>
+                <li className="flex items-center">
+                  <svg className="w-4 h-4 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                  Full Body Haircut
                 </li>
               </ul>
             </div>

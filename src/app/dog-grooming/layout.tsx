@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dog Grooming Near Me | Professional Grooming Services | River Paws",
     description:
-      "Expert dog grooming near you with experienced professionals in Waunakee and Madison, WI. Serving Middleton, DeForest, Sun Prairie. Walk-in grooming available.",
+      "Expert dog grooming near you with experienced professionals in Waunakee and Madison, WI. Serving Middleton, DeForest, Sun Prairie. By appointment only.",
     url: "https://www.riverpaws.dog/dog-grooming",
     type: "website",
     images: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dog Grooming Near Me | Professional Grooming Services | River Paws Waunakee, WI",
     description:
-      "Expert dog grooming services near you in Waunakee and Madison, WI. Professional groomers serving Middleton, DeForest, Sun Prairie. Walk-in available.",
+      "Expert dog grooming services near you in Waunakee and Madison, WI. Professional groomers serving Middleton, DeForest, Sun Prairie. By appointment only.",
     images: ["/Madison dog grooming 4.jpg"],
   },
 };
