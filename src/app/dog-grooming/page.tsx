@@ -172,7 +172,7 @@ export default function DogGrooming() {
 
           {/* Journey Steps - Flowing Zigzag Timeline */}
           <div className="relative max-w-5xl mx-auto">
-            {/* SVG Flowing Path - Hidden on mobile */}
+            {/* SVG Flowing Path - Desktop (zigzag) */}
             <svg 
               className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" 
               viewBox="0 0 100 100"
@@ -180,7 +180,7 @@ export default function DogGrooming() {
               fill="none"
             >
               <defs>
-                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <linearGradient id="pathGradientDesktop" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#3b82f6" />
                   <stop offset="25%" stopColor="#14b8a6" />
                   <stop offset="50%" stopColor="#3b82f6" />
@@ -200,7 +200,7 @@ export default function DogGrooming() {
                    Q 78 70, 50 72
                    Q 22 74, 22 82
                    Q 22 90, 50 95"
-                stroke="url(#pathGradient)"
+                stroke="url(#pathGradientDesktop)"
                 strokeWidth="0.4"
                 strokeLinecap="round"
                 strokeDasharray="1.5 1"
@@ -208,9 +208,38 @@ export default function DogGrooming() {
                 opacity="0.5"
               />
             </svg>
+
+            {/* SVG Flowing Path - Mobile (vertical line on left) */}
+            <svg 
+              className="absolute left-[27px] top-0 w-1 h-full pointer-events-none md:hidden" 
+              viewBox="0 0 4 100"
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <defs>
+                <linearGradient id="pathGradientMobile" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#3b82f6" />
+                  <stop offset="20%" stopColor="#14b8a6" />
+                  <stop offset="40%" stopColor="#3b82f6" />
+                  <stop offset="60%" stopColor="#10b981" />
+                  <stop offset="80%" stopColor="#f59e0b" />
+                  <stop offset="100%" stopColor="#f97316" />
+                </linearGradient>
+              </defs>
+              {/* Straight vertical path */}
+              <path 
+                d="M 2 2 L 2 98"
+                stroke="url(#pathGradientMobile)"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeDasharray="6 4"
+                fill="none"
+                opacity="0.5"
+              />
+            </svg>
             
             {/* Step 1: Book Your Appointment - LEFT */}
-            <div className="relative mb-12 md:mb-16">
+            <div className="relative mb-16 md:mb-16">
               <div className="md:flex md:items-start md:gap-12">
                 {/* Left side - Step badge and card */}
                 <div className="md:w-[55%]">
@@ -272,7 +301,7 @@ export default function DogGrooming() {
             </div>
 
             {/* Step 2: Arrive & Check In - RIGHT */}
-            <div className="relative mb-12 md:mb-16">
+            <div className="relative mb-16 md:mb-16">
               <div className="md:flex md:items-start md:gap-12">
                 {/* Left side - empty for zigzag */}
                 <div className="hidden md:block md:w-[45%]"></div>
@@ -341,7 +370,7 @@ export default function DogGrooming() {
             </div>
 
             {/* Step 3: We Weigh Your Pup - LEFT */}
-            <div className="relative mb-12 md:mb-16">
+            <div className="relative mb-16 md:mb-16">
               <div className="md:flex md:items-start md:gap-12">
                 {/* Left side - Step badge and card */}
                 <div className="md:w-[55%]">
@@ -387,7 +416,7 @@ export default function DogGrooming() {
             </div>
 
             {/* Step 4: We Assess the Coat - RIGHT */}
-            <div className="relative mb-12 md:mb-16">
+            <div className="relative mb-16 md:mb-16">
               <div className="md:flex md:items-start md:gap-12">
                 {/* Left side - empty for zigzag */}
                 <div className="hidden md:block md:w-[45%]"></div>
