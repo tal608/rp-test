@@ -679,8 +679,8 @@ export default function HomeClient() {
                     {/* Photo */}
                     <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
                       <Image
-                        src="/Grooming/freshly-groomed-pomeranian-grooming-waunakee-wi-river-paws.jpg"
-                        alt="Beautifully groomed Pomeranian at River Paws"
+                        src="/Grooming/happy-husky-groomed-deforest-wi-river-paws.jpg"
+                        alt="Happy Husky after grooming at River Paws"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                         sizes="(max-width: 768px) 100vw, 50vw"
@@ -754,8 +754,8 @@ export default function HomeClient() {
                     {/* Photo */}
                     <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
                       <Image
-                        src="/Hiking/joyful-golden-retriever-wilderness-trails-waunakee-wi-river-paws.jpg"
-                        alt="Happy golden retriever on River Paws adventure hike"
+                        src="/Hiking/confident-mixed-pack-socialization-waunakee-wi-river-paws.jpg"
+                        alt="Confident mixed pack of dogs socializing on River Paws adventure hike"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                         sizes="(max-width: 768px) 100vw, 50vw"
