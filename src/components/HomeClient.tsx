@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { homeFaqs } from "@/constants/faqs";
-import { useMouseParallax } from "@/hooks/useMouseParallax";
+// useMouseParallax removed - using animated blobs background instead
 import { useGradientAnimation } from "@/hooks/useGradientAnimation";
 import TestimonialMarquee from "@/components/TestimonialMarquee";
 import TeamStats from "@/components/TeamStats";
@@ -123,7 +123,7 @@ export default function HomeClient() {
   const locationGradientRef = useRef<HTMLDivElement>(null);
   const newToRiverPawsRef = useRef<HTMLDivElement>(null);
 
-  const mousePosition = useMouseParallax(heroRef);
+  // Mouse parallax removed - using animated blobs background instead
   useGradientAnimation(locationGradientRef);
   useGradientAnimation(newToRiverPawsRef);
 
@@ -164,10 +164,19 @@ export default function HomeClient() {
         {/* Enhanced Hero Section with Polaroid Photo Wall */}
         {/* IMAGE_PLACEMENT_START: homepage-hero */}
         <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-          {/* Base background layer - ensures consistent appearance in light/dark mode */}
-          <div className="absolute inset-0 hero-base-layer z-0"></div>
-          {/* Background Gradient overlay */}
-          <div className="absolute inset-0 hero-gradient-overlay z-[1]"></div>
+          {/* Base background - matching "Conveniently Located" section style */}
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-800 z-0"></div>
+          
+          {/* Animated Blobs Background */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-[1]">
+            <div className="absolute top-[-20%] left-[-20%] w-[80%] h-[80%] bg-blue-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+            <div className="absolute top-[-20%] right-[-20%] w-[80%] h-[80%] bg-teal-400 rounded-full filter blur-[60px] opacity-40 animate-blob-2"></div>
+            <div className="absolute bottom-[-20%] left-[-20%] w-[80%] h-[80%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-3"></div>
+            <div className="absolute bottom-[-30%] right-[-10%] w-[60%] h-[60%] bg-green-400 rounded-full filter blur-[60px] opacity-40 animate-blob-1"></div>
+          </div>
+          
+          {/* Radial gradient overlay for depth */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent)] z-[2]"></div>
           
           {/* Polaroid Photos Container */}
           <div className="absolute inset-0 z-[5] pointer-events-none overflow-hidden">
@@ -263,28 +272,13 @@ export default function HomeClient() {
           
           {/* IMAGE_PLACEMENT_END: homepage-hero */}
 
-          {/* Animated gradient overlay - using custom class to prevent dark mode color shifts */}
-          <div className="absolute inset-0 hero-gradient-overlay-secondary"></div>
-
-          {/* Floating elements with parallax */}
-          <div className="absolute top-0 left-0 right-0 bottom-0 overflow-hidden pointer-events-none">
-            <div
-              className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob will-change-transform"
-              style={{ transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
-            ></div>
-            <div
-              className="absolute top-40 right-10 w-72 h-72 bg-teal-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob-delay-2 will-change-transform"
-              style={{ transform: `translate(${-mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
-            ></div>
-          </div>
+          {/* Additional subtle overlay for depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-blue-900/40 z-[3]"></div>
 
           {/* Content container with higher z-index to stay above Polaroids */}
           <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            {/* Blur zone + dark overlay for text readability */}
-            <div className="absolute inset-0 -inset-x-12 -inset-y-16 -z-10 pointer-events-none rounded-[3rem] overflow-hidden">
-              <div className="absolute inset-0 backdrop-blur-sm"></div>
-              <div className="absolute inset-0 bg-slate-900/50"></div>
-            </div>
+            {/* Soft radial backdrop for text readability */}
+            <div className="absolute inset-0 -inset-x-8 -inset-y-16 bg-gradient-radial from-slate-900/60 via-slate-900/30 to-transparent blur-xl -z-10 pointer-events-none"></div>
             
             <div className="space-y-8">
               <div className="inline-flex items-center bg-white/95 backdrop-blur-md rounded-full px-4 py-2 animate-fadeInUp shadow-lg">
