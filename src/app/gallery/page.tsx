@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useRef } from "react";
+import { useState, useRef, useMemo } from "react";
 import { useMouseParallax } from "@/hooks/useMouseParallax";
 import { imageCategories } from "@/constants/gallery";
 import ScrollIndicator from "@/components/ScrollIndicator";
@@ -9,6 +9,7 @@ import { contactInfo } from "@/constants/social";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
 import Breadcrumb from "@/components/Breadcrumb";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import ImageGallerySchema from "@/components/ImageGallerySchema";
 import Lightbox from "@/components/Lightbox";
 
 export default function Gallery() {
@@ -35,6 +36,15 @@ export default function Gallery() {
 
   const filteredImages = selectedCategory ? imageCategories[selectedCategory as keyof typeof imageCategories] : allImages;
 
+  // Create gallery images for schema (limited to first 20 for performance)
+  const gallerySchemaImages = useMemo(() => {
+    return allImages.slice(0, 20).map((img) => ({
+      src: img.src,
+      alt: img.alt,
+      caption: img.title,
+    }));
+  }, [allImages]);
+
   return (
     <>
       <BreadcrumbSchema
@@ -42,6 +52,12 @@ export default function Gallery() {
           { name: "Home", url: "https://www.riverpaws.dog/" },
           { name: "Gallery", url: "https://www.riverpaws.dog/gallery" },
         ]}
+      />
+      <ImageGallerySchema
+        name="River Paws Dog Grooming & Hiking Photo Gallery"
+        description="View our gallery of happy, beautifully groomed dogs and adventure hiking photos. See real results from professional dog grooming and small-group hiking services in Waunakee and Madison, Wisconsin."
+        url="https://www.riverpaws.dog/gallery"
+        images={gallerySchemaImages}
       />
 
       {/* Modern Hero Section */}

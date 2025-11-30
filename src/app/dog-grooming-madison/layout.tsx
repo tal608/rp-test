@@ -2,24 +2,24 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Dog Grooming Madison | Dog Grooming in Madison, WI | River Paws Professional Grooming Services",
+  title: "Dog Grooming in Madison, WI | River Paws | Trusted Since 2017",
   description:
-    "Dog grooming Madison - Professional dog grooming services in Madison, Wisconsin. Expert groomers serving Madison families with full-service grooming and breed-specific styling. By appointment only. Trusted since 2017.",
+    "Professional grooming for Madison dogs. Full-service styling, breed-specific care, and compassionate handling. 10 min from Cherokee Marsh via Highway 113. Book your appointment today!",
   alternates: {
     canonical: "https://www.riverpaws.dog/dog-grooming-madison",
   },
   openGraph: {
-    title: "Dog Grooming Madison | Dog Grooming in Madison, WI | River Paws",
+    title: "Dog Grooming in Madison, WI | River Paws",
     description:
-      "Dog grooming Madison - Professional dog grooming services in Madison, Wisconsin. Expert groomers serving Madison families with full-service grooming since 2017.",
+      "Professional grooming for Madison dogs. Full-service styling, breed-specific care, and compassionate handling. Book your appointment today!",
     url: "https://www.riverpaws.dog/dog-grooming-madison",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dog Grooming Madison | Dog Grooming in Madison, WI | River Paws",
+    title: "Dog Grooming in Madison, WI | River Paws",
     description:
-      "Dog grooming Madison - Professional dog grooming services in Madison, Wisconsin. Expert groomers serving Madison families.",
+      "Professional grooming for Madison dogs. Full-service styling and breed-specific care. Book today!",
   },
 };
 

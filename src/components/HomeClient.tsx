@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { homeFaqs } from "@/constants/faqs";
+import { generalVoiceFaqs, formatForFAQSchema } from "@/constants/voiceSearchFaqs";
 // useMouseParallax removed - using animated blobs background instead
 import { useGradientAnimation } from "@/hooks/useGradientAnimation";
 import TestimonialMarquee from "@/components/TestimonialMarquee";
@@ -127,36 +128,25 @@ export default function HomeClient() {
   useGradientAnimation(locationGradientRef);
   useGradientAnimation(newToRiverPawsRef);
 
-  // Progressive image loading - use requestIdleCallback for better performance
+  // Progressive image loading - one image at a time with consistent timing
   useEffect(() => {
     let timeoutId: NodeJS.Timeout;
-    let cancelled = false;
+    let currentCount = 1; // Track count outside React state to avoid batching issues
     
     const loadNextImage = () => {
-      if (cancelled) return;
+      currentCount++;
+      if (currentCount > 10) return; // Stop at 10 images
       
-      setLoadedImages((prev) => {
-        if (prev >= 10) return prev;
-        
-        // Schedule next load during idle time or after delay
-        if ('requestIdleCallback' in window) {
-          (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(
-            () => { if (!cancelled) timeoutId = setTimeout(loadNextImage, 1200); },
-            { timeout: 2000 }
-          );
-        } else {
-          timeoutId = setTimeout(loadNextImage, 1500);
-        }
-        
-        return prev + 1;
-      });
+      setLoadedImages(currentCount);
+      
+      // Schedule next image load with consistent 1.5s delay
+      timeoutId = setTimeout(loadNextImage, 1500);
     };
     
     // Start loading after initial render settles
-    timeoutId = setTimeout(loadNextImage, 800);
+    timeoutId = setTimeout(loadNextImage, 1000);
     
     return () => {
-      cancelled = true;
       clearTimeout(timeoutId);
     };
   }, []);
@@ -1129,7 +1119,7 @@ export default function HomeClient() {
           title="Frequently Asked Questions"
           description="Everything you need to know about our services"
         />
-        <FAQSchema faqs={homeFaqs} />
+        <FAQSchema faqs={[...homeFaqs, ...formatForFAQSchema(generalVoiceFaqs)]} />
 
         {/* CTA Section */}
         <section className="py-24 px-6 bg-gradient-to-r from-blue-600 to-teal-500">

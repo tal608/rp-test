@@ -2,24 +2,24 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Dog Grooming Waunakee | Dog Grooming in Waunakee, WI | River Paws Professional Grooming Services",
+  title: "Dog Grooming in Waunakee, WI | River Paws | Next to Yahara Heights Dog Park",
   description:
-    "Dog grooming Waunakee - Professional dog grooming services in Waunakee, Wisconsin. Expert groomers serving Waunakee families with full-service grooming and breed-specific styling. By appointment only. Located at 5305 River Road.",
+    "Professional grooming at 5305 River Road in Waunakee. Full-service styling, breed-specific care, and stress-free handling. Walking distance from Yahara Heights Dog Park. Book today!",
   alternates: {
     canonical: "https://www.riverpaws.dog/dog-grooming-waunakee",
   },
   openGraph: {
-    title: "Dog Grooming Waunakee | Dog Grooming in Waunakee, WI | River Paws",
+    title: "Dog Grooming in Waunakee, WI | River Paws",
     description:
-      "Dog grooming Waunakee - Professional dog grooming services in Waunakee, Wisconsin. Expert groomers serving Waunakee families with full-service grooming since 2017.",
+      "Professional grooming at 5305 River Road in Waunakee. Full-service styling and breed-specific care. Next to Yahara Heights Dog Park!",
     url: "https://www.riverpaws.dog/dog-grooming-waunakee",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dog Grooming Waunakee | Dog Grooming in Waunakee, WI | River Paws",
+    title: "Dog Grooming in Waunakee, WI | River Paws",
     description:
-      "Dog grooming Waunakee - Professional dog grooming services in Waunakee, Wisconsin. Expert groomers serving Waunakee families.",
+      "Professional grooming in Waunakee. Full-service styling and breed-specific care. Book today!",
   },
 };
 

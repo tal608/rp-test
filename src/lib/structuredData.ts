@@ -452,3 +452,87 @@ export function getSpeakableSchema(
     url,
   };
 }
+
+/**
+ * WebSite Schema with SearchAction
+ * Enables sitelinks search box in Google search results
+ */
+export interface WebSiteSchema {
+  "@context": string;
+  "@type": string;
+  "@id": string;
+  name: string;
+  alternateName?: string;
+  url: string;
+  potentialAction?: {
+    "@type": string;
+    target: {
+      "@type": string;
+      urlTemplate: string;
+    };
+    "query-input": string;
+  };
+}
+
+export function getWebSiteSchema(): WebSiteSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.riverpaws.dog/#website",
+    name: "River Paws",
+    alternateName: "River Paws Dog Grooming & Hiking",
+    url: "https://www.riverpaws.dog",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://www.riverpaws.dog/blog?search={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
+/**
+ * ImageGallery Schema for gallery pages
+ * Helps images appear in Google Image search with rich results
+ */
+export interface ImageGallerySchema {
+  "@context": string;
+  "@type": string;
+  name: string;
+  description: string;
+  url: string;
+  numberOfItems: number;
+  image: Array<{
+    "@type": string;
+    url: string;
+    name: string;
+    description: string;
+    contentUrl: string;
+    thumbnailUrl?: string;
+  }>;
+}
+
+export function getImageGallerySchema(
+  name: string,
+  description: string,
+  url: string,
+  images: Array<{ src: string; alt: string; caption?: string }>
+): ImageGallerySchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    name,
+    description,
+    url,
+    numberOfItems: images.length,
+    image: images.map((img) => ({
+      "@type": "ImageObject",
+      url: `https://www.riverpaws.dog${img.src}`,
+      name: img.caption || img.alt,
+      description: img.alt,
+      contentUrl: `https://www.riverpaws.dog${img.src}`,
+    })),
+  };
+}

@@ -2,24 +2,24 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Dog Grooming Middleton | Dog Grooming in Middleton, WI | River Paws Professional Grooming Services",
+  title: "Dog Grooming for Middleton Families | River Paws | Easy Access via Hwy M",
   description:
-    "Dog grooming Middleton - Professional dog grooming services in Middleton, Wisconsin. Expert groomers serving Middleton families with full-service grooming and breed-specific styling. By appointment only. Located near Yahara Heights Dog Park. Trusted since 2017.",
+    "Professional grooming serving Middleton pet owners. Full-service styling, breed-specific care, and compassionate handling. Easy access via Highway M and 113. Book your appointment!",
   alternates: {
     canonical: "https://www.riverpaws.dog/dog-grooming-middleton",
   },
   openGraph: {
-    title: "Dog Grooming Middleton | Dog Grooming in Middleton, WI | River Paws",
+    title: "Dog Grooming for Middleton Families | River Paws",
     description:
-      "Dog grooming Middleton - Professional dog grooming services in Middleton, Wisconsin. Expert groomers serving Middleton families with full-service grooming since 2017.",
+      "Professional grooming serving Middleton pet owners. Full-service styling and breed-specific care. Book today!",
     url: "https://www.riverpaws.dog/dog-grooming-middleton",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dog Grooming Middleton | Dog Grooming in Middleton, WI | River Paws",
+    title: "Dog Grooming for Middleton Families | River Paws",
     description:
-      "Dog grooming Middleton - Professional dog grooming services in Middleton, Wisconsin. Expert groomers serving Middleton families.",
+      "Professional grooming serving Middleton pet owners. Full-service styling and breed-specific care.",
   },
 };
 

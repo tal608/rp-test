@@ -5,12 +5,14 @@ import Link from "next/link";
 import { useRef } from "react";
 import { useMouseParallax } from "@/hooks/useMouseParallax";
 import { groomingFaqs } from "@/constants/faqs";
+import { groomingVoiceFaqs, formatForFAQSchema } from "@/constants/voiceSearchFaqs";
 import TestimonialMarquee from "@/components/TestimonialMarquee";
 import TeamStats from "@/components/TeamStats";
 import FAQSection from "@/components/FAQSection";
 import FAQSchema from "@/components/FAQSchema";
 import ServiceSchema from "@/components/ServiceSchema";
 import HowToSchema from "@/components/HowToSchema";
+import SpeakableSchema from "@/components/SpeakableSchema";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Breadcrumb from "@/components/Breadcrumb";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
@@ -65,6 +67,11 @@ export default function DogGrooming() {
             image: "https://www.riverpaws.dog/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg",
           },
         ]}
+      />
+      <SpeakableSchema
+        name="Dog Grooming Services in Waunakee"
+        url="https://www.riverpaws.dog/dog-grooming"
+        cssSelectors={["h1", ".hero-description", ".service-intro", ".grooming-journey-intro"]}
       />
       {/* Modern Hero Section */}
       {/* IMAGE_PLACEMENT_START: dog-grooming-hero */}
@@ -1166,7 +1173,7 @@ export default function DogGrooming() {
               title="Frequently Asked Questions"
               variant="div"
             />
-            <FAQSchema faqs={groomingFaqs} />
+            <FAQSchema faqs={[...groomingFaqs, ...formatForFAQSchema(groomingVoiceFaqs)]} />
           </div>
 
           {/* Blog Section */}

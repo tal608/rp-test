@@ -26,8 +26,8 @@ export default function DogGroomingWaunakee() {
     <>
       <ServiceSchema serviceType="grooming" />
       <ArticleSchema
-        headline={mainFaqs[0]?.question || "Canine Grooming Products Guide"}
-        description="Learn about the best products for canine grooming and professional grooming recommendations."
+        headline={mainFaqs[0]?.question || "Dog Grooming in Waunakee"}
+        description="Professional dog grooming answers for Waunakee pet owners. Learn about our services, pricing, and stress-free approach."
         datePublished="2024-01-15"
         dateModified="2025-01-15"
       />

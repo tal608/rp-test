@@ -2,24 +2,24 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Dog Grooming DeForest | Dog Grooming in DeForest, WI | River Paws Professional Grooming Services",
+  title: "Dog Grooming for DeForest Families | River Paws | Southwest of DeForest",
   description:
-    "Dog grooming DeForest - Professional dog grooming services in DeForest, Wisconsin. Located near Yahara Heights Dog Park. Expert groomers serving DeForest with stress-free grooming. Book online or call (608) 571-7297!",
+    "Professional grooming serving DeForest pet owners. Full-service styling, breed-specific care, and stress-free handling. Located southwest of DeForest on River Road. Call (608) 571-7297!",
   alternates: {
     canonical: "https://www.riverpaws.dog/dog-grooming-deforest",
   },
   openGraph: {
-    title: "Dog Grooming DeForest | Dog Grooming in DeForest, WI | River Paws",
+    title: "Dog Grooming for DeForest Families | River Paws",
     description:
-      "Dog grooming DeForest - Professional dog grooming services in DeForest, Wisconsin. Located near Yahara Heights Dog Park. Expert groomers serving DeForest families.",
+      "Professional grooming serving DeForest pet owners. Full-service styling and breed-specific care. Book today!",
     url: "https://www.riverpaws.dog/dog-grooming-deforest",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dog Grooming DeForest | Dog Grooming in DeForest, WI | River Paws",
+    title: "Dog Grooming for DeForest Families | River Paws",
     description:
-      "Dog grooming DeForest - Professional dog grooming services in DeForest, Wisconsin. Located near Yahara Heights Dog Park. Expert groomers.",
+      "Professional grooming serving DeForest pet owners. Full-service styling and breed-specific care.",
   },
 };
 
