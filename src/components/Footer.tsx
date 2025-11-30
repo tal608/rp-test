@@ -135,7 +135,7 @@ export default function Footer() {
                         alt={social.name}
                         width={20}
                         height={20}
-                        className="social-icon filter brightness-0 group-hover:brightness-0 group-hover:invert"
+                        className="social-icon filter brightness-0 dark:brightness-0 dark:invert group-hover:brightness-0 group-hover:invert"
                       />
                     </a>
                   ))}

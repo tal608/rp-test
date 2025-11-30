@@ -33,7 +33,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Stephanie Helt",
     role: "Dog Groomer",
-    bio: "Hi there! I'm Steph, and I've enjoyed working as a dog groomer for the past seven years. My journey has included owning and operating my own successful grooming business, Bubbles and Mutts, for a couple of years. I'm thrilled to return that experience to the River Paws team. My love for animals began early on, working with livestock like swine and dairy cows. But when I discovered dog grooming, I knew I'd found my calling, and I haven't looked back since! I genuinely enjoy making your pups look and feel their absolute best, and I'm excited to get to know you and your furry family members.",
+    bio: "Hi there! I'm Steph, and I've enjoyed working as a dog groomer for the past eight years. My journey has included owning and operating my own successful grooming business, Bubbles and Mutts, for a couple of years. I'm thrilled to return that experience to the River Paws team. My love for animals began early on, working with livestock like swine and dairy cows. But when I discovered dog grooming, I knew I'd found my calling, and I haven't looked back since! I genuinely enjoy making your pups look and feel their absolute best, and I'm excited to get to know you and your furry family members.",
     image: "/caretakers/stephanie-helt.jpg",
     imageClass: "object-cover object-[35%_60%]",
     yearsExperience: 7,

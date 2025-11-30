@@ -1,11 +1,11 @@
-import { MetadataRoute } from 'next';
-import { blogArticles } from '@/constants/blogArticles';
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.riverpaws.dog';
-  const currentDate = new Date();
+  const baseUrl = 'https://www.riverpaws.dog'
+  const currentDate = new Date()
 
-  return [
+  // Core pages
+  const corePages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified: currentDate,
@@ -16,18 +16,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/dog-grooming`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.95,
     },
     {
       url: `${baseUrl}/dog-hikes`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.95,
     },
     {
-      url: `${baseUrl}/puppy-play`,
+      url: `${baseUrl}/contact`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/gallery`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
@@ -37,15 +43,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/gallery`,
+      url: `${baseUrl}/blog`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
@@ -55,53 +55,60 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${baseUrl}/grooming-application`,
+      url: `${baseUrl}/policies`,
       lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      changeFrequency: 'yearly',
+      priority: 0.4,
     },
     {
-      url: `${baseUrl}/dog-hike-scheduling`,
+      url: `${baseUrl}/waivers`,
       lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      changeFrequency: 'yearly',
+      priority: 0.4,
     },
-    {
-      url: `${baseUrl}/locations/waunakee`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    // City-specific grooming pages (preserve old URLs for SEO)
+  ]
+
+  // City-specific grooming pages (local SEO)
+  const cityPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/dog-grooming-madison`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/dog-grooming-waunakee`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/dog-grooming-sun-prairie`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/dog-grooming-middleton`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/dog-grooming-sun-prairie`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/dog-grooming-deforest`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
+    },
+  ]
+
+  // Service-specific pages
+  const servicePages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/puppy-play`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/puppy-grooming`,
@@ -113,22 +120,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/canine-grooming`,
       lastModified: currentDate,
       changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    // Blog section
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    // Blog articles
-    ...blogArticles.map((article) => ({
-      url: `${baseUrl}/blog/${article.slug}`,
-      lastModified: article.dateModified ? new Date(article.dateModified) : new Date(article.datePublished),
-      changeFrequency: 'monthly' as const,
       priority: 0.7,
-    })),
-  ];
-}
+    },
+  ]
 
+  // Application/booking pages
+  const applicationPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/grooming-application`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/dog-hike-scheduling`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+  ]
+
+  // Location pages
+  const locationPages: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/locations/waunakee`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+  ]
+
+  return [
+    ...corePages,
+    ...cityPages,
+    ...servicePages,
+    ...applicationPages,
+    ...locationPages,
+  ]
+}

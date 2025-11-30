@@ -51,8 +51,8 @@ export default function DogGroomingDeForest() {
           {/* Background Image with Parallax */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/Hiking/eager-pack-dog-bus-transport-deforest-wi-river-paws.jpg"
-              alt="Eager pack transforming boredom into adventure on the dog bus serving DeForest families with River Paws' exclusive door-to-door transport."
+              src="/Hiking/content-spaniel-outdoor-enrichment-deforest-wi-river-paws.jpg"
+              alt="Content spaniel enjoying outdoor enrichment at River Paws, serving DeForest families with professional dog grooming services."
               fill
               className="object-cover"
               style={{ objectPosition: '50% 40%' }}
