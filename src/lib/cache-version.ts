@@ -21,7 +21,7 @@
  * 
  * Last updated: 2025-11-27 - Service worker improvements
  */
-export const CACHE_VERSION = '1.1.6';
+export const CACHE_VERSION = '1.1.8';
 
 /**
  * Get cache version from server

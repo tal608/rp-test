@@ -28,6 +28,17 @@ const kalam = Kalam({
   variable: "--font-kalam",
 });
 
+// Viewport settings for optimal mobile experience
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#2563eb' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
   title: {
@@ -93,9 +104,11 @@ export default function RootLayout({
         {/* Performance optimization: Resource hints */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://booking.moego.pet" />
         <link rel="dns-prefetch" href="https://www.google.com" />
         <link rel="dns-prefetch" href="https://www.googleapis.com" />
         <link rel="dns-prefetch" href="https://maps.googleapis.com" />
+        <link rel="dns-prefetch" href="https://booking.moego.pet" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${kalam.variable} antialiased`}

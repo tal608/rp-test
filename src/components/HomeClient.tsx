@@ -127,12 +127,38 @@ export default function HomeClient() {
   useGradientAnimation(locationGradientRef);
   useGradientAnimation(newToRiverPawsRef);
 
-  // Progressive image loading
+  // Progressive image loading - use requestIdleCallback for better performance
   useEffect(() => {
-    const interval = setInterval(() => {
-      setLoadedImages((prev) => prev >= 10 ? prev : prev + 1);
-    }, 1500);
-    return () => clearInterval(interval);
+    let timeoutId: NodeJS.Timeout;
+    let cancelled = false;
+    
+    const loadNextImage = () => {
+      if (cancelled) return;
+      
+      setLoadedImages((prev) => {
+        if (prev >= 10) return prev;
+        
+        // Schedule next load during idle time or after delay
+        if ('requestIdleCallback' in window) {
+          (window as Window & { requestIdleCallback: (cb: () => void, opts?: { timeout: number }) => number }).requestIdleCallback(
+            () => { if (!cancelled) timeoutId = setTimeout(loadNextImage, 1200); },
+            { timeout: 2000 }
+          );
+        } else {
+          timeoutId = setTimeout(loadNextImage, 1500);
+        }
+        
+        return prev + 1;
+      });
+    };
+    
+    // Start loading after initial render settles
+    timeoutId = setTimeout(loadNextImage, 800);
+    
+    return () => {
+      cancelled = true;
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   useEffect(() => {

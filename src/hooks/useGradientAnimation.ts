@@ -36,6 +36,9 @@ export function useGradientAnimation(ref: RefObject<HTMLElement | null>) {
     // Smooth interpolation factor for speed changes (slower = smoother)
     const speedInterpolation = 0.05;
 
+    // Throttle to ~20fps for better performance (50ms between frames)
+    const FRAME_THROTTLE = 50;
+    
     const animate = (timestamp: number) => {
       try {
         if (!ref.current) {
@@ -52,7 +55,14 @@ export function useGradientAnimation(ref: RefObject<HTMLElement | null>) {
         return;
       }
 
-      const deltaTime = Math.min(timestamp - lastTime, 32); // Cap at ~30fps min rate to avoid huge jumps
+      // Throttle animation for better performance
+      const elapsed = timestamp - lastTime;
+      if (elapsed < FRAME_THROTTLE) {
+        animationFrameId = requestAnimationFrame(animate);
+        return;
+      }
+
+      const deltaTime = Math.min(elapsed, 100); // Cap at 100ms to avoid huge jumps
       lastTime = timestamp;
 
       // Smooth speed interpolation toward target
