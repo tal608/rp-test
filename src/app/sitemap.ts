@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { blogArticles } from '@/constants/blogArticles'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.riverpaws.dog'
@@ -150,11 +151,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
+  // Blog articles (dynamically generated from blogArticles)
+  const blogPages: MetadataRoute.Sitemap = blogArticles.map((article) => ({
+    url: `${baseUrl}/blog/${article.slug}`,
+    lastModified: article.dateModified 
+      ? new Date(article.dateModified) 
+      : new Date(article.datePublished),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }))
+
   return [
     ...corePages,
     ...cityPages,
     ...servicePages,
     ...applicationPages,
     ...locationPages,
+    ...blogPages,
   ]
 }

@@ -13,24 +13,24 @@ import { contactInfo } from "@/constants/social";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Canine Grooming | Best Products for Canine Grooming | River Paws Professional Grooming Tools",
+  title: "Professional Grooming Products Guide | River Paws",
   description:
-    "Canine grooming - Expert guide to the best products for canine grooming. Learn about brushes, shampoos, nail clippers, and grooming tools for different coat types. Premium professional-grade products used at River Paws in Waunakee, Wisconsin serving Madison, Middleton, DeForest, and Sun Prairie.",
+    "Expert guide to grooming products for every coat type. Learn about brushes, shampoos, nail clippers, and professional-grade tools. Tips from experienced groomers at River Paws in Waunakee, WI.",
   alternates: {
     canonical: "https://www.riverpaws.dog/canine-grooming",
   },
   openGraph: {
-    title: "Canine Grooming | Best Products for Canine Grooming | River Paws",
+    title: "Professional Grooming Products Guide | River Paws",
     description:
-      "Canine grooming - Expert guide to the best products for canine grooming. Learn about brushes, shampoos, and grooming tools for different coat types.",
+      "Expert guide to grooming products for every coat type. Learn about brushes, shampoos, and professional-grade tools from experienced groomers.",
     url: "https://www.riverpaws.dog/canine-grooming",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Canine Grooming | Best Products for Canine Grooming | River Paws",
+    title: "Professional Grooming Products Guide | River Paws",
     description:
-      "Canine grooming - Expert guide to the best products for canine grooming. Professional-grade products for all dog breeds.",
+      "Expert guide to grooming products for every coat type. Professional-grade tools and tips for all dog breeds.",
   },
 };
 
@@ -75,7 +75,7 @@ export default function CanineGrooming() {
             />
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-                Canine Grooming | Best Products for Canine Grooming
+                Professional Grooming Products Guide
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
                 Looking for the best canine grooming products? Expert guide to choosing the right grooming tools and products for your dog.

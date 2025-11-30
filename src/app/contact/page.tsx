@@ -8,11 +8,37 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import GetDirectionsButton from "@/components/GetDirectionsButton";
 import Breadcrumb from "@/components/Breadcrumb";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import SpeakableSchema from "@/components/SpeakableSchema";
+import FAQSchema from "@/components/FAQSchema";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
 
 export default function Contact() {
   const heroRef = useRef<HTMLDivElement>(null);
   const mousePosition = useMouseParallax(heroRef);
+
+  // Voice-search optimized FAQs - conversational questions people actually ask
+  const voiceFaqs = [
+    {
+      question: "Where is River Paws located?",
+      answer: "River Paws is located at 5305 River Road in Waunakee, Wisconsin. We're on the border of Waunakee and Madison, just 500 feet from Yahara Heights Dog Park.",
+    },
+    {
+      question: "What is the phone number for River Paws?",
+      answer: "You can reach River Paws at (608) 571-7297. That's 608-571-PAWS.",
+    },
+    {
+      question: "What are River Paws hours?",
+      answer: "River Paws is open Monday through Friday from 8:00 AM to 4:30 PM. We are closed on weekends.",
+    },
+    {
+      question: "How do I book a grooming appointment at River Paws?",
+      answer: "You can book a grooming appointment online at booking.moego.pet/ol/RiverPaws/book or by calling (608) 571-7297.",
+    },
+    {
+      question: "Does River Paws accept walk-ins?",
+      answer: "No, River Paws is by appointment only. We do not accept walk-in services. Please book online or call ahead to schedule your appointment.",
+    },
+  ];
 
   return (
     <>
@@ -22,6 +48,12 @@ export default function Contact() {
           { name: "Contact", url: "https://www.riverpaws.dog/contact" },
         ]}
       />
+      <SpeakableSchema
+        name="Contact River Paws Dog Grooming"
+        url="https://www.riverpaws.dog/contact"
+        cssSelectors={["h1", ".contact-info", ".business-hours", ".location-address"]}
+      />
+      <FAQSchema faqs={voiceFaqs} />
 
       {/* Modern Hero Section */}
       {/* IMAGE_PLACEMENT_START: contact-hero */}

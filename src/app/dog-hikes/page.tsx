@@ -9,6 +9,7 @@ import TeamStats from "@/components/TeamStats";
 import FAQSection from "@/components/FAQSection";
 import FAQSchema from "@/components/FAQSchema";
 import ServiceSchema from "@/components/ServiceSchema";
+import SpeakableSchema from "@/components/SpeakableSchema";
 import Breadcrumb from "@/components/Breadcrumb";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import ScrollIndicator from "@/components/ScrollIndicator";
@@ -51,6 +52,11 @@ export default function DogHikes() {
           { name: "Home", url: "https://www.riverpaws.dog/" },
           { name: "Dog Hiking", url: "https://www.riverpaws.dog/dog-hikes" },
         ]}
+      />
+      <SpeakableSchema
+        name="Dog Hiking Services Near Madison"
+        url="https://www.riverpaws.dog/dog-hikes"
+        cssSelectors={["h1", ".hero-description", ".service-intro", ".faq-answer"]}
       />
 
       {/* Modern Hero Section */}

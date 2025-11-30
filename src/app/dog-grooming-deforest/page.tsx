@@ -97,8 +97,7 @@ export default function DogGroomingDeForest() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto animate-fadeInUp-delay-800 px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-                Looking for dog grooming DeForest? Professional dog grooming services for DeForest families. Expert groomers providing
-                full-service grooming, breed-specific styling, and compassionate care since 2017. Conveniently located southwest of DeForest via River Road, just 500 feet from Yahara Heights Dog Park.
+                Stress-free grooming for DeForest pups. Expert care at our River Road location—a quick drive southwest, steps from Yahara Heights Dog Park.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp-delay-800">
@@ -222,13 +221,13 @@ export default function DogGroomingDeForest() {
               </ul>
             </div>
 
-            {/* Why River Paws is the Best Dog Groomer in DeForest */}
+            {/* Why DeForest Families Trust River Paws */}
             <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Why River Paws is the Best Dog Groomer in DeForest
+                Why 2,000+ Local Families Trust Us
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Searching for the best dog groomer DeForest? Here's why families choose us as their trusted grooming partner:
+                Here&apos;s what sets River Paws apart as your neighborhood grooming partner:
               </p>
               <ul className="space-y-4 text-gray-700">
                 <li className="flex items-start">
@@ -236,7 +235,7 @@ export default function DogGroomingDeForest() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <strong className="text-gray-900">Convenient location</strong> - As the best dog groomer in DeForest, we offer easy access southwest of DeForest via River Road, serving Windsor and DeForest communities
+                    <strong className="text-gray-900">Convenient location</strong> - Easy access southwest of DeForest via River Road, serving Windsor and DeForest communities
                   </div>
                 </li>
                 <li className="flex items-start">
@@ -252,7 +251,7 @@ export default function DogGroomingDeForest() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <div>
-                    <strong className="text-gray-900">Expert care</strong> - 2000+ families trust us as their best dog groomer in DeForest with over 8 years serving the Cherokee Marsh community
+                    <strong className="text-gray-900">Expert care</strong> - Over 8 years serving the Cherokee Marsh community with trusted, professional grooming
                   </div>
                 </li>
                 <li className="flex items-start">

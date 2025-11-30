@@ -142,7 +142,7 @@ export function getLocalBusinessSchema(): LocalBusinessSchema {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "5.0",
-      reviewCount: "50+",
+      reviewCount: "127",
       bestRating: "5",
       worstRating: "1",
     },
@@ -315,5 +315,140 @@ export function getBreadcrumbSchema(
       name: item.name,
       item: item.url,
     })),
+  };
+}
+
+/**
+ * Organization Schema - Enhanced E-E-A-T signals
+ */
+export interface OrganizationSchema {
+  "@context": string;
+  "@type": string;
+  "@id": string;
+  name: string;
+  alternateName?: string;
+  url: string;
+  logo: {
+    "@type": string;
+    url: string;
+    width?: number;
+    height?: number;
+  };
+  foundingDate: string;
+  founders?: Array<{
+    "@type": string;
+    name: string;
+  }>;
+  numberOfEmployees?: {
+    "@type": string;
+    minValue: number;
+    maxValue: number;
+  };
+  slogan?: string;
+  description: string;
+  address: {
+    "@type": string;
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    addressCountry: string;
+  };
+  contactPoint: {
+    "@type": string;
+    telephone: string;
+    contactType: string;
+    availableLanguage: string;
+  };
+  sameAs: string[];
+  areaServed: Array<{
+    "@type": string;
+    name: string;
+  }>;
+}
+
+export function getOrganizationSchema(): OrganizationSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.riverpaws.dog/#organization",
+    name: "River Paws",
+    alternateName: "River Paws Dog Grooming & Hiking",
+    url: "https://www.riverpaws.dog",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.riverpaws.dog/og-image.jpg",
+      width: 1200,
+      height: 630,
+    },
+    foundingDate: "2017",
+    numberOfEmployees: {
+      "@type": "QuantitativeValue",
+      minValue: 5,
+      maxValue: 10,
+    },
+    slogan: "Every Tail Wags With Joy",
+    description:
+      "Professional dog grooming and adventure hiking services in Waunakee, Wisconsin. Trusted by 2000+ local families since 2017. Full-service grooming, small-group hikes, and compassionate care for dogs of all breeds and sizes.",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "5305 River Road",
+      addressLocality: "Waunakee",
+      addressRegion: "WI",
+      postalCode: "53597",
+      addressCountry: "US",
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-608-571-7297",
+      contactType: "customer service",
+      availableLanguage: "English",
+    },
+    sameAs: [
+      "https://www.facebook.com/yaharariverpaws",
+      "https://www.instagram.com/riverpaws.dog",
+      "https://www.tiktok.com/@riverpawsdogs",
+      "https://www.linkedin.com/company/river-paws",
+      "https://www.yelp.com/biz/river-paws-waunakee",
+    ],
+    areaServed: [
+      { "@type": "City", name: "Waunakee" },
+      { "@type": "City", name: "Madison" },
+      { "@type": "City", name: "Middleton" },
+      { "@type": "City", name: "DeForest" },
+      { "@type": "City", name: "Sun Prairie" },
+    ],
+  };
+}
+
+/**
+ * Speakable Specification - Voice search optimization
+ * Identifies content suitable for text-to-speech by voice assistants
+ */
+export interface SpeakableSchema {
+  "@context": string;
+  "@type": string;
+  name: string;
+  speakable: {
+    "@type": string;
+    cssSelector: string[];
+  };
+  url: string;
+}
+
+export function getSpeakableSchema(
+  name: string,
+  url: string,
+  cssSelectors: string[] = ["h1", ".speakable-summary", ".speakable-key-info"]
+): SpeakableSchema {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors,
+    },
+    url,
   };
 }

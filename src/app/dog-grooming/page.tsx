@@ -10,6 +10,7 @@ import TeamStats from "@/components/TeamStats";
 import FAQSection from "@/components/FAQSection";
 import FAQSchema from "@/components/FAQSchema";
 import ServiceSchema from "@/components/ServiceSchema";
+import HowToSchema from "@/components/HowToSchema";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Breadcrumb from "@/components/Breadcrumb";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
@@ -26,6 +27,43 @@ export default function DogGrooming() {
         items={[
           { name: "Home", url: "https://www.riverpaws.dog/" },
           { name: "Dog Grooming", url: "https://www.riverpaws.dog/dog-grooming" },
+        ]}
+      />
+      <HowToSchema
+        name="How to Get Your Dog Groomed at River Paws"
+        description="A step-by-step guide to the professional dog grooming experience at River Paws in Waunakee, WI. From booking to pickup, see exactly what to expect."
+        totalTime="PT2H"
+        estimatedCost={{
+          currency: "USD",
+          minValue: 45,
+          maxValue: 150,
+        }}
+        image="https://www.riverpaws.dog/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg"
+        steps={[
+          {
+            name: "Book Your Appointment",
+            text: "Choose your service (Bath & Brush or Full Service Groom) and schedule online at booking.moego.pet/ol/RiverPaws/book or call (608) 571-7297.",
+            url: "https://booking.moego.pet/ol/RiverPaws/book",
+          },
+          {
+            name: "Arrive & Check In",
+            text: "Drop off your pup at our convenient River Road location. Park in our lot, and we'll greet you and your dog warmly with a quick health check at the door.",
+            image: "https://www.riverpaws.dog/Grooming/calm-cockapoo-grooming-waunakee-wi-river-paws.jpg",
+          },
+          {
+            name: "We Weigh Your Pup",
+            text: "Your price is based on weight because bigger pups need more time and products. We weigh every visit to ensure fair, accurate pricing. Weight groups range from Extra Small (9-10 lbs) to Giant (121+ lbs).",
+          },
+          {
+            name: "We Assess the Coat",
+            text: "Coat type affects grooming time and price. We'll assess whether your dog has a Basic Coat (hairless, smooth, short, medium) or Thick Coat (corded, wire, double, curly, long), discuss any mats or tangles, and give you an estimated price before we begin.",
+            image: "https://www.riverpaws.dog/Grooming/groomed-poodle-grooming-waunakee-wi-river-paws.jpg",
+          },
+          {
+            name: "The Pampering Begins",
+            text: "Your dog receives spa-quality care with premium, pet-safe products. Services include premium bath and conditioning, blow out, brush out, nail trim, ear cleaning, and full body haircut (for Full Service Groom).",
+            image: "https://www.riverpaws.dog/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg",
+          },
         ]}
       />
       {/* Modern Hero Section */}
