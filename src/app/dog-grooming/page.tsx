@@ -516,7 +516,7 @@ export default function DogGrooming() {
                   <div className="grid md:grid-cols-3 gap-8 md:gap-6">
                     {/* Bath & Brush Card */}
                     <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                      <div className="relative h-[168px] -mx-5 -mt-5 mb-4 overflow-hidden">
+                      <div className="relative h-[200px] md:h-[168px] -mx-5 -mt-5 mb-4 overflow-hidden">
                         <Image
                           src="/Grooming/pampered-spaniel-bath-waunakee-wi-river-paws.jpg"
                           alt="Dog enjoying bath at River Paws"
@@ -541,7 +541,7 @@ export default function DogGrooming() {
 
                     {/* Full Service Groom Card */}
                     <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                      <div className="relative h-[168px] -mx-5 -mt-5 mb-4 overflow-hidden">
+                      <div className="relative h-[200px] md:h-[168px] -mx-5 -mt-5 mb-4 overflow-hidden">
                         <Image
                           src="/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg"
                           alt="Freshly groomed dog at River Paws"
@@ -566,7 +566,7 @@ export default function DogGrooming() {
 
                     {/* À La Carte Card */}
                     <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-                      <div className="relative h-[168px] -mx-5 -mt-5 mb-4 overflow-hidden">
+                      <div className="relative h-[200px] md:h-[168px] -mx-5 -mt-5 mb-4 overflow-hidden">
                         <Image
                           src="/Grooming/groomed-poodle-grooming-waunakee-wi-river-paws.jpg"
                           alt="À la carte grooming services"
