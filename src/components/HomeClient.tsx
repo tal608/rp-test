@@ -25,7 +25,7 @@ const heroImages = [
     caption: "Adventure Awaits",
     rotation: -3,
     size: "large" as const,
-    position: { x: "2%", y: "5%" },
+    position: { x: "2%", y: "12%" },
     delay: 0
   },
   {
@@ -34,7 +34,7 @@ const heroImages = [
     caption: "Fresh & Clean",
     rotation: 4,
     size: "medium" as const,
-    position: { x: "5%", y: "28%" },
+    position: { x: "5%", y: "35%" },
     delay: 1.5
   },
   // TOP-RIGHT QUADRANT
@@ -280,8 +280,11 @@ export default function HomeClient() {
 
           {/* Content container with higher z-index to stay above Polaroids */}
           <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            {/* Soft radial backdrop for text readability */}
-            <div className="absolute inset-0 -inset-x-8 -inset-y-16 bg-gradient-radial from-slate-900/60 via-slate-900/30 to-transparent blur-xl -z-10 pointer-events-none"></div>
+            {/* Blur zone + dark overlay for text readability */}
+            <div className="absolute inset-0 -inset-x-12 -inset-y-16 -z-10 pointer-events-none rounded-[3rem] overflow-hidden">
+              <div className="absolute inset-0 backdrop-blur-sm"></div>
+              <div className="absolute inset-0 bg-slate-900/50"></div>
+            </div>
             
             <div className="space-y-8">
               <div className="inline-flex items-center bg-white/95 backdrop-blur-md rounded-full px-4 py-2 animate-fadeInUp shadow-lg">

@@ -71,7 +71,7 @@ export default function Header() {
         : 'bg-transparent py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
-        <div className="flex items-center space-x-2 group">
+        <Link href="/" className="flex items-center space-x-2 group">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full blur-lg opacity-50 group-hover:opacity-75 transition-opacity duration-500"></div>
             <div className="relative bg-white rounded-full p-2">
@@ -87,16 +87,16 @@ export default function Header() {
             </div>
           </div>
           <div>
-            <Link href="/" className={`text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent ${
+            <span className={`text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent ${
               !isScrolled ? 'drop-shadow-lg' : ''
             }`}>
               River Paws
-            </Link>
+            </span>
             <p className={`text-[10px] sm:text-xs tracking-widest ${
               isScrolled ? 'text-gray-600' : 'text-white/80 drop-shadow-md'
             }`}>SINCE 2017 • WAUNAKEE</p>
           </div>
-        </div>
+        </Link>
 
         <div className="hidden md:flex items-center space-x-2">
           {/* Main Navigation Items */}

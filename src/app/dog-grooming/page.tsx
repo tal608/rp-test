@@ -172,15 +172,52 @@ export default function DogGrooming() {
 
           {/* Journey Steps - Flowing Zigzag Timeline */}
           <div className="relative max-w-5xl mx-auto">
-            {/* SVG Flowing Path - Works on all screen sizes with soft curves */}
+            {/* SVG Flowing Path - Desktop (zigzag connecting steps) */}
             <svg 
-              className="absolute inset-0 w-full h-full pointer-events-none" 
+              className="absolute inset-0 w-full h-full pointer-events-none hidden md:block" 
               viewBox="0 0 100 100"
               preserveAspectRatio="none"
               fill="none"
             >
               <defs>
-                <linearGradient id="pathGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <linearGradient id="pathGradientDesktop" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#3b82f6" />
+                  <stop offset="25%" stopColor="#14b8a6" />
+                  <stop offset="50%" stopColor="#3b82f6" />
+                  <stop offset="75%" stopColor="#10b981" />
+                  <stop offset="100%" stopColor="#f97316" />
+                </linearGradient>
+              </defs>
+              {/* Zigzag path connecting left-right-left-right-center steps */}
+              <path 
+                d="M 22 4
+                   Q 22 10, 50 12
+                   Q 78 14, 78 22
+                   Q 78 30, 50 32
+                   Q 22 34, 22 42
+                   Q 22 50, 50 52
+                   Q 78 54, 78 62
+                   Q 78 70, 50 72
+                   Q 22 74, 22 82
+                   Q 22 90, 50 95"
+                stroke="url(#pathGradientDesktop)"
+                strokeWidth="0.4"
+                strokeLinecap="round"
+                strokeDasharray="1.5 1"
+                fill="none"
+                opacity="0.5"
+              />
+            </svg>
+            
+            {/* SVG Flowing Path - Mobile (soft gentle curves) */}
+            <svg 
+              className="absolute inset-0 w-full h-full pointer-events-none md:hidden" 
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+              fill="none"
+            >
+              <defs>
+                <linearGradient id="pathGradientMobile" x1="0%" y1="0%" x2="0%" y2="100%">
                   <stop offset="0%" stopColor="#3b82f6" />
                   <stop offset="20%" stopColor="#14b8a6" />
                   <stop offset="40%" stopColor="#3b82f6" />
@@ -189,7 +226,7 @@ export default function DogGrooming() {
                   <stop offset="100%" stopColor="#f97316" />
                 </linearGradient>
               </defs>
-              {/* Flowing S-curve path with gentle curves */}
+              {/* Soft flowing S-curve path */}
               <path 
                 d="M 12 2
                    Q 12 6, 50 8
@@ -206,7 +243,7 @@ export default function DogGrooming() {
                    Q 12 70, 12 74
                    Q 12 78, 50 82
                    Q 88 86, 50 92"
-                stroke="url(#pathGradient)"
+                stroke="url(#pathGradientMobile)"
                 strokeWidth="0.5"
                 strokeLinecap="round"
                 strokeDasharray="2 1.5"
@@ -568,11 +605,11 @@ export default function DogGrooming() {
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
               {[
                 { name: "Pawdicure", desc: "Nails + Grind + Ears", icon: "🐾" },
-                { name: "Nail Trim", desc: "Quick trim", icon: "✂️" },
+                { name: "Nail Trim", desc: "Quick trim", icon: "🐩" },
                 { name: "Nail Grind", desc: "Smooth finish", icon: "🐕" },
                 { name: "Teeth Brushing", desc: "Fresh breath", icon: "🪥" },
                 { name: "Anal Glands", desc: "Expression", icon: "🩺" },
-                { name: "Sanitary Trim", desc: "Hygiene cut", icon: "✨" }
+                { name: "Sanitary Trim", desc: "Hygiene cut", icon: "✂️" }
               ].map((addon, idx) => (
                 <div key={idx} className="bg-white rounded-xl p-3 text-center shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100">
                   <span className="text-2xl block mb-1">{addon.icon}</span>
@@ -955,7 +992,8 @@ export default function DogGrooming() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">Important Policies</h3>
+                <h3 className="text-2xl font-bold text-gray-800 mb-2">Important to Note</h3>
+                <p className="text-sm text-gray-500 mb-6">(not typically enforced, but up to our discretion)</p>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <svg className="w-5 h-5 text-red-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
