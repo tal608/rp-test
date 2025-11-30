@@ -172,7 +172,7 @@ export default function DogGrooming() {
 
           {/* Journey Steps - Flowing Zigzag Timeline */}
           <div className="relative max-w-5xl mx-auto">
-            {/* SVG Flowing Path - Works on all screen sizes */}
+            {/* SVG Flowing Path - Works on all screen sizes with soft curves */}
             <svg 
               className="absolute inset-0 w-full h-full pointer-events-none" 
               viewBox="0 0 100 100"
@@ -189,17 +189,23 @@ export default function DogGrooming() {
                   <stop offset="100%" stopColor="#f97316" />
                 </linearGradient>
               </defs>
-              {/* Flowing S-curve path */}
+              {/* Flowing S-curve path with gentle curves */}
               <path 
-                d="M 15 3
-                   C 15 8, 50 10, 85 12
-                   C 85 18, 50 20, 15 22
-                   C 15 28, 50 30, 85 32
-                   C 85 38, 50 40, 15 42
-                   C 15 48, 50 50, 85 52
-                   C 85 58, 50 60, 15 62
-                   C 15 68, 50 70, 85 72
-                   C 85 78, 50 82, 50 88"
+                d="M 12 2
+                   Q 12 6, 50 8
+                   Q 88 10, 88 14
+                   Q 88 18, 50 20
+                   Q 12 22, 12 26
+                   Q 12 30, 50 32
+                   Q 88 34, 88 38
+                   Q 88 42, 50 44
+                   Q 12 46, 12 50
+                   Q 12 54, 50 56
+                   Q 88 58, 88 62
+                   Q 88 66, 50 68
+                   Q 12 70, 12 74
+                   Q 12 78, 50 82
+                   Q 88 86, 50 92"
                 stroke="url(#pathGradient)"
                 strokeWidth="0.5"
                 strokeLinecap="round"
@@ -470,7 +476,7 @@ export default function DogGrooming() {
                   </div>
                   
                   {/* Expanded service cards */}
-                  <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+                  <div className="grid md:grid-cols-3 gap-8 md:gap-6">
                     {/* Bath & Brush Card */}
                     <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                       <div className="relative h-40 -mx-5 -mt-5 mb-4 overflow-hidden">
