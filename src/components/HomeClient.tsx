@@ -227,12 +227,12 @@ export default function HomeClient() {
             {heroImages.slice(0, Math.min(loadedImages, 4)).map((image, index) => {
               // Smaller sizes for mobile
               const mobileSize = { width: 80, height: 80 };
-              // 4 positions - 2 at top (visible), 2 at very bottom near scroll indicator
+              // 4 positions - 2 at top (below trust pill), 2 at bottom (above fold)
               const mobilePositions = [
-                { x: "5%", y: "10%", rotation: -5 },     // Top-left, more visible
-                { x: "70%", y: "8%", rotation: 5 },      // Top-right
-                { x: "2%", y: "88%", rotation: -4 },     // Bottom-left, by scroll arrow
-                { x: "72%", y: "86%", rotation: 4 },     // Bottom-right, by scroll arrow
+                { x: "5%", y: "16%", rotation: -5 },     // Top-left, below trust pill
+                { x: "70%", y: "14%", rotation: 5 },     // Top-right, below trust pill
+                { x: "2%", y: "78%", rotation: -4 },     // Bottom-left, moved up to show fully
+                { x: "72%", y: "76%", rotation: 4 },     // Bottom-right, moved up to show fully
               ];
               const mobilePos = mobilePositions[index] || { x: "0%", y: "0%", rotation: 0 };
               
@@ -290,9 +290,9 @@ export default function HomeClient() {
             {/* Soft radial backdrop for text readability */}
             <div className="absolute inset-0 -inset-x-8 -inset-y-16 bg-gradient-radial from-slate-900/60 via-slate-900/30 to-transparent blur-xl -z-10 pointer-events-none"></div>
             
-            <div className="space-y-8">
-              {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight px-2">
+            <div className="space-y-6">
+              {/* Main Headline - pulled up slightly */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight px-2 -mt-8 sm:-mt-12">
                 <span className="block text-white text-shadow-hero animate-fadeInUp">Every Tail Wags</span>
                 <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent relative inline-block animate-fadeInUp-delay-400 mt-1 sm:mt-2">
                   <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] text-shadow-hero-glow">
@@ -300,15 +300,13 @@ export default function HomeClient() {
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent blur-xl opacity-50 animate-pulse"></span>
                 </span>
+                <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 sm:mt-6 font-bold text-blue-100 text-shadow-md animate-fadeInUp-delay-600">
+                  for River Paws Dog Grooming & Hiking
+                </span>
               </h1>
 
-              {/* Subtitle */}
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-blue-100 text-shadow-md animate-fadeInUp-delay-600 mt-3 sm:mt-4">
-                for River Paws Dog Grooming & Hiking
-              </p>
-
               {/* Description */}
-              <div className="mt-6 sm:mt-8 space-y-3 animate-fadeInUp-delay-600">
+              <div className="mt-10 sm:mt-14 space-y-3 animate-fadeInUp-delay-600">
                 <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto px-4 text-shadow-md">
                   Find professional dog grooming and hiking services near you!
                 </p>
@@ -317,12 +315,12 @@ export default function HomeClient() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp-delay-800">
+              <div className="flex justify-center animate-fadeInUp-delay-800">
                 <a
                   href="https://booking.moego.pet/ol/RiverPaws/book"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-600 rounded-full font-medium text-base sm:text-lg overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[44px] flex items-center justify-center"
+                  className="group relative px-8 sm:px-10 py-4 sm:py-5 bg-white text-blue-600 rounded-full font-semibold text-lg sm:text-xl overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[52px] flex items-center justify-center"
                   onMouseMove={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect();
                     const x = e.clientX - rect.left;
@@ -339,40 +337,13 @@ export default function HomeClient() {
                     <Image
                       src="/Logos/paw only 72.png"
                       alt=""
-                      width={20}
-                      height={20}
-                      className="mr-2 w-5 h-5 object-contain group-hover:rotate-12 transition-transform duration-300"
+                      width={24}
+                      height={24}
+                      className="mr-2 w-6 h-6 object-contain group-hover:rotate-12 transition-transform duration-300"
                     />
-                    Book Grooming Today
+                    Book Today
                   </span>
                 </a>
-
-                <Link
-                  href="/dog-hike-scheduling"
-                  className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-600 rounded-full font-medium text-base sm:text-lg overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[44px] flex items-center justify-center"
-                  onMouseMove={(e) => {
-                    const rect = e.currentTarget.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-                    e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-                  }}
-                >
-                  <span className="absolute inset-0 bg-gradient-to-r from-emerald-700 via-teal-600 to-emerald-700 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[length:200%_100%] animate-gradient-shift"></span>
-                  <span className="absolute inset-0 rounded-full bg-white/20 backdrop-blur-sm scale-0 group-hover:scale-100 transition-transform duration-500 origin-center" style={{ 
-                    background: 'radial-gradient(circle 100px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16, 185, 129, 0.3), transparent)' 
-                  }}></span>
-                  <span className="relative z-10 flex items-center justify-center text-blue-700 group-hover:text-white transition-colors duration-300">
-                    <Image
-                      src="/Logos/paw only 72.png"
-                      alt=""
-                      width={20}
-                      height={20}
-                      className="mr-2 w-5 h-5 object-contain group-hover:rotate-12 transition-transform duration-300"
-                    />
-                    Book Dog Hike Today
-                  </span>
-                </Link>
               </div>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white animate-fadeInUp-delay-1000">
