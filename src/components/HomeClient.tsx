@@ -275,37 +275,47 @@ export default function HomeClient() {
           {/* Additional subtle overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-blue-900/40 z-[3]"></div>
 
+          {/* Trust badge - positioned just below header */}
+          <div className="absolute top-20 sm:top-24 left-0 right-0 z-30 flex justify-center animate-fadeInUp">
+            <div className="inline-flex items-center bg-white/95 backdrop-blur-md rounded-full px-4 py-2 shadow-lg">
+              <svg className="w-4 h-4 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+              <span className="text-sm font-medium text-gray-700">Trusted by 2000+ Local Families Since 2017</span>
+            </div>
+          </div>
+
           {/* Content container with higher z-index to stay above Polaroids */}
           <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 text-center">
             {/* Soft radial backdrop for text readability */}
             <div className="absolute inset-0 -inset-x-8 -inset-y-16 bg-gradient-radial from-slate-900/60 via-slate-900/30 to-transparent blur-xl -z-10 pointer-events-none"></div>
             
             <div className="space-y-8">
-              <div className="inline-flex items-center bg-white/95 backdrop-blur-md rounded-full px-4 py-2 animate-fadeInUp shadow-lg">
-                <svg className="w-4 h-4 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                </svg>
-                <span className="text-sm font-medium text-gray-700">Trusted by 2000+ Local Families Since 2017</span>
-              </div>
-
+              {/* Main Headline */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight px-2">
-                {/* LCP element - prioritized but animated */}
                 <span className="block text-white text-shadow-hero animate-fadeInUp">Every Tail Wags</span>
-                <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent relative inline-block animate-fadeInUp-delay-400">
+                <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent relative inline-block animate-fadeInUp-delay-400 mt-1 sm:mt-2">
                   <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] text-shadow-hero-glow">
                     With Joy
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent blur-xl opacity-50 animate-pulse"></span>
                 </span>
-                <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 sm:mt-6 font-medium text-blue-100 text-shadow-md animate-fadeInUp-delay-600">
-                  for River Paws Dog Grooming & Hiking
-                </span>
               </h1>
 
-              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white max-w-2xl mx-auto animate-fadeInUp-delay-600 px-4 mt-6 text-shadow-md">
-                Professional grooming & adventure-filled hiking.
-                <span className="block mt-2">Your dog&apos;s happiness is our mission.</span>
+              {/* Subtitle */}
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-blue-100 text-shadow-md animate-fadeInUp-delay-600 mt-3 sm:mt-4">
+                for River Paws Dog Grooming & Hiking
               </p>
+
+              {/* Description */}
+              <div className="mt-6 sm:mt-8 space-y-3 animate-fadeInUp-delay-600">
+                <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto px-4 text-shadow-md">
+                  Find professional dog grooming and hiking services near you!
+                </p>
+                <p className="text-sm sm:text-base md:text-lg text-blue-100/90 max-w-xl mx-auto px-4 text-shadow-sm italic">
+                  Your dog&apos;s happiness is our mission.
+                </p>
+              </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp-delay-800">
                 <a
@@ -381,10 +391,6 @@ export default function HomeClient() {
                   <span>Call for hours & availability</span>
                 </a>
               </div>
-              
-              <p className="mt-6 text-sm sm:text-base text-white font-semibold animate-fadeInUp-delay-1000 drop-shadow-lg">
-                Find professional dog grooming and hiking services near you!
-              </p>
           </div>
         </div>
 

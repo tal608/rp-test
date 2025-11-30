@@ -87,8 +87,10 @@ export default function Header() {
             </div>
           </div>
           <div>
-            <span className={`text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent ${
-              !isScrolled ? 'drop-shadow-lg' : ''
+            <span className={`text-xl sm:text-2xl font-bold transition-all duration-300 ${
+              !isScrolled 
+                ? 'text-white drop-shadow-lg' 
+                : 'bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent'
             }`}>
               River Paws
             </span>
