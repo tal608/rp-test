@@ -213,6 +213,9 @@ export default function Footer() {
               <Link href="/waivers" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                 Waivers
               </Link>
+              <Link href="/privacy-policy" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                Privacy Policy
+              </Link>
             </div>
           </div>
         </div>

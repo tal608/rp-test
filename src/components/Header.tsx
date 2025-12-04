@@ -12,6 +12,8 @@ export default function Header() {
   const [isMobileInfoOpen, setIsMobileInfoOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const firstFocusableElement = useRef<HTMLElement | null>(null);
+  const lastFocusableElement = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +53,44 @@ export default function Header() {
       return () => document.removeEventListener('keydown', handleEscape);
     }
   }, [isInfoOpen, isMobileMenuOpen]);
+
+  // Focus trap for mobile menu
+  useEffect(() => {
+    if (isMobileMenuOpen && mobileMenuRef.current) {
+      const focusableElements = mobileMenuRef.current.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      
+      if (focusableElements.length > 0) {
+        firstFocusableElement.current = focusableElements[0] as HTMLElement;
+        lastFocusableElement.current = focusableElements[focusableElements.length - 1] as HTMLElement;
+        
+        // Focus the first element when menu opens
+        firstFocusableElement.current.focus();
+        
+        const handleTabKey = (e: KeyboardEvent) => {
+          if (e.key === 'Tab') {
+            if (e.shiftKey) {
+              // Shift + Tab
+              if (document.activeElement === firstFocusableElement.current) {
+                e.preventDefault();
+                lastFocusableElement.current?.focus();
+              }
+            } else {
+              // Tab
+              if (document.activeElement === lastFocusableElement.current) {
+                e.preventDefault();
+                firstFocusableElement.current?.focus();
+              }
+            }
+          }
+        };
+        
+        document.addEventListener('keydown', handleTabKey);
+        return () => document.removeEventListener('keydown', handleTabKey);
+      }
+    }
+  }, [isMobileMenuOpen, isMobileInfoOpen]); // Re-run when submenu opens/closes as focusable elements change
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -268,6 +308,9 @@ export default function Header() {
         className={`fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl z-[95] transform transition-transform duration-300 ease-in-out md:hidden ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile menu"
       >
         <div className="flex flex-col h-full">
           {/* Mobile Menu Header */}
@@ -277,7 +320,7 @@ export default function Header() {
               type="button"
               onClick={() => setIsMobileMenuOpen(false)}
               aria-label="Close menu"
-              className="text-white hover:bg-white/20 rounded-lg p-2 transition-colors"
+              className="text-white hover:bg-white/20 rounded-lg p-2 transition-colors focus:outline-none focus:ring-2 focus:ring-white"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -292,7 +335,7 @@ export default function Header() {
               <Link
                 href="/"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <span className="text-xl">🏠</span>
                 <span>Home</span>
@@ -301,7 +344,7 @@ export default function Header() {
               <Link
                 href="/dog-grooming"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <span className="text-xl">✂️</span>
                 <span>Grooming</span>
@@ -310,7 +353,7 @@ export default function Header() {
               <Link
                 href="/dog-hikes"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <span className="text-xl">🏔️</span>
                 <span>Hiking</span>
@@ -321,7 +364,7 @@ export default function Header() {
                 <button
                   type="button"
                   onClick={() => setIsMobileInfoOpen(!isMobileInfoOpen)}
-                  className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium"
+                  className="flex items-center justify-between w-full px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   <div className="flex items-center gap-3">
                     <span className="text-xl">ℹ️</span>
@@ -346,7 +389,7 @@ export default function Header() {
                         setIsMobileMenuOpen(false);
                         setIsMobileInfoOpen(false);
                       }}
-                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <span className="text-lg">📝</span>
                       <span>Blog</span>
@@ -357,7 +400,7 @@ export default function Header() {
                         setIsMobileMenuOpen(false);
                         setIsMobileInfoOpen(false);
                       }}
-                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <span className="text-lg">👥</span>
                       <span>Our Team</span>
@@ -368,7 +411,7 @@ export default function Header() {
                         setIsMobileMenuOpen(false);
                         setIsMobileInfoOpen(false);
                       }}
-                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <span className="text-lg">🖼️</span>
                       <span>Gallery</span>
@@ -379,7 +422,7 @@ export default function Header() {
                         setIsMobileMenuOpen(false);
                         setIsMobileInfoOpen(false);
                       }}
-                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition-colors"
+                      className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-gray-600 hover:bg-gray-50 hover:text-blue-600 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <span className="text-lg">📞</span>
                       <span>Contact</span>
@@ -392,7 +435,7 @@ export default function Header() {
               <Link
                 href="/portal"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium border-t border-gray-200 mt-4 pt-4"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition-colors font-medium border-t border-gray-200 mt-4 pt-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
@@ -418,7 +461,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="block w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white px-6 py-3 rounded-lg font-semibold text-center hover:from-blue-700 hover:to-teal-600 transition-colors shadow-lg"
+              className="block w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white px-6 py-3 rounded-lg font-semibold text-center hover:from-blue-700 hover:to-teal-600 transition-colors shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Book Now
             </a>
@@ -453,4 +496,3 @@ export default function Header() {
     </nav>
   );
 }
-
