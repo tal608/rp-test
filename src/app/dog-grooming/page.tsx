@@ -136,9 +136,9 @@ export default function DogGrooming() {
           </h1>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto animate-fadeInUp-delay-800 px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-              Experience professional grooming that puts your dog&apos;s comfort and happiness first. 
-              Our experienced, gentle groomers treat every pet like family. Located on the edge of Waunakee and Madison, 
-              we serve pet owners from Middleton, DeForest, Sun Prairie, and throughout the greater Madison area with compassionate, expert care since 2017.
+              Where nervous pups become spa-day regulars and even the wiggliest dogs leave looking like show champions. 
+              Our gentle, experienced groomers take the time to make every dog feel safe—because a calm pup means a beautiful groom. 
+              Proudly serving Waunakee, Madison, Middleton, DeForest, and Sun Prairie since 2017.
               <span className="block mt-2 text-yellow-200 font-semibold">Find professional dog grooming near you!</span>
             </p>
 
@@ -383,8 +383,8 @@ export default function DogGrooming() {
                       {/* Small image */}
                       <div className="hidden md:block relative w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden">
                         <Image
-                          src="/Grooming/happy-bernesemix-grooming-madison-wi-river-paws.jpg"
-                          alt="Welcoming environment at River Paws"
+                          src="/Grooming/curious-maltipoo-grooming-tub-sun-prairie-wi-river-paws.jpg"
+                          alt="Curious Maltipoo greeting at River Paws check-in"
                           fill
                           className="object-cover"
                           sizes="96px"
@@ -498,8 +498,8 @@ export default function DogGrooming() {
                       {/* Small image */}
                       <div className="hidden md:block relative w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden">
                         <Image
-                          src="/Grooming/groomed-poodle-grooming-waunakee-wi-river-paws.jpg"
-                          alt="Professional coat assessment"
+                          src="/Grooming/freshcut-doodle-grooming-waunakee-wi-river-paws.jpg"
+                          alt="Freshly groomed doodle showing coat assessment"
                           fill
                           className="object-cover"
                           sizes="96px"
@@ -613,11 +613,11 @@ export default function DogGrooming() {
                     <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                       <div className="relative h-[200px] md:h-[168px] -mx-5 -mt-5 mb-4 overflow-hidden">
                         <Image
-                          src="/Grooming/groomed-poodle-grooming-waunakee-wi-river-paws.jpg"
-                          alt="À la carte grooming services"
+                          src="/Grooming/calm-biewer-terrier-grooming-waunakee-wi-river-paws.jpg"
+                          alt="Biewer Terrier enjoying à la carte grooming services"
                           fill
                           className="object-cover"
-                          style={{ objectPosition: getImageObjectPosition("/Grooming/groomed-poodle-grooming-waunakee-wi-river-paws.jpg") }}
+                          style={{ objectPosition: getImageObjectPosition("/Grooming/calm-biewer-terrier-grooming-waunakee-wi-river-paws.jpg") }}
                           sizes="(max-width: 768px) 100vw, 33vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -725,9 +725,9 @@ export default function DogGrooming() {
                   Your Trusted Grooming Partners
                 </h2>
                 <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                  Since 2017, River Paws has been the premier destination for professional grooming throughout Waunakee, Madison, and surrounding communities 
-                  including Middleton, DeForest, and Sun Prairie. Whether you're searching for a professional dog groomer, pet groomer, dog salon, or dog spa experience in Waunakee, Madison, Middleton, DeForest, or Sun Prairie, 
-                  our experienced team provides spa-quality grooming services tailored to your dog's specific needs.
+                  It started with one simple belief: dogs deserve groomers who actually <em>like</em> dogs. Not just tolerate them—genuinely enjoy working with them. 
+                  Since 2017, that philosophy has turned first-time visitors into regulars, and nervous pups into spa-day enthusiasts. 
+                  We&apos;re proud to serve families from Waunakee, Madison, Middleton, DeForest, Sun Prairie, and beyond.
                 </p>
                 <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                   We believe every dog deserves personalized attention, stress-free experiences,
@@ -781,11 +781,11 @@ export default function DogGrooming() {
             <div className="relative">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/Grooming/happy-bernesemix-grooming-madison-wi-river-paws.jpg"
-                  alt="A happy Bernese Mountain Dog mix wearing a green bandana after grooming at River Paws in Madison, Wisconsin."
+                  src="/Grooming/happy-husky-groomed-deforest-wi-river-paws.jpg"
+                  alt="A happy Siberian Husky with a fresh grooming and orange bandana at River Paws"
                   fill
                   className="object-cover"
-                  style={{ objectPosition: '50% 40%' }}
+                  style={{ objectPosition: getImageObjectPosition("/Grooming/happy-husky-groomed-deforest-wi-river-paws.jpg") }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
@@ -815,42 +815,31 @@ export default function DogGrooming() {
 
       {/* Why Choose River Paws */}
       <section className="py-24 px-6 bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">Why Choose River Paws?</h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Experience the difference that experienced, compassionate grooming makes for your beloved pet.
+              We&apos;re not a grooming factory. Here, your dog gets the time and attention they deserve—not a rushed assembly line.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+            {/* Experienced & Gentle Team - Combined card */}
             <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-100 to-teal-100 rounded-xl flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Experienced Professionals</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Our groomers are experienced, trained professionals with years of hands-on experience,
-                ensuring your dog receives the highest quality care and attention.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-emerald-100 to-blue-100 rounded-xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Stress-Free Environment</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Experienced & Gentle Team</h3>
               <p className="text-gray-600 leading-relaxed">
-                Our experienced groomers work at your dog&apos;s pace, using gentle techniques
-                and positive reinforcement to ensure a comfortable grooming experience.
+                Our team has seen every coat type, every temperament, and every wiggle-filled bath. Does your dog hide when they hear &quot;bath&quot;? 
+                We get it. Our groomers are experts at reading body language, taking breaks when needed, and turning nervous energy into tail wags.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+            {/* Complete Transparency */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -858,48 +847,37 @@ export default function DogGrooming() {
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Complete Transparency</h3>
               <p className="text-gray-600 leading-relaxed">
-                Full transparency about your dog&apos;s coat health, care recommendations,
-                and detailed explanations of all services and pricing.
+                No surprise charges, no mystery services. We&apos;ll explain exactly what your dog needs, 
+                show you any problem areas, and give you an honest estimate before we start.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+            {/* Premium Products */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-yellow-100 to-orange-100 rounded-xl flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Premium Products</h3>
               <p className="text-gray-600 leading-relaxed">
-                We use only top-quality, pet-safe grooming products and professional-grade
-                equipment to ensure the best results for your dog.
+                Salon-quality shampoos, conditioners, and tools that make coats shine and skin happy. 
+                We&apos;re picky about products so your pup gets the best.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+            {/* Convenient Location */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
               <div className="w-16 h-16 bg-gradient-to-r from-green-100 to-emerald-100 rounded-xl flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Convenient Location</h3>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Convenient Location</h3>
               <p className="text-gray-600 leading-relaxed">
-                Located on the edge of Waunakee and Madison, we're an easy drive from throughout the greater Madison area, 
-                including Middleton, DeForest, and Sun Prairie. Convenient parking makes drop-off and pick-up a breeze.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-              <div className="w-16 h-16 bg-gradient-to-r from-indigo-100 to-purple-100 rounded-xl flex items-center justify-center mb-6">
-                <svg className="w-8 h-8 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Flexible Scheduling</h3>
-              <p className="text-gray-600 leading-relaxed">
-                We work with your schedule to find appointment times that work for you and your dog.
-                Call us to discuss availability and scheduling options.
+                Located on the edge of Waunakee and Madison, we&apos;re an easy drive from Middleton, DeForest, and Sun Prairie. 
+                Plus, we&apos;re just 500 feet from Yahara Heights Dog Park—perfect for post-adventure cleanups!
               </p>
             </div>
           </div>
@@ -939,6 +917,157 @@ export default function DogGrooming() {
                   Walking distance from the area&apos;s most popular dog park!
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials & FAQ */}
+      <section className="py-24 px-6 bg-gradient-to-b from-blue-50 to-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">What Our Clients Say</h2>
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              The real reviews? The dogs who pull their owners toward our door instead of away from it.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12 md:mb-16">
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-white font-bold text-lg">L</span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-800">Lindsey M.</h4>
+                  <p className="text-sm text-gray-600">Waunakee</p>
+                </div>
+              </div>
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 leading-relaxed italic">
+                &ldquo;The best grooming experience we&apos;ve ever had. Our golden retriever comes home looking amazing and completely stress-free.&rdquo;
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
+                  <span className="text-white font-bold text-lg">K</span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-gray-800">Kate S.</h4>
+                  <p className="text-sm text-gray-600">Madison</p>
+                </div>
+              </div>
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                ))}
+              </div>
+              <p className="text-gray-700 leading-relaxed italic">
+                &ldquo;They work magic with nervous dogs. Monique and the team have been a blessing for us.&rdquo;
+              </p>
+            </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg">
+            <FAQSection
+              faqs={groomingFaqs}
+              title="Frequently Asked Questions"
+              variant="div"
+            />
+            <FAQSchema faqs={[...groomingFaqs, ...formatForFAQSchema(groomingVoiceFaqs)]} />
+          </div>
+
+          {/* Grooming Gallery Preview */}
+          <div className="mt-12 sm:mt-16">
+            <div className="text-center mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
+                See the transformations for yourself
+              </h3>
+              <p className="text-lg text-blue-600 font-semibold">Every groom tells a story.</p>
+            </div>
+            
+            {/* Polaroid Preview Stack */}
+            <div className="relative flex justify-center items-center mb-8">
+              <Link href="/gallery" className="group relative">
+                {/* Stacked Polaroid effect */}
+                <div className="relative w-64 h-72 sm:w-80 sm:h-96">
+                  {/* Back polaroid - left */}
+                  <div className="absolute left-0 top-4 w-48 h-56 sm:w-56 sm:h-64 bg-white rounded shadow-lg transform -rotate-12 group-hover:-rotate-6 transition-transform duration-300 overflow-hidden">
+                    <div className="p-2 pb-8 h-full">
+                      <div className="relative w-full h-full rounded-sm overflow-hidden">
+                        <Image
+                          src="/Grooming/groomed-shih-tzu-grooming-madison-wi-river-paws.jpg"
+                          alt="Freshly groomed Shih Tzu looking adorable"
+                          fill
+                          className="object-cover"
+                          sizes="224px"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Back polaroid - right */}
+                  <div className="absolute right-0 top-2 w-48 h-56 sm:w-56 sm:h-64 bg-white rounded shadow-lg transform rotate-12 group-hover:rotate-6 transition-transform duration-300 overflow-hidden">
+                    <div className="p-2 pb-8 h-full">
+                      <div className="relative w-full h-full rounded-sm overflow-hidden">
+                        <Image
+                          src="/Grooming/calm-cockapoo-grooming-waunakee-wi-river-paws.jpg"
+                          alt="Calm cockapoo enjoying the grooming experience"
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Front polaroid - center */}
+                  <div className="absolute left-1/2 -translate-x-1/2 top-0 w-52 h-60 sm:w-64 sm:h-72 bg-white rounded shadow-2xl transform rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 z-10 overflow-hidden">
+                    <div className="p-2 pb-10 h-full">
+                      <div className="relative w-full h-full rounded-sm overflow-hidden">
+                        <Image
+                          src="/Grooming/freshly-groomed-doodle-salon-waunakee-wi-river-paws.jpg"
+                          alt="Freshly groomed doodle looking fabulous"
+                          fill
+                          className="object-cover"
+                          sizes="256px"
+                        />
+                      </div>
+                    </div>
+                    <span className="absolute bottom-3 left-0 right-0 text-center text-sm text-gray-600 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>Fresh & fabulous! ✨</span>
+                  </div>
+                </div>
+                
+                {/* Hover glow effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-teal-400/0 to-blue-400/0 group-hover:from-blue-400/20 group-hover:via-teal-400/20 group-hover:to-blue-400/20 rounded-3xl blur-2xl transition-all duration-500 -z-10"></div>
+              </Link>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="text-center">
+              <Link
+                href="/gallery"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 bg-[length:200%_100%] text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-gradient-x"
+              >
+                <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Browse All Spa Day Photos
+                <svg className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <p className="text-sm text-gray-500 mt-3">100+ photos of happy, freshly groomed pups</p>
             </div>
           </div>
         </div>
@@ -1110,72 +1239,9 @@ export default function DogGrooming() {
         </div>
       </section>
 
-      {/* Testimonials & FAQ */}
+      {/* Blog & Resources Section */}
       <section className="py-24 px-6 bg-gradient-to-b from-blue-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">What Our Clients Say</h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Don&apos;t just take our word for it - hear from the families who trust us with their beloved pets.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12 md:mb-16">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-              <div className="flex items-center mb-4 sm:mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold text-lg">L</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-800">Lindsey M.</h4>
-                  <p className="text-sm text-gray-600">Waunakee</p>
-                </div>
-              </div>
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-700 leading-relaxed italic">
-                &ldquo;The best grooming experience we&apos;ve ever had. Our golden retriever comes home looking amazing and completely stress-free.&rdquo;
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300">
-              <div className="flex items-center mb-4 sm:mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold text-lg">K</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-gray-800">Kate S.</h4>
-                  <p className="text-sm text-gray-600">Madison</p>
-                </div>
-              </div>
-              <div className="flex mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-700 leading-relaxed italic">
-                &ldquo;They work magic with nervous dogs. Monique and the team have been a blessing for us.&rdquo;
-              </p>
-            </div>
-          </div>
-
-          {/* FAQ Section */}
-          <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg">
-            <FAQSection
-              faqs={groomingFaqs}
-              title="Frequently Asked Questions"
-              variant="div"
-            />
-            <FAQSchema faqs={[...groomingFaqs, ...formatForFAQSchema(groomingVoiceFaqs)]} />
-          </div>
-
           {/* Blog Section */}
           <div className="mt-8 sm:mt-12 bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 border border-blue-100">
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-3 sm:mb-4">
@@ -1198,417 +1264,243 @@ export default function DogGrooming() {
           </div>
 
           {/* Related Services */}
-          <div className="mt-8 sm:mt-12 bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 shadow-lg border border-gray-100">
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-10">
-              Explore Our Other Services
-            </h3>
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              
-              {/* Hiking Portal Card */}
-              <Link
-                href="/dog-hikes"
-                className="group relative h-80 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-              >
-                <Image
-                  src="/Hiking/wisconsin-active-pack-dog-hiking-madison-wi-river-paws.jpg"
-                  alt="Adventure Dog Hikes"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  style={{ objectPosition: getImageObjectPosition("/Hiking/wisconsin-active-pack-dog-hiking-madison-wi-river-paws.jpg") }}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
-                
-                <div className="absolute top-6 left-6 w-14 h-14 bg-white/95 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                  </svg>
-                </div>
+          {/* Related Services - Polaroid Style */}
+          <div className="mt-8 sm:mt-12 py-12 sm:py-16">
+            <div className="max-w-5xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-10 sm:mb-14">
+                <p className="text-lg text-gray-500 mb-2">While you&apos;re here...</p>
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">
+                  Check Out Our Other Services
+                </h3>
+              </div>
 
-                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                  <h4 className="text-3xl font-bold text-white mb-3 group-hover:translate-y-[-4px] transition-transform duration-300">
-                    Adventure Dog Hikes
-                  </h4>
-                  <p className="text-emerald-50 text-lg mb-4 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                    Small group hiking adventures for your dog. Exercise, socialization, and fun!
-                  </p>
-                  <div className="flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                    View Hiking Services
-                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+              {/* Two Polaroid Cards */}
+              <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+                
+                {/* Hiking Polaroid Card */}
+                <div className="group">
+                  <Link href="/dog-hikes" className="block">
+                    {/* Polaroid Frame */}
+                    <div className="relative bg-white p-3 pb-16 sm:p-4 sm:pb-20 rounded-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-rotate-2 group-hover:scale-[1.02]"
+                         style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)' }}>
+                      {/* Photo */}
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                        <Image
+                          src="/Hiking/wisconsin-active-pack-dog-hiking-madison-wi-river-paws.jpg"
+                          alt="Happy pack of dogs on a trail adventure with River Paws"
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          style={{ objectPosition: getImageObjectPosition("/Hiking/wisconsin-active-pack-dog-hiking-madison-wi-river-paws.jpg") }}
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        {/* Subtle overlay on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                      
+                      {/* Handwritten Caption */}
+                      <div className="absolute bottom-3 sm:bottom-5 left-0 right-0 text-center">
+                        <p className="text-base sm:text-lg text-gray-700 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
+                          Adventure awaits! 🌲🐕
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                  
+                  {/* Service Info Below Polaroid */}
+                  <div className="mt-5 sm:mt-6 text-center">
+                    <h4 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Adventure Dog Hikes</h4>
+                    <p className="text-gray-600 mb-4 text-sm sm:text-base">Small group trails, big smiles, and the kind of tired that means a great day.</p>
+                    <Link
+                      href="/dog-hikes"
+                      className="inline-flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-500 text-white rounded-full font-semibold text-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    >
+                      Explore Hiking
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
                   </div>
                 </div>
-              </Link>
 
-              {/* Team Portal Card */}
-              <Link
-                href="/caretakers"
-                className="group relative h-80 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-              >
-                <Image
-                  src="/Hiking/confident-mixed-pack-outdoor-enrichment-madison-wi-river-paws.jpg"
-                  alt="River Paws team members"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  style={{ objectPosition: getImageObjectPosition("/Hiking/confident-mixed-pack-outdoor-enrichment-madison-wi-river-paws.jpg") }}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
-                
-                <div className="absolute top-6 left-6 w-14 h-14 bg-white/95 force-bg-white backdrop-blur-md rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-
-                <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                  <h4 className="text-3xl font-bold text-white mb-3 group-hover:translate-y-[-4px] transition-transform duration-300">
-                    Meet Our Team
-                  </h4>
-                  <p className="text-blue-50 text-lg mb-4 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                    Learn about our experienced, trained professionals who care for your pets.
-                  </p>
-                  <div className="flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                    Meet the Pack Leaders
-                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
+                {/* Meet the Team Polaroid Card */}
+                <div className="group">
+                  <Link href="/caretakers" className="block">
+                    {/* Polaroid Frame */}
+                    <div className="relative bg-white p-3 pb-16 sm:p-4 sm:pb-20 rounded-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:rotate-2 group-hover:scale-[1.02]"
+                         style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)' }}>
+                      {/* Photo */}
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                        <Image
+                          src="/Hiking/joyful-pack-social-hiking-madison-wi-river-paws.jpg"
+                          alt="River Paws team with happy pack of dogs on the trails"
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          style={{ objectPosition: getImageObjectPosition("/Hiking/joyful-pack-social-hiking-madison-wi-river-paws.jpg") }}
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        {/* Subtle overlay on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                      
+                      {/* Handwritten Caption */}
+                      <div className="absolute bottom-3 sm:bottom-5 left-0 right-0 text-center">
+                        <p className="text-base sm:text-lg text-gray-700 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
+                          The crew! 🐾❤️
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
+                  
+                  {/* Service Info Below Polaroid */}
+                  <div className="mt-5 sm:mt-6 text-center">
+                    <h4 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Meet Our Team</h4>
+                    <p className="text-gray-600 mb-4 text-sm sm:text-base">The passionate people behind every adventure and spa day.</p>
+                    <Link
+                      href="/caretakers"
+                      className="inline-flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-full font-semibold text-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    >
+                      Meet the Pack Leaders
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </Link>
                   </div>
                 </div>
-              </Link>
-
+              </div>
             </div>
           </div>
 
-          {/* Dog Grooming Resources & Topic Clusters */}
-          <div className="mt-12 bg-gradient-to-r from-blue-50 to-teal-50 rounded-3xl p-8 md:p-12">
-            <h3 className="text-3xl font-bold text-gray-900 text-center mb-6">
-              Dog Grooming Resources & Guides
-            </h3>
-            <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-              Explore detailed guides, expert articles, and location-specific grooming information:
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* IMAGE_PLACEMENT_START: dog-grooming-resources-puppy */}
-              {/* Puppy Grooming */}
-              <Link
-                href="/puppy-grooming"
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src="/Grooming/freshly-groomed-pomeranian-grooming-waunakee-wi-river-paws.jpg"
-                    alt="A happy, freshly groomed Pomeranian wearing a watermelon bandana at a River Paws grooming salon in Waunakee, Wisconsin."
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    style={{ objectPosition: getImageObjectPosition("/Grooming/freshly-groomed-pomeranian-grooming-waunakee-wi-river-paws.jpg") }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  {/* IMAGE_PLACEMENT_END: dog-grooming-resources-puppy */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 className="font-bold text-white text-lg mb-1">
-                      Puppy Grooming
-                    </h4>
-                    <p className="text-sm text-white/90">
-                      Early grooming for puppies starting at 12 weeks
-                    </p>
+          {/* Areas We Serve - Compact Design */}
+          <div className="mt-12 bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+              <div className="flex-1">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-800">Proudly Serving the Greater Madison Area</h3>
+                </div>
+                <p className="text-gray-600 mb-4">
+                  Whether you&apos;re around the corner or across town, we&apos;re worth the drive. Learn more about grooming in your area:
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Link href="/dog-grooming-waunakee" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                    📍 Waunakee
+                  </Link>
+                  <Link href="/dog-grooming-madison" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                    📍 Madison
+                  </Link>
+                  <Link href="/dog-grooming-middleton" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                    📍 Middleton
+                  </Link>
+                  <Link href="/dog-grooming-deforest" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                    📍 DeForest
+                  </Link>
+                  <Link href="/dog-grooming-sun-prairie" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                    📍 Sun Prairie
+                  </Link>
+                </div>
+              </div>
+              <div className="hidden md:block">
+                <div className="relative w-32 h-32">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-teal-400 rounded-full opacity-20 animate-pulse"></div>
+                  <div className="absolute inset-2 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-4xl">🗺️</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Expert Guides - Polaroid Style Blog Cards */}
+          <div className="mt-12 bg-gradient-to-br from-amber-50 via-white to-blue-50 rounded-3xl p-8 md:p-12">
+            <div className="text-center mb-10">
+              <p className="text-lg text-gray-500 mb-2">From our grooming experts...</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">Tips & Guides for Happy Pups</h3>
+            </div>
+            
+            {/* Polaroid-Style Blog Cards */}
+            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {/* Card 1 */}
+              <Link href="/blog/5-signs-your-dog-needs-grooming" className="group">
+                <div className="bg-white p-3 pb-6 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:-rotate-1 group-hover:scale-[1.02]"
+                     style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4">
+                    <Image
+                      src="/Grooming/grooming-transformation-doodle-madison-wi-river-paws.jpg"
+                      alt="Before and after grooming transformation"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="px-1">
+                    <span className="inline-block px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium mb-2">Grooming Tips</span>
+                    <h4 className="font-bold text-gray-800 group-hover:text-blue-600 transition-colors">5 Signs Your Dog Needs Grooming</h4>
                   </div>
                 </div>
               </Link>
 
-              {/* IMAGE_PLACEMENT_START: dog-grooming-resources-canine-products */}
-              {/* Canine Grooming Products */}
-              <Link
-                href="/canine-grooming"
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src="/Grooming/freshcut-doodle-grooming-waunakee-wi-river-paws.jpg"
-                    alt="A freshly groomed black and white doodle dog calmly poses in a River Paws grooming salon in Waunakee, Wisconsin."
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    style={{ objectPosition: getImageObjectPosition("/Grooming/freshcut-doodle-grooming-waunakee-wi-river-paws.jpg") }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  {/* IMAGE_PLACEMENT_END: dog-grooming-resources-canine-products */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 className="font-bold text-white text-lg mb-1">
-                      Canine Grooming Products
-                    </h4>
-                    <p className="text-sm text-white/90">
-                      Guide to best brushes, shampoos & tools
-                    </p>
+              {/* Card 2 */}
+              <Link href="/blog/preparing-your-puppy-for-their-first-groom" className="group">
+                <div className="bg-white p-3 pb-6 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:rotate-1 group-hover:scale-[1.02]"
+                     style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4">
+                    <Image
+                      src="/Grooming/freshly-groomed-pomeranian-grooming-waunakee-wi-river-paws.jpg"
+                      alt="Happy puppy after first grooming"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      style={{ objectPosition: getImageObjectPosition("/Grooming/freshly-groomed-pomeranian-grooming-waunakee-wi-river-paws.jpg") }}
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <div className="px-1">
+                    <span className="inline-block px-2 py-1 bg-amber-100 text-amber-700 rounded text-xs font-medium mb-2">Puppy Care</span>
+                    <h4 className="font-bold text-gray-800 group-hover:text-blue-600 transition-colors">Preparing Your Puppy for Their First Groom</h4>
                   </div>
                 </div>
               </Link>
 
-              {/* IMAGE_PLACEMENT_START: dog-grooming-resources-madison */}
-              {/* Madison */}
-              <Link
-                href="/dog-grooming-madison"
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src="/Grooming/grooming-transformation-doodle-madison-wi-river-paws.jpg"
-                    alt="A doodle's transformation from muddy outdoor play to a happy, freshly groomed look at River Paws in Madison, Wisconsin."
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    style={{ objectPosition: getImageObjectPosition("/Grooming/grooming-transformation-doodle-madison-wi-river-paws.jpg") }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  {/* IMAGE_PLACEMENT_END: dog-grooming-resources-madison */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 className="font-bold text-white text-lg mb-1">
-                      Dog Grooming Madison
-                    </h4>
-                    <p className="text-sm text-white/90">
-                      Benefits of regular grooming
-                    </p>
+              {/* Card 3 */}
+              <Link href="/blog/grooming-dogs-with-anxiety" className="group">
+                <div className="bg-white p-3 pb-6 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:-rotate-1 group-hover:scale-[1.02]"
+                     style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}>
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4">
+                    <Image
+                      src="/Grooming/freshly-groomed-doodle-mix-grooming-waunakee-wi-river-paws.jpg"
+                      alt="Relaxed doodle mix during gentle grooming"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
-                </div>
-              </Link>
-
-              {/* IMAGE_PLACEMENT_START: dog-grooming-resources-waunakee */}
-              {/* Waunakee */}
-              <Link
-                href="/dog-grooming-waunakee"
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src="/Grooming/pampered-spaniel-bath-waunakee-wi-river-paws.jpg"
-                    alt="A pampered Spaniel dog fresh from a bath, wrapped in a towel in a grooming tub, receiving gentle care from River Paws in Waunakee, WI."
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    style={{ objectPosition: getImageObjectPosition("/Grooming/pampered-spaniel-bath-waunakee-wi-river-paws.jpg") }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  {/* IMAGE_PLACEMENT_END: dog-grooming-resources-waunakee */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 className="font-bold text-white text-lg mb-1">
-                      Dog Grooming Waunakee
-                    </h4>
-                    <p className="text-sm text-white/90">
-                      Products & puppy grooming FAQs
-                    </p>
-                  </div>
-                </div>
-              </Link>
-
-              {/* IMAGE_PLACEMENT_START: dog-grooming-resources-deforest */}
-              {/* DeForest */}
-              <Link
-                href="/dog-grooming-deforest"
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src="/Grooming/happy-husky-groomed-deforest-wi-river-paws.jpg"
-                    alt="A happy Siberian Husky with a fresh grooming and an orange bandana, cared for by River Paws in DeForest, Wisconsin."
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    style={{ objectPosition: getImageObjectPosition("/Grooming/happy-husky-groomed-deforest-wi-river-paws.jpg") }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  {/* IMAGE_PLACEMENT_END: dog-grooming-resources-deforest */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 className="font-bold text-white text-lg mb-1">
-                      Dog Grooming DeForest
-                    </h4>
-                    <p className="text-sm text-white/90">
-                      Post-dog park grooming
-                    </p>
-                  </div>
-                </div>
-              </Link>
-
-              {/* IMAGE_PLACEMENT_START: dog-grooming-resources-sun-prairie */}
-              {/* Sun Prairie */}
-              <Link
-                href="/dog-grooming-sun-prairie"
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src="/Grooming/curious-maltipoo-grooming-tub-sun-prairie-wi-river-paws.jpg"
-                    alt="A fluffy Maltipoo with its tongue out, curiously peeking from a grooming tub at River Paws in Sun Prairie, Wisconsin."
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    style={{ objectPosition: getImageObjectPosition("/Grooming/curious-maltipoo-grooming-tub-sun-prairie-wi-river-paws.jpg") }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  {/* IMAGE_PLACEMENT_END: dog-grooming-resources-sun-prairie */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 className="font-bold text-white text-lg mb-1">
-                      Dog Grooming Sun Prairie
-                    </h4>
-                    <p className="text-sm text-white/90">
-                      Before & after appointment tips
-                    </p>
-                  </div>
-                </div>
-              </Link>
-
-              {/* IMAGE_PLACEMENT_START: dog-grooming-resources-middleton */}
-              {/* Middleton */}
-              <Link
-                href="/dog-grooming-middleton"
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-              >
-                <div className="relative h-48">
-                  <Image
-                    src="/Grooming/groomed-poodle-grooming-waunakee-wi-river-paws.jpg"
-                    alt="A freshly groomed Poodle mix sits calmly on a table after a River Paws grooming session in Waunakee, Wisconsin."
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    style={{ objectPosition: getImageObjectPosition("/Grooming/groomed-poodle-grooming-waunakee-wi-river-paws.jpg") }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                  {/* IMAGE_PLACEMENT_END: dog-grooming-resources-middleton */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h4 className="font-bold text-white text-lg mb-1">
-                      Dog Grooming Middleton
-                    </h4>
-                    <p className="text-sm text-white/90">
-                      Bathing tips at home
-                    </p>
+                  <div className="px-1">
+                    <span className="inline-block px-2 py-1 bg-teal-100 text-teal-700 rounded text-xs font-medium mb-2">Stress-Free</span>
+                    <h4 className="font-bold text-gray-800 group-hover:text-blue-600 transition-colors">Grooming Dogs with Anxiety</h4>
                   </div>
                 </div>
               </Link>
             </div>
 
-            {/* Blog Articles Topic Cluster */}
-            <div className="mt-12 pt-12 border-t border-gray-200">
-              <h4 className="text-2xl font-bold text-gray-900 text-center mb-6">
-                Expert Grooming Guides & Articles
-              </h4>
-              <p className="text-center text-gray-600 mb-8 max-w-2xl mx-auto">
-                Learn from our professional groomers with these comprehensive guides:
-              </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <Link
-                  href="/blog/5-signs-your-dog-needs-grooming"
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-                >
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-                      Grooming Tips
-                    </span>
-                  </div>
-                  <h5 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
-                    5 Signs Your Dog Needs Grooming
-                  </h5>
-                  <p className="text-sm text-gray-600 line-clamp-2">
-                    Learn the key signs that indicate your dog needs professional grooming attention.
-                  </p>
-                </Link>
-
-                <Link
-                  href="/blog/how-often-should-you-groom-your-dog"
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-                >
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-                      Grooming Schedule
-                    </span>
-                  </div>
-                  <h5 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
-                    How Often Should You Groom Your Dog?
-                  </h5>
-                  <p className="text-sm text-gray-600 line-clamp-2">
-                    Discover the ideal grooming frequency based on breed, coat type, and lifestyle.
-                  </p>
-                </Link>
-
-                <Link
-                  href="/blog/best-grooming-practices-for-different-dog-breeds"
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-                >
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-                      Breed Guide
-                    </span>
-                  </div>
-                  <h5 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
-                    Best Grooming Practices for Different Dog Breeds
-                  </h5>
-                  <p className="text-sm text-gray-600 line-clamp-2">
-                    Comprehensive breed-specific grooming guide for every dog breed.
-                  </p>
-                </Link>
-
-                <Link
-                  href="/blog/preparing-your-puppy-for-their-first-groom"
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-                >
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-                      Puppy Care
-                    </span>
-                  </div>
-                  <h5 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
-                    Preparing Your Puppy for Their First Groom
-                  </h5>
-                  <p className="text-sm text-gray-600 line-clamp-2">
-                    Essential tips for creating positive first grooming experiences for puppies.
-                  </p>
-                </Link>
-
-                <Link
-                  href="/blog/grooming-dogs-with-anxiety"
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-                >
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-                      Stress-Free
-                    </span>
-                  </div>
-                  <h5 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
-                    Grooming Dogs with Anxiety
-                  </h5>
-                  <p className="text-sm text-gray-600 line-clamp-2">
-                    Gentle techniques and strategies for stress-free grooming of anxious dogs.
-                  </p>
-                </Link>
-
-                <Link
-                  href="/blog/understanding-dog-behavior-during-grooming"
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 group"
-                >
-                  <div className="mb-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-                      Behavior
-                    </span>
-                  </div>
-                  <h5 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">
-                    Understanding Dog Behavior During Grooming
-                  </h5>
-                  <p className="text-sm text-gray-600 line-clamp-2">
-                    Learn to read your dog's signals and body language during grooming.
-                  </p>
-                </Link>
-              </div>
-              <div className="text-center mt-8">
-                <Link
-                  href="/blog"
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-lg font-semibold hover:from-blue-700 hover:to-teal-600 transition-all duration-300 shadow-md hover:shadow-lg"
-                >
-                  View All Grooming Articles
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+            {/* View All CTA */}
+            <div className="text-center mt-10">
+              <Link
+                href="/blog"
+                className="group inline-flex items-center px-6 py-3 bg-white border-2 border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-600 rounded-full font-semibold transition-all duration-300 shadow-sm hover:shadow-md"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                Browse All Grooming Guides
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>

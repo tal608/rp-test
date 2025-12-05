@@ -122,8 +122,7 @@ export default function DogHikes() {
           </h1>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto animate-fadeInUp-delay-800 px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-              Your dog isn&apos;t built for four walls—they&apos;re built for adventure. At River Paws, we trade daycare rooms for private trails where dogs run free, explore nature, and become their happiest selves.
-              Just down the road in Waunakee, we have exclusive access to our own private dog park—acres of wooded trails and open spaces designed for off-leash exploration.
+              Your dog isn&apos;t built for four walls—they&apos;re built for adventure. We swap daycare chaos for private trails where dogs run free, explore nature, and come home the happiest version of themselves.
               <span className="block mt-2 text-yellow-200 font-semibold">A few hours of hiking transforms restless energy into pure contentment.</span>
             </p>
 
@@ -196,7 +195,7 @@ export default function DogHikes() {
                   Why Our Dog Hikes Beat Traditional Daycare
                 </h2>
                 <p className="text-xl text-gray-600 leading-relaxed mb-6">
-                  Traditional doggy daycare has its place, but many dogs thrive with something more—outdoor adventure that taps into their natural instincts. Instead of enclosed play areas with constant chaos, our off-leash hikes offer the freedom to roam, explore, and bond in nature.
+                  Traditional daycare has its place, but some dogs need more—outdoor adventure that taps into their natural instincts. Instead of enclosed rooms and constant chaos, our hikes offer freedom to roam, explore, and bond in nature.
                 </p>
                 <p className="text-lg text-gray-600 leading-relaxed">
                   Here&apos;s why Madison area pet parents are choosing trails over daycare rooms:
@@ -421,7 +420,7 @@ export default function DogHikes() {
             <div className="text-center mb-8 sm:mb-12 md:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">Experience the Difference</h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                Our private dog park in Waunakee provides a safe, supervised space where dogs can truly be dogs.
+                Imagine a place where your dog can run without limits, sniff every trail, and just <em>be a dog</em>. That&apos;s what we built.
               </p>
             </div>
 
@@ -570,6 +569,90 @@ export default function DogHikes() {
                 <p className="text-lg text-white/90 max-w-3xl mx-auto drop-shadow-md">
                   Pet parents tell us their dogs come home peacefully exhausted, ready for cozy cuddles—exactly how nature intended.
                 </p>
+              </div>
+            </div>
+
+            {/* Adventure Gallery Preview */}
+            <div className="mt-12 sm:mt-16">
+              <div className="text-center mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
+                  See the adventures for yourself
+                </h3>
+                <p className="text-lg text-emerald-600 font-semibold">Every hike tells a story.</p>
+              </div>
+              
+              {/* Polaroid Preview Stack */}
+              <div className="relative flex justify-center items-center mb-8">
+                <Link href="/gallery" className="group relative">
+                  {/* Stacked Polaroid effect */}
+                  <div className="relative w-64 h-72 sm:w-80 sm:h-96">
+                    {/* Back polaroid - left */}
+                    <div className="absolute left-0 top-4 w-48 h-56 sm:w-56 sm:h-64 bg-white rounded shadow-lg transform -rotate-12 group-hover:-rotate-6 transition-transform duration-300 overflow-hidden">
+                      <div className="p-2 pb-8 h-full">
+                        <div className="relative w-full h-full rounded-sm overflow-hidden">
+                          <Image
+                            src="/Hiking/energetic-german-shepherd-dog-hiking-madison-wi-river-paws.jpg"
+                            alt="German Shepherd enjoying a trail adventure"
+                            fill
+                            className="object-cover"
+                            sizes="224px"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Back polaroid - right */}
+                    <div className="absolute right-0 top-2 w-48 h-56 sm:w-56 sm:h-64 bg-white rounded shadow-lg transform rotate-12 group-hover:rotate-6 transition-transform duration-300 overflow-hidden">
+                      <div className="p-2 pb-8 h-full">
+                        <div className="relative w-full h-full rounded-sm overflow-hidden">
+                          <Image
+                            src="/Hiking/happy-golden-retriever-pack-hiking-middleton-wi-river-paws.jpg"
+                            alt="Happy golden retriever pack on a hike"
+                            fill
+                            className="object-cover"
+                            sizes="224px"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Front polaroid - center */}
+                    <div className="absolute left-1/2 -translate-x-1/2 top-0 w-52 h-60 sm:w-64 sm:h-72 bg-white rounded shadow-2xl transform rotate-2 group-hover:rotate-0 group-hover:scale-105 transition-all duration-300 z-10 overflow-hidden">
+                      <div className="p-2 pb-10 h-full">
+                        <div className="relative w-full h-full rounded-sm overflow-hidden">
+                          <Image
+                            src="/Hiking/joyful-mini-aussie-dog-hiking-madison-wi-river-paws.jpg"
+                            alt="Joyful Mini Aussie on the trails"
+                            fill
+                            className="object-cover"
+                            sizes="256px"
+                          />
+                        </div>
+                      </div>
+                      <span className="absolute bottom-3 left-0 right-0 text-center text-sm text-gray-600 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>Best day ever! 🐾</span>
+                    </div>
+                  </div>
+                  
+                  {/* Hover glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-teal-400/0 to-emerald-400/0 group-hover:from-emerald-400/20 group-hover:via-teal-400/20 group-hover:to-emerald-400/20 rounded-3xl blur-2xl transition-all duration-500 -z-10"></div>
+                </Link>
+              </div>
+              
+              {/* CTA Button */}
+              <div className="text-center">
+                <Link
+                  href="/gallery"
+                  className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-600 via-teal-500 to-emerald-600 bg-[length:200%_100%] text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 animate-gradient-x"
+                >
+                  <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Browse All Trail Photos
+                  <svg className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+                <p className="text-sm text-gray-500 mt-3">100+ adventure photos in our gallery</p>
               </div>
             </div>
           </div>
@@ -745,8 +828,7 @@ export default function DogHikes() {
           <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">What Our Adventurers Say</h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              Don&apos;t just take our word for it - hear from families whose dogs have discovered
-              the joy of outdoor adventures with River Paws.
+              Don&apos;t just take our word for it—these pups (and their people) speak for themselves.
             </p>
           </div>
 
@@ -898,7 +980,7 @@ export default function DogHikes() {
             </div>
 
             <div className="text-center mt-12">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4">Ready to Transform Your Dog&apos;s Routine?</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Ready to See Your Dog This Happy?</h3>
               <p className="text-gray-600 mb-8">Join our waitlist today and be the first to know when space opens for your pup to discover their wild side on Madison&apos;s most beautiful private trails.</p>
               <Link
                 href="/dog-hike-scheduling"
@@ -927,89 +1009,107 @@ export default function DogHikes() {
             </div>
           </section>
 
-          {/* Related Services */}
-          <section className="py-16 px-6 bg-white">
-            <div className="max-w-7xl mx-auto">
-              <div className="bg-gradient-to-r from-blue-50 to-emerald-50 rounded-3xl p-8 md:p-12 border border-blue-100">
-                <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
-                  Explore Our Other Services
+          {/* Related Services - Polaroid Style */}
+          <section className="py-16 sm:py-20 px-4 sm:px-6 bg-gradient-to-b from-white to-blue-50">
+            <div className="max-w-5xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-10 sm:mb-14">
+                <p className="text-lg text-gray-500 mb-2">While you&apos;re here...</p>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-800">
+                  Check Out Our Other Services
                 </h2>
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              </div>
+
+              {/* Two Polaroid Cards */}
+              <div className="grid md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+                
+                {/* Grooming Polaroid Card */}
+                <div className="group">
+                  <Link href="/dog-grooming" className="block">
+                    {/* Polaroid Frame */}
+                    <div className="relative bg-white p-3 pb-16 sm:p-4 sm:pb-20 rounded-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:-rotate-2 group-hover:scale-[1.02]"
+                         style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)' }}>
+                      {/* Photo */}
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                        <Image
+                          src="/Grooming/pampered-spaniel-bath-waunakee-wi-river-paws.jpg"
+                          alt="Pampered spaniel enjoying a spa bath at River Paws"
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        {/* Subtle overlay on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                      
+                      {/* Handwritten Caption */}
+                      <div className="absolute bottom-3 sm:bottom-5 left-0 right-0 text-center">
+                        <p className="text-base sm:text-lg text-gray-700 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
+                          Spa day, anyone? 🛁✨
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
                   
-                  {/* Grooming Portal Card */}
-                  <Link
-                    href="/dog-grooming"
-                    className="group relative h-80 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-                  >
-                    <Image
-                      src="/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg"
-                      alt="Professional dog grooming"
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      style={{ objectPosition: getImageObjectPosition("/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg") }}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
-                    
-                    <div className="absolute top-6 left-6 w-14 h-14 bg-white/95 backdrop-blur-md rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                      <svg className="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  {/* Service Info Below Polaroid */}
+                  <div className="mt-5 sm:mt-6 text-center">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Professional Grooming</h3>
+                    <p className="text-gray-600 mb-4 text-sm sm:text-base">Bath & brush, full grooms, and that fresh-from-the-salon feeling.</p>
+                    <Link
+                      href="/dog-grooming"
+                      className="inline-flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-full font-semibold text-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    >
+                      Explore Grooming
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </div>
+                    </Link>
+                  </div>
+                </div>
 
-                    <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                      <h3 className="text-3xl font-bold text-white mb-3 group-hover:translate-y-[-4px] transition-transform duration-300">
-                        Professional Grooming
-                      </h3>
-                      <p className="text-emerald-50 text-lg mb-4 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                        Full-service spa treatments, breed-specific cuts, and gentle care for your best friend.
-                      </p>
-                      <div className="flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                        View Grooming Services
-                        <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
+                {/* Meet the Team Polaroid Card */}
+                <div className="group">
+                  <Link href="/caretakers" className="block">
+                    {/* Polaroid Frame */}
+                    <div className="relative bg-white p-3 pb-16 sm:p-4 sm:pb-20 rounded-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform group-hover:rotate-2 group-hover:scale-[1.02]"
+                         style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)' }}>
+                      {/* Photo */}
+                      <div className="relative aspect-[4/3] overflow-hidden rounded-sm">
+                        <Image
+                          src="/Hiking/joyful-pack-social-hiking-madison-wi-river-paws.jpg"
+                          alt="River Paws team with happy pack of dogs on the trails"
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          style={{ objectPosition: getImageObjectPosition("/Hiking/joyful-pack-social-hiking-madison-wi-river-paws.jpg") }}
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                        {/* Subtle overlay on hover */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                      
+                      {/* Handwritten Caption */}
+                      <div className="absolute bottom-3 sm:bottom-5 left-0 right-0 text-center">
+                        <p className="text-base sm:text-lg text-gray-700 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
+                          The crew! 🐾❤️
+                        </p>
                       </div>
                     </div>
                   </Link>
-
-                  {/* Team Portal Card */}
-                  <Link
-                    href="/caretakers"
-                    className="group relative h-80 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
-                  >
-                    <Image
-                      src="/Hiking/confident-mixed-pack-outdoor-enrichment-madison-wi-river-paws.jpg"
-                      alt="River Paws team members"
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                      style={{ objectPosition: getImageObjectPosition("/Hiking/confident-mixed-pack-outdoor-enrichment-madison-wi-river-paws.jpg") }}
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500"></div>
-                    
-                <div className="absolute top-6 left-6 w-14 h-14 bg-white/95 force-bg-white backdrop-blur-md rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                  <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                  
+                  {/* Service Info Below Polaroid */}
+                  <div className="mt-5 sm:mt-6 text-center">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Meet Our Team</h3>
+                    <p className="text-gray-600 mb-4 text-sm sm:text-base">The passionate people behind every adventure and spa day.</p>
+                    <Link
+                      href="/caretakers"
+                      className="inline-flex items-center justify-center px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-500 text-white rounded-full font-semibold text-sm hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    >
+                      Meet the Pack Leaders
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                       </svg>
-                    </div>
-
-                    <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                      <h3 className="text-3xl font-bold text-white mb-3 group-hover:translate-y-[-4px] transition-transform duration-300">
-                        Meet Our Team
-                      </h3>
-                      <p className="text-blue-50 text-lg mb-4 opacity-90 group-hover:opacity-100 transition-opacity duration-300">
-                        Get to know the experienced, passionate professionals who guide your dog's adventures.
-                      </p>
-                      <div className="flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                        Meet the Pack Leaders
-                        <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </div>
-                    </div>
-                  </Link>
-
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

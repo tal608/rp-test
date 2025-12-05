@@ -27,7 +27,7 @@ const focalPointMap: Record<string, { x: number; y: number }> = {
   // Shih Tzu images
   'groomed-shih-tzu-grooming-madison-wi-river-paws.jpg': { x: 50, y: 40 },  
   // Terrier images
-  'calm-biewer-terrier-grooming-waunakee-wi-river-paws.jpg': { x: 50, y: 40 },  
+  'calm-biewer-terrier-grooming-waunakee-wi-river-paws.jpg': { x: 50, y: 60 },  
   // Cockapoo images
   'calm-cockapoo-grooming-waunakee-wi-river-paws.jpg': { x: 50, y: 40 },  
   // German Shepherd images

@@ -327,7 +327,7 @@ export default function HomeClient() {
                   Find professional dog grooming and hiking services near you!
                 </p>
                 <p className="text-sm sm:text-base md:text-lg text-blue-100/90 max-w-xl mx-auto px-4 text-shadow-sm italic">
-                  Your dog&apos;s happiness is our mission.
+                  Grooming they&apos;ll actually enjoy. Adventures they&apos;ll dream about.
                 </p>
               </div>
 
@@ -399,19 +399,19 @@ export default function HomeClient() {
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
                 </svg>
-                <span className="font-medium">Experienced Professional Groomers</span>
+                <span className="font-medium">Trained, Gentle Groomers</span>
               </div>
               <div className="flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
-                <span className="font-medium">Gentle, Patient Approach</span>
+                <span className="font-medium">Your Dog&apos;s Comfort Comes First</span>
               </div>
               <div className="flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="font-medium">Experienced Professional Groomers</span>
+                <span className="font-medium">Locally Owned Since 2017</span>
               </div>
             </div>
           </div>
@@ -453,8 +453,8 @@ export default function HomeClient() {
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Local Expertise</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  We&apos;re located right on the edge of Waunakee and Madison, making us convenient for pet owners throughout the area - 
-                  from Middleton and DeForest to Sun Prairie and beyond. We understand the unique needs of local pets and their families.
+                  Right on the Waunakee-Madison border, we&apos;re an easy drive for families from Middleton, DeForest, Sun Prairie, and beyond. 
+                  We know Wisconsin dogs—the mud they find, the coats they shed, and the adventures they crave.
                 </p>
               </div>
 
@@ -479,10 +479,9 @@ export default function HomeClient() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                   </svg>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Flexible Scheduling</h3>
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Book in Seconds</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Flexible scheduling to accommodate your busy schedule.
-                  Call us to discuss availability and appointment times.
+                  Our online scheduling is fast, simple, and actually works. Skeptical? Try it—you&apos;ll have an appointment booked before you finish your coffee.
                 </p>
               </div>
 
@@ -510,8 +509,8 @@ export default function HomeClient() {
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Stress-Free Environment</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Our experienced groomers work at your dog&apos;s pace, using gentle techniques
-                  and positive reinforcement to ensure a comfortable grooming experience.
+                  Nervous pup? Anxious around strangers? We&apos;ve got you. Our groomers take their time, read your dog&apos;s cues, and never rush. 
+                  No assembly lines here—just patience and positive vibes.
                 </p>
               </div>
             </div>
@@ -832,9 +831,9 @@ export default function HomeClient() {
                     Your Trusted Local Pet Care Partner
                   </h2>
                   <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-4 sm:mb-6">
-                    Since 2017, River Paws has been the premier destination for professional grooming
-                    and adventure experiences in the Madison and Waunakee area. Our experienced, trained team
-                    brings over 50 years of combined experience in pet care.
+                    River Paws started in 2017 with a simple idea: dogs deserve more than traditional doggy daycare 
+                    or a quick bath and a pat on the head. They deserve groomers who notice when they&apos;re nervous, 
+                    trails that let them run free, and a team that treats them like family.
                   </p>
                   <p className="text-lg text-gray-600 leading-relaxed">
                     We believe every pet deserves personalized attention, stress-free experiences,
@@ -849,7 +848,7 @@ export default function HomeClient() {
                     <div className="text-sm text-gray-600">Happy Families Served</div>
                   </div>
                   <div className="text-center p-6 bg-gradient-to-br from-emerald-50 to-blue-50 rounded-xl">
-                    <div className="text-3xl font-bold text-emerald-600 mb-2">7</div>
+                    <div className="text-3xl font-bold text-emerald-600 mb-2">8</div>
                     <div className="text-sm text-gray-600">Years of Experience</div>
                   </div>
                 </div>
@@ -925,8 +924,8 @@ export default function HomeClient() {
             <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">Complete Pet Care Services</h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                From professional grooming to exciting adventures, we provide comprehensive care
-                that keeps your pet happy, healthy, and well-groomed.
+                Two things make a dog&apos;s tail wag: looking their best and getting outside. 
+                We&apos;ve built our whole business around both.
               </p>
             </div>
 
@@ -1125,10 +1124,10 @@ export default function HomeClient() {
         <section className="py-24 px-6 bg-gradient-to-r from-blue-600 to-teal-500">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Join Our Pack?
+              Your Dog Is Going to Love It Here
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              Give your dog the care and adventure they deserve. Book your appointment today and see why families choose River Paws.
+              Whether it&apos;s a spa day or a trail adventure, we can&apos;t wait to meet your pup. Book online or give us a call—let&apos;s make their tail wag.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
