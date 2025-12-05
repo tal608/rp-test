@@ -97,10 +97,7 @@ export default function Contact() {
         <div className="relative z-[50] max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <div className="space-y-6 sm:space-y-8">
             <div className="inline-flex items-center bg-white/90 backdrop-blur-md rounded-full px-3 sm:px-4 py-1.5 sm:py-2 animate-fadeInUp">
-              <svg className="w-4 h-4 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              <span className="text-xs sm:text-sm font-medium text-gray-700">Get In Touch With Us</span>
+              <span className="text-xs sm:text-sm font-medium text-gray-700">We&apos;re just a call (or bark) away 🐕</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight px-2">
@@ -117,9 +114,8 @@ export default function Contact() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto animate-fadeInUp-delay-600 px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-              Ready to give your pet the care they deserve? We&apos;re here to help make your pet&apos;s experience exceptional. 
-              Have questions? Want to schedule an appointment? We&apos;d love to hear from you. Located on the edge of Waunakee and Madison, 
-              we serve pet owners from Middleton, DeForest, Sun Prairie, and throughout the greater Madison area.
+              Curious if we&apos;re the right fit? Have questions about your pup&apos;s first visit? 
+              We&apos;re just a call or email away—let&apos;s figure it out together.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp-delay-800">
@@ -185,11 +181,10 @@ export default function Contact() {
             <div className="space-y-8 flex flex-col">
               <div>
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                  Get In Touch
+                  Let&apos;s Talk Dogs
                 </h2>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
-                  Ready to give your pet the care they deserve? Contact us today to schedule
-                  an appointment or learn more about our services.
+                  Whether you have questions, want to book an appointment, or just want to see if we&apos;re a good fit—we&apos;re here.
                 </p>
               </div>
 

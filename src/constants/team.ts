@@ -53,7 +53,7 @@ export const teamMembers: TeamMember[] = [
     name: "Elaina Katzke",
     role: "Dog Groomer",
     bio: "Hello! I'm Elaina. I've been grooming for the last year, but I've been working in private salons, corporate salons, and boarding kennels for the previous 5 years, learning and building my skills. I have loved animals from a very young age. From pet sitting to taking care of my own dogs and reptiles, caring for animals has been a large part of my life. I love forming relationships with every dog I groom and helping them look and feel great!",
-    image: "/caretakers/elaina-katzke.jpg",
+    image: "/Hiking/relaxed-terrier-mix-outdoor-enrichment-waunakee-wi-river-paws.jpg",
     yearsExperience: 6, // 5 years in salons + 1 year grooming
     certifications: ["Multi-Environment Experience"],
     specializations: ["Private Salon Experience", "Corporate Salon Experience", "Boarding Kennel Experience", "Reptile Care"]

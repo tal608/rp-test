@@ -85,9 +85,8 @@ export default function Caretakers() {
             </h1>
 
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto animate-fadeInUp-delay-600 px-4">
-              Meet our passionate team of experienced groomers and adventure guides. Each member brings years of expertise, 
-              genuine love for animals, and a commitment to making every pet&apos;s experience exceptional. 
-              Located in Waunakee, serving Madison, Middleton, DeForest, and Sun Prairie.
+              The people behind every fresh groom and happy trail. 
+              We&apos;re not just experienced—we genuinely love what we do.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp-delay-800">
@@ -144,82 +143,98 @@ export default function Caretakers() {
         <ScrollIndicator targetId="team-members" />
       </section>
 
-      {/* Team Members */}
-      <section id="team-members" className="py-16 sm:py-20 bg-gradient-to-b from-white to-blue-50">
+      {/* Team Members - Polaroid Style */}
+      <section id="team-members" className="py-16 sm:py-20 bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-800">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-            {teamMembers.map((member) => (
-              <div key={member.name} className="group flex flex-col items-start relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-teal-50/0 group-hover:from-blue-50/40 group-hover:to-teal-50/30 transition-all duration-500 rounded-3xl -m-4 p-4"></div>
-                <div className="mb-6 w-full relative z-10">
-                  <div className="aspect-[3/4] w-full overflow-hidden rounded-2xl bg-gray-100 shadow-lg group-hover:shadow-2xl transition-all duration-500 relative group-hover:scale-[1.02]">
+          {/* Section Intro */}
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-4">The Crew</h2>
+            <p className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+              Real people who chose this career because they genuinely love dogs. Get to know us.
+            </p>
+          </div>
+
+          {/* Polaroid Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+            {teamMembers.map((member, index) => (
+              <div key={member.name} className="group">
+                {/* Polaroid Frame */}
+                <div 
+                  className={`bg-white dark:bg-slate-800 p-3 pb-6 sm:p-4 sm:pb-8 rounded-sm shadow-xl hover:shadow-2xl transition-all duration-500 transform ${
+                    index % 3 === 0 ? 'group-hover:-rotate-2' : index % 3 === 1 ? 'group-hover:rotate-1' : 'group-hover:-rotate-1'
+                  } group-hover:scale-[1.02]`}
+                  style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)' }}
+                >
+                  {/* Photo */}
+                  <div className="relative aspect-[3/4] overflow-hidden rounded-sm mb-4">
                     {member.image ? (
                       <Image
                         src={member.image}
                         alt={`${member.name}, ${member.role} at River Paws dog grooming and hiking service in Waunakee, Wisconsin`}
                         fill
-                        className={`object-cover object-center group-hover:scale-105 transition-transform duration-700 ${member.imageClass ?? ""}`}
+                        className={`object-cover group-hover:scale-105 transition-transform duration-700 ${member.imageClass ?? ""}`}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     ) : (
                       <div className="flex h-full items-center justify-center bg-gradient-to-br from-blue-100 via-emerald-100 to-teal-100">
                         <div className="text-center">
-                          <div className="mx-auto h-20 w-20 rounded-full bg-gradient-to-r from-blue-500 via-emerald-500 to-teal-500 flex items-center justify-center mb-4">
-                            <svg className="h-10 w-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <div className="mx-auto h-16 w-16 rounded-full bg-gradient-to-r from-blue-500 via-emerald-500 to-teal-500 flex items-center justify-center mb-3">
+                            <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
                           </div>
-                          <p className="text-sm font-medium text-blue-700">Professional Caretaker</p>
                         </div>
                       </div>
                     )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+
+                  {/* Handwritten-style caption */}
+                  <div className="text-center px-2">
+                    <p className="text-lg sm:text-xl text-gray-800 dark:text-gray-200 font-medium mb-1" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
+                      {member.name} ✨
+                    </p>
+                    <p className="text-sm text-blue-600 dark:text-blue-400 font-medium">{member.role}</p>
                   </div>
                 </div>
 
-                <div className="w-full relative z-10">
-                  <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-600 transition-colors duration-300">{member.name}</h3>
-                  <p className="text-lg font-semibold text-blue-600 mb-2 group-hover:text-teal-600 transition-colors duration-300">{member.role}</p>
-
-                  {/* Credentials Display */}
-                  <div className="mb-4 space-y-2">
+                {/* Bio Card Below Polaroid */}
+                <div className="mt-5 bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-lg border border-gray-100 dark:border-slate-700">
+                  {/* Quick Stats */}
+                  <div className="flex flex-wrap gap-2 mb-3">
                     {member.yearsExperience && (
-                      <div className="flex items-center text-sm text-gray-600">
-                        <svg className="w-4 h-4 text-emerald-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-100 dark:bg-emerald-900/50 text-emerald-800 dark:text-emerald-300">
+                        <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span className="font-medium">{member.yearsExperience} years of experience</span>
-                      </div>
+                        {member.yearsExperience}+ years
+                      </span>
                     )}
                     {member.education && (
-                      <div className="flex items-start text-sm text-gray-600">
-                        <svg className="w-4 h-4 text-emerald-600 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300">
+                        <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                         </svg>
-                        <span>{member.education}</span>
-                      </div>
-                    )}
-                    {member.certifications && member.certifications.length > 0 && (
-                      <div className="flex flex-wrap gap-2 mt-2">
-                        {member.certifications.map((cert, idx) => (
-                          <span key={idx} className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800">
-                            {cert}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                    {member.specializations && member.specializations.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5 mt-2">
-                        {member.specializations.map((spec, idx) => (
-                          <span key={idx} className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">
-                            {spec}
-                          </span>
-                        ))}
-                      </div>
+                        UW Madison
+                      </span>
                     )}
                   </div>
 
-                  <p className="text-gray-700 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">{member.bio}</p>
+                  {/* Bio */}
+                  <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
+                    {member.bio}
+                  </p>
+
+                  {/* Specializations */}
+                  {member.specializations && member.specializations.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mt-3 pt-3 border-t border-gray-100 dark:border-slate-700">
+                      {member.specializations.slice(0, 3).map((spec, idx) => (
+                        <span key={idx} className="text-xs text-gray-500 dark:text-gray-400">
+                          {idx > 0 && "•"} {spec}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -228,73 +243,72 @@ export default function Caretakers() {
       </section>
 
       {/* Our Philosophy */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white dark:bg-slate-900">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
-              Our Philosophy
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+              How We Work
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Every member of our team shares a common commitment to providing exceptional care
-              with compassion, patience, and professionalism.
+            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
+              Three principles that guide everything we do.
             </p>
           </div>
 
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-              <div className="group flex flex-col relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-blue-50/30 group-hover:via-emerald-50/20 group-hover:to-teal-50/30 transition-all duration-500"></div>
+          <div className="mx-auto mt-12 sm:mt-16 lg:max-w-none">
+            <dl className="grid max-w-xl grid-cols-1 gap-8 lg:max-w-none lg:grid-cols-3">
+              <div className="group flex flex-col relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-slate-700">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-blue-50/30 group-hover:via-emerald-50/20 group-hover:to-teal-50/30 dark:group-hover:from-blue-900/20 dark:group-hover:via-emerald-900/10 dark:group-hover:to-teal-900/20 transition-all duration-500"></div>
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-emerald-600 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900 relative z-10 group-hover:text-blue-600 transition-colors duration-300">
-                  <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 via-emerald-600 to-teal-500 group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:via-emerald-600 group-hover:to-teal-500 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <dt className="flex items-center gap-x-3 text-lg font-bold leading-7 text-gray-900 dark:text-white relative z-10 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  <div className="h-12 w-12 flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 via-emerald-600 to-teal-500 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                     <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                     </svg>
                   </div>
-                  Compassionate Care
+                  Every Dog is Different
                 </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 relative z-10 group-hover:text-gray-700 transition-colors duration-300">
+                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 dark:text-gray-300 relative z-10">
                   <p className="flex-auto">
-                    We treat every pet as if they were our own, providing gentle, patient care
-                    that prioritizes their comfort and well-being.
+                    We take the time to understand each dog&apos;s quirks, fears, and preferences. 
+                    A nervous first-timer gets a different approach than a grooming pro.
                   </p>
                 </dd>
               </div>
 
-              <div className="group flex flex-col relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-blue-50/30 group-hover:via-emerald-50/20 group-hover:to-teal-50/30 transition-all duration-500"></div>
+              <div className="group flex flex-col relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-slate-700">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-blue-50/30 group-hover:via-emerald-50/20 group-hover:to-teal-50/30 dark:group-hover:from-blue-900/20 dark:group-hover:via-emerald-900/10 dark:group-hover:to-teal-900/20 transition-all duration-500"></div>
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-emerald-600 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900 relative z-10 group-hover:text-blue-600 transition-colors duration-300">
-                  <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 via-emerald-600 to-teal-500 group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:via-emerald-600 group-hover:to-teal-500 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <dt className="flex items-center gap-x-3 text-lg font-bold leading-7 text-gray-900 dark:text-white relative z-10 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  <div className="h-12 w-12 flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 via-emerald-600 to-teal-500 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                     <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                     </svg>
                   </div>
-                  Professional Excellence
+                  No Shortcuts
                 </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 relative z-10 group-hover:text-gray-700 transition-colors duration-300">
+                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 dark:text-gray-300 relative z-10">
                   <p className="flex-auto">
-                    Our team maintains the highest standards of professionalism with ongoing training
-                    and certification in the latest techniques and safety protocols.
+                    Quality matters more than speed. We&apos;d rather take extra time to do it right 
+                    than rush through and miss something important.
                   </p>
                 </dd>
               </div>
 
-              <div className="group flex flex-col relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-blue-50/30 group-hover:via-emerald-50/20 group-hover:to-teal-50/30 transition-all duration-500"></div>
+              <div className="group flex flex-col relative bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 dark:border-slate-700">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/0 via-emerald-50/0 to-teal-50/0 group-hover:from-blue-50/30 group-hover:via-emerald-50/20 group-hover:to-teal-50/30 dark:group-hover:from-blue-900/20 dark:group-hover:via-emerald-900/10 dark:group-hover:to-teal-900/20 transition-all duration-500"></div>
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-emerald-600 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900 relative z-10 group-hover:text-blue-600 transition-colors duration-300">
-                  <div className="h-10 w-10 flex items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 via-emerald-600 to-teal-500 group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:via-emerald-600 group-hover:to-teal-500 transition-all duration-500 group-hover:scale-110 group-hover:rotate-6">
+                <dt className="flex items-center gap-x-3 text-lg font-bold leading-7 text-gray-900 dark:text-white relative z-10 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                  <div className="h-12 w-12 flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 via-emerald-600 to-teal-500 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3">
                     <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
-                  Team Collaboration
+                  We Actually Like Each Other
                 </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 relative z-10 group-hover:text-gray-700 transition-colors duration-300">
+                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600 dark:text-gray-300 relative z-10">
                   <p className="flex-auto">
-                    We work together seamlessly to ensure every pet receives consistent, high-quality
-                    care and every client has a positive experience.
+                    Happy team = happy dogs. We genuinely enjoy working together, and that positive 
+                    energy shows in how we treat every pup who walks through our doors.
                   </p>
                 </dd>
               </div>
@@ -371,42 +385,38 @@ export default function Caretakers() {
       </section>
 
       {/* Contact CTA */}
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
-              Ready to Meet Our Team?
-            </h2>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-8 text-gray-600 px-4">
-              Experience the difference our dedicated, professional team can make for your pet.
-              Contact us today to schedule your first visit.
-            </p>
-            <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-x-6">
-              <a
-                href="/contact"
-                className="group relative inline-flex items-center px-8 py-4 bg-white text-white rounded-full font-medium text-lg hover:shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden min-h-[44px]"
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
-                  e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
-                }}
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-blue-600 via-teal-500 to-blue-600 bg-[length:200%_100%] animate-gradient-shift"></span>
-                <span className="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-100 transition-transform duration-500 origin-center" style={{ 
-                  background: 'radial-gradient(circle 100px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.3), transparent)' 
-                }}></span>
-                <span className="relative z-10 flex items-center">
-                  Contact Us
-                </span>
-              </a>
-              <a
-                href="/services"
-                className="text-base font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors duration-300"
-              >
-                View Services <span aria-hidden="true">→</span>
-              </a>
+      <section className="bg-white dark:bg-slate-900 py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-r from-blue-600 to-teal-500 rounded-3xl p-8 md:p-12 text-white text-center relative overflow-hidden shadow-xl">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-32 -mt-32 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full -ml-24 -mb-24 pointer-events-none"></div>
+            
+            <div className="relative z-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+                Like What You See?
+              </h2>
+              <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                We&apos;re always excited to meet new pups (and their humans). 
+                Let&apos;s see if we&apos;re a good fit.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white text-blue-600 rounded-full font-semibold text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg min-h-[48px]"
+                >
+                  Get in Touch
+                </Link>
+                <Link
+                  href="/dog-grooming"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/30 rounded-full font-semibold text-lg hover:bg-white/20 hover:scale-105 transition-all duration-300 min-h-[48px]"
+                >
+                  View Services
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

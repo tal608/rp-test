@@ -88,8 +88,8 @@ export default function BlogPage() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto animate-fadeInUp-delay-800 px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-                Expert tips, guides, and advice from our professional groomers.
-                Learn how to keep your dog healthy, comfortable, and looking their best.
+                Real advice from the people who actually spend their days with dogs. 
+                No fluff—just practical tips you&apos;ll actually use.
               </p>
             </div>
           </div>
@@ -99,149 +99,157 @@ export default function BlogPage() {
         <section className="py-12 sm:py-16 px-4 sm:px-6">
           <div className="max-w-7xl mx-auto">
 
-            {/* Articles Grid */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {sortedArticles.map((article) => (
+            {/* Articles Grid - Polaroid Style */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+              {sortedArticles.map((article, index) => (
                 <Link
                   key={article.slug}
                   href={`/blog/${article.slug}`}
-                  className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 group"
+                  className="group"
                 >
-                  {/* Article Image */}
-                  <div className="relative h-48 bg-gradient-to-r from-blue-500 to-teal-500">
-                    <Image
-                      src={article.image || "/Hiking/happy-alert-brindle-mix-dog-hiking-waunakee-wi-river-paws.jpg"}
-                      alt={article.image ? `${article.title} - Expert dog grooming tips from River Paws` : "A brindle dog poses during a River Paws adventure near Madison, Wisconsin."}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-300"
-                      style={{ objectPosition: getImageObjectPosition(article.image || '') }}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    />
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-white/90 backdrop-blur-sm text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">
-                        {article.category.charAt(0).toUpperCase() + article.category.slice(1)}
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Article Content */}
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 text-sm text-gray-500 mb-3">
-                      <time dateTime={article.datePublished}>
-                        {new Date(article.datePublished).toLocaleDateString("en-US", {
-                          year: "numeric",
-                          month: "long",
-                          day: "numeric",
-                        })}
-                      </time>
-                      {article.readTime && (
-                        <>
-                          <span>•</span>
-                          <span>{article.readTime} min read</span>
-                        </>
-                      )}
-                    </div>
-                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                      {article.title}
-                    </h2>
-                    <p className="text-sm sm:text-base text-gray-600 mb-4 line-clamp-3">{article.excerpt}</p>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {article.tags.slice(0, 3).map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded"
-                        >
-                          {tag}
+                  {/* Polaroid Frame */}
+                  <div 
+                    className={`bg-white p-3 pb-6 rounded-sm shadow-lg hover:shadow-2xl transition-all duration-500 transform ${
+                      index % 3 === 0 ? 'group-hover:-rotate-1' : index % 3 === 1 ? 'group-hover:rotate-1' : 'group-hover:-rotate-2'
+                    } group-hover:scale-[1.02]`}
+                    style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}
+                  >
+                    {/* Photo */}
+                    <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4">
+                      <Image
+                        src={article.image || "/Hiking/happy-alert-brindle-mix-dog-hiking-waunakee-wi-river-paws.jpg"}
+                        alt={article.image ? `${article.title} - Expert dog grooming tips from River Paws` : "A brindle dog poses during a River Paws adventure near Madison, Wisconsin."}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        style={{ objectPosition: getImageObjectPosition(article.image || '') }}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                      {/* Category Badge */}
+                      <div className="absolute top-3 left-3">
+                        <span className="bg-white/95 backdrop-blur-sm text-blue-700 px-3 py-1 rounded-full text-xs font-semibold shadow-sm">
+                          {article.category.charAt(0).toUpperCase() + article.category.slice(1)}
                         </span>
-                      ))}
+                      </div>
                     </div>
 
-                    {/* Read More */}
-                    <div className="flex items-center text-blue-600 font-medium group-hover:text-blue-700">
-                      Read more
-                      <svg
-                        className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
+                    {/* Content Below Photo */}
+                    <div className="px-1">
+                      {/* Date & Read Time */}
+                      <div className="flex items-center gap-2 text-xs text-gray-400 mb-2">
+                        <time dateTime={article.datePublished}>
+                          {new Date(article.datePublished).toLocaleDateString("en-US", {
+                            month: "short",
+                            day: "numeric",
+                            year: "numeric",
+                          })}
+                        </time>
+                        {article.readTime && (
+                          <>
+                            <span>•</span>
+                            <span>{article.readTime} min</span>
+                          </>
+                        )}
+                      </div>
+
+                      {/* Title */}
+                      <h2 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                        {article.title}
+                      </h2>
+
+                      {/* Excerpt */}
+                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{article.excerpt}</p>
+
+                      {/* Read More Link */}
+                      <div className="flex items-center text-blue-600 font-medium text-sm group-hover:text-blue-700">
+                        Read article
+                        <svg
+                          className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M9 5l7 7-7 7"
+                          />
+                        </svg>
+                      </div>
                     </div>
                   </div>
                 </Link>
               ))}
             </div>
 
-            {/* Related Resources */}
-            <div className="mt-16 bg-gradient-to-r from-blue-50 to-teal-50 rounded-3xl p-8 md:p-12">
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center mb-4 sm:mb-6">
-                Grooming Resources by Location
-              </h2>
-              <p className="text-center text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-                Explore location-specific grooming guides and FAQs:
-              </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <Link
-                  href="/dog-grooming-madison"
-                  className="bg-white rounded-xl p-4 hover:shadow-lg transition-all duration-300 text-center"
-                >
-                  <h3 className="font-bold text-gray-900 mb-2">Madison</h3>
-                  <p className="text-sm text-gray-600">Grooming benefits & FAQs</p>
-                </Link>
-                <Link
-                  href="/dog-grooming-waunakee"
-                  className="bg-white rounded-xl p-4 hover:shadow-lg transition-all duration-300 text-center"
-                >
-                  <h3 className="font-bold text-gray-900 mb-2">Waunakee</h3>
-                  <p className="text-sm text-gray-600">Products & puppy grooming</p>
-                </Link>
-                <Link
-                  href="/dog-grooming-middleton"
-                  className="bg-white rounded-xl p-4 hover:shadow-lg transition-all duration-300 text-center"
-                >
-                  <h3 className="font-bold text-gray-900 mb-2">Middleton</h3>
-                  <p className="text-sm text-gray-600">Home bathing tips</p>
-                </Link>
-                <Link
-                  href="/dog-grooming-sun-prairie"
-                  className="bg-white rounded-xl p-4 hover:shadow-lg transition-all duration-300 text-center"
-                >
-                  <h3 className="font-bold text-gray-900 mb-2">Sun Prairie</h3>
-                  <p className="text-sm text-gray-600">Before & after tips</p>
-                </Link>
+            {/* Areas We Serve - Compact Design */}
+            <div className="mt-16 bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-800">Serving the Greater Madison Area</h3>
+                  </div>
+                  <p className="text-gray-600 mb-4">
+                    Location-specific grooming guides and tips for your area:
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <Link href="/dog-grooming-waunakee" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                      📍 Waunakee
+                    </Link>
+                    <Link href="/dog-grooming-madison" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                      📍 Madison
+                    </Link>
+                    <Link href="/dog-grooming-middleton" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                      📍 Middleton
+                    </Link>
+                    <Link href="/dog-grooming-deforest" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                      📍 DeForest
+                    </Link>
+                    <Link href="/dog-grooming-sun-prairie" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                      📍 Sun Prairie
+                    </Link>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* CTA Section */}
-            <div className="mt-12 bg-gradient-to-r from-blue-600 to-teal-500 rounded-3xl p-8 md:p-12 text-white text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-                Ready to Experience Professional Grooming?
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-                Our expert groomers in Waunakee, Wisconsin, are here to help keep your dog
-                looking and feeling their best. Serving Madison, Middleton, DeForest, and Sun Prairie.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
-                <Link
-                  href="/grooming-application"
-                  className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors shadow-lg min-h-[44px] flex items-center justify-center"
-                >
-                  Book Appointment
-                </Link>
-                <Link
-                  href="/dog-grooming"
-                  className="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-white/10 transition-colors min-h-[44px] flex items-center justify-center"
-                >
-                  Learn About Services
-                </Link>
+            <div className="mt-12 bg-gradient-to-r from-blue-600 to-teal-500 rounded-3xl p-8 md:p-12 text-white text-center relative overflow-hidden">
+              {/* Subtle animated background */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-[-50%] left-[-20%] w-[60%] h-[100%] bg-white/5 rounded-full filter blur-3xl"></div>
+                <div className="absolute bottom-[-50%] right-[-20%] w-[60%] h-[100%] bg-white/5 rounded-full filter blur-3xl"></div>
+              </div>
+              <div className="relative z-10">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+                  Like what you&apos;re reading?
+                </h2>
+                <p className="text-xl sm:text-2xl text-white/90 mb-4">
+                  We&apos;re even better in person.
+                </p>
+                <p className="text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto px-4 text-white/80">
+                  Our groomers practice what we preach. Book and see for yourself.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+                  <Link
+                    href="/grooming-application"
+                    className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-gray-100 hover:scale-105 transition-all duration-300 shadow-lg min-h-[44px] flex items-center justify-center"
+                  >
+                    Book Your First Groom
+                  </Link>
+                  <Link
+                    href="/dog-grooming"
+                    className="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white/10 transition-all duration-300 min-h-[44px] flex items-center justify-center"
+                  >
+                    See Our Services
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
