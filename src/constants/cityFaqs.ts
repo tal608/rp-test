@@ -10,36 +10,29 @@ export const cityGroomingFaqs: Record<string, CityFAQ[]> = {
   madison: [
     {
       city: "Madison",
-      question: "What are the benefits of regular dog grooming?",
-      answer: "Regular grooming is essential to the health and well-being of your dog. Not only does it make them look good, but it also enables you to find and address any potential issues such as skin irritations or external parasites that may be present. Grooming also provides an opportunity to check for any lumps, bumps, or other changes in your dog's appearance that could be early signs of illness or disease. The health benefits of grooming your dog are vast and very important.",
-      fullContent: `<p>Regular grooming is essential to the health and well-being of your dog. Not only does it make them look good, but it also plays a crucial role in maintaining their overall health. During grooming, we check for any potential issues such as skin irritations or external parasites. Grooming also provides an opportunity to spot lumps, bumps, or other changes that could be early signs of illness. Here are the key health benefits:</p>
+      question: "Where exactly is River Paws located for Madison dog owners?",
+      answer: "We're right on the North Madison/Waunakee border—about 15 minutes from central Madison via Highway 113. We're also just 500 feet from Yahara Heights Dog Park, making us the perfect stop after an off-leash adventure.",
+      fullContent: `<p>We're located right on the border of North Madison and Waunakee—about 15 minutes from central Madison via Highway 113 (Northport Drive). For families in Sherman, Northport, Cherokee, Maple Bluff, or the isthmus, we're an easy, straight shot north.</p>
 
-<h3>Health Checks</h3>
-<p>Grooming provides an opportunity to check your dog for any abnormalities, such as lumps, bumps, skin infections, or issues with their nails, teeth, ears, and eyes that may require attention from a veterinarian.</p>
+<h3>The Yahara Heights Connection</h3>
+<p>We're literally 500 feet from <strong>Yahara Heights Dog Park</strong>—one of the best off-leash parks in Dane County with 20 acres of woods and open fields. Many Madison families combine a morning at the park with a grooming appointment. Your dog runs, plays, gets muddy... then comes to us for a bath. It's become a whole Saturday routine for some regulars.</p>
 
-<h3>Brushing</h3>
-<p>Brushing is one of the most important aspects of grooming, as it helps remove dirt, debris, and dead skin cells. It also stimulates circulation and helps distribute natural oils throughout the coat. Be sure to use a brush appropriate for your dog's coat type.</p>
+<h3>Perfect for Cherokee Marsh Adventurers</h3>
+<p>If your dog loves <strong>Cherokee Marsh Conservation Park</strong>, you know how messy they can get—especially during spring thaw or after rain. We're used to post-adventure dogs. Mud, burrs, that mysterious swamp smell... we've seen it all. Bring them dirty; we'll send them home fresh.</p>
 
-<h3>Bathing</h3>
-<p>Bathing helps remove any dirt or debris lodged in the coat. It's important to use a shampoo specifically designed for dogs, as human shampoo can strip away natural oils and cause irritation.</p>
+<h3>What Makes Us Different</h3>
+<p>Unlike high-volume pet store groomers, we see fewer dogs per day. That means:</p>
+<ul>
+<li><strong>Less waiting</strong> – Your dog isn't crated for hours before or after their groom</li>
+<li><strong>Less stress</strong> – A calmer environment with fewer barking dogs</li>
+<li><strong>More attention</strong> – Our groomers aren't rushing to hit quotas</li>
+<li><strong>Better communication</strong> – We actually talk to you about what your dog needs</li>
+</ul>
 
-<h3>Nail Care</h3>
-<p>Regular nail trims help maintain proper posture and prevent health problems. Long nails can cause discomfort and make it difficult for your dog to walk properly.</p>
+<h3>Great for Anxious Dogs</h3>
+<p>If your dog has had stressful grooming experiences at high-volume salons, you'll notice the difference here. We go slow when needed, take breaks, and never force a dog through something they're clearly terrified of. Some of our most loyal Madison clients started with nervous dogs who'd been traumatized elsewhere.</p>
 
-<h3>Ear Cleaning</h3>
-<p>Ear cleaning prevents accumulation of wax and debris that can lead to infections.</p>
-
-<h3>Dental Hygiene</h3>
-<p>Brushing your pet's teeth removes plaque build-up which can cause bacterial infections or tooth decay. It also contributes to fresher breath!</p>
-
-<h3>Eye Care</h3>
-<p>Cleaning away any discharge around their eyes with warm water helps prevent bacteria that could cause inflammation or irritation.</p>
-
-<h3>Behavioral Conditioning</h3>
-<p>Regular grooming helps dogs become accustomed to being handled, making vet visits and other handling situations less stressful. For puppies, early grooming experiences are especially important for creating positive associations.</p>
-
-<h3>Socialization</h3>
-<p>Professional grooming helps with socialization, getting dogs used to being around other dogs and people outside their home environment. Learn more about our <a href="/dog-grooming" class="text-emerald-600 hover:text-emerald-700 font-medium underline">professional grooming services</a>.</p>`
+<p>Ready to try us out? <a href="/grooming-application" class="text-emerald-600 hover:text-emerald-700 font-medium underline">Book your first appointment</a> and see why Madison families keep coming back.</p>`
     }
   ],
   sunPrairie: [

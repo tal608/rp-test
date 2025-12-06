@@ -38,7 +38,7 @@ export default function DogGroomingMadison() {
           { name: "Dog Grooming Madison", url: "https://www.riverpaws.dog/dog-grooming-madison" },
         ]}
       />
-      <main className="min-h-screen bg-gradient-to-b from-white to-blue-50">
+      <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-800">
         {/* Modern Hero Section */}
         {/* IMAGE_PLACEMENT_START: dog-grooming-madison-hero */}
         <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -101,7 +101,7 @@ export default function DogGroomingMadison() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto animate-fadeInUp-delay-800 px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-                North Madison&apos;s go-to grooming destination. Professional styling, compassionate care, and easy access via Highway 113—just 10 minutes from Cherokee Marsh Conservation Park.
+                Right on the North Madison border, 15 minutes from downtown, and 500 feet from Yahara Heights Dog Park. Professional grooming with the personalized care big-box stores can&apos;t match.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp-delay-800">
@@ -171,7 +171,7 @@ export default function DogGroomingMadison() {
                       </svg>
                     </div>
                     <p className="text-sm font-semibold text-white uppercase tracking-wide">
-                      A River Paws Dog Grooming Madison Client Asked
+                      Madison Dog Owners Ask
                     </p>
                   </div>
                   <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
@@ -191,10 +191,10 @@ export default function DogGroomingMadison() {
 
             {/* Additional FAQs */}
             {madisonFaqs.length > 1 && (
-              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+              <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 md:p-12">
                 <FAQSection
                   faqs={madisonFaqs.slice(1)}
-                  title="More Dog Grooming Questions for Madison Pet Owners"
+                  title="More Questions from Madison Dog Owners"
                   variant="div"
                 />
                 <FAQSchema faqs={madisonFaqs.slice(1)} />
@@ -202,59 +202,71 @@ export default function DogGroomingMadison() {
             )}
 
             {/* Perfect Location for Dog Park Visitors */}
-            <div className="bg-gradient-to-r from-blue-50 to-teal-50 rounded-2xl p-8 md:p-12 mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Conveniently Located Next to Yahara Heights Dog Park
+            <div className="bg-gradient-to-r from-blue-50 to-teal-50 dark:from-slate-800 dark:to-slate-700 rounded-2xl p-8 md:p-12 mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                Right Next to Yahara Heights Dog Park
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Located just 500 feet from Yahara Heights Dog Park's 20-acre off-leash area, River Paws offers the perfect solution for Madison pet owners looking for post-dog park grooming. We're walking distance from the area's most popular dog park, making it easy to clean up your muddy pup after Cherokee Marsh adventures or Yahara River swimming sessions. Perfect for post-dog park grooming and cleanup!
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                We&apos;re 500 feet from Yahara Heights Dog Park—close enough that some clients walk their dogs over after an off-leash session. Muddy from Cherokee Marsh? Wet from swimming in the Yahara River? Drop off your adventurous pup, grab a coffee, and pick them up fresh, clean, and smelling significantly better.
+              </p>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                We&apos;re right on the North Madison/Waunakee border, serving families from Maple Bluff, Sherman, Northport, Cherokee, and beyond. About 15 minutes from central Madison via Highway 113.
               </p>
             </div>
 
             {/* Why Madison Families Trust River Paws */}
-            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Why 2,000+ Local Families Trust Us
+            <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 md:p-12 mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                Why Madison Families Choose River Paws
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Here&apos;s what sets River Paws apart as your neighborhood grooming partner:
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+                We&apos;re right on the North Madison border—close to everything, but with the personalized attention you won&apos;t find at high-volume salons.
               </p>
-              <ul className="space-y-4 text-gray-700">
-                <li className="flex items-start">
-                  <svg className="w-6 h-6 text-emerald-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                  <div>
-                    <strong className="text-gray-900">Convenient location</strong> - Just north of Madison via Highway 113/Northport Drive, 10 minutes from North Madison, serving Sherman Avenue and Northport corridor
+              <div className="space-y-6 text-gray-700 dark:text-gray-300">
+                <div className="flex items-start">
+                  <div className="w-10 h-10 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <svg className="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
                   </div>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-6 h-6 text-emerald-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
                   <div>
-                    <strong className="text-gray-900">Unique advantage</strong> - Only groomer walking distance from Yahara Heights Dog Park, perfect for post-adventure grooming
+                    <strong className="text-gray-900 dark:text-white">15 minutes from central Madison</strong>
+                    <p className="mt-1">Straight shot up Highway 113 (Northport Drive). Families from Sherman, Northport, Cherokee, Maple Bluff, and the isthmus are here in no time.</p>
                   </div>
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-6 h-6 text-emerald-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <svg className="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
                   <div>
-                    <strong className="text-gray-900">Expert care</strong> - Over 8 years serving the Cherokee Marsh community with trusted, professional grooming
+                    <strong className="text-gray-900 dark:text-white">No assembly-line grooming</strong>
+                    <p className="mt-1">We see fewer dogs per day than most salons. That means less stress for your dog, more attention from the groomer, and better results. Quality over quantity.</p>
                   </div>
-                </li>
-              </ul>
+                </div>
+                <div className="flex items-start">
+                  <div className="w-10 h-10 bg-teal-100 dark:bg-teal-900/30 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <svg className="w-5 h-5 text-teal-600 dark:text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <strong className="text-gray-900 dark:text-white">Great with nervous dogs</strong>
+                    <p className="mt-1">If your dog has had bad grooming experiences before, we&apos;re happy to go slow. Some of our most loyal regulars started as anxious messes. Patience is part of the job.</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Call to Action */}
             <div className="mt-12 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl p-8 md:p-12 text-white text-center">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-                Ready to Experience Professional Dog Grooming in Madison?
+                Ready to Book?
               </h2>
               <p className="text-xl mb-8 max-w-2xl mx-auto">
-                Join the hundreds of Madison families who trust River Paws with their beloved pets.
-                Conveniently located just minutes from downtown Madison.
+                We&apos;re right on the North Madison border—15 minutes from downtown, steps from Yahara Heights Dog Park. Professional grooming without the big-box chaos.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
@@ -315,8 +327,8 @@ export default function DogGroomingMadison() {
               </div>
 
               {/* Related Location Pages */}
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-md">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4 text-center">
                   Grooming Services in Nearby Areas
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

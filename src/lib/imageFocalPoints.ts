@@ -38,6 +38,9 @@ const focalPointMap: Record<string, { x: number; y: number }> = {
   // Halloween/Special images
   'halloween-portrait-schnauzer-madison-wi-river-paws.jpg': { x: 50, y: 55 },
   
+  // Caretaker/Team images
+  'france-lozano.jpg': { x: 50, y: 20 },
+  
   // Adventure/Hiking images (from Grooming folder)
   'joyful-rolling-mixed-breed-grassy-field-sun-prairie-wi-river-paws.jpg': { x: 55, y: 65 },
   

@@ -8,6 +8,7 @@ import { useMouseParallax } from "@/hooks/useMouseParallax";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import Breadcrumb from "@/components/Breadcrumb";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
+import { getImageObjectPosition } from "@/lib/imageFocalPoints";
 
 export default function Caretakers() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -173,6 +174,7 @@ export default function Caretakers() {
                         alt={`${member.name}, ${member.role} at River Paws dog grooming and hiking service in Waunakee, Wisconsin`}
                         fill
                         className={`object-cover group-hover:scale-105 transition-transform duration-700 ${member.imageClass ?? ""}`}
+                        style={{ objectPosition: member.imageClass ? undefined : getImageObjectPosition(member.image) }}
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       />
                     ) : (

@@ -6,7 +6,6 @@ import { blogArticles } from "@/constants/blogArticles";
 import ArticleSchema from "@/components/ArticleSchema";
 import Breadcrumb from "@/components/Breadcrumb";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
-import GetDirectionsButton from "@/components/GetDirectionsButton";
 import RelatedArticles from "@/components/RelatedArticles";
 import AuthorBio from "@/components/AuthorBio";
 import SafeHtml from "@/components/SafeHtml";
@@ -88,32 +87,58 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           { name: article.title, url: `https://www.riverpaws.dog/blog/${article.slug}` },
         ]}
       />
-      <main className="min-h-screen bg-gradient-to-b from-white to-blue-50">
-        {/* Hero Section */}
-        <section className="relative py-12 sm:py-16 md:py-24 px-4 sm:px-6 bg-gradient-to-r from-blue-600 to-teal-500 text-white overflow-hidden">
-          {/* Animated Blobs */}
-          <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-[-20%] left-[-10%] w-96 h-96 bg-blue-400 rounded-full mix-blend-overlay filter blur-3xl opacity-20 animate-blob"></div>
-            <div className="absolute bottom-[-20%] right-[-10%] w-96 h-96 bg-teal-400 rounded-full mix-blend-overlay filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-          </div>
-          <div className="max-w-7xl mx-auto relative z-10">
+      <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-800">
+        {/* Hero Section with Image Background */}
+        <section className="relative min-h-[50vh] sm:min-h-[60vh] flex items-end overflow-hidden">
+          {/* Breadcrumb - Positioned like other pages */}
+          <div className="absolute top-24 left-6 z-20">
             <Breadcrumb
               items={[
                 { name: "Home", href: "/" },
                 { name: "Blog", href: "/blog" },
-                { name: article.title, href: `/blog/${article.slug}` },
+                { name: article.title.length > 25 ? article.title.substring(0, 25) + "..." : article.title, href: `/blog/${article.slug}` },
               ]}
-              className="mb-6 sm:mb-8 text-white/90"
+              className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg"
             />
+          </div>
+
+          {/* Background Image */}
+          {article.image && (
+            <div className="absolute inset-0 z-0">
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                className="object-cover"
+                style={{ objectPosition: getImageObjectPosition(article.image) }}
+                priority
+                sizes="100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-900/50 via-emerald-800/40 to-teal-900/50 z-[1]"></div>
+            </div>
+          )}
+          
+          {/* Fallback gradient if no image */}
+          {!article.image && (
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-teal-600 z-0"></div>
+          )}
+
+          {/* Animated Blobs */}
+          <div className="absolute inset-0 pointer-events-none z-[2]">
+            <div className="absolute top-[-20%] left-[-10%] w-96 h-96 bg-blue-400 rounded-full mix-blend-overlay filter blur-3xl opacity-20 animate-blob"></div>
+            <div className="absolute bottom-[-20%] right-[-10%] w-96 h-96 bg-teal-400 rounded-full mix-blend-overlay filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 w-full pb-12 sm:pb-16 pt-32 sm:pt-40 px-4 sm:px-6">
             <div className="max-w-4xl mx-auto">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 flex-wrap text-xs sm:text-sm">
-                <span className="bg-white/20 backdrop-blur-sm text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full font-semibold">
+              
+              {/* Meta Info */}
+              <div className="flex items-center gap-3 mb-4 flex-wrap text-sm">
+                <span className="bg-white/20 backdrop-blur-sm text-white px-4 py-1.5 rounded-full font-medium">
                   {article.category.charAt(0).toUpperCase() + article.category.slice(1)}
                 </span>
-                <time
-                  dateTime={article.datePublished}
-                  className="text-white/90"
-                >
+                <time dateTime={article.datePublished} className="text-white/80">
                   {new Date(article.datePublished).toLocaleDateString("en-US", {
                     year: "numeric",
                     month: "long",
@@ -122,15 +147,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 </time>
                 {article.readTime && (
                   <>
-                    <span className="text-white/70">•</span>
-                    <span className="text-white/90">{article.readTime} min read</span>
+                    <span className="text-white/60">•</span>
+                    <span className="text-white/80">{article.readTime} min read</span>
                   </>
                 )}
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 px-2">
+
+              {/* Title */}
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 leading-tight" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>
                 {article.title}
               </h1>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mb-6 sm:mb-8 px-4">
+
+              {/* Description */}
+              <p className="text-lg sm:text-xl text-white/90 max-w-3xl" style={{ textShadow: '0 1px 10px rgba(0,0,0,0.5)' }}>
                 {article.description}
               </p>
             </div>
@@ -139,81 +168,87 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/* Article Content */}
         <article className="py-12 sm:py-16 px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto">
-            {/* Featured Image */}
-            {article.image && (
-              <div className="relative h-96 rounded-2xl overflow-hidden mb-12 shadow-2xl">
-                <Image
-                  src={article.image}
-                  alt={`${article.title} - Expert dog grooming tips from River Paws professional groomers`}
-                  fill
-                  className="object-cover"
-                  style={{ objectPosition: getImageObjectPosition(article.image) }}
-                  sizes="100vw"
-                  priority
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
-                  <p className="text-white text-sm font-medium">{article.title}</p>
+          <div className="max-w-3xl mx-auto">
+            {/* Article Body */}
+            <div className="bg-white dark:bg-slate-800 rounded-3xl shadow-xl p-6 sm:p-10 md:p-12 border border-gray-100 dark:border-slate-700">
+              <SafeHtml 
+                html={article.content}
+                className="article-content text-gray-700 dark:text-gray-300 leading-relaxed prose prose-lg max-w-none 
+                  prose-headings:text-gray-900 dark:prose-headings:text-white 
+                  prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:font-bold prose-h2:mt-10 prose-h2:mb-4
+                  prose-h3:text-xl prose-h3:font-bold prose-h3:mt-8 prose-h3:mb-3
+                  prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:mb-4
+                  prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-a:font-medium prose-a:no-underline hover:prose-a:underline 
+                  prose-strong:text-gray-900 dark:prose-strong:text-white prose-strong:font-semibold
+                  prose-ul:my-4 prose-ul:pl-0 prose-ol:my-4
+                  prose-li:text-gray-700 dark:prose-li:text-gray-300 prose-li:mb-2
+                  prose-blockquote:border-l-4 prose-blockquote:border-blue-500 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-gray-600 dark:prose-blockquote:text-gray-400"
+              />
+
+              {/* Tags */}
+              <div className="mt-10 pt-8 border-t border-gray-200 dark:border-slate-700">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-3 font-medium">Topics covered:</p>
+                <div className="flex flex-wrap gap-2">
+                  {article.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1.5 rounded-full text-sm font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              </div>
-            )}
-
-            {/* Article Body - sanitized with DOMPurify for XSS protection */}
-            <SafeHtml 
-              html={article.content}
-              className="article-content text-gray-700 leading-relaxed prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-700 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-ul:text-gray-700 prose-ol:text-gray-700 prose-li:text-gray-700"
-            />
-
-            {/* Tags */}
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <div className="flex flex-wrap gap-2">
-                {article.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium"
-                  >
-                    #{tag}
-                  </span>
-                ))}
               </div>
             </div>
 
-            {/* Author Info */}
             {/* Author Bio */}
             <AuthorBio authorName={article.author} className="mt-8" />
 
-            {/* CTA Section */}
-            <div className="mt-12 bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl p-8 md:p-12 text-white text-center">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
-                Ready to Experience Professional Grooming?
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-                At River Paws, our experienced groomers use premium products and gentle techniques
-                to keep your dog looking and feeling their best.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/grooming-application"
-                  className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold text-base sm:text-lg hover:bg-gray-100 transition-colors shadow-lg min-h-[44px]"
-                >
-                  Book Appointment
-                </Link>
-                <GetDirectionsButton className="bg-transparent border-2 border-white text-white hover:bg-white/10" />
-              </div>
-              <div className="mt-8 pt-8 border-t border-white/20">
-                <p className="text-blue-100 mb-2">
-                  Located at <strong>{contactInfo.address.full}</strong>
-                </p>
-                <p className="text-blue-100">
-                  Call us at{" "}
-                  <a
-                    href={`tel:${contactInfo.phone}`}
-                    className="text-white font-bold hover:underline"
-                  >
-                    {contactInfo.phoneDisplay}
-                  </a>{" "}
-                  to schedule your appointment
-                </p>
+            {/* CTA Section - Polaroid Style */}
+            <div className="mt-12 group">
+              <div 
+                className="bg-white dark:bg-slate-800 p-4 pb-8 rounded-sm shadow-xl transform group-hover:rotate-1 transition-transform duration-500"
+                style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.15)' }}
+              >
+                {/* Image */}
+                <div className="relative aspect-[16/9] overflow-hidden rounded-sm mb-6">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-teal-500"></div>
+                  <div className="absolute inset-0 flex items-center justify-center text-white p-6 text-center">
+                    <div>
+                      <p className="text-3xl sm:text-4xl font-bold mb-2">Like what you read?</p>
+                      <p className="text-lg sm:text-xl text-white/90">We&apos;re even better in person.</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Caption */}
+                <div className="text-center px-4">
+                  <p className="text-gray-600 dark:text-gray-300 mb-6">
+                    Our groomers practice what we preach. Book a visit and see for yourself.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Link
+                      href="/grooming-application"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    >
+                      Book an Appointment
+                    </Link>
+                    <a
+                      href={`tel:${contactInfo.phone}`}
+                      className="inline-flex items-center justify-center px-6 py-3 bg-gray-100 dark:bg-slate-700 text-gray-700 dark:text-gray-200 rounded-full font-medium hover:bg-gray-200 dark:hover:bg-slate-600 transition-colors"
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      {contactInfo.phoneDisplay}
+                    </a>
+                  </div>
+                  
+                  {/* Handwritten note */}
+                  <p className="mt-6 text-gray-500 dark:text-gray-400 text-sm" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
+                    📍 5305 River Road, Waunakee — right by the dog park!
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -224,7 +259,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             <div className="mt-12 text-center">
               <Link
                 href="/blog"
-                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+                className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
               >
                 <svg
                   className="mr-2 w-5 h-5"
@@ -248,4 +283,3 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     </>
   );
 }
-
