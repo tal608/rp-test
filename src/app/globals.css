@@ -30,6 +30,129 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  /* iOS Safari: Prevent text size adjustment on orientation change */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* iOS Safari: Smooth scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* iOS Safari: Remove tap highlight color */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ============================================
+   iOS SAFARI & APPLE DEVICE COMPATIBILITY
+   ============================================ */
+
+/* Fix 100vh issue on iOS Safari (address bar causes content cut-off) */
+/* Use min-height with fallback for browsers that don't support dvh */
+@supports (height: 100dvh) {
+  .h-screen {
+    min-height: 100dvh !important;
+    height: 100dvh !important;
+  }
+}
+
+/* Safe area insets for notched iPhones (iPhone X and later) */
+@supports (padding: env(safe-area-inset-top)) {
+  body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  /* Header: Add safe area padding */
+  header, nav {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+  
+  /* Footer: Add safe area padding for bottom */
+  footer {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+  
+  /* Fixed/sticky elements need safe area consideration */
+  .fixed, .sticky {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+/* Webkit backdrop-filter support (Safari requires prefix) */
+.backdrop-blur-sm,
+.backdrop-blur,
+.backdrop-blur-md,
+.backdrop-blur-lg,
+.backdrop-blur-xl,
+.backdrop-blur-2xl,
+.backdrop-blur-3xl,
+[class*="backdrop-blur"] {
+  -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+/* Specific backdrop blur values for Safari */
+.backdrop-blur-sm {
+  -webkit-backdrop-filter: blur(4px);
+}
+.backdrop-blur {
+  -webkit-backdrop-filter: blur(8px);
+}
+.backdrop-blur-md {
+  -webkit-backdrop-filter: blur(12px);
+}
+.backdrop-blur-lg {
+  -webkit-backdrop-filter: blur(16px);
+}
+.backdrop-blur-xl {
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* iOS Safari: Fix sticky positioning in scroll containers */
+@supports (-webkit-touch-callout: none) {
+  .sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+/* iOS Safari: Prevent pull-to-refresh on specific elements */
+.no-pull-refresh {
+  overscroll-behavior-y: contain;
+}
+
+/* iOS Safari: Fix for input zoom on focus (font-size < 16px triggers zoom) */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[type="search"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* iOS Safari: Fix for flex gap not working in older Safari versions */
+@supports not (gap: 1rem) {
+  .flex.gap-1 > * + * { margin-left: 0.25rem; }
+  .flex.gap-2 > * + * { margin-left: 0.5rem; }
+  .flex.gap-3 > * + * { margin-left: 0.75rem; }
+  .flex.gap-4 > * + * { margin-left: 1rem; }
+  .flex.gap-6 > * + * { margin-left: 1.5rem; }
+  .flex.gap-8 > * + * { margin-left: 2rem; }
+}
+
+/* iOS Safari: Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  -webkit-scroll-behavior: smooth;
+}
+
+/* Prevent iOS Safari from auto-zooming on double tap */
+* {
+  touch-action: manipulation;
 }
 
 /* Performance: Defer rendering of below-fold content */

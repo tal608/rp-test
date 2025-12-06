@@ -28,11 +28,12 @@ const kalam = Kalam({
   variable: "--font-kalam",
 });
 
-// Viewport settings for optimal mobile experience
+// Viewport settings for optimal mobile experience (including iOS Safari)
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
+  viewportFit: 'cover', // For notched iPhones (iPhone X and later)
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#2563eb' },
     { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
@@ -57,7 +58,14 @@ export const metadata: Metadata = {
       { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
     shortcut: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'River Paws',
   },
   other: {
     'msapplication-TileColor': '#2563eb',

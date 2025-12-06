@@ -985,9 +985,9 @@ Bathing: Every 6-8 weeks (unless heavily soiled)</p>
 
 <p>When someone tells us their dog is anxious, we take it seriously. We ask questions: What specifically triggers them? What have you tried? What makes it better or worse? What's their history?</p>
 
-<p>Then we make a plan. Sometimes that means longer appointments with more breaks. Sometimes it means splitting grooming across multiple visits. Sometimes it means doing what we can and skipping what we can't—a dog who's terrified of nail trims but okay with everything else can absolutely get groomed, and we'll work on nails separately.</p>
+<p>Then we make a plan. Sometimes that means longer appointments with more breaks. Sometimes it means tackling the scariest part first while the dog still has patience. A dog who's terrified of nail trims but okay with everything else? We'll do nails first, then move on to the parts they're comfortable with.</p>
 
-<p>We'd rather have a dog leave 80% groomed and feeling okay than 100% groomed and traumatized. The goal isn't just a good haircut—it's a dog who's willing to come back.</p>
+<p>The goal isn't just a good haircut—it's a dog who's willing to come back. Our groomers are experienced enough to work through the nerves and still get the job done right.</p>
 
 <p>Some of our most anxious dogs have become regulars who walk in happy. It takes time. It takes consistency. It takes trusting the process even when progress feels painfully slow. But it's possible.</p>
 
@@ -1074,9 +1074,9 @@ Bathing: Every 6-8 weeks (unless heavily soiled)</p>
 
 <h2>What We Do Differently</h2>
 
-<p>At River Paws, we watch for these signals constantly. When we see early stress signs, we slow down. We take breaks. Sometimes we split grooming into two visits so the dog doesn't get overwhelmed.</p>
+<p>At River Paws, we watch for these signals constantly. When we see early stress signs, we slow down. We take breaks. We adjust our approach—maybe switching to a quieter tool, changing the order of tasks, or just giving the dog a few minutes to decompress.</p>
 
-<p>We'd rather send home a dog who's 80% groomed and feeling okay than a dog who's 100% groomed and traumatized. The coat grows back. The emotional damage from a terrible grooming experience can last years.</p>
+<p>Our groomers are skilled enough to work through the nerves and still finish the job. We've never had to send a dog home half-groomed. It just takes patience, experience, and actually paying attention to what the dog is telling us.</p>
 
 <p>Some dogs just need more time, more breaks, or a different approach. Some need things in a specific order—maybe they're fine with bathing but need to do nails first, before they're tired and less patient. Some do better with constant gentle chatter; others prefer quiet. Part of our job is figuring out what each dog needs.</p>
 
