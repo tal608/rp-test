@@ -509,18 +509,12 @@ export default function DogGrooming() {
                         <p className="text-gray-600 mb-2 text-xs md:text-sm">Coat type also affects time and price:</p>
                         <div className="space-y-1.5 md:space-y-2">
                           <div className="bg-blue-50 border border-blue-200 rounded-xl p-2 md:p-3 hover:border-blue-300 transition-colors duration-300">
-                            <div className="flex items-center gap-2">
-                              <span className="text-base md:text-lg">🧥</span>
-                              <span className="font-bold text-blue-900 text-xs md:text-sm">Basic Coat</span>
-                            </div>
-                            <p className="text-[10px] md:text-xs text-blue-700 ml-6 md:ml-7">Hairless, Smooth, Short, Medium</p>
+                            <span className="font-bold text-blue-900 text-xs md:text-sm block">Basic Coat</span>
+                            <p className="text-[10px] md:text-xs text-blue-700">Hairless, Smooth, Short, Medium</p>
                           </div>
                           <div className="bg-teal-50 border border-teal-200 rounded-xl p-2 md:p-3 hover:border-teal-300 transition-colors duration-300">
-                            <div className="flex items-center gap-2">
-                              <span className="text-base md:text-lg">🧶</span>
-                              <span className="font-bold text-teal-900 text-xs md:text-sm">Thick Coat</span>
-                            </div>
-                            <p className="text-[10px] md:text-xs text-teal-700 ml-6 md:ml-7">Corded, Wire, Double, Curly, Long</p>
+                            <span className="font-bold text-teal-900 text-xs md:text-sm block">Thick Coat</span>
+                            <p className="text-[10px] md:text-xs text-teal-700">Corded, Wire, Double, Curly, Long</p>
                           </div>
                         </div>
                       </div>
