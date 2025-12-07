@@ -91,12 +91,16 @@ export default function DogHikes() {
 
         {/* Floating elements with parallax */}
         <div
-          className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob z-[3]"
+          className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-blue-500 rounded-full filter blur-[100px] opacity-40 animate-blob z-[3]"
           style={{ transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
         ></div>
         <div
-          className="absolute top-40 right-10 w-72 h-72 bg-teal-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob-delay-2 z-[3]"
+          className="absolute top-20 -right-20 w-[450px] h-[450px] bg-teal-500 rounded-full filter blur-[100px] opacity-40 animate-blob-delay-2 z-[3]"
           style={{ transform: `translate(${-mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
+        ></div>
+        <div
+          className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-emerald-500 rounded-full filter blur-[120px] opacity-35 animate-blob z-[3]"
+          style={{ transform: `translate(${mousePosition.x * 1.5}px, ${-mousePosition.y * 1.5}px)` }}
         ></div>
 
         <div className="relative z-[50] max-w-7xl mx-auto px-4 sm:px-6 text-center">
