@@ -18,6 +18,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
 import PawCursorTrail from "@/components/PawCursorTrail";
+import RotatingBadges from "@/components/RotatingBadges";
 
 export default function DogGrooming() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -123,11 +124,8 @@ export default function DogGrooming() {
 
         <div className="relative z-[50] max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <div className="space-y-6 sm:space-y-8">
-            <div className="inline-flex items-center bg-white/90 backdrop-blur-md rounded-full px-3 sm:px-4 py-1.5 sm:py-2 animate-fadeInUp">
-              <svg className="w-4 h-4 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              <span className="text-xs sm:text-sm font-medium text-gray-700">Professional Grooming Since 2017</span>
+            <div className="animate-fadeInUp">
+              <RotatingBadges />
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight px-2">

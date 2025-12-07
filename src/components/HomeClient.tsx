@@ -15,6 +15,7 @@ import ScrollIndicator from "@/components/ScrollIndicator";
 import GetDirectionsButton from "@/components/GetDirectionsButton";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
 import { contactInfo } from "@/constants/social";
+import PawCursorTrail from "@/components/PawCursorTrail";
 
 // Top 10 hero images for Polaroid display - Mix of hiking and grooming
 // Positioned around edges to create a "donut" layout with clear center for text
@@ -193,6 +194,9 @@ export default function HomeClient() {
           
           {/* Radial gradient overlay for depth */}
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.15),transparent),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent)] z-[2]"></div>
+          
+          {/* Paw print cursor trail */}
+          <PawCursorTrail />
           
           {/* Polaroid Photos Container */}
           <div className="absolute inset-0 z-[5] pointer-events-none overflow-hidden">

@@ -15,6 +15,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
+import PawCursorTrail from "@/components/PawCursorTrail";
 
 export default function DogHikes() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -102,6 +103,9 @@ export default function DogHikes() {
           className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-emerald-500 rounded-full filter blur-[120px] opacity-35 animate-blob z-[3]"
           style={{ transform: `translate(${mousePosition.x * 1.5}px, ${-mousePosition.y * 1.5}px)` }}
         ></div>
+
+        {/* Paw print cursor trail */}
+        <PawCursorTrail />
 
         <div className="relative z-[50] max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <div className="space-y-6 sm:space-y-8">
