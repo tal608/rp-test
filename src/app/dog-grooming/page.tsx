@@ -78,13 +78,14 @@ export default function DogGrooming() {
       {/* Modern Hero Section */}
       {/* IMAGE_PLACEMENT_START: dog-grooming-hero */}
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute top-24 left-6 z-20">
+        <div className="absolute top-20 left-4 z-20">
           <Breadcrumb
             items={[
               { name: "Home", href: "/" },
-              { name: "Dog Grooming", href: "/dog-grooming" },
+              { name: "Grooming", href: "/dog-grooming" },
             ]}
-            className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg"
+            compact
+            className="bg-white/85 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-md"
           />
         </div>
         {/* Background Image with Parallax */}

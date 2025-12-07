@@ -10,18 +10,19 @@ interface BreadcrumbItem {
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
   className?: string;
+  compact?: boolean;
 }
 
-export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
+export default function Breadcrumb({ items, className = "", compact = false }: BreadcrumbProps) {
   const baseUrl = "https://www.riverpaws.dog";
   
   return (
     <>
       <nav
         aria-label="Breadcrumb"
-        className={`flex items-center space-x-2 text-sm ${className}`}
+        className={`flex items-center ${compact ? 'space-x-1 text-xs' : 'space-x-2 text-sm'} ${className}`}
       >
-        <ol className="flex items-center space-x-2" itemScope itemType="https://schema.org/BreadcrumbList">
+        <ol className={`flex items-center ${compact ? 'space-x-1' : 'space-x-2'}`} itemScope itemType="https://schema.org/BreadcrumbList">
           {items.map((item, index) => {
             const isLast = index === items.length - 1;
             const fullUrl = item.href.startsWith("http") ? item.href : `${baseUrl}${item.href}`;
@@ -53,7 +54,7 @@ export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
                     </Link>
                     <meta itemProp="position" content={String(index + 1)} />
                     <svg
-                      className="w-4 h-4 text-gray-400 mx-2"
+                      className={`${compact ? 'w-3 h-3 mx-1' : 'w-4 h-4 mx-2'} text-gray-400`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -77,4 +78,3 @@ export default function Breadcrumb({ items, className = "" }: BreadcrumbProps) {
     </>
   );
 }
-

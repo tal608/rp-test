@@ -169,15 +169,15 @@ export default function RotatingBadges() {
                 }}
                 onClick={() => !isDragging && setActiveIndex(index)}
               >
-                {/* Glowing aura - only on active */}
+                {/* Glowing aura - only on active (golden to match headline) */}
                 {isActive && (
                   <div 
                     className="absolute inset-0 -z-20 rounded-full pointer-events-none"
                     style={{
-                      background: 'radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.5) 30%, transparent 60%)',
-                      transform: 'scale(2.2)',
-                      filter: 'blur(18px)',
-                      animation: 'glowPulse 2s ease-in-out infinite',
+                      background: 'radial-gradient(circle, rgba(253,224,71,0.4) 0%, rgba(253,224,71,0.15) 40%, transparent 65%)',
+                      transform: 'scale(1.6)',
+                      filter: 'blur(12px)',
+                      animation: 'glowPulse 3s ease-in-out infinite',
                     }}
                   />
                 )}
@@ -197,7 +197,7 @@ export default function RotatingBadges() {
                     backdropFilter: 'blur(12px)',
                     WebkitBackdropFilter: 'blur(12px)',
                     boxShadow: isActive 
-                      ? '0 25px 50px rgba(0,0,0,0.25), 0 0 50px rgba(255,255,255,0.4), inset 0 1px 0 rgba(255,255,255,0.9)' 
+                      ? '0 15px 35px rgba(0,0,0,0.2), 0 0 25px rgba(253,224,71,0.2), inset 0 1px 0 rgba(255,255,255,0.9)' 
                       : '0 8px 25px rgba(0,0,0,0.2)',
                     border: isActive ? '1px solid rgba(255,255,255,0.8)' : '1px solid rgba(255,255,255,0.4)',
                   }}
@@ -283,12 +283,12 @@ export default function RotatingBadges() {
         
         @keyframes glowPulse {
           0%, 100% {
-            opacity: 0.9;
-            transform: scale(2.2);
+            opacity: 0.8;
+            transform: scale(1.6);
           }
           50% {
             opacity: 1;
-            transform: scale(2.5);
+            transform: scale(1.8);
           }
         }
         
