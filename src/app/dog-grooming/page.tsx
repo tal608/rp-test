@@ -123,12 +123,12 @@ export default function DogGrooming() {
         <PawCursorTrail />
 
         <div className="relative z-[50] max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-4 sm:space-y-6">
             <div className="animate-fadeInUp">
               <RotatingBadges />
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight px-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight px-2">
               <span className="block text-white animate-fadeInUp-delay-200 drop-shadow-2xl">Every Tail Gets</span>
               <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-fadeInUp-delay-400 relative inline-block">
                 <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
@@ -136,19 +136,18 @@ export default function DogGrooming() {
                 </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent blur-xl opacity-50 animate-pulse"></span>
               </span>
-              <span className="block text-xl sm:text-2xl md:text-3xl mt-6 font-medium text-blue-100 animate-fadeInUp-delay-600 drop-shadow-md">
+              <span className="block text-lg sm:text-xl md:text-2xl mt-3 font-medium text-blue-100 animate-fadeInUp-delay-600 drop-shadow-md">
                 at River Paws Dog Grooming
               </span>
           </h1>
 
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto animate-fadeInUp-delay-800 px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-              Where nervous pups become spa-day regulars and even the wiggliest dogs leave looking like show champions. 
-              Our gentle, experienced groomers take the time to make every dog feel safe—because a calm pup means a beautiful groom. 
-              Proudly serving Waunakee, Madison, Middleton, DeForest, and Sun Prairie since 2017.
-              <span className="block mt-2 text-yellow-200 font-semibold">Find professional dog grooming near you!</span>
+            <p className="hero-description text-base sm:text-lg md:text-xl text-white/95 max-w-3xl mx-auto animate-fadeInUp-delay-800 px-4 leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
+              Patient groomers. Premium products. Dogs who actually enjoy their spa day.
+              <span className="block mt-1 text-white/80">We take the time other places won&apos;t—because a calm pup means a beautiful groom.</span>
+              <span className="block mt-3 text-yellow-200 font-semibold text-lg sm:text-xl">Professional dog grooming near you!</span>
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp-delay-800">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fadeInUp-delay-800 pt-2">
               <a
                 href="https://booking.moego.pet/ol/RiverPaws/book"
                 target="_blank"
