@@ -2423,3 +2423,57 @@ html.light section .from-white.dark\:from-slate-950,
 html:not(.dark) section .from-white.dark\:from-slate-950 {
   --tw-gradient-from: #ffffff !important;
 }
+
+/* ============================================
+   HERO SPOTLIGHT GRADIENT - RESPONSIVE
+   ============================================ */
+
+/* Desktop: Wider ellipse, positioned at center-top */
+.hero-spotlight-base {
+  background: radial-gradient(
+    ellipse 80% 60% at center 35%,
+    rgba(15, 23, 42, 0.1) 0%,
+    rgba(15, 23, 42, 0.25) 25%,
+    rgba(15, 23, 42, 0.45) 50%,
+    rgba(15, 23, 42, 0.65) 75%,
+    rgba(15, 23, 42, 0.85) 100%
+  );
+}
+
+/* Mobile: Match desktop intensity exactly - use same tight ellipse proportions */
+@media (max-width: 768px) {
+  .hero-spotlight-base {
+    background: radial-gradient(
+      ellipse 80% 60% at center 32%,
+      rgba(15, 23, 42, 0.1) 0%,
+      rgba(15, 23, 42, 0.25) 25%,
+      rgba(15, 23, 42, 0.45) 50%,
+      rgba(15, 23, 42, 0.65) 75%,
+      rgba(15, 23, 42, 0.85) 100%
+    );
+  }
+}
+
+/* Color tint overlay - Desktop */
+.hero-spotlight-color {
+  background: radial-gradient(
+    ellipse 100% 80% at center top,
+    rgba(59, 130, 246, 0.08) 0%,
+    rgba(16, 185, 129, 0.12) 40%,
+    rgba(20, 184, 166, 0.18) 70%,
+    rgba(20, 184, 166, 0.25) 100%
+  );
+}
+
+/* Color tint overlay - Mobile: Same intensity as desktop */
+@media (max-width: 768px) {
+  .hero-spotlight-color {
+    background: radial-gradient(
+      ellipse 100% 80% at center top,
+      rgba(59, 130, 246, 0.08) 0%,
+      rgba(16, 185, 129, 0.12) 40%,
+      rgba(20, 184, 166, 0.18) 70%,
+      rgba(20, 184, 166, 0.25) 100%
+    );
+  }
+}

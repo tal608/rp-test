@@ -16,6 +16,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
 import PawCursorTrail from "@/components/PawCursorTrail";
+import RotatingBadges from "@/components/RotatingBadges";
 
 export default function DogHikes() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -64,13 +65,14 @@ export default function DogHikes() {
       {/* Modern Hero Section */}
       {/* IMAGE_PLACEMENT_START: dog-hikes-hero */}
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute top-24 left-6 z-20">
+        <div className="absolute top-20 left-4 z-20">
           <Breadcrumb
             items={[
               { name: "Home", href: "/" },
-              { name: "Dog Hiking", href: "/dog-hikes" },
+              { name: "Hiking", href: "/dog-hikes" },
             ]}
-            className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg"
+            compact
+            className="bg-white/85 backdrop-blur-sm px-2.5 py-1 rounded-md shadow-md"
           />
         </div>
         {/* Background Image with Parallax */}
@@ -84,23 +86,24 @@ export default function DogHikes() {
             priority
           />
           {/* IMAGE_PLACEMENT_END: dog-hikes-hero */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-emerald-800/50 to-teal-900/60 z-[1]"></div>
+          {/* Radial gradient overlay - creates spotlight effect: lighter in center (~10%), darker at edges */}
+          {/* Responsive: adjusts ellipse size and position for mobile vs desktop */}
+          <div className="absolute inset-0 z-[1] hero-spotlight-base"></div>
+          {/* Color tint overlay - adds brand colors while maintaining spotlight effect */}
+          <div className="absolute inset-0 z-[1] hero-spotlight-color"></div>
         </div>
-
-        {/* Animated gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-teal-600/20 z-[2]"></div>
 
         {/* Floating elements with parallax */}
         <div
-          className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-blue-500 rounded-full filter blur-[100px] opacity-40 animate-blob z-[3]"
+          className="absolute -top-10 -left-10 w-[280px] h-[280px] md:-top-20 md:-left-20 md:w-[500px] md:h-[500px] bg-blue-500 rounded-full filter blur-[80px] md:blur-[100px] opacity-30 md:opacity-40 animate-blob z-[3]"
           style={{ transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
         ></div>
         <div
-          className="absolute top-20 -right-20 w-[450px] h-[450px] bg-teal-500 rounded-full filter blur-[100px] opacity-40 animate-blob-delay-2 z-[3]"
+          className="absolute top-10 -right-10 w-[250px] h-[250px] md:top-20 md:-right-20 md:w-[450px] md:h-[450px] bg-teal-500 rounded-full filter blur-[80px] md:blur-[100px] opacity-30 md:opacity-40 animate-blob-delay-2 z-[3]"
           style={{ transform: `translate(${-mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
         ></div>
         <div
-          className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-emerald-500 rounded-full filter blur-[120px] opacity-35 animate-blob z-[3]"
+          className="absolute bottom-0 -left-10 w-[220px] h-[220px] md:left-1/4 md:w-[400px] md:h-[400px] bg-emerald-500 rounded-full filter blur-[90px] md:blur-[120px] opacity-25 md:opacity-35 animate-blob z-[3]"
           style={{ transform: `translate(${mousePosition.x * 1.5}px, ${-mousePosition.y * 1.5}px)` }}
         ></div>
 
@@ -108,33 +111,31 @@ export default function DogHikes() {
         <PawCursorTrail />
 
         <div className="relative z-[50] max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <div className="space-y-6 sm:space-y-8">
-            <div className="inline-flex items-center bg-white/90 backdrop-blur-md rounded-full px-3 sm:px-4 py-1.5 sm:py-2 animate-fadeInUp">
-              <svg className="w-4 h-4 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              <span className="text-xs sm:text-sm font-medium text-gray-700">Adventure Awaits Since 2017</span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold leading-tight px-2">
-              <span className="block text-white animate-fadeInUp-delay-200 drop-shadow-2xl">Where Madison</span>
-              <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-fadeInUp-delay-400 relative inline-block">
+          <div className="space-y-4 sm:space-y-5">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight px-2">
+              <span className="block text-white animate-fadeInUp drop-shadow-2xl">Where Madison</span>
+              <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-fadeInUp-delay-200 relative inline-block">
                 <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%]">
                   Dogs Run Free
                 </span>
                 <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent blur-xl opacity-50 animate-pulse"></span>
               </span>
-              <span className="block text-xl sm:text-2xl md:text-3xl mt-6 font-medium text-blue-100 animate-fadeInUp-delay-600 drop-shadow-md">
+              <span className="block text-lg sm:text-xl md:text-2xl mt-2 font-medium text-blue-100 animate-fadeInUp-delay-400 drop-shadow-md">
                 on River Paws Adventure Hikes
               </span>
-          </h1>
+            </h1>
 
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto animate-fadeInUp-delay-800 px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-              Your dog isn&apos;t built for four walls—they&apos;re built for adventure. We swap daycare chaos for private trails where dogs run free, explore nature, and come home the happiest version of themselves.
-              <span className="block mt-2 text-yellow-200 font-semibold">A few hours of hiking transforms restless energy into pure contentment.</span>
+            <div className="animate-fadeInUp-delay-400">
+              <RotatingBadges />
+            </div>
+
+            <p className="hero-description text-base sm:text-lg md:text-xl text-white/95 max-w-3xl mx-auto animate-fadeInUp-delay-600 px-4 leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
+              Your dog isn&apos;t built for four walls—they&apos;re built for adventure.
+              <span className="block mt-1 text-white/80">We swap daycare chaos for private trails where dogs run free, explore nature, and come home the happiest version of themselves.</span>
+              <span className="block mt-3 text-yellow-200 font-semibold text-lg sm:text-xl">Professional dog hiking near you!</span>
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp-delay-800">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center animate-fadeInUp-delay-800 pt-2">
               <Link
                 href="/dog-hike-scheduling"
                 className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-white text-blue-600 rounded-full font-medium text-base sm:text-lg overflow-hidden transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl min-h-[44px] flex items-center justify-center"

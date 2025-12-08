@@ -16,6 +16,7 @@ import GetDirectionsButton from "@/components/GetDirectionsButton";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
 import { contactInfo } from "@/constants/social";
 import PawCursorTrail from "@/components/PawCursorTrail";
+import RotatingBadges from "@/components/RotatingBadges";
 
 // Top 10 hero images for Polaroid display - Mix of hiking and grooming
 // Positioned around edges to create a "donut" layout with clear center for text
@@ -295,39 +296,34 @@ export default function HomeClient() {
           {/* Additional subtle overlay for depth */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/20 to-blue-900/40 z-[3]"></div>
 
-          {/* Trust badge - positioned just below header */}
-          <div className="absolute top-20 sm:top-24 left-0 right-0 z-30 flex justify-center animate-fadeInUp">
-            <div className="inline-flex items-center bg-white/95 backdrop-blur-md rounded-full px-4 py-2 shadow-lg">
-              <svg className="w-4 h-4 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              <span className="text-sm font-medium text-gray-700">Trusted by 2000+ Local Families Since 2017</span>
-            </div>
-          </div>
-
           {/* Content container with higher z-index to stay above Polaroids */}
           <div className="relative z-30 max-w-7xl mx-auto px-4 sm:px-6 text-center">
             {/* Soft radial backdrop for text readability */}
             <div className="absolute inset-0 -inset-x-8 -inset-y-16 bg-gradient-radial from-slate-900/60 via-slate-900/30 to-transparent blur-xl -z-10 pointer-events-none"></div>
             
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-5">
               {/* Main Headline - pulled up slightly */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight px-2 -mt-8 sm:-mt-12">
                 <span className="block text-white text-shadow-hero animate-fadeInUp">Every Tail Wags</span>
-                <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent relative inline-block animate-fadeInUp-delay-400 mt-1 sm:mt-2">
+                <span className="block bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent relative inline-block animate-fadeInUp-delay-200 mt-1 sm:mt-2">
                   <span className="relative z-10 bg-gradient-to-r from-yellow-300 via-white to-yellow-300 bg-clip-text text-transparent animate-shimmer bg-[length:200%_100%] text-shadow-hero-glow">
                     With Joy
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-yellow-400 via-white to-yellow-400 bg-clip-text text-transparent blur-xl opacity-50 animate-pulse"></span>
                 </span>
-                <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl mt-4 sm:mt-6 font-bold text-blue-100 text-shadow-md animate-fadeInUp-delay-600">
+                <span className="block text-lg sm:text-xl md:text-2xl lg:text-3xl mt-2 sm:mt-3 font-bold text-blue-100 text-shadow-md animate-fadeInUp-delay-400">
                   for River Paws Dog Grooming & Hiking
                 </span>
               </h1>
 
+              {/* Rotating Badge Carousel */}
+              <div className="animate-fadeInUp-delay-400">
+                <RotatingBadges />
+              </div>
+
               {/* Description */}
-              <div className="mt-10 sm:mt-14 space-y-3 animate-fadeInUp-delay-600">
-                <p className="text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto px-4 text-shadow-md">
+              <div className="space-y-3 animate-fadeInUp-delay-600">
+                <p className="hero-description text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto px-4 text-shadow-md">
                   Find professional dog grooming and hiking services near you!
                 </p>
                 <p className="text-sm sm:text-base md:text-lg text-blue-100/90 max-w-xl mx-auto px-4 text-shadow-sm italic">
@@ -335,7 +331,7 @@ export default function HomeClient() {
                 </p>
               </div>
 
-              <div className="flex justify-center animate-fadeInUp-delay-800">
+              <div className="flex justify-center animate-fadeInUp-delay-600 pt-2">
                 <a
                   href="https://booking.moego.pet/ol/RiverPaws/book"
                   target="_blank"
@@ -366,7 +362,7 @@ export default function HomeClient() {
                 </a>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white animate-fadeInUp-delay-1000">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-white animate-fadeInUp-delay-600">
                 <GetDirectionsButton
                   label="Minutes from Madison"
                   className="text-sm sm:text-base whitespace-nowrap backdrop-blur-sm"

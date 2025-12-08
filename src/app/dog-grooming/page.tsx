@@ -100,23 +100,24 @@ export default function DogGrooming() {
             sizes="100vw"
           />
           {/* IMAGE_PLACEMENT_END: dog-grooming-hero */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-emerald-800/50 to-teal-900/60 z-[1]"></div>
+          {/* Radial gradient overlay - creates spotlight effect: lighter in center (~10%), darker at edges */}
+          {/* Responsive: adjusts ellipse size and position for mobile vs desktop */}
+          <div className="absolute inset-0 z-[1] hero-spotlight-base"></div>
+          {/* Color tint overlay - adds brand colors while maintaining spotlight effect */}
+          <div className="absolute inset-0 z-[1] hero-spotlight-color"></div>
         </div>
-
-        {/* Animated gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-transparent to-teal-600/20 z-[2]"></div>
 
         {/* Floating elements with parallax */}
         <div
-          className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-blue-500 rounded-full filter blur-[100px] opacity-40 animate-blob z-[3]"
+          className="absolute -top-10 -left-10 w-[280px] h-[280px] md:-top-20 md:-left-20 md:w-[500px] md:h-[500px] bg-blue-500 rounded-full filter blur-[80px] md:blur-[100px] opacity-30 md:opacity-40 animate-blob z-[3]"
           style={{ transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
         ></div>
         <div
-          className="absolute top-20 -right-20 w-[450px] h-[450px] bg-teal-500 rounded-full filter blur-[100px] opacity-40 animate-blob-delay-2 z-[3]"
+          className="absolute top-10 -right-10 w-[250px] h-[250px] md:top-20 md:-right-20 md:w-[450px] md:h-[450px] bg-teal-500 rounded-full filter blur-[80px] md:blur-[100px] opacity-30 md:opacity-40 animate-blob-delay-2 z-[3]"
           style={{ transform: `translate(${-mousePosition.x * 2}px, ${mousePosition.y * 2}px)` }}
         ></div>
         <div
-          className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-emerald-500 rounded-full filter blur-[120px] opacity-35 animate-blob z-[3]"
+          className="absolute bottom-0 -left-10 w-[220px] h-[220px] md:left-1/4 md:w-[400px] md:h-[400px] bg-emerald-500 rounded-full filter blur-[90px] md:blur-[120px] opacity-25 md:opacity-35 animate-blob z-[3]"
           style={{ transform: `translate(${mousePosition.x * 1.5}px, ${-mousePosition.y * 1.5}px)` }}
         ></div>
 
