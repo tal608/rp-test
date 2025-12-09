@@ -929,7 +929,7 @@ export default function DogGrooming() {
           <div className="text-center mb-8 sm:mb-12 md:mb-16 space-y-3 sm:space-y-4">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">What Our Clients Say</h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-              The real reviews? The dogs who pull their owners toward our door instead of away from it.
+              The real reviewers are the dogs who pull their owners toward our door instead of away from it. But, here is what their owners say:
             </p>
           </div>
 

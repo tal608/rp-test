@@ -1130,12 +1130,14 @@ export default function HomeClient() {
               Whether it&apos;s a spa day or a trail adventure, we can&apos;t wait to meet your pup. Book online or give us a call—let&apos;s make their tail wag.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/apply"
+              <a
+                href="https://booking.moego.pet/ol/RiverPaws/book"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 bg-white text-blue-600 rounded-full font-bold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-xl"
               >
                 Book Your Appointment
-              </Link>
+              </a>
               <Link
                 href="/contact"
                 className="px-8 py-4 bg-transparent text-white rounded-full font-bold text-lg border-2 border-white hover:bg-white hover:text-blue-600 transform hover:scale-105 transition-all duration-300"

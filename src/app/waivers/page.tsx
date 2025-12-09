@@ -3,56 +3,11 @@
 import Link from "next/link";
 import ScrollIndicator from "@/components/ScrollIndicator";
 
-const waivers = [
-  {
-    title: "General Liability Waiver",
-    description: "Required waiver for all River Paws services including grooming, hiking, and puppy play.",
-    fileName: "general-liability-waiver.pdf",
-    required: true,
-    icon: "document"
-  },
-  {
-    title: "Dog Hiking Release Form",
-    description: "Specific waiver for participation in our Adventure Out hiking program.",
-    fileName: "hiking-release-form.pdf",
-    required: true,
-    icon: "hiking"
-  },
-  {
-    title: "Puppy Play Waiver",
-    description: "Waiver for puppy socialization and play group activities.",
-    fileName: "puppy-play-waiver.pdf",
-    required: true,
-    icon: "play"
-  },
-  {
-    title: "Emergency Contact Form",
-    description: "Emergency contact information and medical authorization form.",
-    fileName: "emergency-contact-form.pdf",
-    required: true,
-    icon: "contact"
-  },
-  {
-    title: "Vaccination Record Template",
-    description: "Template for submitting your pet's vaccination records.",
-    fileName: "vaccination-record-template.pdf",
-    required: false,
-    icon: "medical"
-  },
-  {
-    title: "Service Agreement",
-    description: "Terms and conditions for ongoing service agreements.",
-    fileName: "service-agreement.pdf",
-    required: false,
-    icon: "contract"
-  }
-];
-
 export default function Waivers() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] min-h-[350px] flex items-center justify-center overflow-hidden">
         {/* Base background */}
         <div className="absolute inset-0 bg-gradient-to-br from-teal-600 via-emerald-600 to-blue-600 z-0"></div>
         
@@ -69,204 +24,330 @@ export default function Waivers() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
           <div className="space-y-6">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight">
-              <span className="block text-white drop-shadow-lg animate-fadeInUp-delay-200">Waivers & Forms</span>
+              <span className="block text-white drop-shadow-lg animate-fadeInUp-delay-200">Service Agreement</span>
             </h1>
 
             <p className="text-lg sm:text-xl text-teal-100 max-w-2xl mx-auto animate-fadeInUp-delay-400">
-              Download and complete the necessary forms for your pet&apos;s safety and our service records.
-              All required documents must be completed before services begin.
+              Review our service agreement, consent for treatment, assumption of risk &amp; release of liability.
             </p>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <ScrollIndicator targetId="waivers-content" />
+        <ScrollIndicator targetId="waiver-content" />
       </section>
 
       {/* Important Notice */}
-      <section className="py-6 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/30 dark:to-orange-950/30 border-b border-amber-200 dark:border-amber-800/50">
+      <section className="py-6 bg-gradient-to-r from-blue-50 to-teal-50 border-b border-blue-200">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-10 h-10 bg-amber-100 dark:bg-amber-900/50 rounded-full flex items-center justify-center">
-              <svg className="h-5 w-5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+            <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+              <svg className="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <div>
-              <h3 className="text-base font-semibold text-amber-800 dark:text-amber-300">Important Notice</h3>
-              <p className="mt-1 text-sm text-amber-700 dark:text-amber-400">
-                <strong>Required waivers must be completed and signed before any services can begin.</strong>{" "}
-                Please download, print, and bring completed forms to your first appointment, or email scanned copies to{" "}
-                <a href="mailto:YaharaRiverPaws@gmail.com" className="font-medium underline hover:text-amber-900 dark:hover:text-amber-200">YaharaRiverPaws@gmail.com</a>.
+              <h3 className="text-base font-semibold text-blue-800">How Our Waiver Process Works</h3>
+              <p className="mt-1 text-sm text-blue-700">
+                This waiver will be signed electronically when you book online. The document below is provided for your reference so you can review the terms before booking. 
+                By booking services with River Paws, you agree to these terms via e-signature.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Waiver Documents */}
-      <section id="waivers-content" className="py-16 sm:py-24 bg-gradient-to-b from-white to-teal-50/30 dark:from-slate-900 dark:to-slate-950">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Available Forms & Waivers
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-              Select the forms you need based on the services you&apos;re interested in.
-            </p>
-          </div>
+      {/* Waiver Content */}
+      <section id="waiver-content" className="py-16 sm:py-24 bg-gradient-to-b from-white to-gray-50">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+            {/* Document Header */}
+            <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-8 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold mb-2">RIVER PAWS LLC</h2>
+              <p className="text-gray-300 text-sm sm:text-base">
+                SERVICE AGREEMENT, CONSENT FOR TREATMENT,<br />
+                ASSUMPTION OF RISK &amp; RELEASE OF LIABILITY
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {waivers.map((waiver) => (
-              <div key={waiver.title} className="bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-gray-100 dark:border-slate-700 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className={`flex-shrink-0 w-14 h-14 rounded-xl flex items-center justify-center ${
-                      waiver.required
-                        ? 'bg-gradient-to-br from-red-100 to-orange-100 dark:from-red-900/50 dark:to-orange-900/50'
-                        : 'bg-gradient-to-br from-blue-100 to-teal-100 dark:from-blue-900/50 dark:to-teal-900/50'
-                    }`}>
-                      {waiver.icon === 'document' && (
-                        <svg className={`w-7 h-7 ${waiver.required ? 'text-red-600 dark:text-red-400' : 'text-blue-600 dark:text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      )}
-                      {waiver.icon === 'hiking' && (
-                        <svg className={`w-7 h-7 ${waiver.required ? 'text-red-600 dark:text-red-400' : 'text-blue-600 dark:text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                        </svg>
-                      )}
-                      {waiver.icon === 'play' && (
-                        <svg className={`w-7 h-7 ${waiver.required ? 'text-red-600 dark:text-red-400' : 'text-blue-600 dark:text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                      )}
-                      {waiver.icon === 'contact' && (
-                        <svg className={`w-7 h-7 ${waiver.required ? 'text-red-600 dark:text-red-400' : 'text-blue-600 dark:text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                        </svg>
-                      )}
-                      {waiver.icon === 'medical' && (
-                        <svg className={`w-7 h-7 ${waiver.required ? 'text-red-600 dark:text-red-400' : 'text-blue-600 dark:text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                        </svg>
-                      )}
-                      {waiver.icon === 'contract' && (
-                        <svg className={`w-7 h-7 ${waiver.required ? 'text-red-600 dark:text-red-400' : 'text-blue-600 dark:text-blue-400'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                      )}
-                    </div>
-
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-2 flex-wrap">
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{waiver.title}</h3>
-                        {waiver.required && (
-                          <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-300">
-                            Required
-                          </span>
-                        )}
-                      </div>
-
-                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">{waiver.description}</p>
-
-                      <button className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-700 dark:to-emerald-700 text-white text-sm font-medium rounded-full hover:from-teal-700 hover:to-emerald-700 dark:hover:from-teal-600 dark:hover:to-emerald-600 transition-all duration-300 hover:scale-105 shadow-md">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                        </svg>
-                        Download PDF
-                      </button>
-                    </div>
-                  </div>
-                </div>
+            {/* Document Body */}
+            <div className="p-6 sm:p-10 space-y-8 text-gray-700 leading-relaxed">
+              {/* Scope & Parties */}
+              <div>
+                <p className="text-gray-800">
+                  <strong>Scope &amp; Parties.</strong> This Agreement is between River Paws LLC (&ldquo;River Paws,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;) and the undersigned owner or authorized agent (&ldquo;Client,&rdquo; &ldquo;I,&rdquo; &ldquo;me&rdquo;). This Agreement applies to all of my dogs (current and future) that use any River Paws services (&ldquo;Dogs&rdquo;). &ldquo;Services&rdquo; include grooming, bathing, daycare, training, off-site hikes/&ldquo;Adventure Out,&rdquo; transportation, and related care.
+                </p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Instructions */}
-      <section className="py-16 sm:py-24 bg-white dark:bg-slate-900">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 dark:text-white text-center mb-12">
-              How to Complete Forms
-            </h2>
+              {/* Section 1 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
+                  OWNER&apos;S COVENANTS (Health &amp; Authority)
+                </h3>
+                <p>
+                  I represent and warrant that I am the legal owner or authorized agent of the Dog(s), I am 18+, and I have authority to enter this Agreement. My Dog(s) are current on required vaccinations (rabies, DHPP, and Bordetella per River Paws policy), free of contagious disease/parasites, and I have disclosed all known medical or behavioral issues (including allergies, orthopedic issues, reactivity, and any bite history). I will promptly update River Paws if any information changes.
+                </p>
+              </div>
 
-            <div className="space-y-8">
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-teal-100 to-emerald-100 dark:from-teal-900/50 dark:to-emerald-900/50 rounded-2xl flex items-center justify-center shadow-md">
-                  <span className="text-xl font-bold text-teal-600 dark:text-teal-400">1</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Download & Print</h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Download the required forms from this page and print them out. You can also fill them out digitally if you prefer.
+              {/* Section 2 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
+                  TREATMENT AUTHORIZATION &amp; EMERGENCIES
+                </h3>
+                <div className="space-y-4 pl-11">
+                  <p>
+                    <strong>Emergency Veterinary Care.</strong> If River Paws reasonably believes a Dog needs evaluation/treatment, I authorize River Paws to obtain veterinary care. River Paws will attempt to contact me and the primary veterinarian on file first; if unavailable, any licensed veterinarian (including UW Veterinary Care) may treat.
+                  </p>
+                  <p>
+                    <strong>Financial Responsibility.</strong> I am solely responsible for all veterinary and related costs, including costs for injuries my Dog inflicts on other animals or people. River Paws may transport a Dog and may pay a veterinarian on my behalf; I will reimburse promptly upon demand.
+                  </p>
+                  <p>
+                    <strong>End-of-Life.</strong> River Paws will not authorize euthanasia; any such decision must be made by me with a licensed veterinarian unless required by law.
+                  </p>
+                  <p>
+                    <strong>Bite/Quarantine.</strong> I understand bites may trigger legally required reporting/quarantine; I must comply and bear associated costs.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-teal-100 to-emerald-100 dark:from-teal-900/50 dark:to-emerald-900/50 rounded-2xl flex items-center justify-center shadow-md">
-                  <span className="text-xl font-bold text-teal-600 dark:text-teal-400">2</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Complete All Fields</h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Fill out all required information completely. Please use blue or black ink if filling out by hand.
+              {/* Section 3 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
+                  TRANSPORT, ACTIVITIES &amp; HUMANE HANDLING
+                </h3>
+                <div className="space-y-4 pl-11">
+                  <p>
+                    <strong>Transportation.</strong> I consent to transport in River Paws vehicles. Dogs may travel crated and/or secured with harnesses/tethers at River Paws&apos; discretion. GPS/telematics may be used as a convenience only and are not guaranteed.
+                  </p>
+                  <p>
+                    <strong>Group/Off-Leash/Outdoor.</strong> I consent to supervised group activities, off-leash play in secured areas, and outdoor hikes/parks/trails (including Cherokee Dog Park and similar locations). Outdoor environments include terrain, weather, water, wildlife, insects, plants, public interactions, and debris.
+                  </p>
+                  <p>
+                    <strong>Water Exposure.</strong> Where applicable, I consent to supervised water access; drowning and water-borne disease risks cannot be eliminated.
+                  </p>
+                  <p>
+                    <strong>Humane Handling Tools.</strong> For safety, River Paws may use crates, gates, tethers, slip leads, muzzles, or time-outs.
+                  </p>
+                  <p>
+                    <strong>Weather/Air Quality.</strong> River Paws may shorten, modify, or cancel Services due to heat, cold, storms, smoke/air quality, or road conditions without liability.
+                  </p>
+                  <p>
+                    <strong>Right to Refuse/Remove.</strong> River Paws may refuse or discontinue Services, or remove a Dog from group activity, if behavior or health poses risk.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-teal-100 to-emerald-100 dark:from-teal-900/50 dark:to-emerald-900/50 rounded-2xl flex items-center justify-center shadow-md">
-                  <span className="text-xl font-bold text-teal-600 dark:text-teal-400">3</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Sign & Date</h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Sign and date all required signature lines. Both parent/guardian signatures may be required for minors.
+              {/* Section 4 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
+                  ILLNESS, MEDICATIONS &amp; GROOMING DISCLOSURES
+                </h3>
+                <div className="space-y-4 pl-11">
+                  <p>
+                    <strong>Illness/Exposure.</strong> I will not present a Dog if showing signs of illness (e.g., cough, GI upset, lethargy, fever, skin/ear infection, parasites) and will notify River Paws of exposures (kennel cough, giardia, leptospirosis, etc.) and follow return-to-care guidance.
+                  </p>
+                  <p>
+                    <strong>Medications.</strong> I authorize administration of owner-supplied oral/topical meds per my written instructions on file. Injections/prescription changes are veterinarian-only.
+                  </p>
+                  <p>
+                    <strong>Grooming Risks.</strong> Grooming has inherent risks: clipper/razor irritation, skin sensitivity, nicks/cuts, quicked nails, ear/skin irritation, stress reactions, and discovery of pre-existing conditions.
+                  </p>
+                  <p>
+                    <strong>Matting.</strong> Dematting or shave-down may be required and can reveal skin issues; additional fees apply.
+                  </p>
+                  <p>
+                    <strong>Parasites.</strong> If fleas/ticks are found, I authorize immediate parasite management and facility sanitation at my expense; tick removal is not guaranteed.
+                  </p>
+                  <p className="italic text-gray-600">
+                    River Paws does not provide veterinary services.
                   </p>
                 </div>
               </div>
 
-              <div className="flex gap-6">
-                <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-teal-100 to-emerald-100 dark:from-teal-900/50 dark:to-emerald-900/50 rounded-2xl flex items-center justify-center shadow-md">
-                  <span className="text-xl font-bold text-teal-600 dark:text-teal-400">4</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Submit Forms</h3>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Bring completed forms to your appointment or email scanned copies to{" "}
-                    <a href="mailto:YaharaRiverPaws@gmail.com" className="text-teal-600 dark:text-teal-400 font-medium hover:underline">YaharaRiverPaws@gmail.com</a>.
+              {/* Section 5 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">5</span>
+                  ACKNOWLEDGMENT OF RISK &amp; ASSUMPTION OF LIABILITY
+                </h3>
+                <p className="pl-11">
+                  I understand animal services involve inherent risks that cannot be eliminated even with reasonable care, including foreseeable and unforeseeable risks such as dog-to-dog/dog-to-human interactions (bites/scratches/sprains), disease transmission despite vaccination, parasites/insect bites, heat/cold exposure, smoke/air-quality issues, water hazards/drowning, environmental hazards (glass/thorns/toxic plants), transportation incidents, equipment-related injuries, and stress-related medical events. <strong>I voluntarily assume all such inherent risks for my Dog(s) and myself.</strong>
+                </p>
+              </div>
+
+              {/* Section 6 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">6</span>
+                  RELEASE, WAIVER &amp; LIABILITY LIMITATIONS
+                </h3>
+                <div className="space-y-4 pl-11">
+                  <p>
+                    River Paws maintains liability insurance and professional standards of care consistent with industry best practices. We are responsible for damages caused by our failure to meet these professional standards, up to $2,500 per incident, and fully responsible for any gross negligence or willful misconduct.
+                  </p>
+                  <p>
+                    To the fullest extent permitted by Wisconsin law, <strong>I RELEASE, WAIVE, AND DISCHARGE</strong> River Paws and its owners, officers, employees, contractors, and agents from all claims, liabilities, damages, or losses arising out of or related to the inherent risks described in Section 5, except to the extent caused by River Paws&apos; failure to meet professional standards of care, gross negligence, or willful misconduct.
+                  </p>
+                  <p>
+                    <strong>No Guarantees.</strong> Training/socialization outcomes are not guaranteed.
+                  </p>
+                  <p>
+                    <strong>Monetary Cap.</strong> River Paws&apos; total liability for any claim arising from failure to meet professional standards of care is limited to the greater of: (a) amounts paid by Client in the six (6) months preceding the incident, or (b) $2,500. This limitation does not apply to gross negligence or willful misconduct.
+                  </p>
+                  <p>
+                    <strong>Personal Property.</strong> River Paws is not responsible for loss/damage to collars, leashes, tags, clothing, crates, or other personal effects.
                   </p>
                 </div>
+              </div>
+
+              {/* Section 7 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">7</span>
+                  INDEMNIFICATION
+                </h3>
+                <p className="pl-11">
+                  I agree to <strong>DEFEND, INDEMNIFY, AND HOLD HARMLESS</strong> River Paws from third-party claims, demands, damages, losses, or expenses (including reasonable attorneys&apos; fees) arising from: (a) my Dog&apos;s actions, behavior, or condition; (b) my breach of this Agreement or policies; or (c) inaccurate/incomplete information I provided; including injuries or damages my Dog causes to persons, animals, or property.
+                </p>
+              </div>
+
+              {/* Section 8 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">8</span>
+                  CANCELLATIONS, LATE ARRIVALS &amp; PICK-UP
+                </h3>
+                <div className="space-y-4 pl-11">
+                  <p>
+                    <strong>Grooming Cancellations (Discretionary).</strong> If I cancel within 24 hours (or less) of the appointment start, River Paws may, at its discretion, assess up to 50% of the estimated service cost. River Paws may waive or reduce this fee in its sole discretion, including for emergencies.
+                  </p>
+                  <p>
+                    <strong>How to Cancel.</strong> Call 608-571-7297 or email yaharariverpaws@gmail.com. If applied, cancellation fees are non-refundable unless River Paws approves extraordinary circumstances.
+                  </p>
+                  <p>
+                    <strong>Late Arrival.</strong> $15 fee if 10+ minutes late; service may be declined at groomer&apos;s discretion.
+                  </p>
+                  <p>
+                    <strong>Late Pick-Up/Extended Stay.</strong> $15 fee per dog if a Dog remains 2+ hours past groom completion; additional daycare/boarding rates may apply for extended care.
+                  </p>
+                </div>
+              </div>
+
+              {/* Section 9 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">9</span>
+                  LOST DOG PROTOCOL (RARE EVENT)
+                </h3>
+                <p className="pl-11">
+                  If a Dog is lost despite reasonable care, River Paws will notify the owner immediately, contact local authorities/shelters, and undertake reasonable search efforts. GPS (if used) is not guaranteed. This clause does not waive claims for gross negligence.
+                </p>
+              </div>
+
+              {/* Section 10 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">10</span>
+                  ABANDONMENT / FAILURE TO PICK UP
+                </h3>
+                <p className="pl-11">
+                  If I fail to pick up or arrange care within 72 hours after the agreed time and River Paws cannot reach me or my emergency contacts on file, the Dog may be deemed abandoned under applicable law; River Paws may transfer the Dog to a shelter/rescue. I remain responsible for accrued fees and reasonable placement costs. River Paws will make reasonable efforts to contact me first.
+                </p>
+              </div>
+
+              {/* Section 11 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">11</span>
+                  PAYMENTS, CARD AUTHORIZATION &amp; COLLECTIONS
+                </h3>
+                <p className="pl-11">
+                  I agree to pay all fees when due. If I have a payment card on file with River Paws, I authorize charges for Services, applicable fees (cancellation/late/boarding), veterinary reimbursements, and taxes. Past-due balances may incur the lesser of 1.5% per month or the maximum allowed by law, plus reasonable collection costs, as permitted.
+                </p>
+              </div>
+
+              {/* Section 12 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">12</span>
+                  PHOTO/VIDEO (DEFAULT OPT-IN)
+                </h3>
+                <p className="pl-11">
+                  I consent to River Paws using my Dog&apos;s image/video for business records, training, and marketing (including social media) without identifying me by full name. I understand I may opt out of future marketing use by written notice; prior uses and non-marketing uses (e.g., safety/training records) may continue as allowed by law.
+                </p>
+              </div>
+
+              {/* Section 13 */}
+              <div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">13</span>
+                  COMMUNICATIONS, UPDATES &amp; MISCELLANEOUS
+                </h3>
+                <div className="space-y-4 pl-11">
+                  <p>
+                    This Agreement governs current and future Services until revoked in writing. River Paws may update policies; material changes will be posted or communicated. Routine updates may be sent via text, email, phone or posted online either through the owner portal or website.
+                  </p>
+                  <p>
+                    <strong>Force Majeure.</strong> Neither party is liable for delays/failures due to events beyond reasonable control (e.g., severe weather, utility/communications outages, public emergencies, strikes, pandemics, acts of God).
+                  </p>
+                  <p>
+                    <strong>Governing Law &amp; Venue.</strong> Wisconsin law governs; venue in Dane County, Wisconsin courts.
+                  </p>
+                  <p>
+                    <strong>Severability.</strong> If any provision is unenforceable, the remainder remains in effect.
+                  </p>
+                  <p>
+                    <strong>Entire Agreement; E-Sign; Authority.</strong> This Agreement (with incorporated policies) is the entire agreement. Electronic signatures/copies are valid as originals. One signer binds all owners.
+                  </p>
+                </div>
+              </div>
+
+              {/* Electronic Agreement Notice */}
+              <div className="bg-gray-100 rounded-xl p-6 mt-8 border border-gray-200">
+                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                  <svg className="w-6 h-6 text-teal-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  ELECTRONIC AGREEMENT
+                </h3>
+                <p className="text-gray-700">
+                  By submitting the booking form online, I acknowledge that I have read, understood, and agree to all terms; had the opportunity to seek legal counsel; and affirm the accuracy of information provided. This Agreement applies to all of my current and future dogs that use River Paws services unless I revoke it in writing.
+                </p>
               </div>
             </div>
           </div>
+
+          {/* Last Updated */}
+          <p className="text-center text-sm text-gray-500 mt-6">
+            This document is provided for reference purposes. The binding agreement will be signed electronically when booking services.
+          </p>
         </div>
       </section>
 
-      {/* Contact Support CTA */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-white to-teal-50/30 dark:from-slate-900 dark:to-slate-950">
+      {/* Contact CTA */}
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-gray-50 to-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="relative overflow-hidden">
-            <div className="bg-gradient-to-r from-teal-600 via-emerald-600 to-blue-600 dark:from-teal-800 dark:via-emerald-800 dark:to-blue-800 text-white p-8 sm:p-12 rounded-3xl shadow-2xl">
+            <div className="bg-gradient-to-r from-teal-600 via-emerald-600 to-blue-600 text-white p-8 sm:p-12 rounded-3xl shadow-2xl">
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-400/20 rounded-full -ml-24 -mb-24 blur-2xl"></div>
               
               <div className="relative z-10 text-center">
-                <h2 className="text-3xl sm:text-4xl font-bold mb-6">Need Help with Forms?</h2>
+                <h2 className="text-3xl sm:text-4xl font-bold mb-6">Questions About Our Agreement?</h2>
                 <p className="text-teal-100 leading-relaxed mb-8 text-lg max-w-2xl mx-auto">
-                  Our team is here to help you complete any forms or answer questions about our waiver process.
+                  We&apos;re happy to answer any questions about our service agreement or policies before you book.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Link
                     href="/contact"
                     className="inline-flex items-center px-8 py-4 bg-white text-teal-600 rounded-full font-semibold text-lg hover:bg-teal-50 transition-all duration-300 hover:scale-105 shadow-lg"
                   >
-                    Contact Support
+                    Contact Us
                     <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

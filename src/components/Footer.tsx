@@ -26,28 +26,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/puppy-play" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Puppy Play
-                </Link>
-              </li>
-              <li>
                 <Link href="/dog-hikes" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Adventure Hikes
-                </Link>
-              </li>
-              <li>
-                <Link href="/puppy-grooming" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Puppy Grooming
-                </Link>
-              </li>
-              <li>
-                <Link href="/canine-grooming" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Grooming Products Guide
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  Blog & Articles
                 </Link>
               </li>
               <li>
@@ -65,12 +45,22 @@ export default function Footer() {
                   Gallery
                 </Link>
               </li>
+              <li>
+                <Link href="/puppy-play" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Puppy Play
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Blog & Articles
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Location Pages */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Grooming FAQs By Clients Within Our Service Area</h3>
+            <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">Grooming Resources</h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/dog-grooming-madison" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
@@ -95,6 +85,16 @@ export default function Footer() {
               <li>
                 <Link href="/dog-grooming-deforest" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   Dog Grooming DeForest
+                </Link>
+              </li>
+              <li>
+                <Link href="/puppy-grooming" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Puppy Grooming Guide
+                </Link>
+              </li>
+              <li>
+                <Link href="/canine-grooming" className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  Grooming Products Guide
                 </Link>
               </li>
             </ul>
