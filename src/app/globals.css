@@ -2017,6 +2017,12 @@ html.dark [class*="from-white/"] {
   background-image: none !important;
 }
 
+/* Keep "Like what you're reading?" CTA section consistent in dark mode */
+html.dark .bg-gradient-to-r.from-blue-600.to-teal-500,
+html.dark [class*="bg-gradient-to-r"][class*="from-blue-600"][class*="to-teal-500"] {
+  background: linear-gradient(to right, rgb(37, 99, 235), rgb(20, 184, 166)) !important;
+}
+
 /* Ensure text on gradient backgrounds is readable in dark mode */
 html.dark .bg-gradient-to-b.from-white,
 html.dark .bg-gradient-to-br.from-white,

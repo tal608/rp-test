@@ -1129,7 +1129,7 @@ export default function DogGrooming() {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-600 to-teal-500 dark:!from-blue-600 dark:!to-teal-500 rounded-2xl p-8 text-white">
+              <div className="bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl p-8 text-white">
                 <div className="flex items-center mb-4">
                   <svg className="w-8 h-8 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
@@ -1220,7 +1220,7 @@ export default function DogGrooming() {
                 </div>
               </div>
 
-              <div className="bg-gradient-to-r from-blue-600 to-teal-500 dark:!from-blue-600 dark:!to-teal-500 rounded-2xl p-8 text-white text-center">
+              <div className="bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl p-8 text-white text-center">
                 <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
                 <p className="text-emerald-100 mb-6">
                   Complete our grooming application to ensure we can provide the best experience for your dog.
@@ -1418,7 +1418,7 @@ export default function DogGrooming() {
           </div>
 
           {/* Expert Guides - Polaroid Style Blog Cards */}
-          <div className="mt-12 bg-gradient-to-b from-blue-50 to-white rounded-3xl p-8 md:p-12">
+          <div className="mt-12 bg-gradient-to-br from-amber-50 via-white to-blue-50 rounded-3xl p-8 md:p-12">
             <div className="text-center mb-10">
               <p className="text-lg text-gray-500 mb-2">From our grooming experts...</p>
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">Tips & Guides for Happy Pups</h3>

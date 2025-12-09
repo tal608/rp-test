@@ -1,7 +1,7 @@
 import type { ImageData } from "@/types";
 
 export const imageCategories: Record<string, ImageData[]> = {
-  grooming: [{ 
+  grooming: [    { 
       src: "/Grooming/happy-bernesemix-grooming-madison-wi-river-paws.jpg", 
       alt: "A happy Bernese Mountain Dog mix wearing a green bandana after grooming at River Paws in Madison, Wisconsin.", 
       title: "Freshly Groomed, Happy Pup", 
@@ -90,200 +90,8 @@ export const imageCategories: Record<string, ImageData[]> = {
       alt: "A freshly groomed German Shepherd dog calmly sits in a grooming salon in Waunakee, ready for River Paws adventures.", 
       title: "Freshly Groomed and Ready for Fun", 
       priority: false 
-    },
-    { 
-      src: "/Grooming/content-shih-tzu-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Festive Shih Tzu looking their best after professional grooming at River Paws Waunakee, Wisconsin", 
-      title: "Clean paws, confident hearts", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/joyful-cockapoo-holiday-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Holiday-ready Cockapoo enjoying gentle expert styling at River Paws Waunakee, Wisconsin", 
-      title: "Gentle care for brave explorers", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/patient-doodle-dog-grooming-middleton-wi-river-paws.jpg", 
-      alt: "Patient doodle relaxing during skilled grooming care for Middleton area pets at River Paws", 
-      title: "Fresh grooming, endless adventures", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/happy-goldendoodle-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Happy Goldendoodle getting pampered with trusted grooming services at River Paws Waunakee, Wisconsin", 
-      title: "Professional grooming without the drama", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-havanese-mix-dog-grooming-sun-prairie-wi-river-paws.jpg", 
-      alt: "Festive Havanese mix trusting our compassionate grooming for Sun Prairie area dogs at River Paws", 
-      title: "Where style meets wilderness-ready care", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-terrier-mix-grooming-madison-wi-river-paws.jpg", 
-      alt: "Dapper terrier mix receiving expert breed-specific styling for Madison area pets at River Paws", 
-      title: "Professional finish, gentle process", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/content-shih-tzu-mix-expert-care-waunakee-wi-river-paws.jpg", 
-      alt: "Content Shih Tzu mix getting pampered with trusted grooming services at River Paws Waunakee, Wisconsin", 
-      title: "Expert styling for every season", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/wi-content-goldendoodle-dog-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Fluffy Goldendoodle shining after premium grooming care at River Paws Waunakee, Wisconsin", 
-      title: "Expert grooming for adventure-ready dogs", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-standard-poodle-dog-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Regal Standard Poodle feeling confident with expert grooming at River Paws Waunakee, Wisconsin", 
-      title: "Professional styling meets compassionate care", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/calm-black-goldendoodle-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Serene black Goldendoodle enjoying gentle expert styling at River Paws Waunakee, Wisconsin", 
-      title: "Styled for confidence, ready for trails", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/joyful-shih-tzu-mix-dog-grooming-madison-wi-river-paws.jpg", 
-      alt: "Cheerful Shih Tzu mix thriving with compassionate spa-quality grooming serving Madison families", 
-      title: "Clean and confident for every adventure", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-hound-mix-dog-grooming-middleton-wi-river-paws.jpg", 
-      alt: "Dapper hound mix relaxing during skilled grooming care for Middleton area pets at River Paws", 
-      title: "From bath time to best friend", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/happy-terrier-mix-dog-bath-grooming-madison-wi-river-paws.jpg", 
-      alt: "Happy wet terrier receiving expert Madison dog grooming at River Paws", 
-      title: "Compassionate styling for happy dogs", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-schnoodle-dog-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Soft grey Schnoodle experiencing stress-free gentle grooming at River Paws Waunakee, Wisconsin", 
-      title: "Professional care meets gentle touch", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/patient-shih-tzu-grooming-middleton-wi-river-paws.jpg", 
-      alt: "Wet Shih Tzu getting pampered with trusted grooming services serving Middleton families", 
-      title: "Where grooming builds trust, not stress", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/happy-goldendoodle-dog-grooming-madison-wi-river-paws.jpg", 
-      alt: "Cheery Goldendoodle shining after premium grooming care for Madison area pets at River Paws", 
-      title: "Expert styling, zero anxiety", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-spaniel-mix-grooming-sun-prairie-wi-river-paws.jpg", 
-      alt: "Wet Spaniel mix looking their best after professional grooming for Sun Prairie area dogs at River Paws", 
-      title: "Stress-free grooming, happy dogs", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/calm-black-cockapoo-dog-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Dapper black Cockapoo enjoying gentle expert styling at River Paws Waunakee, Wisconsin", 
-      title: "Compassionate care for happy trails", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Gentle Saint Bernard thriving with compassionate spa-quality grooming at River Paws Waunakee, Wisconsin", 
-      title: "Clean coats, calm confidence", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/happy-golden-retriever-dog-grooming-madison-wi-river-paws.jpg", 
-      alt: "Golden Retriever with relaxing during Madison dog grooming at River Paws", 
-      title: "Stress-free styling, beautiful results", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/wisconsin-terrier-mix-dog-grooming-deforest-wi-river-paws.jpg", 
-      alt: "Handsome terrier experiencing stress-free gentle grooming for DeForest area dogs at River Paws", 
-      title: "Beautiful coats, peaceful dogs", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/handsome-doodle-dog-grooming-madison-wi-river-paws.jpg", 
-      alt: "Handsome doodle getting pampered with trusted grooming services serving Madison families", 
-      title: "Expert care makes all the difference", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/gentle-golden-retriever-mix-dog-grooming-madison-wi-river-paws.jpg", 
-      alt: "Calm golden dog shining after Madison dog grooming at River Paws", 
-      title: "Trusted grooming for active dogs", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Apricot Goldendoodle with feeling confident with expert grooming at River Paws Waunakee, Wisconsin", 
-      title: "Gentle hands, beautiful results", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/joyful-golden-mix-dog-grooming-deforest-wi-river-paws.jpg", 
-      alt: "Smiling golden mix looking their best after professional grooming for DeForest area dogs at River Paws", 
-      title: "Expert care they'll look forward to", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/wisconsin-bernedoodle-dog-grooming-madison-wi-river-paws.jpg", 
-      alt: "Cheerful Bernedoodle building enjoying gentle expert styling for Madison area pets at River Paws", 
-      title: "Pampered yet ready for adventure", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-black-doodle-dog-grooming-sun-prairie-wi-river-paws.jpg", 
-      alt: "Alert black doodle thriving with compassionate spa-quality grooming serving Sun Prairie families", 
-      title: "When grooming feels like care", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/attentive-goldendoodle-dog-grooming-madison-wi-river-paws.jpg", 
-      alt: "Soft Goldendoodle trusting our compassionate grooming serving Madison families", 
-      title: "Where grooming becomes bonding", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-shih-tzu-mix-dog-grooming-madison-wi-river-paws.jpg", 
-      alt: "Attentive dog with receiving expert Madison dog grooming at River Paws", 
-      title: "Calm grooming, stunning results", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-cockapoo-dog-grooming-waunakee-wi-river-paws.jpg", 
-      alt: "Golden Cockapoo with experiencing stress-free gentle grooming at River Paws Waunakee, Wisconsin", 
-      title: "Where breed meets expertise", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/happy-golden-retriever-creative-grooming-dye-madison-wi-river-paws.jpg", 
-      alt: "Golden Retriever with creative tail dye shining after premium grooming care for Madison area pets at River Paws", 
-      title: "Expert grooming after every adventure", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/happy-golden-retriever-dog-grooming-middleton-wi-river-paws.jpg", 
-      alt: "Smiling Golden Retriever feeling confident with expert grooming serving Middleton families", 
-      title: "Spa-quality care for trail-loving dogs", 
-      priority: true 
     }],
-  hiking: [{ 
+  hiking: [    { 
       src: "/Hiking/joyful-lab-and-doodle-wilderness-trails-madison-wi-river-paws.jpg", 
       alt: "Playful dogs socializing safely experiencing natural enrichment for Madison area dogs at Waunakee's premier adventure park", 
       title: "Built different because dogs deserve different", 
@@ -1044,12 +852,6 @@ export const imageCategories: Record<string, ImageData[]> = {
       alt: "Curious Golden Retriever experiencing natural enrichment for Madison area dogs at Waunakee's premier adventure park", 
       title: "Where curiosity blooms on private wilderness trails.", 
       priority: true 
-    },
-    { 
-      src: "/Grooming/joyful-golden-retriever-outdoor-enrichment-middleton-wi-river-paws.jpg", 
-      alt: "Joyful Golden Retriever receiving expert breed-specific styling for Middleton area pets at River Paws", 
-      title: "Clean, fresh, and adventure-ready", 
-      priority: true 
     }],
   transport: [    { 
       src: "/Hiking/joyful-havanese-dog-bus-transport-middleton-wi-river-paws.jpg", 
@@ -1125,7 +927,7 @@ export const imageCategories: Record<string, ImageData[]> = {
     }],
   team: [
   ],
-  playtime: [{ 
+  playtime: [    { 
       src: "/Hiking/happy-mixed-pack-social-hiking-middleton-wi-river-paws.jpg", 
       alt: "Happy pack achieving peaceful exhaustion for Middleton area pets at private trail systems with River Paws", 
       title: "Your couch called—it's grateful today", 
@@ -1249,36 +1051,6 @@ export const imageCategories: Record<string, ImageData[]> = {
       src: "/Hiking/peaceful-pointer-spaniel-pack-hiking-madison-wi-river-paws.jpg", 
       alt: "Content mixed pack experiencing natural enrichment for Madison area dogs at Waunakee's premier adventure park", 
       title: "Peaceful moments between miles of wilderness adventure.", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-brindle-mix-dog-enrichment-waunakee-wi-river-paws.jpg", 
-      alt: "Stoic brindle dog thriving with compassionate spa-quality grooming at River Paws Waunakee, Wisconsin", 
-      title: "Fresh styles for confident explorers", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/happy-great-pyrenees-socialization-sun-prairie-wi-river-paws.jpg", 
-      alt: "Joyful Great Pyrenees experiencing stress-free gentle grooming serving Sun Prairie families", 
-      title: "Trusted touch, beautiful finish", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/confident-mixed-breed-doodle-social-skills-sun-prairie-wi-river-paws.jpg", 
-      alt: "Confident pair trusting our Sun Prairie dog grooming", 
-      title: "Gentle grooming, gorgeous dogs", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/wisconsin-shepherd-mix-social-enrichment-madison-wi-river-paws.jpg", 
-      alt: "Attentive shepherd mix feeling confident with expert grooming serving Madison families", 
-      title: "Where grooming means care and comfort", 
-      priority: true 
-    },
-    { 
-      src: "/Grooming/alert-border-collie-dog-park-madison-wi-river-paws.jpg", 
-      alt: "Alert Border Collie trusting our compassionate grooming for Madison area pets at River Paws", 
-      title: "Where dogs actually enjoy grooming", 
       priority: true 
     }],
   portraits: [

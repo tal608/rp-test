@@ -220,7 +220,7 @@ export default function BlogPage() {
             </div>
 
             {/* CTA Section */}
-            <div className="mt-12 bg-gradient-to-r from-blue-600 to-teal-500 rounded-3xl p-8 md:p-12 text-white text-center relative overflow-hidden" style={{ background: 'linear-gradient(to right, rgb(37, 99, 235), rgb(20, 184, 166))' }}>
+            <div className="mt-12 bg-gradient-to-r from-blue-600 to-teal-500 dark:!from-blue-600 dark:!to-teal-500 rounded-3xl p-8 md:p-12 text-white text-center relative overflow-hidden">
               {/* Subtle animated background */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-50%] left-[-20%] w-[60%] h-[100%] bg-white/5 rounded-full filter blur-3xl"></div>
