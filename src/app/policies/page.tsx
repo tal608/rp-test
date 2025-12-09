@@ -99,14 +99,14 @@ export default function Policies() {
           {/* No-Show Fees */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
-              <span className="w-10 h-10 bg-gradient-to-r from-red-100 to-orange-100 dark:from-red-900/50 dark:to-orange-900/50 rounded-xl flex items-center justify-center mr-4">
+              <span className="w-10 h-10 bg-gradient-to-r from-red-100 to-orange-100 dark:bg-slate-700 dark:from-slate-700 dark:to-slate-700 rounded-xl flex items-center justify-center mr-4">
                 <svg className="w-5 h-5 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                 </svg>
               </span>
               No-Show Fees
             </h2>
-            <div className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950/30 dark:to-orange-950/30 p-8 rounded-2xl border border-red-200 dark:border-red-800/50 shadow-lg">
+            <div className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-slate-800 dark:to-slate-800 p-8 rounded-2xl border border-red-200 dark:border-red-500/30 shadow-lg">
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                 To ensure the commitment of our clients and the well-being of our groomers, we have implemented a <strong className="text-red-700 dark:text-red-400">50% no-show fee policy</strong>. This fee is in place to address the financial impact on our commission-based groomers when clients do not arrive for scheduled appointments. Groomers rely on a steady stream of appointments to make a living, and last-minute cancellations or no-shows can significantly affect their income.
               </p>
@@ -161,7 +161,7 @@ export default function Policies() {
           {/* Additional Fees */}
           <div className="mb-16">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 flex items-center">
-              <span className="w-10 h-10 bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900/50 dark:to-red-900/50 rounded-xl flex items-center justify-center mr-4">
+              <span className="w-10 h-10 bg-gradient-to-r from-orange-100 to-amber-100 dark:bg-slate-700 dark:from-slate-700 dark:to-slate-700 rounded-xl flex items-center justify-center mr-4">
                 <svg className="w-5 h-5 text-orange-600 dark:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -170,9 +170,9 @@ export default function Policies() {
             </h2>
 
             <div className="grid gap-6 md:grid-cols-2">
-              <div className="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30 p-6 rounded-2xl border border-orange-200 dark:border-orange-800/50 shadow-lg">
+              <div className="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-slate-800 dark:to-slate-800 p-6 rounded-2xl border border-orange-200 dark:border-orange-500/30 shadow-lg">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/50 rounded-xl flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-orange-100 dark:bg-slate-700 rounded-xl flex items-center justify-center mr-4">
                     <span className="text-2xl font-bold text-orange-600 dark:text-orange-400">$15</span>
                   </div>
                   <h3 className="text-xl font-semibold text-orange-700 dark:text-orange-400">Late Fee</h3>
@@ -182,9 +182,9 @@ export default function Policies() {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/30 dark:to-amber-950/30 p-6 rounded-2xl border border-orange-200 dark:border-orange-800/50 shadow-lg">
+              <div className="bg-gradient-to-br from-orange-50 to-amber-50 dark:from-slate-800 dark:to-slate-800 p-6 rounded-2xl border border-orange-200 dark:border-orange-500/30 shadow-lg">
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/50 rounded-xl flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-orange-100 dark:bg-slate-700 rounded-xl flex items-center justify-center mr-4">
                     <span className="text-2xl font-bold text-orange-600 dark:text-orange-400">$15</span>
                   </div>
                   <h3 className="text-xl font-semibold text-orange-700 dark:text-orange-400">Boarding Fee</h3>
@@ -226,13 +226,12 @@ export default function Policies() {
           </div>
 
           {/* Contact CTA */}
-          <section className="relative overflow-hidden">
-            <div className="bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 dark:from-emerald-800 dark:via-teal-800 dark:to-blue-800 text-white p-8 sm:p-12 rounded-3xl shadow-2xl">
-              {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-teal-400/20 rounded-full -ml-24 -mb-24 blur-2xl"></div>
-              
-              <div className="relative z-10">
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-blue-600 dark:from-emerald-800 dark:via-teal-800 dark:to-blue-800 text-white p-8 sm:p-12">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-teal-400/20 rounded-full -ml-24 -mb-24 blur-2xl"></div>
+            
+            <div className="relative z-10">
                 <h2 className="text-3xl sm:text-4xl font-bold mb-6">Questions About Our Policies?</h2>
                 <p className="text-emerald-100 leading-relaxed mb-8 text-lg max-w-2xl">
                   If you have any questions or concerns regarding our policies, please don&apos;t hesitate to contact us. We&apos;re here to help ensure the best experience for you and your dog.
@@ -275,9 +274,8 @@ export default function Policies() {
                     </svg>
                   </Link>
                 </div>
-              </div>
             </div>
-          </section>
+          </div>
         </div>
       </section>
     </>

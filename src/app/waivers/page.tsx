@@ -38,17 +38,17 @@ export default function Waivers() {
       </section>
 
       {/* Important Notice */}
-      <section className="py-6 bg-gradient-to-r from-blue-50 to-teal-50 border-b border-blue-200">
+      <section className="py-6 bg-gradient-to-r from-blue-50 to-teal-50 dark:from-blue-950 dark:to-teal-950 border-b border-blue-200 dark:border-blue-800">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-              <svg className="h-5 w-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="flex-shrink-0 w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center">
+              <svg className="h-5 w-5 text-blue-600 dark:text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <div>
-              <h3 className="text-base font-semibold text-blue-800">How Our Waiver Process Works</h3>
-              <p className="mt-1 text-sm text-blue-700">
+              <h3 className="text-base font-semibold text-blue-800 dark:text-blue-200">How Our Waiver Process Works</h3>
+              <p className="mt-1 text-sm text-blue-700 dark:text-blue-300">
                 This waiver will be signed electronically when you book online. The document below is provided for your reference so you can review the terms before booking. 
                 By booking services with River Paws, you agree to these terms via e-signature.
               </p>
@@ -58,9 +58,9 @@ export default function Waivers() {
       </section>
 
       {/* Waiver Content */}
-      <section id="waiver-content" className="py-16 sm:py-24 bg-gradient-to-b from-white to-gray-50">
+      <section id="waiver-content" className="py-16 sm:py-24 bg-gradient-to-b from-white to-gray-50 dark:from-slate-900 dark:to-slate-950">
         <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-gray-200 dark:border-slate-700 overflow-hidden">
             {/* Document Header */}
             <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-8 text-center">
               <h2 className="text-2xl sm:text-3xl font-bold mb-2">RIVER PAWS LLC</h2>
@@ -71,18 +71,18 @@ export default function Waivers() {
             </div>
 
             {/* Document Body */}
-            <div className="p-6 sm:p-10 space-y-8 text-gray-700 leading-relaxed">
+            <div className="p-6 sm:p-10 space-y-8 text-gray-700 dark:text-gray-300 leading-relaxed">
               {/* Scope & Parties */}
               <div>
-                <p className="text-gray-800">
+                <p className="text-gray-800 dark:text-gray-200">
                   <strong>Scope &amp; Parties.</strong> This Agreement is between River Paws LLC (&ldquo;River Paws,&rdquo; &ldquo;we,&rdquo; &ldquo;us&rdquo;) and the undersigned owner or authorized agent (&ldquo;Client,&rdquo; &ldquo;I,&rdquo; &ldquo;me&rdquo;). This Agreement applies to all of my dogs (current and future) that use any River Paws services (&ldquo;Dogs&rdquo;). &ldquo;Services&rdquo; include grooming, bathing, daycare, training, off-site hikes/&ldquo;Adventure Out,&rdquo; transportation, and related care.
                 </p>
               </div>
 
               {/* Section 1 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
                   OWNER&apos;S COVENANTS (Health &amp; Authority)
                 </h3>
                 <p>
@@ -92,8 +92,8 @@ export default function Waivers() {
 
               {/* Section 2 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
                   TREATMENT AUTHORIZATION &amp; EMERGENCIES
                 </h3>
                 <div className="space-y-4 pl-11">
@@ -114,8 +114,8 @@ export default function Waivers() {
 
               {/* Section 3 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
                   TRANSPORT, ACTIVITIES &amp; HUMANE HANDLING
                 </h3>
                 <div className="space-y-4 pl-11">
@@ -142,8 +142,8 @@ export default function Waivers() {
 
               {/* Section 4 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
                   ILLNESS, MEDICATIONS &amp; GROOMING DISCLOSURES
                 </h3>
                 <div className="space-y-4 pl-11">
@@ -162,7 +162,7 @@ export default function Waivers() {
                   <p>
                     <strong>Parasites.</strong> If fleas/ticks are found, I authorize immediate parasite management and facility sanitation at my expense; tick removal is not guaranteed.
                   </p>
-                  <p className="italic text-gray-600">
+                  <p className="italic text-gray-600 dark:text-gray-400">
                     River Paws does not provide veterinary services.
                   </p>
                 </div>
@@ -170,8 +170,8 @@ export default function Waivers() {
 
               {/* Section 5 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">5</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">5</span>
                   ACKNOWLEDGMENT OF RISK &amp; ASSUMPTION OF LIABILITY
                 </h3>
                 <p className="pl-11">
@@ -181,8 +181,8 @@ export default function Waivers() {
 
               {/* Section 6 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">6</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">6</span>
                   RELEASE, WAIVER &amp; LIABILITY LIMITATIONS
                 </h3>
                 <div className="space-y-4 pl-11">
@@ -206,8 +206,8 @@ export default function Waivers() {
 
               {/* Section 7 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">7</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">7</span>
                   INDEMNIFICATION
                 </h3>
                 <p className="pl-11">
@@ -217,8 +217,8 @@ export default function Waivers() {
 
               {/* Section 8 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">8</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">8</span>
                   CANCELLATIONS, LATE ARRIVALS &amp; PICK-UP
                 </h3>
                 <div className="space-y-4 pl-11">
@@ -239,8 +239,8 @@ export default function Waivers() {
 
               {/* Section 9 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">9</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">9</span>
                   LOST DOG PROTOCOL (RARE EVENT)
                 </h3>
                 <p className="pl-11">
@@ -250,8 +250,8 @@ export default function Waivers() {
 
               {/* Section 10 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">10</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">10</span>
                   ABANDONMENT / FAILURE TO PICK UP
                 </h3>
                 <p className="pl-11">
@@ -261,8 +261,8 @@ export default function Waivers() {
 
               {/* Section 11 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">11</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">11</span>
                   PAYMENTS, CARD AUTHORIZATION &amp; COLLECTIONS
                 </h3>
                 <p className="pl-11">
@@ -272,8 +272,8 @@ export default function Waivers() {
 
               {/* Section 12 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">12</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">12</span>
                   PHOTO/VIDEO (DEFAULT OPT-IN)
                 </h3>
                 <p className="pl-11">
@@ -283,8 +283,8 @@ export default function Waivers() {
 
               {/* Section 13 */}
               <div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <span className="w-8 h-8 bg-teal-100 text-teal-700 rounded-full flex items-center justify-center text-sm font-bold mr-3">13</span>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <span className="w-8 h-8 bg-teal-100 dark:bg-teal-800 text-teal-700 dark:text-teal-200 rounded-full flex items-center justify-center text-sm font-bold mr-3">13</span>
                   COMMUNICATIONS, UPDATES &amp; MISCELLANEOUS
                 </h3>
                 <div className="space-y-4 pl-11">
@@ -307,14 +307,14 @@ export default function Waivers() {
               </div>
 
               {/* Electronic Agreement Notice */}
-              <div className="bg-gray-100 rounded-xl p-6 mt-8 border border-gray-200">
-                <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                  <svg className="w-6 h-6 text-teal-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="bg-gray-100 dark:bg-slate-700 rounded-xl p-6 mt-8 border border-gray-200 dark:border-slate-600">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3 flex items-center">
+                  <svg className="w-6 h-6 text-teal-600 dark:text-teal-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   ELECTRONIC AGREEMENT
                 </h3>
-                <p className="text-gray-700">
+                <p className="text-gray-700 dark:text-gray-300">
                   By submitting the booking form online, I acknowledge that I have read, understood, and agree to all terms; had the opportunity to seek legal counsel; and affirm the accuracy of information provided. This Agreement applies to all of my current and future dogs that use River Paws services unless I revoke it in writing.
                 </p>
               </div>
@@ -322,20 +322,19 @@ export default function Waivers() {
           </div>
 
           {/* Last Updated */}
-          <p className="text-center text-sm text-gray-500 mt-6">
+          <p className="text-center text-sm text-gray-500 dark:text-gray-400 mt-6">
             This document is provided for reference purposes. The binding agreement will be signed electronically when booking services.
           </p>
         </div>
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 sm:py-24 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-16 sm:py-24 bg-gradient-to-b from-gray-50 to-white dark:from-slate-950 dark:to-slate-900">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="relative overflow-hidden">
-            <div className="bg-gradient-to-r from-teal-600 via-emerald-600 to-blue-600 text-white p-8 sm:p-12 rounded-3xl shadow-2xl">
-              {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-400/20 rounded-full -ml-24 -mb-24 blur-2xl"></div>
+          <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-r from-teal-600 via-emerald-600 to-blue-600 text-white p-8 sm:p-12">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-emerald-400/20 rounded-full -ml-24 -mb-24 blur-2xl"></div>
               
               <div className="relative z-10 text-center">
                 <h2 className="text-3xl sm:text-4xl font-bold mb-6">Questions About Our Agreement?</h2>
@@ -365,8 +364,7 @@ export default function Waivers() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
     </>
   );
 }

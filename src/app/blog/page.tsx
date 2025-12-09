@@ -28,7 +28,7 @@ export default function BlogPage() {
   );
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-blue-50">
+    <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-950">
         {/* Modern Hero Section */}
         {/* IMAGE_PLACEMENT_START: blog-hero */}
         <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -109,7 +109,7 @@ export default function BlogPage() {
                 >
                   {/* Polaroid Frame */}
                   <div 
-                    className={`bg-white p-3 pb-6 rounded-sm shadow-lg hover:shadow-2xl transition-all duration-500 transform ${
+                    className={`bg-white dark:bg-slate-800 p-3 pb-6 rounded-sm shadow-lg hover:shadow-2xl transition-all duration-500 transform ${
                       index % 3 === 0 ? 'group-hover:-rotate-1' : index % 3 === 1 ? 'group-hover:rotate-1' : 'group-hover:-rotate-2'
                     } group-hover:scale-[1.02]`}
                     style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}
@@ -135,7 +135,7 @@ export default function BlogPage() {
                     {/* Content Below Photo */}
                     <div className="px-1">
                       {/* Date & Read Time */}
-                      <div className="flex items-center gap-2 text-xs text-gray-400 mb-2">
+                      <div className="flex items-center gap-2 text-xs text-gray-400 dark:text-gray-500 mb-2">
                         <time dateTime={article.datePublished}>
                           {new Date(article.datePublished).toLocaleDateString("en-US", {
                             month: "short",
@@ -152,15 +152,15 @@ export default function BlogPage() {
                       </div>
 
                       {/* Title */}
-                      <h2 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-blue-600 transition-colors line-clamp-2">
+                      <h2 className="text-lg font-bold text-gray-800 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2">
                         {article.title}
                       </h2>
 
                       {/* Excerpt */}
-                      <p className="text-sm text-gray-600 mb-3 line-clamp-2">{article.excerpt}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mb-3 line-clamp-2">{article.excerpt}</p>
 
                       {/* Read More Link */}
-                      <div className="flex items-center text-blue-600 font-medium text-sm group-hover:text-blue-700">
+                      <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium text-sm group-hover:text-blue-700 dark:group-hover:text-blue-300">
                         Read article
                         <svg
                           className="ml-1.5 w-4 h-4 group-hover:translate-x-1 transition-transform"
@@ -183,35 +183,35 @@ export default function BlogPage() {
             </div>
 
             {/* Areas We Serve - Compact Design */}
-            <div className="mt-16 bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100">
+            <div className="mt-16 bg-white dark:bg-slate-800 rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100 dark:border-slate-700">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-teal-100 rounded-xl flex items-center justify-center">
-                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-teal-100 dark:from-blue-900/50 dark:to-teal-900/50 rounded-xl flex items-center justify-center">
+                      <svg className="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                       </svg>
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-800">Serving the Greater Madison Area</h3>
+                    <h3 className="text-2xl font-bold text-gray-800 dark:text-white">Serving the Greater Madison Area</h3>
                   </div>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 dark:text-gray-400 mb-4">
                     Location-specific grooming guides and tips for your area:
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    <Link href="/dog-grooming-waunakee" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                    <Link href="/dog-grooming-waunakee" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 dark:from-slate-700 dark:to-slate-700 hover:from-blue-100 hover:to-teal-100 dark:hover:from-slate-600 dark:hover:to-slate-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 dark:border-slate-600 hover:border-blue-200 dark:hover:border-slate-500">
                       📍 Waunakee
                     </Link>
-                    <Link href="/dog-grooming-madison" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                    <Link href="/dog-grooming-madison" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 dark:from-slate-700 dark:to-slate-700 hover:from-blue-100 hover:to-teal-100 dark:hover:from-slate-600 dark:hover:to-slate-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 dark:border-slate-600 hover:border-blue-200 dark:hover:border-slate-500">
                       📍 Madison
                     </Link>
-                    <Link href="/dog-grooming-middleton" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                    <Link href="/dog-grooming-middleton" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 dark:from-slate-700 dark:to-slate-700 hover:from-blue-100 hover:to-teal-100 dark:hover:from-slate-600 dark:hover:to-slate-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 dark:border-slate-600 hover:border-blue-200 dark:hover:border-slate-500">
                       📍 Middleton
                     </Link>
-                    <Link href="/dog-grooming-deforest" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                    <Link href="/dog-grooming-deforest" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 dark:from-slate-700 dark:to-slate-700 hover:from-blue-100 hover:to-teal-100 dark:hover:from-slate-600 dark:hover:to-slate-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 dark:border-slate-600 hover:border-blue-200 dark:hover:border-slate-500">
                       📍 DeForest
                     </Link>
-                    <Link href="/dog-grooming-sun-prairie" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 hover:from-blue-100 hover:to-teal-100 text-gray-700 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 hover:border-blue-200">
+                    <Link href="/dog-grooming-sun-prairie" className="px-4 py-2 bg-gradient-to-r from-blue-50 to-teal-50 dark:from-slate-700 dark:to-slate-700 hover:from-blue-100 hover:to-teal-100 dark:hover:from-slate-600 dark:hover:to-slate-600 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium transition-all duration-300 border border-blue-100 dark:border-slate-600 hover:border-blue-200 dark:hover:border-slate-500">
                       📍 Sun Prairie
                     </Link>
                   </div>
@@ -220,7 +220,7 @@ export default function BlogPage() {
             </div>
 
             {/* CTA Section */}
-            <div className="mt-12 bg-gradient-to-r from-blue-600 to-teal-500 rounded-3xl p-8 md:p-12 text-white text-center relative overflow-hidden">
+            <div className="mt-12 bg-gradient-to-r from-blue-600 to-teal-500 dark:!from-blue-600 dark:!to-teal-500 rounded-3xl p-8 md:p-12 text-white text-center relative overflow-hidden">
               {/* Subtle animated background */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-50%] left-[-20%] w-[60%] h-[100%] bg-white/5 rounded-full filter blur-3xl"></div>

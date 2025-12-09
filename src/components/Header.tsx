@@ -14,10 +14,11 @@ export default function Header() {
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const firstFocusableElement = useRef<HTMLElement | null>(null);
   const lastFocusableElement = useRef<HTMLElement | null>(null);
+  const hoverOpenedAt = useRef<number>(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -108,7 +109,7 @@ export default function Header() {
     <nav className={`fixed w-full z-[100] transition-all duration-700 ${
       isScrolled
         ? 'glassmorphism py-3'
-        : 'bg-transparent py-6'
+        : 'header-hero-bg py-6'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2 group">
@@ -167,8 +168,18 @@ export default function Header() {
           <div ref={dropdownRef} className="relative">
             <button
               type="button"
-              onClick={() => setIsInfoOpen(!isInfoOpen)}
-              onMouseEnter={() => setIsInfoOpen(true)}
+              onClick={() => {
+                // Don't close if hover just opened it (within 400ms grace period)
+                const timeSinceHover = Date.now() - hoverOpenedAt.current;
+                if (isInfoOpen && timeSinceHover < 400) {
+                  return; // Ignore click that would close recently-hovered menu
+                }
+                setIsInfoOpen(!isInfoOpen);
+              }}
+              onMouseEnter={() => {
+                hoverOpenedAt.current = Date.now();
+                setIsInfoOpen(true);
+              }}
               aria-expanded={isInfoOpen}
               aria-haspopup="true"
               className={`relative transition-all duration-300 group ${
@@ -475,6 +486,11 @@ export default function Header() {
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
           border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .header-hero-bg {
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
         }
         .menu-item-shade {
           background: rgba(255, 255, 255, 0.15);
