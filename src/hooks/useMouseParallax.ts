@@ -36,12 +36,12 @@ export function useMouseParallax(ref: RefObject<HTMLElement | null>) {
       return () => {
         try {
           window.removeEventListener('mousemove', handleMouseMove);
-        } catch (error) {
+        } catch {
           // Ignore cleanup errors
         }
       };
-    } catch (error) {
-      console.warn("Failed to set up mouse parallax:", error);
+    } catch {
+      console.warn("Failed to set up mouse parallax");
       return () => {}; // Return empty cleanup function
     }
   }, [ref]);

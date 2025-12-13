@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { getAuthor, type Author } from "@/constants/authors";
+import { getAuthor } from "@/constants/authors";
 
 interface AuthorBioProps {
   authorName: string;

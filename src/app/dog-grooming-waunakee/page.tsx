@@ -29,7 +29,7 @@ export default function DogGroomingWaunakee() {
         headline={mainFaqs[0]?.question || "Dog Grooming in Waunakee"}
         description="Professional dog grooming answers for Waunakee pet owners. Learn about our services, pricing, and stress-free approach."
         datePublished="2024-01-15"
-        dateModified="2025-01-15"
+        dateModified="2025-11-01"
       />
       <BreadcrumbSchema
         items={[

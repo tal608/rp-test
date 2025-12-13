@@ -29,7 +29,7 @@ export default function DogGroomingSunPrairie() {
         headline={mainFaq.question}
         description="Expert tips for preparing your dog before and after grooming appointments for Sun Prairie pet owners."
         datePublished="2024-01-15"
-        dateModified="2025-01-15"
+        dateModified="2025-11-01"
       />
       <BreadcrumbSchema
         items={[

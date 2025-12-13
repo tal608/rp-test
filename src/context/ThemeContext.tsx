@@ -47,6 +47,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     setThemeState(initialTheme);
     updateResolvedTheme(initialTheme);
     setMounted(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Listen for system theme changes
@@ -62,6 +63,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
     mediaQuery.addEventListener("change", handleChange);
     return () => mediaQuery.removeEventListener("change", handleChange);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [theme, mounted]);
 
   const setTheme = (newTheme: Theme) => {

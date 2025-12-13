@@ -26,7 +26,7 @@ export default function DogGroomingMiddleton() {
         headline={mainFaq.question}
         description="Expert tips and tricks for bathing your dog at home from professional groomers in Middleton, Wisconsin."
         datePublished="2024-01-15"
-        dateModified="2025-01-15"
+        dateModified="2025-11-01"
       />
       <BreadcrumbSchema
         items={[

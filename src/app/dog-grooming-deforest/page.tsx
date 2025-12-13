@@ -25,7 +25,7 @@ export default function DogGroomingDeForest() {
         headline={mainFaq.question}
         description="Expert dog grooming services for DeForest pet owners. Convenient location near Yahara Heights Dog Park. Professional groomers serving DeForest and Windsor communities."
         datePublished="2024-01-15"
-        dateModified="2025-01-15"
+        dateModified="2025-11-01"
       />
       <BreadcrumbSchema
         items={[

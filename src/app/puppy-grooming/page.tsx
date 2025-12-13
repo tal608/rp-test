@@ -51,7 +51,7 @@ export default function PuppyGrooming() {
         headline={puppyFaq.question}
         description="Expert guide to puppy grooming services and preparing your puppy for their first grooming experience."
         datePublished="2024-01-15"
-        dateModified="2025-01-15"
+        dateModified="2025-11-10"
       />
       <FAQSchema faqs={faqForSchema} />
       <BreadcrumbSchema

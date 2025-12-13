@@ -122,12 +122,15 @@ export function useGradientAnimation(ref: RefObject<HTMLElement | null>) {
       }
     };
 
+    // Capture ref.current for cleanup
+    const element = ref.current;
+    
     try {
       if (typeof requestAnimationFrame !== 'undefined') {
         animationFrameId = requestAnimationFrame(animate);
       }
-    } catch (error) {
-      console.warn("Failed to start gradient animation:", error);
+    } catch {
+      console.warn("Failed to start gradient animation");
     }
 
     return () => {
@@ -136,10 +139,10 @@ export function useGradientAnimation(ref: RefObject<HTMLElement | null>) {
           cancelAnimationFrame(animationFrameId);
         }
         // Cleanup style
-        if (ref.current) {
-          ref.current.style.transform = '';
+        if (element) {
+          element.style.transform = '';
         }
-      } catch (error) {
+      } catch {
         // Ignore cleanup errors
       }
     };

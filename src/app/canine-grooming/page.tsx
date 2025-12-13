@@ -51,7 +51,7 @@ export default function CanineGrooming() {
         headline={productsFaq.question}
         description="Expert guide to the best products for canine grooming, including brushes, shampoos, and professional tools."
         datePublished="2024-01-15"
-        dateModified="2025-01-15"
+        dateModified="2025-11-12"
       />
       <FAQSchema faqs={faqForSchema} />
       <BreadcrumbSchema

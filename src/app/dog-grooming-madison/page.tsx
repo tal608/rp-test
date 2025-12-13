@@ -29,7 +29,7 @@ export default function DogGroomingMadison() {
         headline={mainFaq.question}
         description="Learn about the health benefits of regular dog grooming for Madison area pet owners."
         datePublished="2024-01-15"
-        dateModified="2025-01-15"
+        dateModified="2025-11-01"
       />
       <BreadcrumbSchema
         items={[

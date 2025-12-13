@@ -6,8 +6,6 @@ import { useRef } from "react";
 import { useMouseParallax } from "@/hooks/useMouseParallax";
 import { groomingFaqs } from "@/constants/faqs";
 import { groomingVoiceFaqs, formatForFAQSchema } from "@/constants/voiceSearchFaqs";
-import TestimonialMarquee from "@/components/TestimonialMarquee";
-import TeamStats from "@/components/TeamStats";
 import FAQSection from "@/components/FAQSection";
 import FAQSchema from "@/components/FAQSchema";
 import ServiceSchema from "@/components/ServiceSchema";
