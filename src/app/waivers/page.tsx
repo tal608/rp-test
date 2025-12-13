@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import { contactInfo } from "@/constants/social";
 
 export default function Waivers() {
   return (
@@ -226,7 +227,7 @@ export default function Waivers() {
                     <strong>Grooming Cancellations (Discretionary).</strong> If I cancel within 24 hours (or less) of the appointment start, River Paws may, at its discretion, assess up to 50% of the estimated service cost. River Paws may waive or reduce this fee in its sole discretion, including for emergencies.
                   </p>
                   <p>
-                    <strong>How to Cancel.</strong> Call 608-571-7297 or email yaharariverpaws@gmail.com. If applied, cancellation fees are non-refundable unless River Paws approves extraordinary circumstances.
+                    <strong>How to Cancel.</strong> Call 608-571-7297 or email {contactInfo.email}. If applied, cancellation fees are non-refundable unless River Paws approves extraordinary circumstances.
                   </p>
                   <p>
                     <strong>Late Arrival.</strong> $15 fee if 10+ minutes late; service may be declined at groomer&apos;s discretion.

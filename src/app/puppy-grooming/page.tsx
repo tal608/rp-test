@@ -78,7 +78,7 @@ export default function PuppyGrooming() {
                 Puppy Grooming | Expert Puppy Grooming Services
               </h1>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
-                Looking for puppy grooming services? Start your puppy's grooming journey early! Gentle, positive puppy grooming
+                Looking for puppy grooming services? Start your puppy&apos;s grooming journey early! Gentle, positive puppy grooming
                 experiences that set the foundation for a lifetime of comfortable
                 grooming. Serving Waunakee, Madison, Middleton, DeForest, and Sun Prairie.
               </p>
@@ -149,7 +149,7 @@ export default function PuppyGrooming() {
             {/* Call to Action */}
             <div className="bg-gradient-to-r from-blue-600 to-teal-500 rounded-2xl p-8 md:p-12 text-white text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Ready to Start Your Puppy's Grooming Journey?
+                Ready to Start Your Puppy&apos;s Grooming Journey?
               </h2>
               <p className="text-xl mb-8 max-w-2xl mx-auto">
                 Early grooming experiences create positive associations that last a lifetime.
@@ -178,7 +178,7 @@ export default function PuppyGrooming() {
                   >
                     {contactInfo.phoneDisplay}
                   </a>{" "}
-                  to schedule your puppy's first grooming appointment
+                  to schedule your puppy&apos;s first grooming appointment
                 </p>
               </div>
             </div>

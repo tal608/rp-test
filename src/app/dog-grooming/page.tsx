@@ -19,6 +19,7 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
 import PawCursorTrail from "@/components/PawCursorTrail";
 import RotatingBadges from "@/components/RotatingBadges";
+import { contactInfo } from "@/constants/social";
 
 export default function DogGrooming() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -1124,7 +1125,7 @@ export default function DogGrooming() {
                   </div>
                 </div>
                 <p className="text-sm text-gray-600 mt-6 leading-relaxed">
-                  Email vaccination records to riverpawsgrooming@gmail.com or bring a copy when you drop off.
+                  Email vaccination records to {contactInfo.email} or bring a copy when you drop off.
                   Records must be current for your dog&apos;s safety and our facility requirements.
                 </p>
               </div>

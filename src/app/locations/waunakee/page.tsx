@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
   title: "Dog Grooming & Hiking in Waunakee, WI | River Paws",
   description:
-    "Professional dog grooming and adventure hiking services in Waunakee, Wisconsin. Expert groomers and hiking guides serving Waunakee families since 2017. Located at 5305 River Road.",
+    "Professional dog grooming and adventure hiking services in Waunakee, Wisconsin. Expert groomers and hiking guides serving Waunakee families since 2017. Located at 5305 W River Rd.",
   alternates: {
     canonical: "https://www.riverpaws.dog/locations/waunakee",
   },
@@ -36,7 +36,7 @@ export default function WaunakeeLocationPage() {
             Dog Grooming & Hiking Services in Waunakee, Wisconsin
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Located right here in Waunakee at 5305 River Road, River Paws has been serving your
+            Located right here in Waunakee at 5305 W River Rd, River Paws has been serving your
             neighbors since 2017 with professional dog grooming and adventure hiking services.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

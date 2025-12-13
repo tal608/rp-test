@@ -53,7 +53,7 @@ const ReviewCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) =>
       </div>
     </div>
     <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed line-clamp-6">
-      "{testimonial.text}"
+      &ldquo;{testimonial.text}&rdquo;
     </p>
     <div className="mt-4 pt-4 border-t border-gray-50 dark:border-slate-700 flex justify-between items-center">
       <span className="text-xs font-semibold text-blue-700 dark:text-white bg-blue-50 dark:bg-blue-500/40 border border-blue-100 dark:border-blue-400/30 px-2.5 py-1 rounded-full tracking-wide transition-colors duration-300">

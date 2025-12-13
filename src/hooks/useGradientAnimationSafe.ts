@@ -1,6 +1,6 @@
 "use client";
 
-import { RefObject, useEffect } from "react";
+import { RefObject } from "react";
 import { useGradientAnimation } from "@/hooks/useGradientAnimation";
 
 /**

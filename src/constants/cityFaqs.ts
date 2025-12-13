@@ -195,7 +195,7 @@ export const cityGroomingFaqs: Record<string, CityFAQ[]> = {
 </ul>
 
 <h3>Easy Access</h3>
-<p>Getting to River Paws is easy: take River Road west directly to our location at 5305 River Road. We're near Cherokee Marsh Wildlife Area, making us a convenient stop for families exploring the area's natural spaces.</p>
+<p>Getting to River Paws is easy: take River Road west directly to our location at 5305 W River Rd. We're near Cherokee Marsh Wildlife Area, making us a convenient stop for families exploring the area's natural spaces.</p>
 
 <p>Book your appointment today by calling <a href="tel:+16085717297" class="text-emerald-600 hover:text-emerald-700 font-medium underline">(608) 571-7297</a> or <a href="/grooming-application" class="text-emerald-600 hover:text-emerald-700 font-medium underline">apply online</a>.</p>`
     }

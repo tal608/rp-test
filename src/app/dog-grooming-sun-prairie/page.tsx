@@ -166,7 +166,7 @@ export default function DogGroomingSunPrairie() {
                 Conveniently Located Next to Yahara Heights Dog Park
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
-                Located just 500 feet from Yahara Heights Dog Park's 20-acre off-leash area, River Paws offers the perfect solution for Sun Prairie pet owners looking for post-dog park grooming. We're walking distance from the area's most popular dog park, making it easy to clean up your muddy pup after Cherokee Marsh adventures or Yahara River swimming sessions.
+                Located just 500 feet from Yahara Heights Dog Park&apos;s 20-acre off-leash area, River Paws offers the perfect solution for Sun Prairie pet owners looking for post-dog park grooming. We&apos;re walking distance from the area&apos;s most popular dog park, making it easy to clean up your muddy pup after Cherokee Marsh adventures or Yahara River swimming sessions.
               </p>
             </div>
 

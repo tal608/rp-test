@@ -191,7 +191,7 @@ export default function DogGroomingDeForest() {
                 Perfect Location for Dog Lovers
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Located next to Yahara Heights Dog Park, River Paws offers the perfect solution for muddy, happy dogs after their adventures. With 20 acres of off-leash play area just 500 feet away, we're the convenient choice for DeForest pet owners looking for:
+                Located next to Yahara Heights Dog Park, River Paws offers the perfect solution for muddy, happy dogs after their adventures. With 20 acres of off-leash play area just 500 feet away, we&apos;re the convenient choice for DeForest pet owners looking for:
               </p>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
@@ -275,7 +275,7 @@ export default function DogGroomingDeForest() {
               </p>
               <div className="bg-white rounded-xl p-6 shadow-md">
                 <p className="text-lg font-semibold text-gray-900 mb-2">From DeForest:</p>
-                <p className="text-gray-700">River Road west directly to our location at 5305 River Road. We're near Cherokee Marsh Wildlife Area, making us a convenient stop for DeForest pet owners exploring the area's natural spaces with their dogs.</p>
+                <p className="text-gray-700">River Road west directly to our location at 5305 W River Rd. We&apos;re near Cherokee Marsh Wildlife Area, making us a convenient stop for DeForest pet owners exploring the area&apos;s natural spaces with their dogs.</p>
               </div>
             </div>
 

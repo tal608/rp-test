@@ -30,8 +30,6 @@ export function useGradientAnimation(ref: RefObject<HTMLElement | null>) {
     // Variable intervals for random changes (like the blob example)
     let baseInterval = 3000 + Math.random() * 5000; // 3-8 seconds
     let timeSinceChange = 0;
-    let pauseTime = 0;
-    let isPaused = false;
     
     // Smooth interpolation factor for speed changes (slower = smoother)
     const speedInterpolation = 0.05;

@@ -55,7 +55,7 @@ export default function TeamStats() {
             Meet Our Pack Leaders
           </h2>
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Our experienced, trained team of professional groomers and hiking guides are dedicated to your dog's happiness and safety.
+            Our experienced, trained team of professional groomers and hiking guides are dedicated to your dog&apos;s happiness and safety.
           </p>
         </div>
 

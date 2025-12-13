@@ -101,7 +101,7 @@ export default function DogGroomingWaunakee() {
               </h1>
 
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 max-w-4xl mx-auto animate-fadeInUp-delay-800 px-4" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
-                Your pup deserves spa-quality care just minutes from downtown. Full-service grooming with breed-specific expertise—conveniently located at 5305 River Road, next to Yahara Heights Dog Park.
+                Your pup deserves spa-quality care just minutes from downtown. Full-service grooming with breed-specific expertise—conveniently located at 5305 W River Rd, next to Yahara Heights Dog Park.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fadeInUp-delay-800">
@@ -200,7 +200,7 @@ export default function DogGroomingWaunakee() {
                 Conveniently Located Next to Yahara Heights Dog Park
               </h2>
               <p className="text-lg text-gray-700 leading-relaxed mb-4">
-                Located just 500 feet from Yahara Heights Dog Park's 20-acre off-leash area, River Paws offers the perfect solution for Waunakee pet owners looking for post-dog park grooming. We're walking distance from the area's most popular dog park, making it easy to clean up your muddy pup after Cherokee Marsh adventures or Yahara River swimming sessions. Perfect for post-dog park grooming and cleanup!
+                Located just 500 feet from Yahara Heights Dog Park&apos;s 20-acre off-leash area, River Paws offers the perfect solution for Waunakee pet owners looking for post-dog park grooming. We&apos;re walking distance from the area&apos;s most popular dog park, making it easy to clean up your muddy pup after Cherokee Marsh adventures or Yahara River swimming sessions. Perfect for post-dog park grooming and cleanup!
               </p>
             </div>
 
@@ -255,7 +255,7 @@ export default function DogGroomingWaunakee() {
               </h2>
               <p className="text-xl mb-8 max-w-2xl mx-auto">
                 As a locally-owned and operated business in Waunakee, we understand the unique
-                needs of our community's pets. Conveniently located at{" "}
+                needs of our community&apos;s pets. Conveniently located at{" "}
                 <strong>{contactInfo.address.full}</strong>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -176,7 +176,7 @@ export default function Footer() {
                     <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">Leave a review:</p>
                     <div className="flex flex-wrap gap-3 text-xs">
                       <a
-                        href="https://search.google.com/local/writereview?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4"
+                        href="https://search.google.com/local/writereview?placeid=ChIJKznPS7GqB4gRpU3kZYE4Rb8"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"

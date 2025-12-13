@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import { contactInfo } from "@/constants/social";
 
 export default function PrivacyPolicy() {
   return (
@@ -212,7 +213,15 @@ export default function PrivacyPolicy() {
               </p>
               <div className="space-y-2 text-gray-700 dark:text-gray-300">
                 <p><strong>River Paws</strong></p>
-                <p>Email: <a href="mailto:info@riverpaws.dog" className="text-blue-600 dark:text-blue-400 hover:underline">info@riverpaws.dog</a></p>
+                <p>
+                  Email:{" "}
+                  <a
+                    href={`mailto:${contactInfo.email}`}
+                    className="text-blue-600 dark:text-blue-400 hover:underline"
+                  >
+                    {contactInfo.email}
+                  </a>
+                </p>
                 <p>Phone: <a href="tel:608-571-7297" className="text-blue-600 dark:text-blue-400 hover:underline">(608) 571-PAWS</a></p>
                 <p className="mt-4">
                   <Link href="/contact" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">

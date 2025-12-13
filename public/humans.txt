@@ -1,6 +1,6 @@
 /* TEAM */
 River Paws Team
-Contact: yaharariverpaws@gmail.com
+Contact: YaharaRiverPaws@gmail.com
 Phone: (608) 571-7297
 Location: Waunakee, Wisconsin, USA
 
@@ -8,7 +8,7 @@ Location: Waunakee, Wisconsin, USA
 Thanks to all the dogs and their families who trust us with their care!
 
 /* SITE */
-Last update: 2025/01/XX
+Last update: 2025/12/13
 Standards: HTML5, CSS3, JavaScript ES6+
 Components: React 19, Next.js 16
 Software: TypeScript, Tailwind CSS
@@ -17,5 +17,6 @@ Hosting: AWS Amplify
 /* NOTE */
 This site is built with modern web standards and best practices.
 We prioritize accessibility, performance, and security.
+
 
 

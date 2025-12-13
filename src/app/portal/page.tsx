@@ -151,7 +151,7 @@ export default function Portal() {
                       </div>
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Unable to Load Booking System</h3>
                       <p className="text-gray-600 dark:text-gray-300 mb-6">
-                        The booking system couldn't be loaded. Please try refreshing the page or contact us directly.
+                        The booking system couldn&apos;t be loaded. Please try refreshing the page or contact us directly.
                       </p>
                       <div className="flex flex-col sm:flex-row gap-3 justify-center">
                         <button

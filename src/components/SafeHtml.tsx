@@ -2,19 +2,23 @@
 
 import { useEffect, useState } from 'react';
 
+type DOMPurifyLike = {
+  sanitize: (html: string, config?: Record<string, unknown>) => string;
+};
+
 interface SafeHtmlProps {
   html: string;
   className?: string;
 }
 
 // Cache DOMPurify instance to avoid multiple imports
-let dompurifyCache: any = null;
-let dompurifyPromise: Promise<any> | null = null;
+let dompurifyCache: DOMPurifyLike | null = null;
+let dompurifyPromise: Promise<DOMPurifyLike> | null = null;
 
 /**
  * Load DOMPurify with caching
  */
-function loadDOMPurify(): Promise<any> {
+function loadDOMPurify(): Promise<DOMPurifyLike> {
   if (dompurifyCache) {
     return Promise.resolve(dompurifyCache);
   }
@@ -25,7 +29,8 @@ function loadDOMPurify(): Promise<any> {
 
   dompurifyPromise = import('dompurify')
     .then((module) => {
-      dompurifyCache = module.default || module;
+      // dompurify is a CJS/ESM interop package; default export is the DOMPurify instance
+      dompurifyCache = (module.default || module) as unknown as DOMPurifyLike;
       return dompurifyCache;
     })
     .catch((error) => {

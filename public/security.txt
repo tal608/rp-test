@@ -1,7 +1,7 @@
 # River Paws Security Policy
 # This file provides security contact information for responsible disclosure
 
-Contact: mailto:yaharariverpaws@gmail.com
+Contact: mailto:YaharaRiverPaws@gmail.com
 Expires: 2026-12-31T23:59:59.000Z
 Preferred-Languages: en
 Canonical: https://www.riverpaws.dog/.well-known/security.txt
@@ -16,5 +16,6 @@ Policy: https://www.riverpaws.dog/policies#security
 # - Suggested fix (if any)
 
 # We do not offer bug bounties at this time, but we appreciate all security reports.
+
 
 

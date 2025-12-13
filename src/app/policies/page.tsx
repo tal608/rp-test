@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import ScrollIndicator from "@/components/ScrollIndicator";
+import { contactInfo } from "@/constants/social";
 
 export default function Policies() {
   return (
@@ -138,7 +139,21 @@ export default function Policies() {
               <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-slate-700">
                 <h3 className="text-xl font-semibold text-amber-700 dark:text-amber-400 mb-4">How to Cancel</h3>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                  To cancel a booking or appointment, please contact us as soon as possible by calling <a href="tel:608-571-7297" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">608-571-7297</a> or emailing <a href="mailto:riverpawsgrooming@gmail.com" className="text-blue-600 dark:text-blue-400 hover:underline font-medium">riverpawsgrooming@gmail.com</a>. We understand that unforeseen circumstances may arise, and we appreciate your prompt notification.
+                  To cancel a booking or appointment, please contact us as soon as possible by calling{" "}
+                  <a
+                    href="tel:608-571-7297"
+                    className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                  >
+                    608-571-7297
+                  </a>{" "}
+                  or emailing{" "}
+                  <a
+                    href={`mailto:${contactInfo.email}`}
+                    className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
+                  >
+                    {contactInfo.email}
+                  </a>
+                  . We understand that unforeseen circumstances may arise, and we appreciate your prompt notification.
                 </p>
               </div>
 
@@ -250,14 +265,14 @@ export default function Policies() {
                     </div>
                   </a>
 
-                  <a href="mailto:yaharariverpaws@gmail.com" className="flex items-center gap-4 group">
+                  <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-4 group">
                     <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
                       <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-lg group-hover:underline">yaharariverpaws@gmail.com</p>
+                      <p className="font-semibold text-lg group-hover:underline">{contactInfo.email}</p>
                       <p className="text-emerald-200 text-sm">Email us anytime</p>
                     </div>
                   </a>

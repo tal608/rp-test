@@ -23,7 +23,7 @@ export interface VoiceFAQ {
 export const generalVoiceFaqs: VoiceFAQ[] = [
   {
     question: "Where can I get my dog groomed near Waunakee?",
-    answer: "River Paws offers professional dog grooming at 5305 River Road in Waunakee, Wisconsin. We're located on the border of Waunakee and Madison, next to Yahara Heights Dog Park.",
+    answer: "River Paws offers professional dog grooming at 5305 W River Rd in Waunakee, Wisconsin. We're located on the border of Waunakee and Madison, next to Yahara Heights Dog Park.",
     category: "location",
   },
   {
@@ -33,7 +33,7 @@ export const generalVoiceFaqs: VoiceFAQ[] = [
   },
   {
     question: "Where is River Paws dog grooming?",
-    answer: "River Paws is at 5305 River Road, Waunakee, Wisconsin 53597. We're located next to Yahara Heights Dog Park, on the eastern edge of Waunakee.",
+    answer: "River Paws is at 5305 W River Rd, Waunakee, Wisconsin 53597. We're located next to Yahara Heights Dog Park, on the eastern edge of Waunakee.",
     category: "location",
   },
   {
@@ -120,7 +120,7 @@ export const hikingVoiceFaqs: VoiceFAQ[] = [
 export const nearMeFaqs: VoiceFAQ[] = [
   {
     question: "Dog grooming near me in Waunakee",
-    answer: "River Paws is Waunakee's professional dog grooming salon at 5305 River Road. We offer full service grooming, bath and brush, and nail trims by appointment.",
+    answer: "River Paws is Waunakee's professional dog grooming salon at 5305 W River Rd. We offer full service grooming, bath and brush, and nail trims by appointment.",
     category: "location",
   },
   {
@@ -162,5 +162,6 @@ export function getVoiceFaqsByCategory(category: VoiceFAQ["category"]): VoiceFAQ
 export function formatForFAQSchema(faqs: VoiceFAQ[]): Array<{ question: string; answer: string }> {
   return faqs.map(({ question, answer }) => ({ question, answer }));
 }
+
 
 

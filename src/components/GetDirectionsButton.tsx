@@ -8,7 +8,7 @@ interface GetDirectionsButtonProps {
 }
 
 export default function GetDirectionsButton({
-  address = "5305 River Road, Waunakee, WI 53597",
+  address = "5305 W River Rd, Waunakee, WI 53597",
   className = "",
   label = "Get Directions",
   variant = "solid",

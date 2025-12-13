@@ -43,7 +43,7 @@ export const socialLinks: SocialLink[] = [
 export const directoryLinks: DirectoryLink[] = [
   {
     name: "Google Business Profile",
-    url: "https://www.google.com/maps/place/?q=5305+River+Road+Waunakee+WI+53597",
+    url: "https://www.google.com/maps/place/?q=place_id:ChIJKznPS7GqB4gRpU3kZYE4Rb8",
     description: "Find us on Google Maps"
   },
   {
@@ -79,11 +79,11 @@ export const contactInfo = {
   phoneDisplay: "(608) 571-PAWS",
   email: "YaharaRiverPaws@gmail.com",
   address: {
-    street: "5305 River Road",
+    street: "5305 W River Rd",
     city: "Waunakee",
     state: "WI",
     zip: "53597",
-    full: "5305 River Road, Waunakee, WI 53597"
+    full: "5305 W River Rd, Waunakee, WI 53597"
   },
   businessHours: {
     weekdays: "8:00 AM - 4:30 PM",

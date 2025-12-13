@@ -353,10 +353,8 @@ export default function Contact() {
               <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 flex-shrink-0">
                 <div className="aspect-[4/3] w-full">
                   {/* Google Maps Embed */}
-                  {/* Google Maps Embed - Update this URL with the embed code from your live site or get it from: */}
-                  {/* Go to Google Maps > Search "5305 River Road, Waunakee, WI" > Share > Embed a map > Copy the URL */}
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2910.123!2d-89.445123!3d43.191789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8807a3f9b9b9b9b9%3A0x1234567890abcdef!2s5305%20River%20Rd%2C%20Waunakee%2C%20WI%2053597!5e0!3m2!1sen!2sus!4v1698000000000!5m2!1sen!2sus"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4642.257469340423!2d-89.40684808721252!3d43.15889178413912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8807aab14bcf392b%3A0xbf45388165e44da5!2sRiver%20Paws!5e1!3m2!1sen!2sus!4v1765656144935!5m2!1sen!2sus"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}
@@ -384,7 +382,7 @@ export default function Contact() {
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-3">Getting Here</h3>
                     <p className="text-gray-600 text-base leading-relaxed mb-4">
-                      We're located at <span className="font-semibold text-gray-900">5305 River Road</span>, right on the border of Waunakee and Madison.
+                      We&apos;re located at <span className="font-semibold text-gray-900">5305 River Road</span>, right on the border of Waunakee and Madison.
                       Look for us just 500 feet from the Yahara Heights Dog Park entrance!
                     </p>
                     <div className="mt-4">

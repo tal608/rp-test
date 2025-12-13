@@ -246,7 +246,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   
                   {/* Handwritten note */}
                   <p className="mt-6 text-gray-500 dark:text-gray-400 text-sm" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
-                    📍 5305 River Road, Waunakee — right by the dog park!
+                    📍 5305 W River Rd, Waunakee — right by the dog park!
                   </p>
                 </div>
               </div>
