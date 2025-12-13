@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>River Paws Image Recommendations - Full Analysis</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap');
+    
+    :root {
+      --bg: #0f1419;
+      --card-bg: #1a2027;
+      --card-border: #2d3640;
+      --accent: #4ecdc4;
+      --accent-hover: #3dbdb5;
+      --warning: #ffbe0b;
+      --success: #10b981;
+      --danger: #ef4444;
+      --text: #e7e9ea;
+      --text-muted: #8b98a5;
+      --critical: #ef4444;
+      --high: #f97316;
+      --medium: #eab308;
+    }
+    
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    
+    h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, #1a2027 0%, #252d38 100%);
+      border-radius: 16px;
+      border: 1px solid var(--card-border);
+    }
+    
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--accent) 0%, #a8edea 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .header p { color: var(--text-muted); font-size: 1.1rem; }
+    
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .stat-label { color: var(--text-muted); font-size: 0.9rem; }
+    
+    .filters {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+      padding: 1rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+    
+    .filter-btn {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background: #2d3640;
+      color: var(--text);
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent);
+      color: #000;
+    }
+    
+    .filter-btn.critical.active { background: var(--critical); }
+    .filter-btn.high.active { background: var(--high); }
+    .filter-btn.medium.active { background: var(--medium); }
+    
+    .recommendations {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .recommendation {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    
+    .rec-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem;
+      background: #252d38;
+      border-bottom: 1px solid var(--card-border);
+    }
+    
+    .rec-title {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .rec-title h3 { font-size: 1.2rem; }
+    
+    .priority-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    
+    .priority-critical { background: var(--critical); color: #fff; }
+    .priority-high { background: var(--high); color: #000; }
+    .priority-medium { background: var(--medium); color: #000; }
+    
+    .rec-meta {
+      display: flex;
+      gap: 1rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    
+    .rec-body { padding: 1.5rem; }
+    
+    .context-info {
+      background: #252d38;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    
+    .context-info strong { color: var(--text); }
+    
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    
+    .image-section {
+      background: #252d38;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    
+    .image-section h4 {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .image-section.current h4 { color: var(--danger); }
+    .image-section.proposed h4 { color: var(--success); }
+    
+    .location-tag {
+      background: linear-gradient(135deg, #2d3640 0%, #1a2027 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+    }
+    
+    .location-tag .page-name {
+      color: var(--accent);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    
+    .location-tag .section-name {
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+    
+    .location-tag .file-path {
+      color: var(--text-muted);
+      font-family: monospace;
+      font-size: 0.75rem;
+      margin-top: 0.5rem;
+      display: block;
+    }
+    
+    .image-container {
+      aspect-ratio: 16/10;
+      background: #1a2027;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .image-container.empty {
+      border: 2px dashed var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    
+    .image-info {
+      font-size: 0.85rem;
+    }
+    
+    .image-info .filename {
+      font-family: monospace;
+      color: var(--accent);
+      word-break: break-all;
+      margin-bottom: 0.5rem;
+    }
+    
+    .image-info .score {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      background: #1a2027;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    
+    .score-low { color: var(--danger); }
+    .score-mid { color: var(--warning); }
+    .score-high { color: var(--success); }
+    
+    .arrow-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    
+    .arrow {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+    
+    .score-change {
+      margin-top: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--success);
+      color: #000;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    
+    .candidates {
+      margin-top: 1.5rem;
+    }
+    
+    .candidates h4 {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    .candidate-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    
+    .candidate {
+      background: #252d38;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+    
+    .candidate:first-child {
+      border-color: var(--success);
+    }
+    
+    .candidate-img {
+      aspect-ratio: 16/10;
+      background: #1a2027;
+    }
+    
+    .candidate-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .candidate-info {
+      padding: 0.75rem;
+    }
+    
+    .candidate-info .filename {
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: var(--accent);
+      word-break: break-all;
+      margin-bottom: 0.5rem;
+    }
+    
+    .candidate-meta {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    
+    .tag {
+      padding: 0.2rem 0.5rem;
+      background: #1a2027;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    
+    .tag.score {
+      color: var(--success);
+      font-weight: 600;
+    }
+    
+    .tag.city {
+      color: var(--accent);
+    }
+    
+    .summary-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .summary-section h2 {
+      margin-bottom: 1.5rem;
+      color: var(--accent);
+    }
+    
+    .summary-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    .summary-table th, .summary-table td {
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+    
+    .summary-table th {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    
+    .summary-table td {
+      font-size: 0.9rem;
+    }
+    
+    .new-images-section {
+      margin-top: 2rem;
+    }
+    
+    .new-images-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .new-image-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .new-image-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+    }
+    
+    .new-image-card .info {
+      padding: 0.75rem;
+    }
+    
+    .new-image-card .filename {
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      word-break: break-all;
+    }
+    
+    @media (max-width: 900px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .arrow-container {
+        transform: rotate(90deg);
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🐕 Image Placement Recommendations</h1>
+    <p>Comprehensive analysis of 30 placement opportunities across Home, Grooming, Blog, and other pages</p>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Generated: December 13, 2025</p>
+  </div>
+  
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-number">30</div>
+      <div class="stat-label">Placements Analyzed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">56</div>
+      <div class="stat-label">New Images Available</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">22</div>
+      <div class="stat-label">Upgrade Opportunities</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">+1.2</div>
+      <div class="stat-label">Avg Score Improvement</div>
+    </div>
+  </div>
+  
+  <div class="filters">
+    <span style="color: var(--text-muted); margin-right: 1rem;">Filter by Priority:</span>
+    <button class="filter-btn active" onclick="filterByPriority('all')">All (30)</button>
+    <button class="filter-btn critical" onclick="filterByPriority('critical')">Critical (1)</button>
+    <button class="filter-btn high" onclick="filterByPriority('high')">High (11)</button>
+    <button class="filter-btn medium" onclick="filterByPriority('medium')">Medium (18)</button>
+  </div>
+  
+  <div class="recommendations" id="recommendations">
+    <!-- CRITICAL: Homepage Hero -->
+    <div class="recommendation" data-priority="critical">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-critical">Critical</span>
+          <h3>Homepage Hero</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/page.tsx</span>
+          <span>🏠 Homepage</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> High-impact hero image showcasing adventure energy and joy. First impression for visitors.<br>
+          <strong>Preferred Cities:</strong> Madison, Waunakee | <strong>Preferred Categories:</strong> Adventure / Hiking, Social / Community
+        </div>
+        <div class="comparison-grid">
+          <div class="image-section current">
+            <h4>🔴 Current Image</h4>
+            <div class="location-tag">
+              <span class="page-name">📍 Homepage (page.tsx)</span>
+              <span class="section-name">Hero Section - Main banner at top of homepage</span>
+              <span class="file-path">src/app/page.tsx → HeroSection component</span>
+            </div>
+            <div class="image-container">
+              <img src="/Hiking/joyful-brindle-mix-running-waunakee-wi-river-paws.jpg" alt="Current" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">joyful-brindle-mix-running-waunakee-wi-river-paws.jpg</div>
+              <span class="score score-high">Score: 9.2</span>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow">→</div>
+            <div class="score-change">+0.8</div>
+          </div>
+          <div class="image-section proposed">
+            <h4>🟢 Recommended Replacement</h4>
+            <div class="image-container">
+              <img src="/Grooming/confident-brindle-mix-dog-enrichment-waunakee-wi-river-paws.jpg" alt="Proposed" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">confident-brindle-mix-dog-enrichment-waunakee-wi-river-paws.jpg</div>
+              <span class="score score-high">Match Score: 10.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="candidates">
+          <h4>Alternative Candidates</h4>
+          <div class="candidate-list">
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/wisconsin-shepherd-mix-social-enrichment-madison-wi-river-paws.jpg" alt="" onerror="this.style.display='none'">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">wisconsin-shepherd-mix-social-enrichment-madison-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.0</span>
+                  <span class="tag city">Madison</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/alert-border-collie-dog-park-madison-wi-river-paws.jpg" alt="" onerror="this.style.display='none'">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">alert-border-collie-dog-park-madison-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.0</span>
+                  <span class="tag city">Madison</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIGH: Dog Grooming Hero -->
+    <div class="recommendation" data-priority="high">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-high">High</span>
+          <h3>Dog Grooming Page Hero</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/dog-grooming/page.tsx</span>
+          <span>✂️ Grooming</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> Professional dog grooming service hero - showcases grooming expertise<br>
+          <strong>Preferred Categories:</strong> Grooming / Care Close-Up
+        </div>
+        <div class="comparison-grid">
+          <div class="image-section current">
+            <h4>🔴 Current Image</h4>
+            <div class="location-tag">
+              <span class="page-name">📍 Dog Grooming Page (/dog-grooming)</span>
+              <span class="section-name">Hero Section - Main banner showcasing grooming services</span>
+              <span class="file-path">src/app/dog-grooming/page.tsx → Hero component</span>
+            </div>
+            <div class="image-container">
+              <img src="/Grooming/grooming-transformation-doodle-madison-wi-river-paws.jpg" alt="Current" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">grooming-transformation-doodle-madison-wi-river-paws.jpg</div>
+              <span class="score score-mid">Score: 8.0</span>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow">→</div>
+            <div class="score-change">+2.2</div>
+          </div>
+          <div class="image-section proposed">
+            <h4>🟢 Recommended Replacement</h4>
+            <div class="image-container">
+              <img src="/Grooming/confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg" alt="Proposed" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg</div>
+              <span class="score score-high">Match Score: 10.2</span>
+            </div>
+          </div>
+        </div>
+        <div class="candidates">
+          <h4>Alternative Candidates</h4>
+          <div class="candidate-list">
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/wisconsin-terrier-mix-dog-grooming-deforest-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">wisconsin-terrier-mix-dog-grooming-deforest-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.1</span>
+                  <span class="tag city">DeForest</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.1</span>
+                  <span class="tag city">Waunakee</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIGH: Madison Grooming Hero -->
+    <div class="recommendation" data-priority="high">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-high">High</span>
+          <h3>Madison Grooming Page Hero</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/dog-grooming-madison/page.tsx</span>
+          <span>📍 Madison</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> Madison-specific grooming page hero - must match Madison city<br>
+          <strong>Required City:</strong> Madison | <strong>Category:</strong> Grooming / Care Close-Up
+        </div>
+        <div class="comparison-grid">
+          <div class="image-section current">
+            <h4>🔴 Current Image</h4>
+            <div class="location-tag">
+              <span class="page-name">📍 Madison Dog Grooming Page (/dog-grooming-madison)</span>
+              <span class="section-name">Hero Section - City-specific grooming landing page banner</span>
+              <span class="file-path">src/app/dog-grooming-madison/page.tsx → Hero component</span>
+            </div>
+            <div class="image-container">
+              <img src="/Hiking/happy-bernedoodle-dog-bus-madison-wi-river-paws.jpg" alt="Current" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">happy-bernedoodle-dog-bus-madison-wi-river-paws.jpg</div>
+              <span class="score score-high">Score: 9.1</span>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow">→</div>
+            <div class="score-change">+0.9</div>
+          </div>
+          <div class="image-section proposed">
+            <h4>🟢 Recommended Replacement</h4>
+            <div class="image-container">
+              <img src="/Grooming/handsome-doodle-dog-grooming-madison-wi-river-paws.jpg" alt="Proposed" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">handsome-doodle-dog-grooming-madison-wi-river-paws.jpg</div>
+              <span class="score score-high">Match Score: 10.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="candidates">
+          <h4>Alternative Madison Options</h4>
+          <div class="candidate-list">
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/gentle-golden-retriever-mix-dog-grooming-madison-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">gentle-golden-retriever-mix-dog-grooming-madison-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.0</span>
+                  <span class="tag city">Madison</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/wisconsin-bernedoodle-dog-grooming-madison-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">wisconsin-bernedoodle-dog-grooming-madison-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.0</span>
+                  <span class="tag city">Madison</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIGH: Waunakee Grooming Hero -->
+    <div class="recommendation" data-priority="high">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-high">High</span>
+          <h3>Waunakee Grooming Page Hero</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/dog-grooming-waunakee/page.tsx</span>
+          <span>📍 Waunakee</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> Waunakee-specific grooming page hero - must match Waunakee city<br>
+          <strong>Required City:</strong> Waunakee | <strong>Category:</strong> Grooming / Care Close-Up
+        </div>
+        <div class="comparison-grid">
+          <div class="image-section current">
+            <h4>🔴 Current Image</h4>
+            <div class="location-tag">
+              <span class="page-name">📍 Waunakee Dog Grooming Page (/dog-grooming-waunakee)</span>
+              <span class="section-name">Hero Section - City-specific grooming landing page banner</span>
+              <span class="file-path">src/app/dog-grooming-waunakee/page.tsx → Hero component</span>
+            </div>
+            <div class="image-container">
+              <img src="/Hiking/attentive-gsp-dog-bus-transport-waunakee-wi-river-paws.jpg" alt="Current" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">attentive-gsp-dog-bus-transport-waunakee-wi-river-paws.jpg</div>
+              <span class="score score-mid">Score: 8.8</span>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow">→</div>
+            <div class="score-change">+1.4</div>
+          </div>
+          <div class="image-section proposed">
+            <h4>🟢 Recommended Replacement</h4>
+            <div class="image-container">
+              <img src="/Grooming/confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg" alt="Proposed" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg</div>
+              <span class="score score-high">Match Score: 10.2</span>
+            </div>
+          </div>
+        </div>
+        <div class="candidates">
+          <h4>Alternative Waunakee Options</h4>
+          <div class="candidate-list">
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.1</span>
+                  <span class="tag city">Waunakee</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/joyful-havanese-mix-dog-grooming-waunakee-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">joyful-havanese-mix-dog-grooming-waunakee-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.1</span>
+                  <span class="tag city">Waunakee</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIGH: DeForest Grooming Hero -->
+    <div class="recommendation" data-priority="high">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-high">High</span>
+          <h3>DeForest Grooming Page Hero</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/dog-grooming-deforest/page.tsx</span>
+          <span>📍 DeForest</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> DeForest-specific grooming page hero - must match DeForest city<br>
+          <strong>Required City:</strong> DeForest | <strong>Category:</strong> Grooming / Care Close-Up
+        </div>
+        <div class="comparison-grid">
+          <div class="image-section current">
+            <h4>🔴 Current Image</h4>
+            <div class="location-tag">
+              <span class="page-name">📍 DeForest Dog Grooming Page (/dog-grooming-deforest)</span>
+              <span class="section-name">Hero Section - City-specific grooming landing page banner</span>
+              <span class="file-path">src/app/dog-grooming-deforest/page.tsx → Hero component</span>
+            </div>
+            <div class="image-container">
+              <img src="/Hiking/eager-pack-dog-bus-transport-deforest-wi-river-paws.jpg" alt="Current" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">eager-pack-dog-bus-transport-deforest-wi-river-paws.jpg</div>
+              <span class="score score-high">Score: 9.3</span>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow">→</div>
+            <div class="score-change">+0.8</div>
+          </div>
+          <div class="image-section proposed">
+            <h4>🟢 Recommended Replacement</h4>
+            <div class="image-container">
+              <img src="/Grooming/wisconsin-terrier-mix-dog-grooming-deforest-wi-river-paws.jpg" alt="Proposed" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">wisconsin-terrier-mix-dog-grooming-deforest-wi-river-paws.jpg</div>
+              <span class="score score-high">Match Score: 10.1</span>
+            </div>
+          </div>
+        </div>
+        <div class="candidates">
+          <h4>Alternative DeForest Options</h4>
+          <div class="candidate-list">
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/joyful-golden-mix-dog-grooming-deforest-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">joyful-golden-mix-dog-grooming-deforest-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.0</span>
+                  <span class="tag city">DeForest</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/festive-american-eskimo-dog-grooming-deforest-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">festive-american-eskimo-dog-grooming-deforest-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.0</span>
+                  <span class="tag city">DeForest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIGH: Sun Prairie Grooming Hero -->
+    <div class="recommendation" data-priority="high">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-high">High</span>
+          <h3>Sun Prairie Grooming Page Hero</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/dog-grooming-sun-prairie/page.tsx</span>
+          <span>📍 Sun Prairie</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> Sun Prairie-specific grooming page hero - must match Sun Prairie city<br>
+          <strong>Required City:</strong> Sun Prairie | <strong>Category:</strong> Grooming / Care Close-Up
+        </div>
+        <div class="comparison-grid">
+          <div class="image-section current">
+            <h4>🔴 Current Image</h4>
+            <div class="location-tag">
+              <span class="page-name">📍 Sun Prairie Dog Grooming Page (/dog-grooming-sun-prairie)</span>
+              <span class="section-name">Hero Section - City-specific grooming landing page banner</span>
+              <span class="file-path">src/app/dog-grooming-sun-prairie/page.tsx → Hero component</span>
+            </div>
+            <div class="image-container">
+              <img src="/Hiking/confident-goldendoodle-dog-bus-sun-prairie-wi-river-paws.jpg" alt="Current" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">confident-goldendoodle-dog-bus-sun-prairie-wi-river-paws.jpg</div>
+              <span class="score score-high">Score: 9.1</span>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow">→</div>
+            <div class="score-change">+1.0</div>
+          </div>
+          <div class="image-section proposed">
+            <h4>🟢 Recommended Replacement</h4>
+            <div class="image-container">
+              <img src="/Grooming/radiant-maltese-mix-dog-grooming-sun-prairie-wi-river-paws.jpg" alt="Proposed" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">radiant-maltese-mix-dog-grooming-sun-prairie-wi-river-paws.jpg</div>
+              <span class="score score-high">Match Score: 10.1</span>
+            </div>
+          </div>
+        </div>
+        <div class="candidates">
+          <h4>Alternative Sun Prairie Options</h4>
+          <div class="candidate-list">
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/confident-black-doodle-dog-grooming-sun-prairie-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">confident-black-doodle-dog-grooming-sun-prairie-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.0</span>
+                  <span class="tag city">Sun Prairie</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/joyful-papillon-dog-grooming-sun-prairie-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">joyful-papillon-dog-grooming-sun-prairie-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.0</span>
+                  <span class="tag city">Sun Prairie</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIGH: Middleton Grooming Hero -->
+    <div class="recommendation" data-priority="high">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-high">High</span>
+          <h3>Middleton Grooming Page Hero</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/dog-grooming-middleton/page.tsx</span>
+          <span>📍 Middleton</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> Middleton-specific grooming page hero - must match Middleton city<br>
+          <strong>Required City:</strong> Middleton | <strong>Category:</strong> Grooming / Care Close-Up
+        </div>
+        <div class="comparison-grid">
+          <div class="image-section current">
+            <h4>🔴 Current Image</h4>
+            <div class="location-tag">
+              <span class="page-name">📍 Middleton Dog Grooming Page (/dog-grooming-middleton)</span>
+              <span class="section-name">Hero Section - City-specific grooming landing page banner</span>
+              <span class="file-path">src/app/dog-grooming-middleton/page.tsx → Hero component</span>
+            </div>
+            <div class="image-container">
+              <img src="/Hiking/eager-pack-dog-bus-transport-middleton-wi-river-paws.jpg" alt="Current" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">eager-pack-dog-bus-transport-middleton-wi-river-paws.jpg</div>
+              <span class="score score-high">Score: 9.3</span>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow">→</div>
+            <div class="score-change">+0.7</div>
+          </div>
+          <div class="image-section proposed">
+            <h4>🟢 Recommended Replacement</h4>
+            <div class="image-container">
+              <img src="/Grooming/patient-doodle-dog-grooming-middleton-wi-river-paws.jpg" alt="Proposed" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">patient-doodle-dog-grooming-middleton-wi-river-paws.jpg</div>
+              <span class="score score-high">Match Score: 10.0</span>
+            </div>
+          </div>
+        </div>
+        <div class="candidates">
+          <h4>Alternative Middleton Options</h4>
+          <div class="candidate-list">
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/patient-shih-tzu-grooming-middleton-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">patient-shih-tzu-grooming-middleton-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">9.8</span>
+                  <span class="tag city">Middleton</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/joyful-golden-retriever-outdoor-enrichment-middleton-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">joyful-golden-retriever-outdoor-enrichment-middleton-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.1</span>
+                  <span class="tag city">Middleton</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HIGH: Puppy Play Card -->
+    <div class="recommendation" data-priority="high">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-high">High</span>
+          <h3>Homepage - Puppy Play Card</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/page.tsx</span>
+          <span>🏠 Homepage</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> Puppy Play & Socialization service card - showcases puppy socialization and play experiences<br>
+          <strong>Current Status:</strong> NO IMAGE ASSIGNED
+        </div>
+        <div class="comparison-grid">
+          <div class="image-section current">
+            <h4>🔴 Current Image</h4>
+            <div class="location-tag">
+              <span class="page-name">📍 Homepage (page.tsx)</span>
+              <span class="section-name">Puppy Play & Socialization Service Card - "Services" grid section</span>
+              <span class="file-path">src/app/page.tsx → Services section → Puppy Play card</span>
+            </div>
+            <div class="image-container empty">
+              No image currently assigned
+            </div>
+            <div class="image-info">
+              <div class="filename">—</div>
+              <span class="score score-low">Score: N/A</span>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow">→</div>
+            <div class="score-change">NEW</div>
+          </div>
+          <div class="image-section proposed">
+            <h4>🟢 Recommended Image</h4>
+            <div class="image-container">
+              <img src="/Grooming/happy-great-pyrenees-socialization-sun-prairie-wi-river-paws.jpg" alt="Proposed" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">happy-great-pyrenees-socialization-sun-prairie-wi-river-paws.jpg</div>
+              <span class="score score-high">Match Score: 10.1</span>
+            </div>
+          </div>
+        </div>
+        <div class="candidates">
+          <h4>Alternative Options</h4>
+          <div class="candidate-list">
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/wisconsin-spaniel-seasonal-social-deforest-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">wisconsin-spaniel-seasonal-social-deforest-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">10.1</span>
+                  <span class="tag city">DeForest</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIUM: Gallery Grooming Category -->
+    <div class="recommendation" data-priority="medium">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-medium">Medium</span>
+          <h3>Gallery - Grooming Category</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/constants/gallery.ts</span>
+          <span>🖼️ Gallery</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> Grooming gallery category - all grooming images added<br>
+          <strong>Recommendation:</strong> Add all new grooming images to gallery rotation
+        </div>
+        <div class="location-tag" style="margin-bottom: 1.5rem;">
+          <span class="page-name">📍 Gallery Page (/gallery)</span>
+          <span class="section-name">Grooming Category - Filterable image gallery grid</span>
+          <span class="file-path">src/constants/gallery.ts → groomingImages array</span>
+        </div>
+        <div class="candidates">
+          <h4>New Images to Add to Gallery</h4>
+          <div class="candidate-list">
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">9.2</span>
+                  <span class="tag city">Waunakee</span>
+                  <span class="tag">Grooming</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/wisconsin-terrier-mix-dog-grooming-deforest-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">wisconsin-terrier-mix-dog-grooming-deforest-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">9.1</span>
+                  <span class="tag city">DeForest</span>
+                  <span class="tag">Grooming</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">9.1</span>
+                  <span class="tag city">Waunakee</span>
+                  <span class="tag">Grooming</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIUM: Dog Grooming Page Content Section -->
+    <div class="recommendation" data-priority="medium">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-medium">Medium</span>
+          <h3>Dog Grooming Page - Content Images</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/dog-grooming/page.tsx</span>
+          <span>✂️ Grooming</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> Multiple content section images on dog grooming page with score 8.0<br>
+          <strong>Files to Replace:</strong> freshly-groomed-pomeranian, freshcut-doodle, grooming-transformation-doodle, pampered-spaniel-bath, happy-husky-groomed, curious-maltipoo, groomed-poodle
+        </div>
+        <div class="location-tag" style="margin-bottom: 1.5rem;">
+          <span class="page-name">📍 Dog Grooming Page (/dog-grooming)</span>
+          <span class="section-name">Content Sections - Service showcase images, testimonials, city resource cards</span>
+          <span class="file-path">src/app/dog-grooming/page.tsx → Multiple components throughout page</span>
+        </div>
+        <div class="candidates">
+          <h4>Higher-Scoring Replacements Available</h4>
+          <div class="candidate-list">
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">9.2 (+1.2)</span>
+                  <span class="tag city">Waunakee</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/wisconsin-terrier-mix-dog-grooming-deforest-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">wisconsin-terrier-mix-dog-grooming-deforest-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">9.1 (+1.1)</span>
+                  <span class="tag city">DeForest</span>
+                </div>
+              </div>
+            </div>
+            <div class="candidate">
+              <div class="candidate-img">
+                <img src="/Grooming/soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg" alt="">
+              </div>
+              <div class="candidate-info">
+                <div class="filename">soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg</div>
+                <div class="candidate-meta">
+                  <span class="tag score">9.1 (+1.1)</span>
+                  <span class="tag city">Waunakee</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIUM: Contact Page Hero -->
+    <div class="recommendation" data-priority="medium">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-high">High</span>
+          <h3>Contact Page Hero</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/contact/page.tsx</span>
+          <span>📞 Contact</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> Hero Section on contact page<br>
+          <strong>Current:</strong> Madison dog hiking5.jpg (Score: 8.0)
+        </div>
+        <div class="comparison-grid">
+          <div class="image-section current">
+            <h4>🔴 Current Image</h4>
+            <div class="location-tag">
+              <span class="page-name">📍 Contact Page (/contact)</span>
+              <span class="section-name">Hero Section - Main banner at top of contact page</span>
+              <span class="file-path">src/app/contact/page.tsx → Hero component</span>
+            </div>
+            <div class="image-container">
+              <img src="/Madison dog hiking5.jpg" alt="Current" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">Madison dog hiking5.jpg</div>
+              <span class="score score-mid">Score: 8.0</span>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow">→</div>
+            <div class="score-change">+1.7</div>
+          </div>
+          <div class="image-section proposed">
+            <h4>🟢 Recommended Replacement</h4>
+            <div class="image-container">
+              <img src="/Grooming/confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg" alt="Proposed" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg</div>
+              <span class="score score-high">Match Score: 9.7</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIUM: Apply Page Hero -->
+    <div class="recommendation" data-priority="high">
+      <div class="rec-header">
+        <div class="rec-title">
+          <span class="priority-badge priority-high">High</span>
+          <h3>Apply Page Hero</h3>
+        </div>
+        <div class="rec-meta">
+          <span>📄 src/app/apply/page.tsx</span>
+          <span>📝 Apply</span>
+        </div>
+      </div>
+      <div class="rec-body">
+        <div class="context-info">
+          <strong>Context:</strong> Hero Section on apply page<br>
+          <strong>Current:</strong> Madison dog hiking1.jpg (Score: 8.0)
+        </div>
+        <div class="comparison-grid">
+          <div class="image-section current">
+            <h4>🔴 Current Image</h4>
+            <div class="location-tag">
+              <span class="page-name">📍 Apply Page (/apply)</span>
+              <span class="section-name">Hero Section - Main banner at top of application page</span>
+              <span class="file-path">src/app/apply/page.tsx → Hero component</span>
+            </div>
+            <div class="image-container">
+              <img src="/Madison dog hiking1.jpg" alt="Current" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">Madison dog hiking1.jpg</div>
+              <span class="score score-mid">Score: 8.0</span>
+            </div>
+          </div>
+          <div class="arrow-container">
+            <div class="arrow">→</div>
+            <div class="score-change">+1.7</div>
+          </div>
+          <div class="image-section proposed">
+            <h4>🟢 Recommended Replacement</h4>
+            <div class="image-container">
+              <img src="/Grooming/happy-great-pyrenees-socialization-sun-prairie-wi-river-paws.jpg" alt="Proposed" onerror="this.parentElement.innerHTML='Image Preview'">
+            </div>
+            <div class="image-info">
+              <div class="filename">happy-great-pyrenees-socialization-sun-prairie-wi-river-paws.jpg</div>
+              <span class="score score-high">Match Score: 9.6</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary Section -->
+  <div class="summary-section">
+    <h2>📊 Summary of All Recommendations</h2>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th>Page/Location</th>
+          <th>Current Image</th>
+          <th>Current Score</th>
+          <th>Recommended Image</th>
+          <th>New Score</th>
+          <th>Improvement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Homepage Hero</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">joyful-brindle-mix-running...</td>
+          <td>9.2</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">confident-brindle-mix-dog-enrichment...</td>
+          <td style="color: var(--success);">10.0</td>
+          <td style="color: var(--success);">+0.8</td>
+        </tr>
+        <tr>
+          <td>Dog Grooming Hero</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">grooming-transformation-doodle...</td>
+          <td>8.0</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">confident-saint-bernard...</td>
+          <td style="color: var(--success);">10.2</td>
+          <td style="color: var(--success);">+2.2</td>
+        </tr>
+        <tr>
+          <td>Madison Grooming Hero</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">happy-bernedoodle-dog-bus...</td>
+          <td>9.1</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">handsome-doodle-dog-grooming...</td>
+          <td style="color: var(--success);">10.0</td>
+          <td style="color: var(--success);">+0.9</td>
+        </tr>
+        <tr>
+          <td>Waunakee Grooming Hero</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">attentive-gsp-dog-bus...</td>
+          <td>8.8</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">confident-saint-bernard...</td>
+          <td style="color: var(--success);">10.2</td>
+          <td style="color: var(--success);">+1.4</td>
+        </tr>
+        <tr>
+          <td>DeForest Grooming Hero</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">eager-pack-dog-bus...</td>
+          <td>9.3</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">wisconsin-terrier-mix...</td>
+          <td style="color: var(--success);">10.1</td>
+          <td style="color: var(--success);">+0.8</td>
+        </tr>
+        <tr>
+          <td>Sun Prairie Grooming Hero</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">confident-goldendoodle...</td>
+          <td>9.1</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">radiant-maltese-mix...</td>
+          <td style="color: var(--success);">10.1</td>
+          <td style="color: var(--success);">+1.0</td>
+        </tr>
+        <tr>
+          <td>Middleton Grooming Hero</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">eager-pack-dog-bus...</td>
+          <td>9.3</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">patient-doodle...</td>
+          <td style="color: var(--success);">10.0</td>
+          <td style="color: var(--success);">+0.7</td>
+        </tr>
+        <tr>
+          <td>Contact Page Hero</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">Madison dog hiking5.jpg</td>
+          <td>8.0</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">confident-saint-bernard...</td>
+          <td style="color: var(--success);">9.7</td>
+          <td style="color: var(--success);">+1.7</td>
+        </tr>
+        <tr>
+          <td>Apply Page Hero</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">Madison dog hiking1.jpg</td>
+          <td>8.0</td>
+          <td style="font-family: monospace; font-size: 0.8rem;">happy-great-pyrenees...</td>
+          <td style="color: var(--success);">9.6</td>
+          <td style="color: var(--success);">+1.6</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- New Images Section -->
+  <div class="summary-section new-images-section">
+    <h2>🆕 All 56 New Images Available</h2>
+    <p style="color: var(--text-muted); margin-bottom: 1rem;">These images are available in /Grooming/ for placement across the site.</p>
+    <div class="new-images-grid" id="newImagesGrid">
+      <!-- Will be populated by JavaScript -->
+    </div>
+  </div>
+
+  <script>
+    // Filter functionality
+    function filterByPriority(priority) {
+      const recommendations = document.querySelectorAll('.recommendation');
+      const buttons = document.querySelectorAll('.filter-btn');
+      
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      
+      recommendations.forEach(rec => {
+        if (priority === 'all' || rec.dataset.priority === priority) {
+          rec.style.display = 'block';
+        } else {
+          rec.style.display = 'none';
+        }
+      });
+    }
+    
+    // Populate new images grid
+    const newImages = [
+      'confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg',
+      'wisconsin-terrier-mix-dog-grooming-deforest-wi-river-paws.jpg',
+      'soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg',
+      'joyful-havanese-mix-dog-grooming-waunakee-wi-river-paws.jpg',
+      'happy-great-pyrenees-socialization-sun-prairie-wi-river-paws.jpg',
+      'joyful-golden-retriever-outdoor-enrichment-middleton-wi-river-paws.jpg',
+      'wisconsin-spaniel-seasonal-social-deforest-wi-river-paws.jpg',
+      'confident-brindle-mix-dog-enrichment-waunakee-wi-river-paws.jpg',
+      'wisconsin-shepherd-mix-social-enrichment-madison-wi-river-paws.jpg',
+      'alert-border-collie-dog-park-madison-wi-river-paws.jpg',
+      'handsome-doodle-dog-grooming-madison-wi-river-paws.jpg',
+      'gentle-golden-retriever-mix-dog-grooming-madison-wi-river-paws.jpg',
+      'wisconsin-bernedoodle-dog-grooming-madison-wi-river-paws.jpg',
+      'joyful-golden-mix-dog-grooming-deforest-wi-river-paws.jpg',
+      'festive-american-eskimo-dog-grooming-deforest-wi-river-paws.jpg',
+      'radiant-maltese-mix-dog-grooming-sun-prairie-wi-river-paws.jpg',
+      'confident-black-doodle-dog-grooming-sun-prairie-wi-river-paws.jpg',
+      'joyful-papillon-dog-grooming-sun-prairie-wi-river-paws.jpg',
+      'patient-doodle-dog-grooming-middleton-wi-river-paws.jpg',
+      'patient-shih-tzu-grooming-middleton-wi-river-paws.jpg'
+    ];
+    
+    const grid = document.getElementById('newImagesGrid');
+    newImages.forEach(img => {
+      const card = document.createElement('div');
+      card.className = 'new-image-card';
+      card.innerHTML = `
+        <img src="/Grooming/${img}" alt="${img}" onerror="this.style.display='none'">
+        <div class="info">
+          <div class="filename">${img}</div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

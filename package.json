@@ -6,10 +6,12 @@
     "process-images": "node scripts/process-images.js",
     "optimize-images": "node scripts/optimize-images.js",
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/update-cache-version.js --sync && next build",
     "start": "next start",
     "lint": "next lint",
-    "test:redirects": "node scripts/test-redirects.js"
+    "test:redirects": "node scripts/test-redirects.js",
+    "sync-cache": "node scripts/update-cache-version.js --sync",
+    "update-cache": "node scripts/update-cache-version.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
@@ -27,6 +29,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "baseline-browser-mapping": "^2.9.7",
     "csv-parse": "^6.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.0.1",

@@ -163,3 +163,4 @@ export function formatForFAQSchema(faqs: VoiceFAQ[]): Array<{ question: string; 
   return faqs.map(({ question, answer }) => ({ question, answer }));
 }
 
+

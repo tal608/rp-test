@@ -39,6 +39,7 @@ const focalPointMap: Record<string, { x: number; y: number }> = {
   'halloween-portrait-schnauzer-madison-wi-river-paws.jpg': { x: 50, y: 55 },
   
   // Caretaker/Team images
+  'amanda-masarik.jpg': { x: 50, y: 25 },
   'france-lozano.jpg': { x: 50, y: 20 },
   
   // Adventure/Hiking images (from Grooming folder)
@@ -239,7 +240,6 @@ const focalPointMap: Record<string, { x: number; y: number }> = {
   'content-shih-tzu-mix-expert-care-waunakee-wi-river-paws.jpg': { x: 54, y: 35 },
   'wi-content-goldendoodle-dog-grooming-waunakee-wi-river-paws.jpg': { x: 48, y: 35 },
   'confident-standard-poodle-dog-grooming-waunakee-wi-river-paws.jpg': { x: 63, y: 22 },
-  'confident-standard-poodle-grooming-middleton-wi-river-paws.jpg': { x: 52, y: 25 },
   'calm-black-goldendoodle-grooming-waunakee-wi-river-paws.jpg': { x: 55, y: 55 },
   'joyful-shih-tzu-mix-dog-grooming-madison-wi-river-paws.jpg': { x: 50, y: 35 },
   'confident-hound-mix-dog-grooming-middleton-wi-river-paws.jpg': { x: 55, y: 35 },
@@ -267,6 +267,23 @@ const focalPointMap: Record<string, { x: number; y: number }> = {
   'happy-goldendoodle-grooming-waunakee-wi-river-paws.jpg': { x: 43, y: 32 },
   'happy-golden-retriever-creative-grooming-dye-madison-wi-river-paws.jpg': { x: 82, y: 30 },
   'happy-golden-retriever-dog-grooming-middleton-wi-river-paws.jpg': { x: 42, y: 35 },
+  'calm-sheepadoodle-mix-professional-grooming-sun-prairie-wi-river-paws.jpg': { x: 50, y: 45 },
+  'wisconsin-terrier-mix-social-madison-wi-river-paws.jpg': { x: 55, y: 42 },
+  'festive-sheepadoodle-dog-social-event-sun-prairie-wi-river-paws.jpg': { x: 45, y: 45 },
+  'playful-sheepadoodle-adventure-park-madison-wi-river-paws.jpg': { x: 50, y: 45 },
+  'confident-terrier-mix-dog-socialization-madison-wi-river-paws.jpg': { x: 52, y: 62 },
+  'radiant-maltese-mix-dog-grooming-sun-prairie-wi-river-paws.jpg': { x: 50, y: 30 },
+  'content-golden-retriever-fall-social-madison-wi-river-paws.jpg': { x: 28, y: 45 },
+  'joyful-papillon-dog-grooming-sun-prairie-wi-river-paws.jpg': { x: 53, y: 42 },
+  'patient-black-doodle-grooming-sun-prairie-wi-river-paws.jpg': { x: 50, y: 55 },
+  'beaming-goldendoodle-dog-grooming-deforest-wi-river-paws.jpg': { x: 45, y: 38 },
+  'festive-american-eskimo-dog-grooming-deforest-wi-river-paws.jpg': { x: 62, y: 32 },
+  'festive-american-eskimo-grooming-sun-prairie-wi-river-paws.jpg': { x: 50, y: 38 },
+  'wisconsin-spaniel-mix-gentle-grooming-waunakee-wi-river-paws.jpg': { x: 35, y: 30 },
+  'wisconsin-giant-schnauzer-social-event-sun-prairie-wi-river-paws.jpg': { x: 38, y: 45 },
+  'wisconsin-spaniel-seasonal-social-deforest-wi-river-paws.jpg': { x: 48, y: 42 },
+  'wisconsin-confident-doodle-grooming-madison-wi-river-paws.jpg': { x: 66, y: 16 },
+  'joyful-havanese-mix-dog-grooming-waunakee-wi-river-paws.jpg': { x: 50, y: 35 },
 };
 
 /**

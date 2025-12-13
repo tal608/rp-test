@@ -58,6 +58,16 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        // Caretaker images - shorter cache since these can be updated
+        source: '/caretakers/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=3600, stale-while-revalidate=86400'
+          },
+        ],
+      },
+      {
         // Logos and icons
         source: '/Logos/:path*',
         headers: [

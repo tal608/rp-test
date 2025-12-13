@@ -505,8 +505,8 @@ export default function DogGrooming() {
                       {/* Small image */}
                       <div className="hidden md:block relative w-24 h-24 flex-shrink-0 rounded-xl overflow-hidden">
                         <Image
-                          src="/Grooming/freshcut-doodle-grooming-waunakee-wi-river-paws.jpg"
-                          alt="Freshly groomed doodle showing coat assessment"
+                          src="/Grooming/joyful-havanese-mix-dog-grooming-waunakee-wi-river-paws.jpg"
+                          alt="Sweet Havanese mix celebrating with professional grooming at River Paws"
                           fill
                           className="object-cover"
                           sizes="96px"
@@ -589,11 +589,11 @@ export default function DogGrooming() {
                     <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                       <div className="relative h-[200px] md:h-[168px] -mx-5 -mt-5 mb-4 overflow-hidden">
                         <Image
-                          src="/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg"
-                          alt="Freshly groomed dog at River Paws"
+                          src="/Grooming/confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg"
+                          alt="Gentle Saint Bernard getting pampered with professional grooming at River Paws"
                           fill
                           className="object-cover"
-                          style={{ objectPosition: getImageObjectPosition("/Grooming/freshly-groomed-goldendoodle-salon-madison-wi-river-paws.jpg") }}
+                          style={{ objectPosition: getImageObjectPosition("/Grooming/confident-saint-bernard-dog-grooming-waunakee-wi-river-paws.jpg") }}
                           sizes="(max-width: 768px) 100vw, 33vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -614,11 +614,11 @@ export default function DogGrooming() {
                     <div className="bg-white rounded-2xl p-5 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                       <div className="relative h-[200px] md:h-[168px] -mx-5 -mt-5 mb-4 overflow-hidden">
                         <Image
-                          src="/Grooming/calm-biewer-terrier-grooming-waunakee-wi-river-paws.jpg"
-                          alt="Biewer Terrier enjoying à la carte grooming services"
+                          src="/Grooming/wisconsin-bernedoodle-dog-grooming-madison-wi-river-paws.jpg"
+                          alt="Cheerful Bernedoodle enjoying gentle expert grooming services at River Paws"
                           fill
                           className="object-cover"
-                          style={{ objectPosition: getImageObjectPosition("/Grooming/calm-biewer-terrier-grooming-waunakee-wi-river-paws.jpg") }}
+                          style={{ objectPosition: getImageObjectPosition("/Grooming/wisconsin-bernedoodle-dog-grooming-madison-wi-river-paws.jpg") }}
                           sizes="(max-width: 768px) 100vw, 33vw"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
@@ -782,11 +782,11 @@ export default function DogGrooming() {
             <div className="relative">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/Grooming/happy-husky-groomed-deforest-wi-river-paws.jpg"
-                  alt="A happy Siberian Husky with a fresh grooming and orange bandana at River Paws"
+                  src="/Grooming/joyful-golden-retriever-outdoor-enrichment-middleton-wi-river-paws.jpg"
+                  alt="Joyful Golden Retriever celebrating with skilled grooming serving Middleton families at River Paws"
                   fill
                   className="object-cover"
-                  style={{ objectPosition: getImageObjectPosition("/Grooming/happy-husky-groomed-deforest-wi-river-paws.jpg") }}
+                  style={{ objectPosition: getImageObjectPosition("/Grooming/joyful-golden-retriever-outdoor-enrichment-middleton-wi-river-paws.jpg") }}
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">

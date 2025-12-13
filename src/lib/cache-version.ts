@@ -19,9 +19,9 @@
  * - MINOR: New features/content
  * - PATCH: Bug fixes
  * 
- * Last updated: 2025-11-27 - Service worker improvements
+ * Last updated: 2025-12-09 - Updated Amanda and Kelly bio pictures
  */
-export const CACHE_VERSION = '1.1.30';
+export const CACHE_VERSION = '1.1.34';
 
 /**
  * Get cache version from server

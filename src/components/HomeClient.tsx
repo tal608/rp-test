@@ -489,11 +489,11 @@ export default function HomeClient() {
               <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-500 overflow-hidden">
                 <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
                   <Image
-                    src="/Grooming/happy-bernesemix-grooming-madison-wi-river-paws.jpg"
-                    alt="A happy Bernesemix dog with a fresh groom looks content after grooming at River Paws in Madison, Wisconsin"
+                    src="/Grooming/festive-american-eskimo-dog-grooming-deforest-wi-river-paws.jpg"
+                    alt="Charming American Eskimo trusting our breed-specific styling for DeForest area pets at River Paws"
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    style={{ objectPosition: getImageObjectPosition("/Grooming/happy-bernesemix-grooming-madison-wi-river-paws.jpg") }}
+                    style={{ objectPosition: getImageObjectPosition("/Grooming/festive-american-eskimo-dog-grooming-deforest-wi-river-paws.jpg") }}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">

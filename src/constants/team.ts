@@ -16,6 +16,7 @@ export const teamMembers: TeamMember[] = [
     role: "Owner",
     bio: "Amanda is the owner and founder of River Paws. She and her fiance Ben live in DeForest with their two kiddos Evie, Kai, dog Journey, and 2 rescue cats, George, and Monkey. Amanda attended UW Madison where she studied communication and Animal Science with an emphasis on behavior. While in school she worked at the UW Veterinary Medical Teaching Hospital. She enjoys working with many animals but especially loves horses, pigs, cows, monkeys, and of course DOGS! Amanda is fascinated by the communication between us humans and our pets and is continually researching the best way to really understand our dogs.",
     image: "/caretakers/amanda-masarik.jpg",
+    imageClass: "object-cover object-[50%_20%] scale-150",
     yearsExperience: 8, // Since 2017
     education: "UW Madison - Animal Science (Behavior Emphasis)",
     certifications: ["UW Veterinary Medical Teaching Hospital Experience"],
@@ -25,7 +26,7 @@ export const teamMembers: TeamMember[] = [
     name: "Kelly Esterholm",
     role: "Dog Groomer",
     bio: "Kelly Esterholm has been a professional groomer for about 17 years. She has worked in a corporate and private salon setting as well as vet supervised grooming. She lives in Oregon with her husband Max, her daughter Amelia, and her four legged kid, Buffy. Animals have always been a big part of her life, whether it be growing up with dogs, cats, rabbits, or rats! Her favorite part about being a groomer is taking the time to make your pup feel comfortable in her presence. She really enjoys getting to know each dog's personality and making an ever-lasting connection with you and your pet!",
-    image: "/caretakers/kelly-esterholm.jpg",
+    image: "/caretakers/kelly-esterholm.png",
     yearsExperience: 17,
     certifications: ["Professional Dog Groomer Certification", "Veterinary Supervised Grooming Experience"],
     specializations: ["Corporate Salon Experience", "Private Salon Experience", "Veterinary-Supervised Grooming", "Stress-Free Grooming"]

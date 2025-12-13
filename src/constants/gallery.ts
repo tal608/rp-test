@@ -282,6 +282,66 @@ export const imageCategories: Record<string, ImageData[]> = {
       alt: "Smiling Golden Retriever feeling confident with expert grooming serving Middleton families", 
       title: "Spa-quality care for trail-loving dogs", 
       priority: true 
+    },
+    { 
+      src: "/Grooming/calm-sheepadoodle-mix-professional-grooming-sun-prairie-wi-river-paws.jpg", 
+      alt: "Attentive Sheepadoodle mix feeling confident with gentle grooming care near Sun Prairie at River Paws", 
+      title: "Expert supervision makes events stress-free", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/radiant-maltese-mix-dog-grooming-sun-prairie-wi-river-paws.jpg", 
+      alt: "Radiant Maltese mix beaming after professional grooming serving Sun Prairie families", 
+      title: "Safe celebrations in controlled environments", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/joyful-papillon-dog-grooming-sun-prairie-wi-river-paws.jpg", 
+      alt: "Cheery Papillon enjoying gentle spa-quality care near Sun Prairie at River Paws", 
+      title: "Where socialization meets celebration", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/patient-black-doodle-grooming-sun-prairie-wi-river-paws.jpg", 
+      alt: "Patient black doodle thriving with compassionate skilled grooming for Sun Prairie area pets at River Paws", 
+      title: "Compassionate care for happy trails", 
+      priority: false 
+    },
+    { 
+      src: "/Grooming/beaming-goldendoodle-dog-grooming-deforest-wi-river-paws.jpg", 
+      alt: "Beaming Goldendoodle building relaxing during compassionate grooming near DeForest at River Paws", 
+      title: "Festive fun without dog park stress", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/festive-american-eskimo-dog-grooming-deforest-wi-river-paws.jpg", 
+      alt: "Charming American Eskimo trusting our breed-specific styling for DeForest area pets at River Paws", 
+      title: "Trusted grooming for active dogs", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/festive-american-eskimo-grooming-sun-prairie-wi-river-paws.jpg", 
+      alt: "Festive American Eskimo receiving expert gentle grooming care serving Sun Prairie families", 
+      title: "Where wellness meets wilderness", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/wisconsin-spaniel-mix-gentle-grooming-waunakee-wi-river-paws.jpg", 
+      alt: "Engaging Spaniel mix experiencing stress-free trusted grooming at River Paws Waunakee, Wisconsin", 
+      title: "Where style meets wilderness-ready care", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/wisconsin-confident-doodle-grooming-madison-wi-river-paws.jpg", 
+      alt: "Soft doodle mix feeling confident with professional care near Madison at River Paws", 
+      title: "Stress-free styling, beautiful results", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/joyful-havanese-mix-dog-grooming-waunakee-wi-river-paws.jpg", 
+      alt: "Sweet Havanese mix celebrating with professional grooming at River Paws Waunakee, Wisconsin", 
+      title: "Professional care, personal touch", 
+      priority: true 
     }],
   hiking: [{ 
       src: "/Hiking/joyful-lab-and-doodle-wilderness-trails-madison-wi-river-paws.jpg", 
@@ -1279,6 +1339,42 @@ export const imageCategories: Record<string, ImageData[]> = {
       src: "/Grooming/alert-border-collie-dog-park-madison-wi-river-paws.jpg", 
       alt: "Alert Border Collie trusting our compassionate grooming for Madison area pets at River Paws", 
       title: "Where dogs actually enjoy grooming", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/wisconsin-terrier-mix-social-madison-wi-river-paws.jpg", 
+      alt: "Festive terrier mix celebrating with supervised socialization serving Madison families", 
+      title: "Trust built one visit at a time", 
+      priority: false 
+    },
+    { 
+      src: "/Grooming/festive-sheepadoodle-dog-social-event-sun-prairie-wi-river-paws.jpg", 
+      alt: "Costumed Sheepadoodle socializing through expert-led events for Sun Prairie area pets at River Paws", 
+      title: "Clean paws, confident hearts", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/playful-sheepadoodle-adventure-park-madison-wi-river-paws.jpg", 
+      alt: "Festive Sheepadoodle discovering joy in safe social activities near Madison at River Paws", 
+      title: "Where breed meets expertise", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/confident-terrier-mix-dog-socialization-madison-wi-river-paws.jpg", 
+      alt: "Spunky terrier mix mastering calm during curated celebrations for Madison area pets at River Paws", 
+      title: "Where grooming builds trust, not stress", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/wisconsin-giant-schnauzer-social-event-sun-prairie-wi-river-paws.jpg", 
+      alt: "Regal Giant Schnauzer getting pampered with supervised socialization near Sun Prairie at River Paws", 
+      title: "Where dogs actually enjoy grooming", 
+      priority: true 
+    },
+    { 
+      src: "/Grooming/wisconsin-spaniel-seasonal-social-deforest-wi-river-paws.jpg", 
+      alt: "Gentle Spaniel shining after expert-led events serving DeForest families", 
+      title: "From muddy trails to spa-fresh confidence", 
       priority: true 
     }],
   portraits: [

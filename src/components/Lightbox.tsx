@@ -20,17 +20,19 @@ interface LightboxProps {
 export default function Lightbox({ images, currentIndex, onClose, onNext, onPrev }: LightboxProps) {
   const [isPlaying, setIsPlaying] = useState(true);
   const [progress, setProgress] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const image = images[currentIndex];
 
-  // Reset progress on slide change
+  // Reset progress and loaded state on slide change
   useEffect(() => {
     setProgress(0);
+    setImageLoaded(false);
   }, [currentIndex]);
 
-  // Autoplay logic
+  // Autoplay logic - only starts after image is loaded
   useEffect(() => {
-    if (!isPlaying) return;
+    if (!isPlaying || !imageLoaded) return;
 
     const duration = 5000; // 5 seconds per slide
     const interval = 50; // Update every 50ms
@@ -49,7 +51,7 @@ export default function Lightbox({ images, currentIndex, onClose, onNext, onPrev
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isPlaying, onNext, currentIndex]); // Re-run when index changes to ensure smooth loop
+  }, [isPlaying, imageLoaded, onNext, currentIndex]); // Re-run when index changes or image loads
 
   // Handle keyboard navigation
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
@@ -153,6 +155,7 @@ export default function Lightbox({ images, currentIndex, onClose, onNext, onPrev
             sizes="100vw"
             priority
             quality={90}
+            onLoad={() => setImageLoaded(true)}
           />
         </div>
 

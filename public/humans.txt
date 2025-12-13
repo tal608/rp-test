@@ -18,3 +18,4 @@ Hosting: AWS Amplify
 This site is built with modern web standards and best practices.
 We prioritize accessibility, performance, and security.
 
+

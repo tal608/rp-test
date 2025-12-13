@@ -2,7 +2,11 @@ const fs = require('fs');
 const path = require('path');
 const { parse } = require('csv-parse/sync');
 
-const csvPath = path.join(__dirname, '..', 'public', 'Grooming', 'river-paws-optimization-report (1).csv');
+// Accept CSV path as argument or use default
+const csvArg = process.argv[2];
+const csvPath = csvArg 
+  ? (path.isAbsolute(csvArg) ? csvArg : path.join(__dirname, '..', csvArg))
+  : path.join(__dirname, '..', 'public', 'Grooming', 'river-paws-grooming-social-complete_1.csv');
 const groomingDir = path.join(__dirname, '..', 'public', 'Grooming');
 
 // Read CSV as raw lines to preserve formatting
@@ -37,7 +41,8 @@ console.log(`Valid records (file exists): ${validIndices.size}`);
 console.log(`Skipped records: ${records.length - validIndices.size}`);
 
 // Write filtered CSV preserving original format
-const outputPath = path.join(__dirname, '..', 'public', 'Grooming', 'river-paws-optimization-report-filtered.csv');
+const inputBasename = path.basename(csvPath, '.csv');
+const outputPath = path.join(path.dirname(csvPath), `${inputBasename}-filtered.csv`);
 const outputLines = [header];
 allLines.slice(1).forEach((line, index) => {
   if (validIndices.has(index + 1)) {

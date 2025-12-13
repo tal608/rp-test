@@ -2,18 +2,50 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useMouseParallax } from "@/hooks/useMouseParallax";
 import { contactInfo } from "@/constants/social";
 import ScrollIndicator from "@/components/ScrollIndicator";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
+import Breadcrumb from "@/components/Breadcrumb";
 
 export default function Portal() {
   const heroRef = useRef<HTMLDivElement>(null);
   const mousePosition = useMouseParallax(heroRef);
+  const [iframeLoading, setIframeLoading] = useState(true);
+  const [iframeError, setIframeError] = useState(false);
+
+  // Timeout fallback if iframe takes too long to load
+  useEffect(() => {
+    if (iframeLoading) {
+      const timeout = setTimeout(() => {
+        setIframeLoading(false);
+        // Check if iframe actually loaded by checking if it's visible
+        const iframe = document.querySelector('iframe');
+        if (iframe && iframe.contentWindow) {
+          // Iframe loaded successfully
+          setIframeError(false);
+        } else {
+          // Iframe failed to load
+          setIframeError(true);
+        }
+      }, 15000); // 15 second timeout
+
+      return () => clearTimeout(timeout);
+    }
+  }, [iframeLoading]);
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-800">
+      {/* Breadcrumb */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-4">
+        <Breadcrumb
+          items={[
+            { name: 'Home', href: '/' },
+            { name: 'Online Booking', href: '/portal' },
+          ]}
+        />
+      </div>
       {/* Hero Section */}
       <section ref={heroRef} className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -97,7 +129,56 @@ export default function Portal() {
 
             {/* Booking Iframe */}
             <div className="p-4 sm:p-6">
-              <div style={{ width: '100%', height: '800px' }}>
+              <div className="relative" style={{ width: '100%', height: '800px', minHeight: '800px' }}>
+                {/* Loading State */}
+                {iframeLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-50 dark:bg-slate-700 rounded-xl z-10">
+                    <div className="text-center">
+                      <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-600 border-t-transparent mb-4"></div>
+                      <p className="text-gray-600 dark:text-gray-300 font-medium">Loading booking system...</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Error State */}
+                {iframeError && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-50 dark:bg-slate-700 rounded-xl z-10 p-8">
+                    <div className="text-center max-w-md">
+                      <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-8 h-8 text-red-600 dark:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Unable to Load Booking System</h3>
+                      <p className="text-gray-600 dark:text-gray-300 mb-6">
+                        The booking system couldn't be loaded. Please try refreshing the page or contact us directly.
+                      </p>
+                      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                        <button
+                          onClick={() => {
+                            setIframeError(false);
+                            setIframeLoading(true);
+                            const iframe = document.querySelector('iframe') as HTMLIFrameElement;
+                            if (iframe) {
+                              iframe.src = iframe.src; // Reload iframe
+                            }
+                          }}
+                          className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                        >
+                          Try Again
+                        </button>
+                        <a
+                          href={`tel:${contactInfo.phone}`}
+                          className="px-6 py-3 bg-gray-200 dark:bg-slate-600 text-gray-900 dark:text-white rounded-lg font-semibold hover:bg-gray-300 dark:hover:bg-slate-500 transition-colors"
+                        >
+                          Call Us Instead
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Iframe */}
                 <iframe
                   src="https://booking.moego.pet/ol/RiverPaws/book?utm_medium=embed"
                   width="100%"
@@ -105,8 +186,22 @@ export default function Portal() {
                   frameBorder="0"
                   title="Online booking for River Paws grooming and hiking services"
                   scrolling="no"
-                  className="rounded-xl"
+                  className={`rounded-xl transition-opacity duration-300 ${
+                    iframeLoading || iframeError ? 'opacity-0' : 'opacity-100'
+                  }`}
                   allow="payment"
+                  sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  loading="lazy"
+                  onLoad={() => {
+                    setIframeLoading(false);
+                    setIframeError(false);
+                  }}
+                  onError={() => {
+                    setIframeLoading(false);
+                    setIframeError(true);
+                  }}
+                  aria-label="Online booking system for River Paws grooming and hiking services"
                 />
               </div>
             </div>
