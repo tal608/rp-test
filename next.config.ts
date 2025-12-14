@@ -88,6 +88,24 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        // Service Worker - must not be cached and needs specific headers
+        source: '/sw.js',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate'
+          },
+          {
+            key: 'Content-Type',
+            value: 'application/javascript; charset=utf-8'
+          },
+          {
+            key: 'Service-Worker-Allowed',
+            value: '/'
+          },
+        ],
+      },
+      {
         // API routes - no cache (except cache-version which has its own headers)
         source: '/api/:path*',
         headers: [

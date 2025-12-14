@@ -11,7 +11,7 @@
 
 // Cache version - will be checked against server version
 // IMPORTANT: Keep in sync with src/lib/cache-version.ts
-let CACHE_VERSION = '1.1.42';
+let CACHE_VERSION = '1.1.43';
 
 // Cache name generators (recalculated when version changes)
 function getStaticCacheName() {
