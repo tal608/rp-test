@@ -11,6 +11,8 @@ const nextConfig: NextConfig = {
   compress: true,
   // Improve performance
   poweredByHeader: false,
+  // Enforce no trailing slash for canonical URLs
+  trailingSlash: false,
   
   // ============================================
   // SECURITY HEADERS
@@ -464,6 +466,51 @@ const nextConfig: NextConfig = {
       {
         source: '/puppy-play/',
         destination: '/puppy-play',
+        permanent: true,
+      },
+      {
+        source: '/puppy-grooming/',
+        destination: '/puppy-grooming',
+        permanent: true,
+      },
+      {
+        source: '/canine-grooming/',
+        destination: '/canine-grooming',
+        permanent: true,
+      },
+      {
+        source: '/grooming-application/',
+        destination: '/grooming-application',
+        permanent: true,
+      },
+      {
+        source: '/dog-hike-scheduling/',
+        destination: '/dog-hike-scheduling',
+        permanent: true,
+      },
+      {
+        source: '/dog-grooming-madison/',
+        destination: '/dog-grooming-madison',
+        permanent: true,
+      },
+      {
+        source: '/dog-grooming-waunakee/',
+        destination: '/dog-grooming-waunakee',
+        permanent: true,
+      },
+      {
+        source: '/dog-grooming-middleton/',
+        destination: '/dog-grooming-middleton',
+        permanent: true,
+      },
+      {
+        source: '/dog-grooming-sun-prairie/',
+        destination: '/dog-grooming-sun-prairie',
+        permanent: true,
+      },
+      {
+        source: '/dog-grooming-deforest/',
+        destination: '/dog-grooming-deforest',
         permanent: true,
       },
       

@@ -6,6 +6,10 @@ Disallow: /portal
 Disallow: /api
 Disallow: /admin
 
+# Block legacy redirect URLs from indexing
+Disallow: /sms
+Disallow: /agreement
+
 # Explicitly Allow AI Bots (matching ai.txt)
 User-agent: GPTBot
 User-agent: ChatGPT-User
