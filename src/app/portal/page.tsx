@@ -37,17 +37,18 @@ export default function Portal() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-800">
-      {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-4">
-        <Breadcrumb
-          items={[
-            { name: 'Home', href: '/' },
-            { name: 'Online Booking', href: '/portal' },
-          ]}
-        />
-      </div>
-      {/* Hero Section */}
-      <section ref={heroRef} className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Full height from top */}
+      <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
+        {/* Breadcrumb - Positioned over the hero */}
+        <div className="absolute top-24 left-6 z-20">
+          <Breadcrumb
+            items={[
+              { name: 'Home', href: '/' },
+              { name: 'Online Booking', href: '/portal' },
+            ]}
+            className="bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg"
+          />
+        </div>
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
