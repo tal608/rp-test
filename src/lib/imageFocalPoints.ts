@@ -269,7 +269,7 @@ const focalPointMap: Record<string, { x: number; y: number }> = {
   'happy-golden-retriever-dog-grooming-middleton-wi-river-paws.jpg': { x: 42, y: 35 },
   'calm-sheepadoodle-mix-professional-grooming-sun-prairie-wi-river-paws.jpg': { x: 50, y: 45 },
   'wisconsin-terrier-mix-social-madison-wi-river-paws.jpg': { x: 55, y: 42 },
-  'festive-sheepadoodle-dog-social-event-sun-prairie-wi-river-paws.jpg': { x: 45, y: 45 },
+  'festive-sheepadoodle-dog-social-event-sun-prairie-wi-river-paws.jpg': { x: 50, y: 55 },
   'playful-sheepadoodle-adventure-park-madison-wi-river-paws.jpg': { x: 50, y: 45 },
   'confident-terrier-mix-dog-socialization-madison-wi-river-paws.jpg': { x: 52, y: 62 },
   'radiant-maltese-mix-dog-grooming-sun-prairie-wi-river-paws.jpg': { x: 50, y: 30 },

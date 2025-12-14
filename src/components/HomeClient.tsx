@@ -238,9 +238,9 @@ export default function HomeClient() {
                       quality={index === 0 ? 85 : 75}
                     />
                   </div>
-                  <div className="polaroid-caption">
+                  <span className="absolute bottom-3 left-0 right-0 text-center text-sm text-gray-600 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
                     {image.caption}
-                  </div>
+                  </span>
                 </div>
               );
             })}
@@ -250,10 +250,10 @@ export default function HomeClient() {
               const mobileSize = { width: 80, height: 80 };
               // 4 positions - 2 at top (below trust pill), 2 at bottom (above fold)
               const mobilePositions = [
-                { x: "5%", y: "16%", rotation: -5 },     // Top-left, below trust pill
-                { x: "70%", y: "14%", rotation: 5 },     // Top-right, below trust pill
-                { x: "2%", y: "78%", rotation: -4 },     // Bottom-left, moved up to show fully
-                { x: "72%", y: "76%", rotation: 4 },     // Bottom-right, moved up to show fully
+                { x: "1%", y: "12%", rotation: -5 },     // Top-left, more towards corner
+                { x: "74%", y: "10%", rotation: 5 },     // Top-right, more towards corner
+                { x: "2%", y: "83%", rotation: -4 },     // Bottom-left, aligned with scroll arrow
+                { x: "76%", y: "83%", rotation: 4 },     // Bottom-right, moved right to avoid button
               ];
               const mobilePos = mobilePositions[index] || { x: "0%", y: "0%", rotation: 0 };
               
@@ -265,7 +265,7 @@ export default function HomeClient() {
                     left: mobilePos.x,
                     top: mobilePos.y,
                     width: `${mobileSize.width}px`,
-                    height: `${mobileSize.height + 30}px`,
+                    height: `${mobileSize.height + 20}px`,
                     '--rotation': `${mobilePos.rotation}deg`,
                     zIndex: 4,
                     animationDelay: `${index * 1.5}s`
@@ -283,9 +283,9 @@ export default function HomeClient() {
                       quality={70}
                     />
                   </div>
-                  <div className="polaroid-caption text-xs">
+                  <span className="absolute bottom-1 left-0 right-0 text-center text-[10px] xs:text-xs text-gray-600 font-medium" style={{ fontFamily: 'var(--font-kalam), cursive' }}>
                     {image.caption}
-                  </div>
+                  </span>
                 </div>
               );
             })}
@@ -933,10 +933,11 @@ export default function HomeClient() {
               <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 overflow-hidden group">
                 <div className="relative h-48 mb-6 rounded-xl overflow-hidden">
                   <Image
-                    src="/Grooming/calm-biewer-terrier-grooming-waunakee-wi-river-paws.jpg"
-                    alt="A gentle golden retriever looks toward the camera after a River Paws grooming session in Waunakee."
+                    src="/Grooming/festive-sheepadoodle-dog-social-event-sun-prairie-wi-river-paws.jpg"
+                    alt="A festive Sheepadoodle smiles at the camera during a River Paws grooming session in Sun Prairie."
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    style={{ objectPosition: getImageObjectPosition('/Grooming/festive-sheepadoodle-dog-social-event-sun-prairie-wi-river-paws.jpg') }}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-3">

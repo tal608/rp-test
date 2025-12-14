@@ -52,11 +52,11 @@ export default function DogGroomingMiddleton() {
           {/* Background Image with Parallax */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/Hiking/eager-pack-dog-bus-transport-middleton-wi-river-paws.jpg"
-              alt="Eager pack getting fitness achieving peaceful exhaustion for Middleton area pets at private trail systems with River Paws"
+              src="/Grooming/wisconsin-spaniel-seasonal-social-deforest-wi-river-paws.jpg"
+              alt="A beautiful Wisconsin Spaniel enjoying seasonal grooming services at River Paws, serving Middleton area families"
               fill
               className="object-cover"
-              style={{ objectPosition: getImageObjectPosition("/Hiking/eager-pack-dog-bus-transport-middleton-wi-river-paws.jpg") }}
+              style={{ objectPosition: getImageObjectPosition('/Grooming/wisconsin-spaniel-seasonal-social-deforest-wi-river-paws.jpg') }}
               priority
               sizes="100vw"
             />

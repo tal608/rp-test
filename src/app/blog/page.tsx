@@ -41,10 +41,11 @@ export default function BlogPage() {
           {/* Background Image with Parallax */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/Hiking/happy-alert-brindle-mix-dog-hiking-waunakee-wi-river-paws.jpg"
-              alt="A brindle dog poses during a River Paws adventure near Madison, Wisconsin."
+              src="/Grooming/soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg"
+              alt="A soft Goldendoodle enjoys professional grooming at River Paws in Waunakee, Wisconsin."
               fill
-              className="object-cover object-center"
+              className="object-cover"
+              style={{ objectPosition: getImageObjectPosition('/Grooming/soft-goldendoodle-grooming-waunakee-wi-river-paws.jpg') }}
               priority
               sizes="100vw"
             />

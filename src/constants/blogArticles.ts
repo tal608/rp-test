@@ -283,7 +283,7 @@ Nail trim: Every 6 weeks</p>
     datePublished: "2025-10-20",
     dateModified: "2025-10-20",
     author: "River Paws",
-    image: "/Grooming/happy-bernesemix-grooming-madison-wi-river-paws.jpg",
+    image: "/Grooming/radiant-maltese-mix-dog-grooming-sun-prairie-wi-river-paws.jpg",
     readTime: 8,
   },
   {
