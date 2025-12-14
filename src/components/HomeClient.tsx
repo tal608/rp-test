@@ -653,7 +653,7 @@ export default function HomeClient() {
             {/* Section Header */}
             <div className="text-center mb-12 sm:mb-16 md:mb-20">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">Our Services</h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">Two ways to make tails wag</p>
+              <p className="service-summary text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">Two ways to make tails wag</p>
             </div>
 
             {/* Two Polaroid Cards */}

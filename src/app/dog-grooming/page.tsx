@@ -142,7 +142,7 @@ export default function DogGrooming() {
               <RotatingBadges />
             </div>
 
-            <p className="hero-description text-base sm:text-lg md:text-xl text-white/95 max-w-3xl mx-auto animate-fadeInUp-delay-600 px-4 leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
+            <p className="hero-description service-intro text-base sm:text-lg md:text-xl text-white/95 max-w-3xl mx-auto animate-fadeInUp-delay-600 px-4 leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
               Patient groomers. Premium products. Dogs who actually enjoy their spa day.
               <span className="block mt-1 text-white/80">We take the time other places won&apos;t—because a calm pup means a beautiful groom.</span>
               <span className="block mt-3 text-yellow-200 font-semibold text-lg sm:text-xl">Professional dog grooming near you!</span>
@@ -218,7 +218,7 @@ export default function DogGrooming() {
               <span className="mr-2">🐾</span> From Booking to Beautiful
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">Your Grooming Journey</h2>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">See exactly what to expect when you bring your pup for grooming</p>
+            <p className="grooming-journey-intro text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">See exactly what to expect when you bring your pup for grooming</p>
           </div>
 
           {/* Journey Steps - Flowing Zigzag Timeline */}

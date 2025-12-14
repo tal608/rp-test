@@ -126,7 +126,7 @@ export default function DogHikes() {
               <RotatingBadges />
             </div>
 
-            <p className="hero-description text-base sm:text-lg md:text-xl text-white/95 max-w-3xl mx-auto animate-fadeInUp-delay-600 px-4 leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
+            <p className="hero-description service-intro text-base sm:text-lg md:text-xl text-white/95 max-w-3xl mx-auto animate-fadeInUp-delay-600 px-4 leading-relaxed" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
               Your dog isn&apos;t built for four walls—they&apos;re built for adventure.
               <span className="block mt-1 text-white/80">We swap daycare chaos for private trails where dogs run free, explore nature, and come home the happiest version of themselves.</span>
               <span className="block mt-3 text-yellow-200 font-semibold text-lg sm:text-xl">Professional dog hiking near you!</span>
@@ -968,7 +968,7 @@ export default function DogHikes() {
                     <div 
                       id={`faq-answer-${index}`}
                       aria-labelledby={`faq-question-${index}`}
-                      className={`relative overflow-hidden transition-all duration-500 ${
+                      className={`faq-answer relative overflow-hidden transition-all duration-500 ${
                         isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                       }`}
                     >
