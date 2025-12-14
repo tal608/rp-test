@@ -335,7 +335,7 @@ export default function DogHikes() {
                 </div>
                 <h4 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">Off-Leash Adventure</h4>
                 <p className="text-gray-600 leading-relaxed">
-                  1-2 hours of supervised fun in small groups (up to 6 dogs) exploring Madison&apos;s
+                  60-90 minutes of supervised fun in small groups (up to 6 dogs) exploring Madison&apos;s
                   scenic trails with professional handlers ensuring safety.
                 </p>
               </div>

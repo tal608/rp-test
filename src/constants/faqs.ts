@@ -9,12 +9,12 @@ export const homeFaqs: FAQ[] = [
     answer: "All dogs must be current on Rabies, Bordetella (Kennel Cough), and DHPP vaccines. Proof of vaccination must be provided before first visit."
   },
   {
-    question: "How do I prepare my dog for their first grooming?",
-    answer: "We recommend a meet-and-greet session first! Bring your dog's favorite treats, and we'll take time to let them get comfortable with our space and team."
+    question: "How do I prepare my puppy for their first grooming?",
+    answer: "We build extra time into your puppy's first appointment for a meet and greet with you and your pup. Bring their favorite treats, and we'll take time to let them get comfortable with our space and team before we begin."
   },
   {
     question: "What's included in the hiking adventures?",
-    answer: "Each adventure includes pickup/dropoff, 2-3 hours of hiking in small groups (max 6 dogs), water breaks, basic training reinforcement, and lots of photos!"
+    answer: "Each adventure includes pickup/dropoff, 60-90 minutes of hiking in small groups (max 6 dogs), water breaks, basic training reinforcement, and lots of photos!"
   },
   {
     question: "Do you offer senior dog services?",
@@ -22,7 +22,7 @@ export const homeFaqs: FAQ[] = [
   },
   {
     question: "What if my dog has separation anxiety?",
-    answer: "Our team is trained in anxiety management. We use calming techniques, allow comfort items from home, and provide updates throughout their visit."
+    answer: "Our team is experienced in handling anxious dogs and can provide updates throughout the appointment if requested."
   }
 ];
 
