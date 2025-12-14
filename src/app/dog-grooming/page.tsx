@@ -1417,17 +1417,17 @@ export default function DogGrooming() {
           </div>
 
           {/* Expert Guides - Polaroid Style Blog Cards */}
-          <div className="mt-12 bg-gradient-to-b from-blue-50 to-white rounded-3xl p-8 md:p-12">
+          <div className="mt-12 bg-gradient-to-b from-blue-50 to-white dark:from-slate-800 dark:to-slate-900 rounded-3xl p-8 md:p-12">
             <div className="text-center mb-10">
-              <p className="text-lg text-gray-500 mb-2">From our grooming experts...</p>
-              <h3 className="text-2xl sm:text-3xl font-bold text-gray-800">Tips & Guides for Happy Pups</h3>
+              <p className="text-lg text-gray-500 dark:text-gray-400 mb-2">From our grooming experts...</p>
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-white">Tips & Guides for Happy Pups</h3>
             </div>
             
             {/* Polaroid-Style Blog Cards */}
             <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {/* Card 1 */}
               <Link href="/blog/5-signs-your-dog-needs-grooming" className="group">
-                <div className="bg-white p-3 pb-6 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:-rotate-1 group-hover:scale-[1.02]"
+                <div className="bg-white dark:bg-slate-800 p-3 pb-6 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:-rotate-1 group-hover:scale-[1.02]"
                      style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}>
                   <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4">
                     <Image
@@ -1439,15 +1439,15 @@ export default function DogGrooming() {
                     />
                   </div>
                   <div className="px-1">
-                    <span className="inline-block px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-medium mb-2">Grooming Tips</span>
-                    <h4 className="font-bold text-gray-800 group-hover:text-blue-600 transition-colors">5 Signs Your Dog Needs Grooming</h4>
+                    <span className="inline-block px-2 py-1 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded text-xs font-medium mb-2">Grooming Tips</span>
+                    <h4 className="font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">5 Signs Your Dog Needs Grooming</h4>
                   </div>
                 </div>
               </Link>
 
               {/* Card 2 */}
               <Link href="/blog/preparing-your-puppy-for-their-first-groom" className="group">
-                <div className="bg-white p-3 pb-6 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:rotate-1 group-hover:scale-[1.02]"
+                <div className="bg-white dark:bg-slate-800 p-3 pb-6 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:rotate-1 group-hover:scale-[1.02]"
                      style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}>
                   <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4">
                     <Image
@@ -1460,15 +1460,15 @@ export default function DogGrooming() {
                     />
                   </div>
                   <div className="px-1">
-                    <span className="inline-block px-2 py-1 bg-amber-100 text-amber-700 rounded text-xs font-medium mb-2">Puppy Care</span>
-                    <h4 className="font-bold text-gray-800 group-hover:text-blue-600 transition-colors">Preparing Your Puppy for Their First Groom</h4>
+                    <span className="inline-block px-2 py-1 bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-300 rounded text-xs font-medium mb-2">Puppy Care</span>
+                    <h4 className="font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Preparing Your Puppy for Their First Groom</h4>
                   </div>
                 </div>
               </Link>
 
               {/* Card 3 */}
               <Link href="/blog/grooming-dogs-with-anxiety" className="group">
-                <div className="bg-white p-3 pb-6 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:-rotate-1 group-hover:scale-[1.02]"
+                <div className="bg-white dark:bg-slate-800 p-3 pb-6 rounded-sm shadow-lg hover:shadow-xl transition-all duration-500 transform group-hover:-rotate-1 group-hover:scale-[1.02]"
                      style={{ boxShadow: '0 8px 30px rgba(0,0,0,0.12)' }}>
                   <div className="relative aspect-[4/3] overflow-hidden rounded-sm mb-4">
                     <Image
@@ -1480,8 +1480,8 @@ export default function DogGrooming() {
                     />
                   </div>
                   <div className="px-1">
-                    <span className="inline-block px-2 py-1 bg-teal-100 text-teal-700 rounded text-xs font-medium mb-2">Stress-Free</span>
-                    <h4 className="font-bold text-gray-800 group-hover:text-blue-600 transition-colors">Grooming Dogs with Anxiety</h4>
+                    <span className="inline-block px-2 py-1 bg-teal-100 dark:bg-teal-900/50 text-teal-700 dark:text-teal-300 rounded text-xs font-medium mb-2">Stress-Free</span>
+                    <h4 className="font-bold text-gray-800 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Grooming Dogs with Anxiety</h4>
                   </div>
                 </div>
               </Link>
@@ -1491,7 +1491,7 @@ export default function DogGrooming() {
             <div className="text-center mt-10">
               <Link
                 href="/blog"
-                className="group inline-flex items-center px-6 py-3 bg-white border-2 border-gray-200 hover:border-blue-300 text-gray-700 hover:text-blue-600 rounded-full font-semibold transition-all duration-300 shadow-sm hover:shadow-md"
+                className="group inline-flex items-center px-6 py-3 bg-white dark:bg-slate-700 border-2 border-gray-200 dark:border-slate-600 hover:border-blue-300 dark:hover:border-blue-500 text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 rounded-full font-semibold transition-all duration-300 shadow-sm hover:shadow-md"
               >
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
