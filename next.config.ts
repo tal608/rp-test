@@ -360,6 +360,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/dog-grooming-deforest/',
+        destination: '/dog-grooming-deforest',
+        permanent: true,
+      },
+      {
         source: '/puppy-grooming/',
         destination: '/puppy-grooming',
         permanent: true,
@@ -416,6 +421,31 @@ const nextConfig: NextConfig = {
       {
         source: '/portal/',
         destination: '/portal',
+        permanent: true,
+      },
+      {
+        source: '/privacy-policy/',
+        destination: '/privacy-policy',
+        permanent: true,
+      },
+      {
+        source: '/offline/',
+        destination: '/offline',
+        permanent: true,
+      },
+      {
+        source: '/dog-grooming/',
+        destination: '/dog-grooming',
+        permanent: true,
+      },
+      {
+        source: '/dog-hikes/',
+        destination: '/dog-hikes',
+        permanent: true,
+      },
+      {
+        source: '/puppy-play/',
+        destination: '/puppy-play',
         permanent: true,
       },
       

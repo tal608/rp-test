@@ -15,7 +15,7 @@ const REDIRECT_PATTERNS: Record<string, string> = {
   // Live site URLs discovered from sitemap
   '/grooming-application': '/grooming-application',
   '/dog-hike-scheduling': '/dog-hike-scheduling',
-  '/dog-daycare': '/puppy-play',
+  '/dog-daycare': '/dog-hikes',
   '/agreement': '/waivers',
   '/grooming-and-doggy-daycare-gallery': '/gallery',
   '/puppy-play': '/puppy-play',
@@ -35,7 +35,7 @@ const VARIATION_PATTERNS = [
   // Live site URL patterns
   { pattern: /^\/grooming-application\/?$/i, dest: '/grooming-application' },
   { pattern: /^\/dog-hike-scheduling\/?$/i, dest: '/dog-hike-scheduling' },
-  { pattern: /^\/dog-daycare\/?$/i, dest: '/puppy-play' },
+  { pattern: /^\/dog-daycare\/?$/i, dest: '/dog-hikes' },
   { pattern: /^\/agreement\/?$/i, dest: '/waivers' },
   { pattern: /^\/grooming-and-doggy-daycare-gallery\/?$/i, dest: '/gallery' },
   { pattern: /^\/puppy-play\/?$/i, dest: '/puppy-play' },

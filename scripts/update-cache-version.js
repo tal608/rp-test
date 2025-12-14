@@ -72,21 +72,21 @@ function updateCacheVersion() {
     let newVersion = currentVersion;
     
     if (!syncOnly) {
-      // Parse version (format: major.minor.patch)
-      const [major, minor, patch] = currentVersion.split('.').map(Number);
-      
-      // Increment patch version
+    // Parse version (format: major.minor.patch)
+    const [major, minor, patch] = currentVersion.split('.').map(Number);
+    
+    // Increment patch version
       newVersion = `${major}.${minor}.${patch + 1}`;
-      console.log(`New cache version: ${newVersion}`);
-      
+    console.log(`New cache version: ${newVersion}`);
+    
       // Replace version in cache-version.ts
-      content = content.replace(
-        /export const CACHE_VERSION = ['"][^'"]+['"]/,
-        `export const CACHE_VERSION = '${newVersion}'`
-      );
-      
-      // Write updated file
-      fs.writeFileSync(CACHE_VERSION_FILE, content, 'utf-8');
+    content = content.replace(
+      /export const CACHE_VERSION = ['"][^'"]+['"]/,
+      `export const CACHE_VERSION = '${newVersion}'`
+    );
+    
+    // Write updated file
+    fs.writeFileSync(CACHE_VERSION_FILE, content, 'utf-8');
       console.log(`✅ Cache version file (cache-version.ts) updated to ${newVersion}`);
     } else {
       console.log('🔄 Sync mode: syncing sw.js to current version without incrementing');

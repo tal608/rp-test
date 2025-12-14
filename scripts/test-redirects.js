@@ -23,7 +23,7 @@ const CRITICAL_REDIRECTS = [
   { source: '/services/dog-hikes/', dest: '/dog-hikes', desc: 'Services Dog Hikes (trailing slash) → Dog Hikes' },
   { source: '/hiking', dest: '/dog-hikes', desc: 'Hiking' },
   { source: '/puppy-play', dest: '/puppy-play', desc: 'Puppy Play' },
-  { source: '/dog-daycare', dest: '/puppy-play', desc: 'Dog Daycare' },
+  { source: '/dog-daycare', dest: '/dog-hikes', desc: 'Dog Daycare → Dog Hikes' },
   { source: '/services/puppy-play', dest: '/puppy-play', desc: 'Services Puppy Play → Puppy Play' },
   
   // Team/About pages
