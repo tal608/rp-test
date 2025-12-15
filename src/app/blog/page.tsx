@@ -27,8 +27,33 @@ export default function BlogPage() {
       new Date(a.datePublished).getTime()
   );
 
+  // Breadcrumb schema for the blog list page
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.riverpaws.dog/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.riverpaws.dog/blog"
+      }
+    ]
+  };
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-950">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-950">
         {/* Modern Hero Section */}
         {/* IMAGE_PLACEMENT_START: blog-hero */}
         <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -255,7 +280,8 @@ export default function BlogPage() {
             </div>
           </div>
         </section>
-    </main>
+      </main>
+    </>
   );
 }
 

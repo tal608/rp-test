@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
@@ -23,21 +22,17 @@ export const metadata: Metadata = {
   },
 };
 
+/**
+ * Blog layout - schema is handled by individual pages:
+ * - blog/page.tsx adds its own BreadcrumbSchema for the list page
+ * - blog/[slug]/page.tsx adds complete breadcrumb including article name
+ * This prevents duplicate BreadcrumbList schemas
+ */
 export default function BlogLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <>
-      <BreadcrumbSchema
-        items={[
-          { name: "Home", url: "https://www.riverpaws.dog/" },
-          { name: "Blog", url: "https://www.riverpaws.dog/blog" },
-        ]}
-      />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 }
 

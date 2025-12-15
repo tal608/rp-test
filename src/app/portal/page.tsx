@@ -35,8 +35,23 @@ export default function Portal() {
     }
   }, [iframeLoading]);
 
+  // Breadcrumb schema
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.riverpaws.dog/" },
+      { "@type": "ListItem", "position": 2, "name": "Online Booking", "item": "https://www.riverpaws.dog/portal" }
+    ]
+  };
+
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-800">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <main className="min-h-screen bg-gradient-to-b from-white to-blue-50 dark:from-slate-900 dark:to-slate-800">
       {/* Hero Section - Full height from top */}
       <section ref={heroRef} className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Breadcrumb - Positioned over the hero */}
@@ -321,5 +336,6 @@ export default function Portal() {
         </div>
       </section>
     </main>
+    </>
   );
 }
