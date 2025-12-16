@@ -12,14 +12,20 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import GetDirectionsButton from "@/components/GetDirectionsButton";
 import SafeHtml from "@/components/SafeHtml";
 import { contactInfo } from "@/constants/social";
+import { getLocalBusinessSchema } from "@/lib/structuredData";
 
 export default function DogGroomingDeForest() {
   const heroRef = useRef<HTMLDivElement>(null);
   const mousePosition = useMouseParallax(heroRef);
   const mainFaq = cityGroomingFaqs.deforest[0];
+  const structuredData = getLocalBusinessSchema();
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <ServiceSchema serviceType="grooming" />
       <ArticleSchema
         headline={mainFaq.question}

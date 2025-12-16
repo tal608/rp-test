@@ -6,6 +6,7 @@ import { useState, useRef } from "react";
 import { useMouseParallax } from "@/hooks/useMouseParallax";
 import FAQSchema from "@/components/FAQSchema";
 import ServiceSchema from "@/components/ServiceSchema";
+import { getLocalBusinessSchema } from "@/lib/structuredData";
 import SpeakableSchema from "@/components/SpeakableSchema";
 import { hikingVoiceFaqs, formatForFAQSchema } from "@/constants/voiceSearchFaqs";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -19,6 +20,7 @@ export default function DogHikes() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const mousePosition = useMouseParallax(heroRef);
+  const structuredData = getLocalBusinessSchema();
 
   const faqs = [
     {
@@ -45,6 +47,10 @@ export default function DogHikes() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <ServiceSchema serviceType="hiking" />
       <FAQSchema faqs={[...faqs, ...formatForFAQSchema(hikingVoiceFaqs)]} />
       <BreadcrumbSchema

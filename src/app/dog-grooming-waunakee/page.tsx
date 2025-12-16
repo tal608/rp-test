@@ -13,6 +13,7 @@ import GetDirectionsButton from "@/components/GetDirectionsButton";
 import SafeHtml from "@/components/SafeHtml";
 import { contactInfo } from "@/constants/social";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
+import { getLocalBusinessSchema } from "@/lib/structuredData";
 
 export default function DogGroomingWaunakee() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -21,9 +22,14 @@ export default function DogGroomingWaunakee() {
   const mainFaqs = cityGroomingFaqs.waunakee.filter(
     (faq) => faq.question.toLowerCase().includes("products") || faq.question.toLowerCase().includes("canine")
   );
+  const structuredData = getLocalBusinessSchema();
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <ServiceSchema serviceType="grooming" />
       <ArticleSchema
         headline={mainFaqs[0]?.question || "Dog Grooming in Waunakee"}

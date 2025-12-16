@@ -15,15 +15,21 @@ import GetDirectionsButton from "@/components/GetDirectionsButton";
 import SafeHtml from "@/components/SafeHtml";
 import { contactInfo } from "@/constants/social";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
+import { getLocalBusinessSchema } from "@/lib/structuredData";
 
 export default function DogGroomingSunPrairie() {
   const heroRef = useRef<HTMLDivElement>(null);
   const mousePosition = useMouseParallax(heroRef);
   const sunPrairieFaqs = getCityGroomingFaqs("sunprairie");
   const mainFaq = cityGroomingFaqs.sunPrairie[0];
+  const structuredData = getLocalBusinessSchema();
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <ServiceSchema serviceType="grooming" />
       <ArticleSchema
         headline={mainFaq.question}

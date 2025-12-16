@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Kalam } from "next/font/google";
 import "./globals.css";
 import AppShell from "@/components/AppShell";
-import { getLocalBusinessSchema, getOrganizationSchema, getWebSiteSchema } from "@/lib/structuredData";
+import { getOrganizationSchema, getWebSiteSchema } from "@/lib/structuredData";
 import SkipLink from "@/components/SkipLink";
 import { ThemeProvider } from "@/context/ThemeContext";
 
@@ -104,7 +104,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = getLocalBusinessSchema();
   const organizationData = getOrganizationSchema();
   const webSiteData = getWebSiteSchema();
 
@@ -137,10 +136,6 @@ export default function RootLayout({
               })();
             `,
           }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
         <script
           type="application/ld+json"

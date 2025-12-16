@@ -9,6 +9,7 @@ import { groomingVoiceFaqs, formatForFAQSchema } from "@/constants/voiceSearchFa
 import FAQSection from "@/components/FAQSection";
 import FAQSchema from "@/components/FAQSchema";
 import ServiceSchema from "@/components/ServiceSchema";
+import { getLocalBusinessSchema } from "@/lib/structuredData";
 import HowToSchema from "@/components/HowToSchema";
 import SpeakableSchema from "@/components/SpeakableSchema";
 import ScrollIndicator from "@/components/ScrollIndicator";
@@ -22,9 +23,14 @@ import { contactInfo } from "@/constants/social";
 export default function DogGrooming() {
   const heroRef = useRef<HTMLDivElement>(null);
   const mousePosition = useMouseParallax(heroRef);
+  const structuredData = getLocalBusinessSchema();
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <ServiceSchema serviceType="grooming" />
       <BreadcrumbSchema
         items={[

@@ -11,10 +11,12 @@ import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 import SpeakableSchema from "@/components/SpeakableSchema";
 import FAQSchema from "@/components/FAQSchema";
 import { getImageObjectPosition } from "@/lib/imageFocalPoints";
+import { getLocalBusinessSchema } from "@/lib/structuredData";
 
 export default function Contact() {
   const heroRef = useRef<HTMLDivElement>(null);
   const mousePosition = useMouseParallax(heroRef);
+  const structuredData = getLocalBusinessSchema();
 
   // Voice-search optimized FAQs - conversational questions people actually ask
   const voiceFaqs = [
@@ -42,6 +44,10 @@ export default function Contact() {
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <BreadcrumbSchema
         items={[
           { name: "Home", url: "https://www.riverpaws.dog/" },
