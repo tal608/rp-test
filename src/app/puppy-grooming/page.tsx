@@ -13,7 +13,7 @@ import { contactInfo } from "@/constants/social";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Puppy Grooming | Puppy Grooming Services in Waunakee, WI | River Paws Professional Grooming",
+  title: "Puppy Grooming Services in Waunakee, WI",
   description:
     "Puppy grooming - Expert puppy grooming services in Waunakee, Wisconsin. Early grooming acclimation for puppies starting at 12 weeks. Gentle, positive grooming experiences that prepare puppies for a lifetime of comfortable grooming. Serving Madison, Middleton, DeForest, and Sun Prairie.",
   alternates: {
@@ -25,6 +25,7 @@ export const metadata: Metadata = {
       "Puppy grooming - Expert puppy grooming services starting at 12 weeks. Gentle, positive grooming experiences that prepare puppies for a lifetime of comfortable grooming.",
     url: "https://www.riverpaws.dog/puppy-grooming",
     type: "website",
+    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",

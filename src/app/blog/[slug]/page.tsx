@@ -52,11 +52,13 @@ export async function generateMetadata({
       modifiedTime: article.dateModified || article.datePublished,
       authors: [article.author],
       tags: article.tags,
+      images: [article.image || "/og-image.jpg"],
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.description,
+      images: [article.image || "/og-image.jpg"],
     },
   };
 }

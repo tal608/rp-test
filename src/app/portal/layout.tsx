@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Online Booking Portal | River Paws",
+  title: "Online Booking Portal",
   description:
     "Book your dog's grooming or hiking appointment online. Easy scheduling for River Paws services in Waunakee, WI. Select a service and pick a time that works for you.",
   alternates: {
@@ -19,6 +19,7 @@ export const metadata: Metadata = {
       "Book your dog's grooming or hiking appointment online. Easy scheduling for River Paws services.",
     url: "https://www.riverpaws.dog/portal",
     type: "website",
+    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary",

@@ -13,7 +13,7 @@ import { contactInfo } from "@/constants/social";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Professional Grooming Products Guide | River Paws",
+  title: "Professional Grooming Products Guide",
   description:
     "Expert guide to grooming products for every coat type. Learn about brushes, shampoos, nail clippers, and professional-grade tools. Tips from experienced groomers at River Paws in Waunakee, WI.",
   alternates: {
@@ -25,6 +25,7 @@ export const metadata: Metadata = {
       "Expert guide to grooming products for every coat type. Learn about brushes, shampoos, and professional-grade tools from experienced groomers.",
     url: "https://www.riverpaws.dog/canine-grooming",
     type: "website",
+    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",

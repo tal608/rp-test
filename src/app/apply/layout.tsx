@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Apply for Services | River Paws Dog Grooming & Hiking",
+  title: "Apply for Services | Dog Grooming & Hiking",
   description:
     "Apply for dog grooming, hiking adventures, and puppy play services at River Paws. Complete your application to get started with professional pet care in Waunakee, WI.",
   alternates: {
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
       "Apply for dog grooming, hiking adventures, and puppy play services at River Paws in Waunakee, WI.",
     url: "https://www.riverpaws.dog/apply",
     type: "website",
+    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary",

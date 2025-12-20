@@ -499,19 +499,25 @@ export function getWebSiteSchema(): WebSiteSchema {
  */
 export interface ImageGallerySchema {
   "@context": string;
-  "@type": string;
+  "@type": "CollectionPage";
   name: string;
   description: string;
   url: string;
-  numberOfItems: number;
-  image: Array<{
-    "@type": string;
-    url: string;
-    name: string;
-    description: string;
-    contentUrl: string;
-    thumbnailUrl?: string;
-  }>;
+  mainEntity: {
+    "@type": "ItemList";
+    numberOfItems: number;
+    itemListElement: Array<{
+      "@type": "ListItem";
+      position: number;
+      item: {
+        "@type": "ImageObject";
+        url: string;
+        name: string;
+        description: string;
+        contentUrl: string;
+      };
+    }>;
+  };
 }
 
 export function getImageGallerySchema(
@@ -522,17 +528,24 @@ export function getImageGallerySchema(
 ): ImageGallerySchema {
   return {
     "@context": "https://schema.org",
-    "@type": "ImageGallery",
+    "@type": "CollectionPage",
     name,
     description,
     url,
-    numberOfItems: images.length,
-    image: images.map((img) => ({
-      "@type": "ImageObject",
-      url: `https://www.riverpaws.dog${img.src}`,
-      name: img.caption || img.alt,
-      description: img.alt,
-      contentUrl: `https://www.riverpaws.dog${img.src}`,
-    })),
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: images.length,
+      itemListElement: images.map((img, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "ImageObject",
+          url: `https://www.riverpaws.dog${img.src}`,
+          name: img.caption || img.alt,
+          description: img.alt,
+          contentUrl: `https://www.riverpaws.dog${img.src}`,
+        },
+      })),
+    },
   };
 }

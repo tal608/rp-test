@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Dog Grooming in Waunakee, WI | River Paws | Next to Yahara Heights Dog Park",
+  title: "Dog Grooming in Waunakee, WI | Near Yahara Heights Dog Park",
   description:
     "Professional grooming at 5305 W River Rd in Waunakee. Full-service styling, breed-specific care, and stress-free handling. Walking distance from Yahara Heights Dog Park. Book today!",
   alternates: {
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       "Professional grooming at 5305 W River Rd in Waunakee. Full-service styling and breed-specific care. Next to Yahara Heights Dog Park!",
     url: "https://www.riverpaws.dog/dog-grooming-waunakee",
     type: "website",
+    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",

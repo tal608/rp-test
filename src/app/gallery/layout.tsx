@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Photo Gallery | Happy Dogs at River Paws Dog Grooming & Hiking | Waunakee, WI",
+  title: "Photo Gallery | Happy Dogs | Dog Grooming & Hiking",
   description:
     "View our gallery of happy, beautifully groomed dogs and adventure hiking photos at River Paws. See real results from our professional dog grooming and hiking services in Waunakee and Madison, WI since 2017.",
   alternates: {

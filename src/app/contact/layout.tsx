@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Contact Us | River Paws Dog Grooming & Hiking | Waunakee, WI",
+  title: "Contact Us | Dog Grooming & Hiking | Waunakee, WI",
   description:
     "Contact River Paws for dog grooming and hiking services. Located in Waunakee, WI. Call (608) 571-PAWS or email us. Serving Madison, Middleton, DeForest, Sun Prairie.",
   alternates: {
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       "Get in touch with River Paws for dog grooming and adventure hiking services. Located in Waunakee, serving Madison and surrounding areas.",
     url: "https://www.riverpaws.dog/contact",
     type: "website",
+    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary",

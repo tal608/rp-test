@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Puppy Play & Socialization | River Paws | Waunakee, WI",
+  title: "Puppy Play & Socialization | Waunakee, WI",
   description:
     "Professional puppy socialization and play services at River Paws. Safe, supervised play sessions help your puppy develop confidence and social skills. Serving Waunakee, Madison, Middleton, DeForest & Sun Prairie.",
   alternates: {

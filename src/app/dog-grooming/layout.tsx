@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Dog Grooming in Waunakee/Madison — Bath, Brush, Full Groom | River Paws",
+  title: "Dog Grooming in Waunakee/Madison — Bath, Brush, Full Groom",
   description:
     "Spa-quality dog grooming near Waunakee & North Madison: bath/brush, full groom, de-shedding, puppy grooms & nail trims. Call 608-571-7297.",
   alternates: {

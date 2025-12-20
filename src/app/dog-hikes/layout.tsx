@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Dog Hikes in Waunakee & North Madison | Pack Hikes & Off-Leash Play | River Paws",
+  title: "Dog Hikes in Waunakee & North Madison | Pack Hikes & Off-Leash Play",
   description:
     "Small-group dog hikes on private trails near Waunakee/Madison. Arrival 7:30–8:30, hike 8:45–11:00, owner pickup discount; drop-offs included. Apply now.",
   alternates: {

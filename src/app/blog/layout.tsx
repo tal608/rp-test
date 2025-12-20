@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Dog Grooming & Care Blog | River Paws Expert Tips & Advice",
+  title: "Dog Grooming & Care Blog | Expert Tips & Advice",
   description:
     "Expert dog grooming tips, breed-specific care guides, and seasonal grooming advice from River Paws professional groomers. Learn how to keep your dog healthy, comfortable, and looking their best.",
   alternates: {
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
       "Expert dog grooming tips, breed-specific care guides, and seasonal grooming advice from professional groomers.",
     url: "https://www.riverpaws.dog/blog",
     type: "website",
+    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary_large_image",

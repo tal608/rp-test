@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.riverpaws.dog"),
-  title: "Dog Grooming Application | River Paws",
+  title: "Dog Grooming Application",
   description:
     "Apply for professional dog grooming services at River Paws in Waunakee, WI. Complete your application to get started with our expert groomers.",
   alternates: {
     canonical: "https://www.riverpaws.dog/grooming-application",
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
   },
   openGraph: {
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
       "Apply for professional dog grooming services. Complete your application to get started with our expert groomers in Waunakee, WI.",
     url: "https://www.riverpaws.dog/grooming-application",
     type: "website",
+    images: ["/og-image.jpg"],
   },
   twitter: {
     card: "summary",
