@@ -204,9 +204,22 @@ export const cityGroomingFaqs: Record<string, CityFAQ[]> = {
 
 // Convert to FAQ format for FAQSection component
 export function getCityGroomingFaqs(city: string): Array<{ question: string; answer: string }> {
-  const cityKey = city.toLowerCase().replace(/\s+/g, '');
-  const faqs = cityGroomingFaqs[cityKey as keyof typeof cityGroomingFaqs];
+  // Map normalized input to actual camelCase keys in cityGroomingFaqs
+  const cityMap: Record<string, keyof typeof cityGroomingFaqs> = {
+    'madison': 'madison',
+    'sunprairie': 'sunPrairie',
+    'sun prairie': 'sunPrairie',
+    'middleton': 'middleton',
+    'waunakee': 'waunakee',
+    'deforest': 'deforest',
+  };
   
+  const normalizedInput = city.toLowerCase().replace(/\s+/g, '');
+  const cityKey = cityMap[normalizedInput];
+  
+  if (!cityKey) return [];
+  
+  const faqs = cityGroomingFaqs[cityKey];
   if (!faqs) return [];
   
   return faqs.map(faq => ({

@@ -21,7 +21,7 @@
  * 
  * Last updated: 2025-12-09 - Updated Amanda and Kelly bio pictures
  */
-export const CACHE_VERSION = '1.1.49';
+export const CACHE_VERSION = '1.1.50';
 
 /**
  * Get cache version from server
